@@ -1,6 +1,7 @@
 /**
- * Offline-first STT with fast start on mobile:
- * Web Speech immediately → Whisper WASM (background) → Vosk WASM (desktop only)
+ * Offline-first STT:
+ * Mobile/Android: keep the native Web Speech recognizer (Chrome uses Android STT).
+ * Desktop: Vosk WASM → Whisper WASM, with Web Speech as a fast fallback.
  */
 
 import { CONFIG } from "./config.js";
@@ -40,6 +41,10 @@ function isMobileDevice() {
   return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 }
 
+function isAndroidDevice() {
+  return /Android/i.test(navigator.userAgent);
+}
+
 export class STTService extends EventTarget {
   constructor() {
     super();
@@ -59,6 +64,7 @@ export class STTService extends EventTarget {
     this._whisperBusy = false;
     this._recognition = null;
     this._wasmTask = null;
+    this._restartTimer = null;
     this._mediaSampleRate = CONFIG.STT.sampleRate;
   }
 
@@ -91,18 +97,35 @@ export class STTService extends EventTarget {
     this._emit("transcript", { text: chunk, partial: "", buffer: this.buffer });
   }
 
-  /** Fast init: Web Speech first, WASM loads in background. */
+  /**
+   * Fast init: on phone, pin the native recognizer (Chrome Android = Speech-to-Text système).
+   * Whisper/Vosk WASM is skipped when native STT is available — it was degrading mobile quality.
+   */
   async init() {
-    this.setStatus("loading-wasm", { message: "Préparation du micro…" });
     this._startWebSpeechFallback();
+
+    const mobile = isMobileDevice();
+    const android = isAndroidDevice();
+
+    if (this._recognition && mobile) {
+      this.engine = "webspeech";
+      this.setStatus("fallback", {
+        message: android
+          ? "STT natif Android (Speech-to-Text système)"
+          : "STT natif (Web Speech) — WASM désactivé sur mobile",
+      });
+      this._emit("log", {
+        level: "info",
+        message: android
+          ? "Moteur STT: webspeech (natif Android). Whisper ignoré pour la qualité."
+          : "Moteur STT: webspeech (natif). Whisper ignoré sur mobile.",
+      });
+      return;
+    }
 
     if (this._recognition) {
       this.engine = "webspeech";
-      this.setStatus("fallback", {
-        message: isMobileDevice()
-          ? "Web Speech actif — Whisper se charge en arrière-plan"
-          : "Web Speech actif — WASM se charge en arrière-plan",
-      });
+      this.setStatus("fallback", { message: "Web Speech actif — WASM se charge en arrière-plan" });
     } else {
       this.setStatus("loading-wasm", { message: "Chargement WASM (sans secours Web Speech)…" });
     }
@@ -110,7 +133,7 @@ export class STTService extends EventTarget {
     this._wasmTask = this._loadWasmEngines();
     await Promise.race([
       this._wasmTask.catch(() => {}),
-      new Promise((resolve) => setTimeout(resolve, isMobileDevice() ? 1500 : 3000)),
+      new Promise((resolve) => setTimeout(resolve, 3000)),
     ]);
 
     if (this.engine === "none" && !this._recognition) {
@@ -162,7 +185,6 @@ export class STTService extends EventTarget {
     }
 
     const wasListening = this._listening && !this._paused;
-    const hadStream = !!this._stream;
 
     if (this._recognition) {
       try {
@@ -176,7 +198,10 @@ export class STTService extends EventTarget {
     this.setStatus("ready", { message });
     this._emit("log", { level: "info", message: `Moteur STT: ${nextEngine}` });
 
-    if (wasListening && hadStream) {
+    if (wasListening) {
+      if (nextEngine === "vosk" || nextEngine === "whisper") {
+        await this._ensureStream();
+      }
       await this._restartCapture();
     }
   }
@@ -223,9 +248,12 @@ export class STTService extends EventTarget {
   _startWebSpeechFallback() {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) return;
+    const android = isAndroidDevice();
     const rec = new SR();
-    rec.lang = "en-US";
-    rec.continuous = true;
+    rec.lang = CONFIG.STT.lang || "en-US";
+    // Android Chrome: continuous mode is unreliable. One-shot + restart
+    // matches the native SpeechRecognizer loop and yields better transcripts.
+    rec.continuous = !android;
     rec.interimResults = true;
     rec.maxAlternatives = 1;
     rec.onresult = (event) => {
@@ -246,14 +274,31 @@ export class STTService extends EventTarget {
     };
     rec.onend = () => {
       if (this._listening && !this._paused && this.engine === "webspeech") {
-        try {
-          rec.start();
-        } catch {
-          /* already started */
-        }
+        this._scheduleNativeRestart();
       }
     };
     this._recognition = rec;
+  }
+
+  _clearRestartTimer() {
+    if (this._restartTimer) {
+      clearTimeout(this._restartTimer);
+      this._restartTimer = null;
+    }
+  }
+
+  _scheduleNativeRestart() {
+    this._clearRestartTimer();
+    const delay = isAndroidDevice() ? CONFIG.STT.nativeRestartMs : 80;
+    this._restartTimer = setTimeout(() => {
+      this._restartTimer = null;
+      if (!this._listening || this._paused || this.engine !== "webspeech" || !this._recognition) return;
+      try {
+        this._recognition.start();
+      } catch {
+        /* already started */
+      }
+    }, delay);
   }
 
   async _initVosk() {
@@ -294,8 +339,8 @@ export class STTService extends EventTarget {
     });
   }
 
-  async start() {
-    if (this._listening) return;
+  async _ensureStream() {
+    if (this._stream) return;
     this._stream = await navigator.mediaDevices.getUserMedia({
       audio: {
         channelCount: 1,
@@ -305,12 +350,18 @@ export class STTService extends EventTarget {
       },
       video: false,
     });
+  }
+
+  async start() {
+    if (this._listening) return;
     this._listening = true;
     this._paused = false;
 
     if (this.engine === "vosk" && this._vosk) {
+      await this._ensureStream();
       await this._startVoskCapture();
     } else if (this.engine === "whisper" && this._whisper) {
+      await this._ensureStream();
       await this._startWhisperCapture();
     } else if (this._recognition) {
       this.engine = "webspeech";
@@ -320,6 +371,7 @@ export class STTService extends EventTarget {
         /* already started */
       }
     } else {
+      this._listening = false;
       throw new Error("STT non initialisé");
     }
     this._emit("listening", { listening: true });
@@ -327,6 +379,7 @@ export class STTService extends EventTarget {
 
   async pause() {
     this._paused = true;
+    this._clearRestartTimer();
     if (this._recognition) {
       try {
         this._recognition.stop();
@@ -343,17 +396,14 @@ export class STTService extends EventTarget {
       return;
     }
     if (this.engine === "webspeech" && this._recognition) {
-      try {
-        this._recognition.start();
-      } catch {
-        /* already started */
-      }
+      this._scheduleNativeRestart();
     }
   }
 
   async stop() {
     this._listening = false;
     this._paused = true;
+    this._clearRestartTimer();
     if (this._recognition) {
       try {
         this._recognition.stop();

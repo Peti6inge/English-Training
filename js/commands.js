@@ -9,15 +9,19 @@ const ORDER = ["remind", "repeat", "previous", "next", "ok"];
 
 /**
  * @param {string} buffer
+ * @param {{ allowBareOk?: boolean }} [opts]
  * @returns {{ type: "OK"|"REPEAT"|"PREVIOUS"|"NEXT"|"REMIND", before: string, after: string, raw: string } | null}
  */
-export function detectCommand(buffer) {
+export function detectCommand(buffer, opts = {}) {
   const raw = String(buffer || "").trim();
   if (!raw) return null;
 
   let best = null;
   for (const name of ORDER) {
-    const patterns = CONFIG.COMMANDS.aliases[name] || [];
+    const patterns = [
+      ...(CONFIG.COMMANDS.aliases[name] || []),
+      ...(opts.allowBareOk && name === "ok" ? CONFIG.COMMANDS.bareOk || [] : []),
+    ];
     for (const pattern of patterns) {
       const re = new RegExp(pattern.source, pattern.flags.includes("g") ? pattern.flags : pattern.flags + "g");
       let match;

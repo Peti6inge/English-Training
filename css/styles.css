@@ -201,6 +201,12 @@ body {
 .feedback.ok { border: 1px solid rgba(61, 214, 140, 0.35); }
 .feedback.bad { border: 1px solid rgba(255, 107, 107, 0.35); }
 
+.feedback .hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 .meter {
   height: 8px;
   background: var(--bg-elev-2);

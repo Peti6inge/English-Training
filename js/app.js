@@ -11,6 +11,7 @@ const STATES = [
   LOOP_STATES.LISTENING,
   LOOP_STATES.EVALUATING,
   LOOP_STATES.FEEDBACK,
+  LOOP_STATES.AWAITING_CONFIRM,
   LOOP_STATES.NEXT_PHRASE,
 ];
 
@@ -72,6 +73,7 @@ function renderFeedback({ ok, score, spoken, phrase }) {
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
+    <div class="hint">Dites <strong>OK</strong> pour continuer, <strong>REPEAT MONKEY</strong> pour réécouter, <strong>REMIND MONKEY</strong> pour réviser.</div>
   `;
 }
 
@@ -109,6 +111,11 @@ async function boot() {
     renderMachine(ev.detail.state);
     renderPhrase(ev.detail.phrase);
     if (ev.detail.state === LOOP_STATES.LISTENING) setBadge("listen", `${stt.engine} · écoute`);
+    if (ev.detail.state === LOOP_STATES.AWAITING_CONFIRM) {
+      setBadge("listen", `${stt.engine} · en attente d'OK`);
+      $("transcript").innerHTML =
+        "Dites <strong>OK</strong> pour continuer · <strong>REPEAT MONKEY</strong> pour réécouter · <strong>REMIND MONKEY</strong> pour réviser.";
+    }
     renderStats();
   });
 

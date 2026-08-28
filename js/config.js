@@ -6,8 +6,10 @@ export const CONFIG = {
   IDB_NAME: "english-training",
   IDB_VERSION: 1,
 
-  /** Fuzzy matcher: answers at or above this score are marked correct. */
+  /** Fallback fuzzy matcher when keyword-in-order matching does not pass. */
   SIMILARITY_THRESHOLD: 0.85,
+  /** Per-token similarity used when scanning expected keywords in order. */
+  KEYWORD_WORD_THRESHOLD: 0.72,
 
   TTS: {
     fr: "fr-FR",
@@ -17,10 +19,13 @@ export const CONFIG = {
   },
 
   STT: {
+    lang: "en-US",
     sampleRate: 16000,
     /** Whisper chunk length while continuously listening. */
     chunkMs: 2500,
     overlapMs: 400,
+    /** Delay before restarting Android one-shot SpeechRecognition. */
+    nativeRestartMs: 250,
     /** Abandon Vosk/Whisper load after this (ms) and keep Web Speech. */
     wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",
@@ -41,6 +46,8 @@ export const CONFIG = {
       next: [/\b(next|skip)\s+(monkey|monky|munkie)\b/i],
       remind: [/\b(remind|remember)\s+(monkey|monky|munkie)\b/i],
     },
+    /** After feedback, a bare "OK" advances — not used while answering. */
+    bareOk: [/\b(ok|okay|okey|o\.k\.)\b/i],
   },
 
   SM2: {
@@ -56,5 +63,6 @@ export const LOOP_STATES = Object.freeze({
   LISTENING: "LISTENING",
   EVALUATING: "EVALUATING",
   FEEDBACK: "FEEDBACK",
+  AWAITING_CONFIRM: "AWAITING_CONFIRM",
   NEXT_PHRASE: "NEXT_PHRASE",
 });
