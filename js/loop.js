@@ -129,21 +129,22 @@ export class LoopManager extends EventTarget {
     }
 
     if (!this.running) return;
-    this.setState(LOOP_STATES.NEXT_PHRASE);
-    queue.next();
+    const nextPhrase = queue.next();
+    this.setState(LOOP_STATES.NEXT_PHRASE, { phrase: nextPhrase });
     await this._speakCurrent();
   }
 
   async _onPrevious() {
     await stt.pause();
-    queue.previous();
+    const phrase = queue.previous();
+    this.setState(LOOP_STATES.NEXT_PHRASE, { phrase });
     await this._speakCurrent();
   }
 
   async _onNext() {
     await stt.pause();
-    this.setState(LOOP_STATES.NEXT_PHRASE);
-    queue.next();
+    const phrase = queue.next();
+    this.setState(LOOP_STATES.NEXT_PHRASE, { phrase });
     await this._speakCurrent();
   }
 

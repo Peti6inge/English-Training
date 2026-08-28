@@ -87,7 +87,10 @@ async function boot() {
 
   stt.addEventListener("status", (ev) => {
     const { status, engine, message } = ev.detail;
-    $("overlay").classList.toggle("show", status === "loading-wasm");
+    const loading = status === "loading-wasm";
+    $("overlay").classList.toggle("show", loading);
+    $("overlay").hidden = !loading;
+    $("overlay").setAttribute("aria-hidden", loading ? "false" : "true");
     $("overlay-msg").textContent = message || "Chargement…";
     if (status === "loading-wasm") setBadge("loading", message || "WASM…");
     else if (status === "ready") setBadge("ready", `${engine} prêt`);
@@ -127,6 +130,8 @@ async function boot() {
     $("btn-start").disabled = true;
     $("btn-stop").disabled = false;
     $("overlay").classList.add("show");
+    $("overlay").hidden = false;
+    $("overlay").setAttribute("aria-hidden", "false");
     try {
       await stt.init();
       await loop.start();
@@ -137,6 +142,8 @@ async function boot() {
       $("btn-stop").disabled = true;
     } finally {
       $("overlay").classList.remove("show");
+      $("overlay").hidden = true;
+      $("overlay").setAttribute("aria-hidden", "true");
     }
   });
 

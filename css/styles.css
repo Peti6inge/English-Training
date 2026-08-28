@@ -330,6 +330,7 @@ button:disabled {
 }
 
 .overlay.show { display: grid; }
+.overlay[hidden] { display: none !important; }
 
 .overlay .card {
   width: min(420px, calc(100% - 32px));

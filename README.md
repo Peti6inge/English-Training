@@ -2,6 +2,10 @@
 
 PWA mains-libres pour s'entraîner à l'anglais à l'oral : une phrase française est lue, vous répondez en anglais, puis vous validez par commande vocale.
 
+## Sur le téléphone
+
+Ouvrir **https://peti6inge.github.io/English-Training/** dans Chrome (Android) ou Safari (iPhone), puis **Ajouter à l'écran d'accueil**. Le premier chargement a besoin d'Internet (modèle vocal) ; ensuite l'app fonctionne hors-ligne.
+
 ## Démarrage local
 
 Servir le dossier en HTTP(S) — le micro, WASM et le service worker l'exigent :
