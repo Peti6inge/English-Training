@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+.cache/
+models/*.tar.gz
+models/*.zip
+.env
+.env.*

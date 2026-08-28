@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e1116" />
+    <title>English Training</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <img src="./icons/icon.svg" alt="" />
+          <div>
+            <h1>English Training</h1>
+            <p>Mains libres · FR → EN · wake word MONKEY</p>
+          </div>
+        </div>
+        <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <p class="kicker">Phrase française</p>
+          <h2 id="phrase-fr" class="phrase-fr">Appuyez sur Démarrer</h2>
+          <div class="phrase-meta">
+            <span id="phrase-index">0 / 0</span>
+            <span id="phrase-tag" class="tag">—</span>
+          </div>
+
+          <div class="machine" id="machine"></div>
+
+          <div class="transcript" id="transcript">Le transcript vocal apparaîtra ici.</div>
+          <div class="feedback" id="feedback"></div>
+
+          <div class="actions">
+            <button id="btn-start" class="primary">Démarrer</button>
+            <button id="btn-stop" class="ghost" disabled>Pause</button>
+            <button id="btn-repeat">Repeat</button>
+            <button id="btn-ok">OK</button>
+            <button id="btn-prev">Previous</button>
+            <button id="btn-next">Next</button>
+            <button id="btn-remind">Remind</button>
+            <button id="btn-reveal" class="ghost">Voir l'anglais</button>
+          </div>
+          <p class="reveal" id="reveal" hidden></p>
+        </section>
+
+        <aside class="card">
+          <p class="kicker">Progression</p>
+          <div class="stats">
+            <div class="stat"><b id="stat-seen">0</b><span>vues</span></div>
+            <div class="stat"><b id="stat-ok">0</b><span>correctes</span></div>
+            <div class="stat"><b id="stat-bad">0</b><span>à revoir</span></div>
+            <div class="stat"><b id="stat-remind">0</b><span>remind</span></div>
+          </div>
+
+          <p class="kicker">Commandes vocales</p>
+          <div class="commands">
+            <div class="cmd"><span>Réécouter le français</span><code>REPEAT MONKEY</code></div>
+            <div class="cmd"><span>Valider la réponse</span><code>OK MONKEY</code></div>
+            <div class="cmd"><span>Phrase précédente</span><code>PREVIOUS MONKEY</code></div>
+            <div class="cmd"><span>Passer sans score</span><code>NEXT MONKEY</code></div>
+            <div class="cmd"><span>Priorité révision</span><code>REMIND MONKEY</code></div>
+          </div>
+
+          <p class="kicker" style="margin-top:16px">Liste Remind</p>
+          <ul class="remind-list" id="remind-list"></ul>
+          <div class="actions" style="margin-top:12px">
+            <button id="btn-reset" class="ghost">Réinitialiser</button>
+          </div>
+          <div class="log" id="log"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="card">
+        <p class="kicker">Moteur STT</p>
+        <h2>Chargement WASM</h2>
+        <p id="overlay-msg">Préparation de Vosk / Whisper. Web Speech prend le relais en attendant.</p>
+      </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
