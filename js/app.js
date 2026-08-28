@@ -86,17 +86,18 @@ async function boot() {
   renderStats();
 
   stt.addEventListener("status", (ev) => {
-    const { status, engine, message } = ev.detail;
-    const loading = status === "loading-wasm";
-    $("overlay").classList.toggle("show", loading);
-    $("overlay").hidden = !loading;
-    $("overlay").setAttribute("aria-hidden", loading ? "false" : "true");
-    $("overlay-msg").textContent = message || "Chargement…";
-    if (status === "loading-wasm") setBadge("loading", message || "WASM…");
+    const { status, engine, message, ratio } = ev.detail;
+    const blockingLoad = status === "loading-wasm" && !stt._listening;
+    $("overlay").classList.toggle("show", blockingLoad);
+    $("overlay").hidden = !blockingLoad;
+    $("overlay").setAttribute("aria-hidden", blockingLoad ? "false" : "true");
+    const pct = ratio != null ? ` (${Math.round(ratio * 100)}%)` : "";
+    $("overlay-msg").textContent = `${message || "Chargement…"}${pct}`;
+    if (status === "loading-wasm") setBadge("loading", `${message || "WASM…"}${pct}`);
     else if (status === "ready") setBadge("ready", `${engine} prêt`);
-    else if (status === "fallback") setBadge("loading", `${engine} (secours)`);
+    else if (status === "fallback") setBadge("listen", `${engine} actif`);
     else if (status === "error") setBadge("error", "STT indisponible");
-    if (message) log(message);
+    if (message) log(`${message}${pct}`);
   });
 
   stt.addEventListener("log", (ev) => log(ev.detail.message));
@@ -129,9 +130,6 @@ async function boot() {
   $("btn-start").addEventListener("click", async () => {
     $("btn-start").disabled = true;
     $("btn-stop").disabled = false;
-    $("overlay").classList.add("show");
-    $("overlay").hidden = false;
-    $("overlay").setAttribute("aria-hidden", "false");
     try {
       await stt.init();
       await loop.start();
@@ -140,10 +138,6 @@ async function boot() {
       setBadge("error", "Micro refusé");
       $("btn-start").disabled = false;
       $("btn-stop").disabled = true;
-    } finally {
-      $("overlay").classList.remove("show");
-      $("overlay").hidden = true;
-      $("overlay").setAttribute("aria-hidden", "true");
     }
   });
 

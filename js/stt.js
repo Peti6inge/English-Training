@@ -1,6 +1,6 @@
 /**
- * Offline-first STT: Vosk WASM → Whisper WASM → Web Speech API fallback
- * while models load. Emits partial/final transcripts into a rolling buffer.
+ * Offline-first STT with fast start on mobile:
+ * Web Speech immediately → Whisper WASM (background) → Vosk WASM (desktop only)
  */
 
 import { CONFIG } from "./config.js";
@@ -20,28 +20,24 @@ function resample(input, fromRate, toRate) {
   return out;
 }
 
-async function fetchWithProgress(url, onProgress) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  const total = Number(res.headers.get("content-length")) || 0;
-  if (!res.body || !total) return res.arrayBuffer();
-  const reader = res.body.getReader();
-  const chunks = [];
-  let received = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    chunks.push(value);
-    received += value.length;
-    onProgress?.({ loaded: received, total, ratio: received / total });
-  }
-  const out = new Uint8Array(received);
-  let offset = 0;
-  for (const chunk of chunks) {
-    out.set(chunk, offset);
-    offset += chunk.length;
-  }
-  return out.buffer;
+function withTimeout(promise, ms, label) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`${label} — délai dépassé (${Math.round(ms / 1000)}s)`)), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (err) => {
+        clearTimeout(timer);
+        reject(err);
+      },
+    );
+  });
+}
+
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 }
 
 export class STTService extends EventTarget {
@@ -62,7 +58,7 @@ export class STTService extends EventTarget {
     this._pcmSamples = 0;
     this._whisperBusy = false;
     this._recognition = null;
-    this._fallbackActive = false;
+    this._wasmTask = null;
     this._mediaSampleRate = CONFIG.STT.sampleRate;
   }
 
@@ -95,37 +91,133 @@ export class STTService extends EventTarget {
     this._emit("transcript", { text: chunk, partial: "", buffer: this.buffer });
   }
 
+  /** Fast init: Web Speech first, WASM loads in background. */
   async init() {
-    this.setStatus("loading-wasm", { message: "Chargement du moteur vocal…" });
+    this.setStatus("loading-wasm", { message: "Préparation du micro…" });
     this._startWebSpeechFallback();
 
-    try {
-      await this._initVosk();
-      this.engine = "vosk";
-      this._stopWebSpeechFallback();
-      this.setStatus("ready", { message: "Vosk WASM prêt (hors-ligne)" });
-      return;
-    } catch (err) {
-      this._emit("log", { level: "warn", message: `Vosk indisponible: ${err.message}` });
+    if (this._recognition) {
+      this.engine = "webspeech";
+      this.setStatus("fallback", {
+        message: isMobileDevice()
+          ? "Web Speech actif — Whisper se charge en arrière-plan"
+          : "Web Speech actif — WASM se charge en arrière-plan",
+      });
+    } else {
+      this.setStatus("loading-wasm", { message: "Chargement WASM (sans secours Web Speech)…" });
+    }
+
+    this._wasmTask = this._loadWasmEngines();
+    await Promise.race([
+      this._wasmTask.catch(() => {}),
+      new Promise((resolve) => setTimeout(resolve, isMobileDevice() ? 1500 : 3000)),
+    ]);
+
+    if (this.engine === "none" && !this._recognition) {
+      try {
+        await withTimeout(this._wasmTask, CONFIG.STT.wasmTimeoutMs, "STT WASM");
+      } catch (err) {
+        this._emit("log", { level: "warn", message: err.message });
+        this.setStatus("error", { message: "Aucun moteur STT disponible" });
+      }
+    }
+  }
+
+  async _loadWasmEngines() {
+    const mobile = isMobileDevice();
+
+    if (!mobile) {
+      try {
+        await withTimeout(this._initVosk(), CONFIG.STT.wasmTimeoutMs, "Vosk");
+        await this._switchEngine("vosk", "Vosk WASM prêt (hors-ligne)");
+        return;
+      } catch (err) {
+        this._emit("log", { level: "warn", message: `Vosk indisponible: ${err.message}` });
+      }
+    } else {
+      this._emit("log", {
+        level: "info",
+        message: "Vosk ignoré sur mobile (souvent bloquant) — Whisper en arrière-plan",
+      });
     }
 
     try {
-      await this._initWhisper();
-      this.engine = "whisper";
-      this._stopWebSpeechFallback();
-      this.setStatus("ready", { message: "Whisper WASM prêt (hors-ligne)" });
+      await withTimeout(this._initWhisper(), CONFIG.STT.wasmTimeoutMs, "Whisper");
+      await this._switchEngine("whisper", "Whisper WASM prêt (hors-ligne)");
       return;
     } catch (err) {
       this._emit("log", { level: "warn", message: `Whisper indisponible: ${err.message}` });
     }
 
-    this.engine = this._recognition ? "webspeech" : "none";
-    this.setStatus(this.engine === "webspeech" ? "fallback" : "error", {
-      message:
-        this.engine === "webspeech"
-          ? "WASM en échec — Web Speech API en secours"
-          : "Aucun moteur STT disponible",
-    });
+    if (this._recognition) {
+      this.engine = "webspeech";
+      this.setStatus("fallback", { message: "WASM indisponible — Web Speech API" });
+    }
+  }
+
+  async _switchEngine(nextEngine, message) {
+    if (this.engine === nextEngine) {
+      this.setStatus("ready", { message });
+      return;
+    }
+
+    const wasListening = this._listening && !this._paused;
+    const hadStream = !!this._stream;
+
+    if (this._recognition) {
+      try {
+        this._recognition.stop();
+      } catch {
+        /* ignore */
+      }
+    }
+
+    this.engine = nextEngine;
+    this.setStatus("ready", { message });
+    this._emit("log", { level: "info", message: `Moteur STT: ${nextEngine}` });
+
+    if (wasListening && hadStream) {
+      await this._restartCapture();
+    }
+  }
+
+  async _restartCapture() {
+    if (this._processor) {
+      try {
+        this._processor.disconnect();
+      } catch {
+        /* ignore */
+      }
+      this._processor = null;
+    }
+    if (this._source) {
+      try {
+        this._source.disconnect();
+      } catch {
+        /* ignore */
+      }
+      this._source = null;
+    }
+    if (this._audioContext) {
+      try {
+        await this._audioContext.close();
+      } catch {
+        /* ignore */
+      }
+      this._audioContext = null;
+    }
+
+    if (this.engine === "vosk" && this._vosk) {
+      await this._startVoskCapture();
+    } else if (this.engine === "whisper" && this._whisper) {
+      await this._startWhisperCapture();
+    } else if (this._recognition) {
+      try {
+        this._recognition.start();
+      } catch {
+        /* already started */
+      }
+    }
   }
 
   _startWebSpeechFallback() {
@@ -137,7 +229,7 @@ export class STTService extends EventTarget {
     rec.interimResults = true;
     rec.maxAlternatives = 1;
     rec.onresult = (event) => {
-      if (this._paused || !this._listening) return;
+      if (this._paused || !this._listening || this.engine !== "webspeech") return;
       let interim = "";
       let finalText = "";
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -162,41 +254,29 @@ export class STTService extends EventTarget {
       }
     };
     this._recognition = rec;
-    this._fallbackActive = true;
-    this.engine = "webspeech";
-    this.setStatus("fallback", { message: "Écoute Web Speech pendant le chargement WASM…" });
-  }
-
-  _stopWebSpeechFallback() {
-    this._fallbackActive = false;
-    if (this._recognition && this.engine !== "webspeech") {
-      try {
-        this._recognition.stop();
-      } catch {
-        /* ignore */
-      }
-    }
   }
 
   async _initVosk() {
-    this.setStatus("loading-wasm", { message: "Téléchargement du modèle Vosk…" });
+    this.setStatus("loading-wasm", { message: "Téléchargement Vosk…", ratio: 0 });
     const { createModel } = await import(/* @vite-ignore */ CONFIG.STT.voskCdn);
     let lastError = null;
     for (const url of CONFIG.STT.voskModelUrls) {
+      const name = url.split("/").pop();
       try {
-        this.setStatus("loading-wasm", { message: `Modèle Vosk: ${url.split("/").pop()}` });
+        this.setStatus("loading-wasm", { message: `Vosk: ${name}`, ratio: 0 });
         const model = await createModel(url);
         this._vosk = { model, url };
         return;
       } catch (err) {
         lastError = err;
+        this._emit("log", { level: "warn", message: `Vosk ${name}: ${err.message}` });
       }
     }
     throw lastError || new Error("Aucun modèle Vosk chargé");
   }
 
   async _initWhisper() {
-    this.setStatus("loading-wasm", { message: "Chargement de Whisper tiny.en…" });
+    this.setStatus("loading-wasm", { message: "Chargement Whisper tiny.en…", ratio: 0 });
     const { pipeline, env } = await import(/* @vite-ignore */ `${CONFIG.STT.transformersCdn}`);
     env.allowRemoteModels = true;
     env.useBrowserCache = true;
@@ -205,7 +285,7 @@ export class STTService extends EventTarget {
     }
     this._whisper = await pipeline("automatic-speech-recognition", CONFIG.STT.whisperModel, {
       progress_callback: (p) => {
-        const ratio = p?.progress != null ? p.progress / 100 : p?.status === "done" ? 1 : 0;
+        const ratio = p?.progress != null ? p.progress / 100 : p?.status === "done" ? 1 : undefined;
         this.setStatus("loading-wasm", {
           message: p?.file ? `Whisper: ${p.status || ""} ${p.file}` : "Whisper…",
           ratio,

@@ -21,12 +21,14 @@ export const CONFIG = {
     /** Whisper chunk length while continuously listening. */
     chunkMs: 2500,
     overlapMs: 400,
+    /** Abandon Vosk/Whisper load after this (ms) and keep Web Speech. */
+    wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",
     transformersCdn: "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2",
     voskCdn: "https://cdn.jsdelivr.net/npm/vosk-browser@0.0.8/+esm",
     voskModelUrls: [
-      "https://huggingface.co/ccoreilly/vosk-model-small-en-us-0.15/resolve/main/model.tar.gz",
       "https://ccoreilly.github.io/vosk-browser/models/vosk-model-small-en-us-0.15.tar.gz",
+      "https://huggingface.co/ccoreilly/vosk-model-small-en-us-0.15/resolve/main/model.tar.gz",
     ],
   },
 
