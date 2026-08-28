@@ -10,6 +10,8 @@ export const CONFIG = {
   SIMILARITY_THRESHOLD: 0.85,
   /** Per-token similarity used when scanning expected keywords in order. */
   KEYWORD_WORD_THRESHOLD: 0.72,
+  /** Insert a random Remind phrase after this many regular advances. */
+  REMIND_INSERT_EVERY: 4,
 
   TTS: {
     fr: "fr-FR",
@@ -24,8 +26,10 @@ export const CONFIG = {
     /** Whisper chunk length while continuously listening. */
     chunkMs: 2500,
     overlapMs: 400,
-    /** Delay before restarting Android one-shot SpeechRecognition. */
+    /** Delay before restarting one-shot SpeechRecognition. */
     nativeRestartMs: 250,
+    /** Whisper: treat this silence after speech as end of utterance (ms). */
+    utteranceSilenceMs: 1400,
     /** Abandon Vosk/Whisper load after this (ms) and keep Web Speech. */
     wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",
@@ -38,16 +42,14 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    wake: "monkey",
     aliases: {
-      ok: [/\b(ok|okay|okey|o\.k\.)\s+(monkey|monky|munkie)\b/i],
-      repeat: [/\b(repeat|again)\s+(monkey|monky|munkie)\b/i],
-      previous: [/\b(previous|back|last)\s+(monkey|monky|munkie)\b/i],
-      next: [/\b(next|skip)\s+(monkey|monky|munkie)\b/i],
-      remind: [/\b(remind|remember)\s+(monkey|monky|munkie)\b/i],
+      dont_remind: [/\b(don't|dont|do not)\s+remind\b/i],
+      repeat_english: [/\brepeat(?:\s+the)?\s+english\b/i],
+      repeat_french: [/\brepeat(?:\s+the)?\s+french\b/i],
+      previous: [/\bprevious\b/i],
+      next: [/\bnext\b/i],
+      remind: [/\bremind\b/i],
     },
-    /** After feedback, a bare "OK" advances — not used while answering. */
-    bareOk: [/\b(ok|okay|okey|o\.k\.)\b/i],
   },
 
   SM2: {
@@ -63,6 +65,5 @@ export const LOOP_STATES = Object.freeze({
   LISTENING: "LISTENING",
   EVALUATING: "EVALUATING",
   FEEDBACK: "FEEDBACK",
-  AWAITING_CONFIRM: "AWAITING_CONFIRM",
   NEXT_PHRASE: "NEXT_PHRASE",
 });

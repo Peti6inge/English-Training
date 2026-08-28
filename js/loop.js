@@ -1,7 +1,8 @@
 /**
- * Hands-free loop state machine:
- * SPEAKING_FR → LISTENING → EVALUATING → FEEDBACK → AWAITING_CONFIRM
- * (OK / OK MONKEY) → NEXT_PHRASE → SPEAKING_FR
+ * Hands-free loop:
+ * SPEAKING_FR → LISTENING → (mic closes) → EVALUATING → FEEDBACK
+ *   correct → NEXT_PHRASE
+ *   incorrect → LISTENING (retry) until a valid answer or "Next"
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
@@ -18,8 +19,8 @@ export class LoopManager extends EventTarget {
     this.state = LOOP_STATES.IDLE;
     this.running = false;
     this._busy = false;
-    this._awaitingAdvance = false;
     this._onTranscript = (ev) => this._handleTranscript(ev.detail);
+    this._onSpeechEnd = (ev) => this._handleSpeechEnd(ev.detail);
   }
 
   _emit(name, detail) {
@@ -34,17 +35,22 @@ export class LoopManager extends EventTarget {
   async start() {
     if (this.running) return;
     this.running = true;
-    this._awaitingAdvance = false;
     stt.addEventListener("transcript", this._onTranscript);
+    stt.addEventListener("speechend", this._onSpeechEnd);
     await tts.init();
-    if (!stt._listening) await stt.start();
-    await this._speakCurrent();
+    this._busy = true;
+    try {
+      if (!stt._listening) await stt.start();
+      await this._speakCurrent();
+    } finally {
+      this._busy = false;
+    }
   }
 
   async stop() {
     this.running = false;
-    this._awaitingAdvance = false;
     stt.removeEventListener("transcript", this._onTranscript);
+    stt.removeEventListener("speechend", this._onSpeechEnd);
     tts.cancel();
     await stt.pause();
     this.setState(LOOP_STATES.IDLE);
@@ -54,11 +60,10 @@ export class LoopManager extends EventTarget {
     return queue.current();
   }
 
-  async _speakCurrent({ resumeConfirm = false } = {}) {
+  async _speakCurrent() {
     const phrase = queue.current();
     if (!phrase || !this.running) return;
     this._busy = true;
-    if (!resumeConfirm) this._awaitingAdvance = false;
     this.setState(LOOP_STATES.SPEAKING_FR, { phrase });
     await stt.pause();
     stt.clearBuffer();
@@ -67,62 +72,62 @@ export class LoopManager extends EventTarget {
     } catch {
       /* TTS may be blocked; continue to listening */
     }
-    if (!this.running) {
-      this._busy = false;
-      return;
-    }
-    const nextState = resumeConfirm ? LOOP_STATES.AWAITING_CONFIRM : LOOP_STATES.LISTENING;
-    if (resumeConfirm) this._awaitingAdvance = true;
-    this.setState(nextState, { phrase });
-    await stt.resume();
-    this._busy = false;
+    if (!this.running) return;
+    this.setState(LOOP_STATES.LISTENING, { phrase });
+    this._resumeMic();
   }
 
-  _canListen() {
-    return this.state === LOOP_STATES.LISTENING || this.state === LOOP_STATES.AWAITING_CONFIRM;
+  _resumeMic() {
+    stt.resume().catch((err) => {
+      this._emit("log", { level: "warn", message: String(err?.message || err) });
+    });
   }
 
-  async _handleTranscript(detail) {
-    if (!this.running || this._busy) return;
-    if (!this._canListen()) return;
-
-    const probe = `${detail.buffer || ""} ${detail.partial || ""}`.trim();
+  _handleTranscript(detail) {
+    if (!this.running) return;
     this._emit("transcript", { buffer: detail.buffer, partial: detail.partial });
+  }
 
-    const command = detectCommand(probe, { allowBareOk: this._awaitingAdvance });
-    if (!command) return;
+  async _handleSpeechEnd(detail) {
+    if (!this.running || this._busy) return;
+    if (this.state !== LOOP_STATES.LISTENING) return;
 
     this._busy = true;
-    stt.clearBuffer();
+    await stt.pause();
 
     try {
-      if (command.type === "REPEAT") await this._onRepeat();
-      else if (command.type === "OK") await this._onOk(command);
-      else if (command.type === "PREVIOUS") await this._onPrevious();
-      else if (command.type === "NEXT") await this._onNext();
-      else if (command.type === "REMIND") await this._onRemind(command);
+      const spoken = String(detail?.buffer || stt.getBuffer() || "").trim();
+      const command = detectCommand(spoken);
+      if (command) {
+        stt.clearBuffer();
+        await this._dispatch(command);
+        return;
+      }
+      if (spoken) {
+        await this._evaluate(spoken, { force: false });
+        return;
+      }
+      if (this.running) this._resumeMic();
     } finally {
       this._busy = false;
     }
   }
 
-  async _onRepeat() {
-    await stt.pause();
-    await this._speakCurrent({ resumeConfirm: this._awaitingAdvance });
+  async _dispatch(command) {
+    if (command.type === "REPEAT_FRENCH") await this._onRepeatFrench();
+    else if (command.type === "REPEAT_ENGLISH") await this._onRepeatEnglish();
+    else if (command.type === "NEXT") await this._evaluate(stripCommands(command.before || ""), { force: true });
+    else if (command.type === "PREVIOUS") await this._onPrevious();
+    else if (command.type === "REMIND") await this._onRemind(command);
+    else if (command.type === "DONT_REMIND") await this._onDontRemind();
   }
 
-  async _onOk(command) {
-    if (this._awaitingAdvance) {
-      await this._advance();
-      return;
-    }
-
+  async _evaluate(spokenRaw, { force = false } = {}) {
     const phrase = queue.current();
     if (!phrase) return;
     this.setState(LOOP_STATES.EVALUATING, { phrase });
-    await stt.pause();
 
-    const spoken = stripCommands(command.before || command.raw);
+    const spoken = stripCommands(spokenRaw);
     const { ok, score } = isMatch(spoken, phrase.en, CONFIG.SIMILARITY_THRESHOLD, {
       wordThreshold: CONFIG.KEYWORD_WORD_THRESHOLD,
     });
@@ -134,44 +139,61 @@ export class LoopManager extends EventTarget {
       expected: phrase.en,
       score,
       ok,
-      via: "ok-monkey",
+      via: force ? "next" : "speechend",
     });
 
-    this.setState(LOOP_STATES.FEEDBACK, { phrase, ok, score, spoken });
-    this._emit("feedback", { phrase, ok, score, spoken });
+    this.setState(LOOP_STATES.FEEDBACK, { phrase, ok, score, spoken, force });
+    this._emit("feedback", { phrase, ok, score, spoken, force });
 
     if (ok) {
       await tts.speakEn("Perfect");
-    } else {
-      await tts.speakEn(`Incorrect. The correct answer is: ${phrase.en}`);
+      if (!this.running) return;
+      await this._advance();
+      return;
     }
 
+    if (force) {
+      await tts.speakEn(`Incorrect. The correct answer is: ${phrase.en}`);
+      if (!this.running) return;
+      await this._advance();
+      return;
+    }
+
+    await tts.speakEn("Try again");
     if (!this.running) return;
-    this._awaitingAdvance = true;
     stt.clearBuffer();
-    this.setState(LOOP_STATES.AWAITING_CONFIRM, { phrase, ok, score, spoken });
-    await stt.resume();
+    this.setState(LOOP_STATES.LISTENING, { phrase, ok: false, score, spoken });
+    this._resumeMic();
   }
 
   async _advance() {
-    this._awaitingAdvance = false;
     const nextPhrase = queue.next();
     this.setState(LOOP_STATES.NEXT_PHRASE, { phrase: nextPhrase });
     await this._speakCurrent();
   }
 
-  async _onPrevious() {
-    this._awaitingAdvance = false;
-    await stt.pause();
-    const phrase = queue.previous();
-    this.setState(LOOP_STATES.NEXT_PHRASE, { phrase });
+  async _onRepeatFrench() {
     await this._speakCurrent();
   }
 
-  async _onNext() {
-    this._awaitingAdvance = false;
+  async _onRepeatEnglish() {
+    const phrase = queue.current();
+    if (!phrase) return;
     await stt.pause();
-    const phrase = queue.next();
+    try {
+      await tts.speakEn(phrase.en);
+    } catch {
+      /* ignore */
+    }
+    if (!this.running) return;
+    stt.clearBuffer();
+    this.setState(LOOP_STATES.LISTENING, { phrase });
+    this._resumeMic();
+  }
+
+  async _onPrevious() {
+    await stt.pause();
+    const phrase = queue.previous();
     this.setState(LOOP_STATES.NEXT_PHRASE, { phrase });
     await this._speakCurrent();
   }
@@ -185,23 +207,34 @@ export class LoopManager extends EventTarget {
     await stt.pause();
     await tts.speakEn("Added to review");
     if (!this.running) return;
-    const nextState = this._awaitingAdvance ? LOOP_STATES.AWAITING_CONFIRM : LOOP_STATES.LISTENING;
     stt.clearBuffer();
-    this.setState(nextState, { phrase });
-    await stt.resume();
+    this.setState(LOOP_STATES.LISTENING, { phrase });
+    this._resumeMic();
+  }
+
+  async _onDontRemind() {
+    const phrase = queue.current();
+    if (!phrase) return;
+    storage.removeRemind(phrase.id);
+    this._emit("dont-remind", { phrase });
+    await stt.pause();
+    await tts.speakEn("Removed from review");
+    if (!this.running) return;
+    stt.clearBuffer();
+    this.setState(LOOP_STATES.LISTENING, { phrase });
+    this._resumeMic();
   }
 
   /** Manual UI triggers — same semantics as voice commands. */
   async trigger(type, extra = {}) {
-    if (this._busy && type !== "REPEAT") return;
-    const fake = { type, before: extra.spoken || stt.getBuffer(), after: extra.note || "", raw: "" };
+    if (!this.running) return;
+    if (this._busy && type !== "REPEAT_FRENCH" && type !== "REPEAT_ENGLISH") return;
+    const spoken = extra.spoken || stt.getBuffer();
+    const fake = { type, before: spoken, after: extra.note || "", raw: spoken };
     this._busy = true;
     try {
-      if (type === "REPEAT") await this._onRepeat();
-      else if (type === "OK") await this._onOk(fake);
-      else if (type === "PREVIOUS") await this._onPrevious();
-      else if (type === "NEXT") await this._onNext();
-      else if (type === "REMIND") await this._onRemind(fake);
+      await stt.pause();
+      await this._dispatch(fake);
     } finally {
       this._busy = false;
     }

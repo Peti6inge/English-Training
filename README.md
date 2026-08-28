@@ -1,6 +1,6 @@
 # English Training
 
-PWA mains-libres pour s'entraîner à l'anglais à l'oral : une phrase française est lue, vous répondez en anglais, puis vous validez par commande vocale.
+PWA mains-libres pour s'entraîner à l'anglais à l'oral : une phrase française est lue, vous répondez en anglais. La vérification se lance quand le micro se ferme.
 
 ## Sur le téléphone
 
@@ -22,28 +22,30 @@ Ouvrir `http://localhost:4173`.
 
 | Commande | Effet |
 |---|---|
-| `REPEAT MONKEY` | Relit la phrase française |
-| `OK MONKEY` | Compare le buffer (hors mots de commande) à `phrase.en` |
-| `OK` | Après le feedback, passe à la phrase suivante |
-| `PREVIOUS MONKEY` | Phrase précédente |
-| `NEXT MONKEY` | Passe sans score |
-| `REMIND MONKEY [note]` | Ajoute la phrase à `customRemindList` |
+| `REPEAT FRENCH` | Relit la phrase française |
+| `REPEAT ENGLISH` | Lit la phrase anglaise |
+| `NEXT` | Force la validation : score + correction, puis phrase suivante |
+| `PREVIOUS` | Phrase précédente |
+| `REMIND` | Ajoute la phrase à `customRemindList` |
+| `DON'T REMIND` | Retire la phrase de la liste de révisions |
+
+À la fermeture du micro, la réponse est comparée à `phrase.en`. Si elle est correcte, passage automatique à la suite. Si elle est incorrecte, le micro est rendu jusqu'à une réponse valide ou `NEXT`.
 
 Validation : les mots-clés attendus doivent apparaître **dans l'ordre** (mots parasites ignorés). À défaut, similarité globale ≥ **85 %**.
 
-Après le feedback (correct ou correction), le micro reste à l'écoute : dites `OK` pour continuer, ou une autre commande (`REPEAT`, `REMIND`, …).
+Les phrases marquées `REMIND` sont réinjectées **au hasard** de temps en temps pendant la session (toutes les 4 phrases environ).
 
 ## Architecture
 
 ```
-SPEAKING_FR → LISTENING → EVALUATING → FEEDBACK → AWAITING_CONFIRM → NEXT_PHRASE
+SPEAKING_FR → LISTENING → EVALUATING → FEEDBACK → (retry LISTENING | NEXT_PHRASE)
 ```
 
 - `js/storage.js` — `currentIndex`, `phrasesState`, `customRemindList` en localStorage, miroir IndexedDB
 - `js/tts.js` — `speechSynthesis` fr-FR / en-US
 - `js/stt.js` — STT natif sur mobile ; Vosk/Whisper WASM sur desktop
 - `js/fuzzy.js` — mots-clés dans l'ordre + similarité de repli
-- `js/commands.js` — détection des déclencheurs
-- `js/queue.js` — Remind > incorrect > nouvelles phrases
+- `js/commands.js` — détection des déclencheurs (en fin d'énoncé)
+- `js/queue.js` — incorrect > nouvelles phrases, interludes Remind aléatoires
 - `js/loop.js` — machine à états mains-libres
 - `sw.js` — précache du shell, cache runtime des modèles WASM

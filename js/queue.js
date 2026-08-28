@@ -1,9 +1,6 @@
 /**
- * Spaced-repetition queue.
- * Priority 1: REMIND MONKEY flags
- * Priority 2: previously incorrect
- * Priority 3: new / unvisited
- * Then remaining due / practiced phrases.
+ * Session queue with occasional random Remind interludes.
+ * Regular order: previously incorrect → new → remaining practiced phrases.
  */
 
 import { CONFIG } from "./config.js";
@@ -22,20 +19,16 @@ function unique(ids) {
 
 export function buildQueue(phrases) {
   const state = storage.getPhrasesState();
-  const remindIds = storage.getRemindList().map((item) => item.phraseId);
-
-  const byId = new Map(phrases.map((p) => [p.id, p]));
   const allIds = phrases.map((p) => p.id);
 
-  const remind = remindIds.filter((id) => byId.has(id));
   const incorrect = allIds.filter((id) => {
     const s = state[id];
-    return s && (s.lastAttemptStatus === "incorrect" || s.reviewNext) && !remind.includes(id);
+    return s && (s.lastAttemptStatus === "incorrect" || s.reviewNext);
   });
-  const unvisited = allIds.filter((id) => !state[id] && !remind.includes(id) && !incorrect.includes(id));
-  const rest = allIds.filter((id) => !remind.includes(id) && !incorrect.includes(id) && !unvisited.includes(id));
+  const unvisited = allIds.filter((id) => !state[id] && !incorrect.includes(id));
+  const rest = allIds.filter((id) => !incorrect.includes(id) && !unvisited.includes(id));
 
-  return unique([...remind, ...incorrect, ...unvisited, ...rest]);
+  return unique([...incorrect, ...unvisited, ...rest]);
 }
 
 export function applyAttempt(phraseId, correct) {
@@ -65,9 +58,13 @@ export function applyAttempt(phraseId, correct) {
 export const queue = {
   ids: [],
   phrases: [],
+  _interludeId: null,
+  _pendingIndex: null,
+  _regularsSinceRemind: 0,
 
   load(phrases) {
     this.phrases = phrases;
+    this.clearInterlude();
     const stored = storage.getQueue();
     const valid = stored.filter((id) => phrases.some((p) => p.id === id));
     this.ids = valid.length ? valid : buildQueue(phrases);
@@ -76,6 +73,7 @@ export const queue = {
   },
 
   rebuild() {
+    this.clearInterlude();
     this.ids = buildQueue(this.phrases);
     storage.setQueue(this.ids);
     const max = Math.max(0, this.ids.length - 1);
@@ -83,10 +81,34 @@ export const queue = {
     return this.ids;
   },
 
-  current() {
+  clearInterlude() {
+    this._interludeId = null;
+    this._pendingIndex = null;
+  },
+
+  isInterlude() {
+    return !!this._interludeId;
+  },
+
+  remindPoolIds() {
+    const known = new Set(this.phrases.map((p) => p.id));
+    return storage
+      .getRemindList()
+      .map((item) => item.phraseId)
+      .filter((id) => known.has(id));
+  },
+
+  _regularCurrent() {
     const idx = this.clampIndex(storage.getCurrentIndex());
     const id = this.ids[idx];
     return this.phrases.find((p) => p.id === id) || this.phrases[0] || null;
+  },
+
+  current() {
+    if (this._interludeId) {
+      return this.phrases.find((p) => p.id === this._interludeId) || this._regularCurrent();
+    }
+    return this._regularCurrent();
   },
 
   indexOfCurrent() {
@@ -100,16 +122,36 @@ export const queue = {
   },
 
   goTo(index) {
+    this.clearInterlude();
     const idx = this.clampIndex(index);
     storage.setCurrentIndex(idx);
     return this.current();
   },
 
   next() {
-    return this.goTo(this.indexOfCurrent() + 1);
+    if (this._interludeId) {
+      const idx = this._pendingIndex != null ? this._pendingIndex : this.indexOfCurrent() + 1;
+      this.clearInterlude();
+      return this.goTo(idx);
+    }
+
+    const nextIndex = this.indexOfCurrent() + 1;
+    this._regularsSinceRemind += 1;
+    const currentId = this._regularCurrent()?.id;
+    const pool = this.remindPoolIds().filter((id) => id !== currentId);
+
+    if (pool.length && this._regularsSinceRemind >= CONFIG.REMIND_INSERT_EVERY) {
+      this._interludeId = pool[Math.floor(Math.random() * pool.length)];
+      this._pendingIndex = nextIndex;
+      this._regularsSinceRemind = 0;
+      return this.current();
+    }
+
+    return this.goTo(nextIndex);
   },
 
   previous() {
+    this.clearInterlude();
     return this.goTo(this.indexOfCurrent() - 1);
   },
 

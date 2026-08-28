@@ -1,57 +1,58 @@
 /**
- * Voice command detector. Scans the STT buffer (case-insensitive) for:
- * REPEAT MONKEY, OK MONKEY, PREVIOUS MONKEY, NEXT MONKEY, REMIND MONKEY [note]
+ * Voice command detector. Commands must appear at the end of the utterance.
+ * Most-specific patterns are tried first so "don't remind" wins over "remind".
  */
 
 import { CONFIG } from "./config.js";
 
-const ORDER = ["remind", "repeat", "previous", "next", "ok"];
+const ORDER = ["dont_remind", "repeat_english", "repeat_french", "previous", "next", "remind"];
+
+const TYPE_MAP = {
+  dont_remind: "DONT_REMIND",
+  repeat_english: "REPEAT_ENGLISH",
+  repeat_french: "REPEAT_FRENCH",
+  previous: "PREVIOUS",
+  next: "NEXT",
+  remind: "REMIND",
+};
 
 /**
  * @param {string} buffer
- * @param {{ allowBareOk?: boolean }} [opts]
- * @returns {{ type: "OK"|"REPEAT"|"PREVIOUS"|"NEXT"|"REMIND", before: string, after: string, raw: string } | null}
+ * @returns {{ type: string, before: string, after: string, raw: string } | null}
  */
-export function detectCommand(buffer, opts = {}) {
+export function detectCommand(buffer) {
   const raw = String(buffer || "").trim();
   if (!raw) return null;
 
-  let best = null;
   for (const name of ORDER) {
-    const patterns = [
-      ...(CONFIG.COMMANDS.aliases[name] || []),
-      ...(opts.allowBareOk && name === "ok" ? CONFIG.COMMANDS.bareOk || [] : []),
-    ];
+    const patterns = CONFIG.COMMANDS.aliases[name] || [];
     for (const pattern of patterns) {
-      const re = new RegExp(pattern.source, pattern.flags.includes("g") ? pattern.flags : pattern.flags + "g");
-      let match;
-      while ((match = re.exec(raw))) {
-        const index = match.index;
-        if (!best || index > best.index) {
-          best = {
-            type: name.toUpperCase(),
-            index,
-            length: match[0].length,
-            match: match[0],
-          };
-        }
-      }
+      const flags = pattern.flags.replace("g", "");
+      const re = new RegExp(`(?:${pattern.source})\\s*$`, flags);
+      const match = raw.match(re);
+      if (!match) continue;
+      const index = match.index ?? raw.length - match[0].length;
+      return {
+        type: TYPE_MAP[name],
+        before: raw.slice(0, index).trim(),
+        after: "",
+        raw,
+      };
     }
   }
 
-  if (!best) return null;
-
-  const before = raw.slice(0, best.index).trim();
-  const after = raw.slice(best.index + best.length).trim();
-  return { type: best.type, before, after, raw };
+  return null;
 }
 
-/** Remove command words so remaining text can be scored against phrase.en */
+/** Remove trailing command words so remaining text can be scored against phrase.en */
 export function stripCommands(buffer) {
-  let text = String(buffer || "");
-  for (const patterns of Object.values(CONFIG.COMMANDS.aliases)) {
+  let text = String(buffer || "").trim();
+  for (const name of ORDER) {
+    const patterns = CONFIG.COMMANDS.aliases[name] || [];
     for (const pattern of patterns) {
-      text = text.replace(pattern, " ");
+      const flags = pattern.flags.replace("g", "");
+      const re = new RegExp(`(?:${pattern.source})\\s*$`, flags);
+      text = text.replace(re, " ").trim();
     }
   }
   return text.replace(/\s+/g, " ").trim();

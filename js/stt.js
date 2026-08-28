@@ -65,6 +65,8 @@ export class STTService extends EventTarget {
     this._recognition = null;
     this._wasmTask = null;
     this._restartTimer = null;
+    this._silenceTimer = null;
+    this._lastPartial = "";
     this._mediaSampleRate = CONFIG.STT.sampleRate;
   }
 
@@ -83,6 +85,7 @@ export class STTService extends EventTarget {
 
   clearBuffer() {
     this.buffer = "";
+    this._lastPartial = "";
     this._emit("transcript", { text: "", partial: "", buffer: "" });
   }
 
@@ -90,11 +93,26 @@ export class STTService extends EventTarget {
     const chunk = String(text || "").trim();
     if (!chunk) return;
     if (replacePartial) {
+      this._lastPartial = chunk;
       this._emit("transcript", { text: "", partial: chunk, buffer: `${this.buffer} ${chunk}`.trim() });
       return;
     }
+    this._lastPartial = "";
     this.buffer = `${this.buffer} ${chunk}`.trim();
     this._emit("transcript", { text: chunk, partial: "", buffer: this.buffer });
+  }
+
+  _commitPartial() {
+    if (!this._lastPartial) return;
+    const chunk = this._lastPartial;
+    this._lastPartial = "";
+    this.buffer = `${this.buffer} ${chunk}`.trim();
+    this._emit("transcript", { text: chunk, partial: "", buffer: this.buffer });
+  }
+
+  _emitSpeechEnd() {
+    this._commitPartial();
+    this._emit("speechend", { buffer: this.buffer });
   }
 
   /**
@@ -248,12 +266,10 @@ export class STTService extends EventTarget {
   _startWebSpeechFallback() {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) return;
-    const android = isAndroidDevice();
     const rec = new SR();
     rec.lang = CONFIG.STT.lang || "en-US";
-    // Android Chrome: continuous mode is unreliable. One-shot + restart
-    // matches the native SpeechRecognizer loop and yields better transcripts.
-    rec.continuous = !android;
+    // One-shot: the recognizer closes after an utterance, which drives auto-check.
+    rec.continuous = false;
     rec.interimResults = true;
     rec.maxAlternatives = 1;
     rec.onresult = (event) => {
@@ -273,9 +289,8 @@ export class STTService extends EventTarget {
       this._emit("log", { level: "warn", message: `Web Speech: ${ev.error}` });
     };
     rec.onend = () => {
-      if (this._listening && !this._paused && this.engine === "webspeech") {
-        this._scheduleNativeRestart();
-      }
+      if (!this._listening || this._paused || this.engine !== "webspeech") return;
+      this._emitSpeechEnd();
     };
     this._recognition = rec;
   }
@@ -285,6 +300,22 @@ export class STTService extends EventTarget {
       clearTimeout(this._restartTimer);
       this._restartTimer = null;
     }
+  }
+
+  _clearSilenceTimer() {
+    if (this._silenceTimer) {
+      clearTimeout(this._silenceTimer);
+      this._silenceTimer = null;
+    }
+  }
+
+  _armUtteranceSilence(ms = CONFIG.STT.utteranceSilenceMs) {
+    this._clearSilenceTimer();
+    this._silenceTimer = setTimeout(() => {
+      this._silenceTimer = null;
+      if (!this._listening || this._paused) return;
+      this._emitSpeechEnd();
+    }, ms);
   }
 
   _scheduleNativeRestart() {
@@ -380,6 +411,7 @@ export class STTService extends EventTarget {
   async pause() {
     this._paused = true;
     this._clearRestartTimer();
+    this._clearSilenceTimer();
     if (this._recognition) {
       try {
         this._recognition.stop();
@@ -397,6 +429,14 @@ export class STTService extends EventTarget {
     }
     if (this.engine === "webspeech" && this._recognition) {
       this._scheduleNativeRestart();
+      return;
+    }
+    if ((this.engine === "vosk" && this._vosk) || (this.engine === "whisper" && this._whisper)) {
+      if (!this._processor) {
+        await this._ensureStream();
+        if (this.engine === "vosk") await this._startVoskCapture();
+        else await this._startWhisperCapture();
+      }
     }
   }
 
@@ -404,6 +444,7 @@ export class STTService extends EventTarget {
     this._listening = false;
     this._paused = true;
     this._clearRestartTimer();
+    this._clearSilenceTimer();
     if (this._recognition) {
       try {
         this._recognition.stop();
@@ -455,7 +496,10 @@ export class STTService extends EventTarget {
     recognizer.on("result", (message) => {
       if (this._paused) return;
       const text = message?.result?.text || "";
-      this.appendTranscript(text);
+      if (text) {
+        this.appendTranscript(text);
+        this._armUtteranceSilence(700);
+      }
     });
     recognizer.on("partialresult", (message) => {
       if (this._paused) return;
@@ -521,7 +565,10 @@ export class STTService extends EventTarget {
         return_timestamps: false,
       });
       const text = (result?.text || "").trim();
-      if (text && !this._paused) this.appendTranscript(text);
+      if (text && !this._paused) {
+        this.appendTranscript(text);
+        this._armUtteranceSilence();
+      }
     } catch (err) {
       this._emit("log", { level: "warn", message: `Whisper: ${err.message}` });
     } finally {

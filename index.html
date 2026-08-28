@@ -17,7 +17,7 @@
           <img src="./icons/icon.svg" alt="" />
           <div>
             <h1>English Training</h1>
-            <p>Mains libres · FR → EN · wake word MONKEY</p>
+            <p>Mains libres · FR → EN</p>
           </div>
         </div>
         <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
@@ -40,11 +40,12 @@
           <div class="actions">
             <button id="btn-start" class="primary">Démarrer</button>
             <button id="btn-stop" class="ghost" disabled>Pause</button>
-            <button id="btn-repeat">Repeat</button>
-            <button id="btn-ok">OK</button>
+            <button id="btn-repeat-fr">Repeat French</button>
+            <button id="btn-repeat-en">Repeat English</button>
             <button id="btn-prev">Previous</button>
             <button id="btn-next">Next</button>
             <button id="btn-remind">Remind</button>
+            <button id="btn-dont-remind">Don't Remind</button>
             <button id="btn-reveal" class="ghost">Voir l'anglais</button>
           </div>
           <p class="reveal" id="reveal" hidden></p>
@@ -61,12 +62,12 @@
 
           <p class="kicker">Commandes vocales</p>
           <div class="commands">
-            <div class="cmd"><span>Réécouter le français</span><code>REPEAT MONKEY</code></div>
-            <div class="cmd"><span>Valider la réponse</span><code>OK MONKEY</code></div>
-            <div class="cmd"><span>Continuer après le feedback</span><code>OK</code></div>
-            <div class="cmd"><span>Phrase précédente</span><code>PREVIOUS MONKEY</code></div>
-            <div class="cmd"><span>Passer sans score</span><code>NEXT MONKEY</code></div>
-            <div class="cmd"><span>Priorité révision</span><code>REMIND MONKEY</code></div>
+            <div class="cmd"><span>Réécouter le français</span><code>REPEAT FRENCH</code></div>
+            <div class="cmd"><span>Écouter l'anglais</span><code>REPEAT ENGLISH</code></div>
+            <div class="cmd"><span>Forcer correction et suite</span><code>NEXT</code></div>
+            <div class="cmd"><span>Phrase précédente</span><code>PREVIOUS</code></div>
+            <div class="cmd"><span>Ajouter aux révisions</span><code>REMIND</code></div>
+            <div class="cmd"><span>Retirer des révisions</span><code>DON'T REMIND</code></div>
           </div>
 
           <p class="kicker" style="margin-top:16px">Liste Remind</p>

@@ -11,7 +11,6 @@ const STATES = [
   LOOP_STATES.LISTENING,
   LOOP_STATES.EVALUATING,
   LOOP_STATES.FEEDBACK,
-  LOOP_STATES.AWAITING_CONFIRM,
   LOOP_STATES.NEXT_PHRASE,
 ];
 
@@ -31,8 +30,11 @@ function renderMachine(state) {
 function renderPhrase(phrase) {
   if (!phrase) return;
   $("phrase-fr").textContent = phrase.fr;
-  $("phrase-index").textContent = `${queue.indexOfCurrent() + 1} / ${queue.ids.length}`;
-  $("phrase-tag").textContent = (phrase.tags && phrase.tags[0]) || "phrase";
+  $("phrase-index").textContent = queue.isInterlude()
+    ? `rappel · ${queue.indexOfCurrent() + 1} / ${queue.ids.length}`
+    : `${queue.indexOfCurrent() + 1} / ${queue.ids.length}`;
+  const onRemind = queue.isInterlude() || storage.getRemindList().some((item) => item.phraseId === phrase.id);
+  $("phrase-tag").textContent = onRemind ? "remind" : (phrase.tags && phrase.tags[0]) || "phrase";
   $("reveal").hidden = true;
   $("reveal").textContent = phrase.en;
 }
@@ -63,17 +65,22 @@ function setBadge(kind, label) {
   $("engine-label").textContent = label;
 }
 
-function renderFeedback({ ok, score, spoken, phrase }) {
+function renderFeedback({ ok, score, spoken, phrase, force }) {
   const el = $("feedback");
   el.className = `feedback show ${ok ? "ok" : "bad"}`;
   const pct = Math.round((score || 0) * 100);
+  const hint = ok
+    ? "Passage à la suite…"
+    : force
+      ? "Correction lue — passage à la suite."
+      : 'Réessayez, ou dites <strong>Next</strong> pour forcer la correction.';
   el.innerHTML = `
     <strong>${ok ? "Perfect" : "Incorrect"}</strong>
     · similarité ${pct}%
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">Dites <strong>OK</strong> pour continuer, <strong>REPEAT MONKEY</strong> pour réécouter, <strong>REMIND MONKEY</strong> pour réviser.</div>
+    <div class="hint">${hint}</div>
   `;
 }
 
@@ -111,11 +118,6 @@ async function boot() {
     renderMachine(ev.detail.state);
     renderPhrase(ev.detail.phrase);
     if (ev.detail.state === LOOP_STATES.LISTENING) setBadge("listen", `${stt.engine} · écoute`);
-    if (ev.detail.state === LOOP_STATES.AWAITING_CONFIRM) {
-      setBadge("listen", `${stt.engine} · en attente d'OK`);
-      $("transcript").innerHTML =
-        "Dites <strong>OK</strong> pour continuer · <strong>REPEAT MONKEY</strong> pour réécouter · <strong>REMIND MONKEY</strong> pour réviser.";
-    }
     renderStats();
   });
 
@@ -132,6 +134,11 @@ async function boot() {
   loop.addEventListener("remind", () => {
     renderStats();
     log("Phrase ajoutée à customRemindList");
+  });
+
+  loop.addEventListener("dont-remind", () => {
+    renderStats();
+    log("Phrase retirée de customRemindList");
   });
 
   $("btn-start").addEventListener("click", async () => {
@@ -155,11 +162,12 @@ async function boot() {
     setBadge("ready", `${stt.engine} en pause`);
   });
 
-  $("btn-repeat").addEventListener("click", () => loop.trigger("REPEAT"));
-  $("btn-ok").addEventListener("click", () => loop.trigger("OK", { spoken: stt.getBuffer() }));
+  $("btn-repeat-fr").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
+  $("btn-repeat-en").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
   $("btn-prev").addEventListener("click", () => loop.trigger("PREVIOUS"));
-  $("btn-next").addEventListener("click", () => loop.trigger("NEXT"));
+  $("btn-next").addEventListener("click", () => loop.trigger("NEXT", { spoken: stt.getBuffer() }));
   $("btn-remind").addEventListener("click", () => loop.trigger("REMIND"));
+  $("btn-dont-remind").addEventListener("click", () => loop.trigger("DONT_REMIND"));
   $("btn-reveal").addEventListener("click", () => {
     $("reveal").hidden = false;
   });
