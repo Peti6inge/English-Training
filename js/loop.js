@@ -175,11 +175,15 @@ export class LoopManager extends EventTarget {
     if (!this.running) return;
 
     try {
-      await tts.speakFr(phrase.fr);
-      if (!this.running) return;
-      await tts.speakEn(phrase.en);
-      if (!this.running) return;
-      await tts.speakEn("Perfect");
+      if (ok) {
+        await tts.speakFr(phrase.fr);
+        if (!this.running) return;
+        await tts.speakEn(phrase.en);
+        if (!this.running) return;
+        await tts.speakEn("Perfect");
+      } else {
+        await tts.speakEn(phrase.en);
+      }
     } catch {
       /* TTS blocked */
     }

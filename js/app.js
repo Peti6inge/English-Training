@@ -97,7 +97,7 @@ function renderFeedback({ ok, score, spoken, phrase, phase }) {
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">FR → EN → Perfect, puis commandes de correction disponibles.</div>
+    <div class="hint">${ok ? "FR → EN → Perfect, puis commandes de correction." : "Correction en anglais, puis commandes de correction."}</div>
   `;
 }
 

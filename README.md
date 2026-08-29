@@ -19,7 +19,7 @@ Ouvrir `http://localhost:4173`.
 ## Flux
 
 ```
-SPEAKING_FR → LISTENING (saisie incrémentale) → validation → FEEDBACK (FR → EN → Perfect) → CORRECTION
+SPEAKING_FR → LISTENING (saisie incrémentale) → validation → FEEDBACK (audio) → CORRECTION
 ```
 
 ### Saisie incrémentale
@@ -31,7 +31,11 @@ SPEAKING_FR → LISTENING (saisie incrémentale) → validation → FEEDBACK (FR
 
 ### Après validation
 
-Pause, puis enchaînement : **français → anglais correct → « Perfect »**, puis phase **CORRECTION** (micro ouvert).
+Pause, puis :
+- **réponse correcte** : français → anglais → « Perfect »
+- **réponse incorrecte** : anglais seulement (pas de français, pas de « Perfect »)
+
+Puis phase **CORRECTION** (micro ouvert).
 
 ### Commandes en saisie
 
