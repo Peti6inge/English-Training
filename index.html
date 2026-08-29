@@ -39,7 +39,7 @@
 
           <div class="actions">
             <button id="btn-start" class="primary">Démarrer</button>
-            <button id="btn-stop" class="ghost" disabled>Pause</button>
+            <button id="btn-stop" class="ghost" disabled>Stop</button>
             <button id="btn-repeat-fr">Repeat French</button>
             <button id="btn-repeat-en">Repeat English</button>
             <button id="btn-prev">Previous</button>
@@ -60,14 +60,10 @@
             <div class="stat"><b id="stat-remind">0</b><span>remind</span></div>
           </div>
 
-          <p class="kicker">Commandes vocales</p>
-          <div class="commands">
-            <div class="cmd"><span>Réécouter le français</span><code>REPEAT FRENCH</code></div>
-            <div class="cmd"><span>Écouter l'anglais</span><code>REPEAT ENGLISH</code></div>
-            <div class="cmd"><span>Forcer correction et suite</span><code>NEXT</code></div>
-            <div class="cmd"><span>Phrase précédente</span><code>PREVIOUS</code></div>
-            <div class="cmd"><span>Ajouter aux révisions</span><code>REMIND</code></div>
-            <div class="cmd"><span>Retirer des révisions</span><code>DON'T REMIND</code></div>
+          <p class="kicker" id="commands-title">Commandes vocales</p>
+          <div class="commands" id="commands">
+            <div class="cmd"><span>Valider la tentative</span><code>NEXT</code></div>
+            <div class="cmd"><span>Arrêter la session</span><code>STOP</code></div>
           </div>
 
           <p class="kicker" style="margin-top:16px">Liste Remind</p>

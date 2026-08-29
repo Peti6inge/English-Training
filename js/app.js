@@ -4,6 +4,7 @@ import { tts } from "./tts.js";
 import { stt } from "./stt.js";
 import { queue } from "./queue.js";
 import { loop } from "./loop.js";
+import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
 
 const $ = (id) => document.getElementById(id);
 const STATES = [
@@ -11,6 +12,7 @@ const STATES = [
   LOOP_STATES.LISTENING,
   LOOP_STATES.EVALUATING,
   LOOP_STATES.FEEDBACK,
+  LOOP_STATES.CORRECTION,
   LOOP_STATES.NEXT_PHRASE,
 ];
 
@@ -25,6 +27,21 @@ function renderMachine(state) {
     const active = s === state ? " active" : "";
     return `<span class="step${active}">${s.replaceAll("_", " ")}</span>`;
   }).join("");
+}
+
+function renderCommandList(state) {
+  const labels = state === LOOP_STATES.CORRECTION ? CORRECTION_COMMAND_LABELS : LISTENING_COMMAND_LABELS;
+  const title =
+    state === LOOP_STATES.CORRECTION
+      ? "Commandes en phase de correction"
+      : "Pendant la saisie";
+  $("commands-title").textContent = title;
+  $("commands").innerHTML = labels
+    .map(
+      (item) => `
+    <div class="cmd"><span>${item.label}</span><code>${item.code}</code></div>`,
+    )
+    .join("");
 }
 
 function renderPhrase(phrase) {
@@ -65,27 +82,34 @@ function setBadge(kind, label) {
   $("engine-label").textContent = label;
 }
 
-function renderFeedback({ ok, score, spoken, phrase, force }) {
+function renderFeedback({ ok, score, spoken, phrase, phase }) {
   const el = $("feedback");
+  if (phase !== "validated") {
+    el.className = "feedback";
+    el.innerHTML = "";
+    return;
+  }
   el.className = `feedback show ${ok ? "ok" : "bad"}`;
   const pct = Math.round((score || 0) * 100);
-  const hint = ok
-    ? "Passage à la suite…"
-    : force
-      ? "Correction lue — passage à la suite."
-      : 'Réessayez, ou dites <strong>Next</strong> pour forcer la correction.';
   el.innerHTML = `
-    <strong>${ok ? "Perfect" : "Incorrect"}</strong>
+    <strong>Validé</strong>
     · similarité ${pct}%
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">${hint}</div>
+    <div class="hint">FR → EN → Perfect, puis commandes de correction disponibles.</div>
   `;
+}
+
+function clearFeedback() {
+  const el = $("feedback");
+  el.className = "feedback";
+  el.innerHTML = "";
 }
 
 async function boot() {
   renderMachine(LOOP_STATES.IDLE);
+  renderCommandList(LOOP_STATES.IDLE);
   await storage.init();
   await tts.init();
 
@@ -117,7 +141,14 @@ async function boot() {
   loop.addEventListener("state", (ev) => {
     renderMachine(ev.detail.state);
     renderPhrase(ev.detail.phrase);
-    if (ev.detail.state === LOOP_STATES.LISTENING) setBadge("listen", `${stt.engine} · écoute`);
+    renderCommandList(ev.detail.state);
+    if (ev.detail.state === LOOP_STATES.LISTENING) {
+      setBadge("listen", `${stt.engine} · saisie incrémentale`);
+      clearFeedback();
+    }
+    if (ev.detail.state === LOOP_STATES.CORRECTION) {
+      setBadge("listen", `${stt.engine} · correction`);
+    }
     renderStats();
   });
 
@@ -131,6 +162,10 @@ async function boot() {
     renderStats();
   });
 
+  loop.addEventListener("correction", () => {
+    renderCommandList(LOOP_STATES.CORRECTION);
+  });
+
   loop.addEventListener("remind", () => {
     renderStats();
     log("Phrase ajoutée à customRemindList");
@@ -139,6 +174,12 @@ async function boot() {
   loop.addEventListener("dont-remind", () => {
     renderStats();
     log("Phrase retirée de customRemindList");
+  });
+
+  loop.addEventListener("session-stop", () => {
+    $("btn-start").disabled = false;
+    $("btn-stop").disabled = true;
+    setBadge("ready", `${stt.engine} en pause`);
   });
 
   $("btn-start").addEventListener("click", async () => {
@@ -156,10 +197,7 @@ async function boot() {
   });
 
   $("btn-stop").addEventListener("click", async () => {
-    await loop.stop();
-    $("btn-start").disabled = false;
-    $("btn-stop").disabled = true;
-    setBadge("ready", `${stt.engine} en pause`);
+    await loop.trigger("STOP");
   });
 
   $("btn-repeat-fr").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));

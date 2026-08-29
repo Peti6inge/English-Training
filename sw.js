@@ -1,6 +1,6 @@
 /* English Training — caches the app shell and STT WASM/model requests for offline use. */
 
-const VERSION = "v1.0.4";
+const VERSION = "v1.0.5";
 const SHELL = `et-shell-${VERSION}`;
 const RUNTIME = `et-runtime-${VERSION}`;
 
