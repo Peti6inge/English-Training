@@ -83,6 +83,12 @@ export class STTService extends EventTarget {
     return this.buffer;
   }
 
+  setBuffer(text) {
+    this.buffer = String(text || "").trim();
+    this._lastPartial = "";
+    this._emit("transcript", { text: "", partial: "", buffer: this.buffer });
+  }
+
   clearBuffer() {
     this.buffer = "";
     this._lastPartial = "";

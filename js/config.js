@@ -41,7 +41,7 @@ export const CONFIG = {
 
   COMMANDS: {
     /** Available while the user is building an answer (incremental input). */
-    listening: ["NEXT", "STOP"],
+    listening: ["NEXT", "REPEAT_ENGLISH", "STOP"],
     /** Available after validation — correction / navigation phase. */
     correction: [
       "REPEAT_FRENCH",

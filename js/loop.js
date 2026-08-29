@@ -109,6 +109,9 @@ export class LoopManager extends EventTarget {
       const command = detectCommand(spoken, { phase });
 
       if (command) {
+        if (phase === "listening" && command.type === "REPEAT_ENGLISH") {
+          stt.setBuffer(command.before);
+        }
         await this._dispatch(command, { phase });
         return;
       }
@@ -214,6 +217,8 @@ export class LoopManager extends EventTarget {
   async _onRepeatEnglish() {
     const phrase = queue.current();
     if (!phrase) return;
+    const returnState =
+      this.state === LOOP_STATES.CORRECTION ? LOOP_STATES.CORRECTION : LOOP_STATES.LISTENING;
     await stt.pause();
     try {
       await tts.speakEn(phrase.en);
@@ -221,7 +226,7 @@ export class LoopManager extends EventTarget {
       /* ignore */
     }
     if (!this.running) return;
-    this.setState(LOOP_STATES.CORRECTION, { phrase });
+    this.setState(returnState, { phrase });
     this._resumeMic();
   }
 

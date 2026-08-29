@@ -41,6 +41,7 @@ Puis phase **CORRECTION** (micro ouvert).
 
 | Commande | Effet |
 |---|---|
+| `REPEAT ENGLISH` | Écoute la réponse attendue en anglais |
 | `NEXT` | Valider la tentative |
 | `STOP` | Arrêter la session |
 

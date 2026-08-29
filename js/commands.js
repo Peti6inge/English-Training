@@ -80,6 +80,7 @@ export const CORRECTION_COMMAND_LABELS = [
 ];
 
 export const LISTENING_COMMAND_LABELS = [
+  { label: "Écouter l'anglais", code: "REPEAT ENGLISH" },
   { label: "Valider la tentative", code: "NEXT" },
   { label: "Arrêter la session", code: "STOP" },
 ];
