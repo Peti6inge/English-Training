@@ -32,7 +32,7 @@ SPEAKING_FR → LISTENING (saisie incrémentale) → validation → FEEDBACK (au
 ### Après validation
 
 Pause, puis :
-- **réponse correcte** : français → anglais → « Perfect »
+- **réponse correcte** : « Perfect »
 - **réponse incorrecte** : anglais seulement (pas de français, pas de « Perfect »)
 
 Puis phase **CORRECTION** (micro ouvert).
