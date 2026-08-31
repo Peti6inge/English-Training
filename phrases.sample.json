@@ -1,0 +1,122 @@
+[
+  {
+    "id": "s001",
+    "fr": "Franchement, j'en ai marre d'attendre.",
+    "en": "Honestly, I'm sick of waiting around.",
+    "tags": ["emotions"]
+  },
+  {
+    "id": "s002",
+    "fr": "Elle m'a un peu envoyé balader quand j'ai demandé.",
+    "en": "She kinda brushed me off when I asked.",
+    "tags": ["social"]
+  },
+  {
+    "id": "s003",
+    "fr": "On a fini par aller manger un truc en ville.",
+    "en": "We ended up grabbing a bite downtown.",
+    "tags": ["food"]
+  },
+  {
+    "id": "s004",
+    "fr": "J'ai pas trop envie ce soir, honnêtement.",
+    "en": "I'm not really in the mood for that tonight.",
+    "tags": ["daily"]
+  },
+  {
+    "id": "s005",
+    "fr": "Tu pourrais me prévenir à l'avance ?",
+    "en": "Could you give me a heads-up beforehand?",
+    "tags": ["social"]
+  },
+  {
+    "id": "s006",
+    "fr": "Il esquive la question à chaque fois.",
+    "en": "He keeps dodging the question every time.",
+    "tags": ["work"]
+  },
+  {
+    "id": "s007",
+    "fr": "Ça me paraît un peu forcé, franchement.",
+    "en": "That sounds like a stretch to me.",
+    "tags": ["opinions"]
+  },
+  {
+    "id": "s008",
+    "fr": "J'ai des réunions en chaîne tout l'après-midi.",
+    "en": "I've got back-to-back meetings all afternoon.",
+    "tags": ["work"]
+  },
+  {
+    "id": "s009",
+    "fr": "On verra au feeling, on improvisera.",
+    "en": "Let's play it by ear and see.",
+    "tags": ["plans"]
+  },
+  {
+    "id": "s010",
+    "fr": "J'ai complètement zappé notre déj.",
+    "en": "I totally spaced on our lunch date.",
+    "tags": ["social"]
+  },
+  {
+    "id": "s011",
+    "fr": "Je tourne à vide, là.",
+    "en": "I'm running on fumes at this point.",
+    "tags": ["emotions"]
+  },
+  {
+    "id": "s012",
+    "fr": "On peut reporter à la semaine prochaine ?",
+    "en": "Can we rain-check until next week?",
+    "tags": ["plans"]
+  },
+  {
+    "id": "s013",
+    "fr": "Il m'a convaincu de venir avec lui.",
+    "en": "He talked me into coming along.",
+    "tags": ["social"]
+  },
+  {
+    "id": "s014",
+    "fr": "Je voulais pas passer pour impoli.",
+    "en": "I didn't mean to come across as rude.",
+    "tags": ["emotions"]
+  },
+  {
+    "id": "s015",
+    "fr": "Le wifi coupe toutes les cinq minutes.",
+    "en": "The wifi keeps dropping every five minutes.",
+    "tags": ["tech"]
+  },
+  {
+    "id": "s016",
+    "fr": "Je suis partagé sur cette offre.",
+    "en": "I'm on the fence about the offer.",
+    "tags": ["work"]
+  },
+  {
+    "id": "s017",
+    "fr": "On a été bloqués dans les bouchons longtemps.",
+    "en": "We got stuck in traffic for ages.",
+    "tags": ["travel"]
+  },
+  {
+    "id": "s018",
+    "fr": "C'est pas le sujet de toute façon.",
+    "en": "That's beside the point anyway.",
+    "tags": ["opinions"]
+  },
+  {
+    "id": "s019",
+    "fr": "Je t'enverrai un message quand je serai proche.",
+    "en": "I'll shoot you a text when I'm close.",
+    "tags": ["daily"]
+  },
+  {
+    "id": "s020",
+    "fr": "T'as une idée de ce qu'on pourrait faire ?",
+    "en": "Got any idea what we could do?",
+    "tags": ["plans"]
+  }
+]

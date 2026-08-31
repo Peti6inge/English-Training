@@ -113,7 +113,7 @@ async function boot() {
   await storage.init();
   await tts.init();
 
-  const phrases = await fetch("./phrases.json").then((r) => r.json());
+  const phrases = await fetch("./phrases.sample.json").then((r) => r.json());
   queue.load(phrases);
   renderPhrase(queue.current());
   renderStats();
