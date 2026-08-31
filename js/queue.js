@@ -1,6 +1,6 @@
 /**
- * Session queue with occasional random Remind interludes.
- * Regular order: previously incorrect → new → remaining practiced phrases.
+ * Session queue with shuffle, tag spacing, and occasional Remind interludes.
+ * Priority: incorrect → unvisited → rest (each segment shuffled & tag-spaced).
  */
 
 import { CONFIG } from "./config.js";
@@ -17,9 +17,35 @@ function unique(ids) {
   return out;
 }
 
+function shuffle(ids) {
+  const a = [...ids];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/** Reorder so consecutive phrases rarely share the same tag. */
+function diversifyTags(ids, tagById) {
+  const remaining = [...ids];
+  const out = [];
+  let lastTag = null;
+
+  while (remaining.length) {
+    let pick = remaining.findIndex((id) => tagById.get(id) !== lastTag);
+    if (pick === -1) pick = 0;
+    const id = remaining.splice(pick, 1)[0];
+    lastTag = tagById.get(id) || null;
+    out.push(id);
+  }
+  return out;
+}
+
 export function buildQueue(phrases) {
   const state = storage.getPhrasesState();
   const allIds = phrases.map((p) => p.id);
+  const tagById = new Map(phrases.map((p) => [p.id, p.tags?.[0] || "phrase"]));
 
   const incorrect = allIds.filter((id) => {
     const s = state[id];
@@ -28,7 +54,13 @@ export function buildQueue(phrases) {
   const unvisited = allIds.filter((id) => !state[id] && !incorrect.includes(id));
   const rest = allIds.filter((id) => !incorrect.includes(id) && !unvisited.includes(id));
 
-  return unique([...incorrect, ...unvisited, ...rest]);
+  const segments = [
+    diversifyTags(shuffle(incorrect), tagById),
+    diversifyTags(shuffle(unvisited), tagById),
+    diversifyTags(shuffle(rest), tagById),
+  ];
+
+  return unique(segments.flat());
 }
 
 export function applyAttempt(phraseId, correct) {
@@ -65,9 +97,11 @@ export const queue = {
   load(phrases) {
     this.phrases = phrases;
     this.clearInterlude();
-    const stored = storage.getQueue();
-    const valid = stored.filter((id) => phrases.some((p) => p.id === id));
-    this.ids = valid.length ? valid : buildQueue(phrases);
+    const known = new Set(phrases.map((p) => p.id));
+    const stored = storage.getQueue().filter((id) => known.has(id));
+    const queueMatchesPool = stored.length === phrases.length && phrases.every((p) => stored.includes(p.id));
+
+    this.ids = queueMatchesPool ? stored : buildQueue(phrases);
     storage.setQueue(this.ids);
     return this.ids;
   },

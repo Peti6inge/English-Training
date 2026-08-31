@@ -58,3 +58,13 @@ Puis phase **CORRECTION** (micro ouvert).
 | `STOP` | Arrêter la session |
 
 Les phrases `REMIND` sont réinjectées au hasard environ toutes les 4 phrases.
+
+## Jeu de données (~800 phrases)
+
+- **`phrases.json`** — pool servi par l'app (800 paires FR → EN)
+- **`data/chunks/`** — sources par lot (`c01.json` …), ~40 % vocabulaire neutre + ~60 % expressions orales
+- **`scripts/merge-phrases.mjs`** — regénère `phrases.json` (ids, dédoublonnage, validation longueur)
+
+L'ordre de passage est **mélangé** à chaque (re)construction de file : priorité aux phrases incorrectes / jamais vues, avec espacement des tags pour éviter les blocs thématiques.
+
+Après mise à jour du pool, utiliser **Réinitialiser** dans l'app pour reconstruire la file.

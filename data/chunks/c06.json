@@ -1,0 +1,802 @@
+[
+  {
+    "fr": "L'entreprise propose un télétravail deux jours par semaine.",
+    "en": "The company offers remote work two days per week.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai souscrit une assurance voyage pour toute la durée du séjour.",
+    "en": "I purchased travel insurance for the entire duration of the trip.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le médecin généraliste m'a orienté vers un spécialiste.",
+    "en": "The general practitioner referred me to a specialist.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les prévisions annoncent des rafales de vent fortes demain.",
+    "en": "The forecast predicts strong gusts of wind tomorrow.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons rénové la salle de bain pendant les vacances scolaires.",
+    "en": "We renovated the bathroom during the school holidays.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon neveu commence la maternelle à la rentrée prochaine.",
+    "en": "My nephew is starting preschool next school term.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'écoute un livre audio pendant mes trajets en transports.",
+    "en": "I listen to an audiobook during my commutes on public transit.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le cours porte sur les bases de la négociation commerciale.",
+    "en": "The course covers the basics of business negotiation.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai réservé une table pour quatre personnes à vingt heures.",
+    "en": "I booked a table for four people at eight in the evening.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le centre commercial propose un service de retours gratuit.",
+    "en": "The shopping center offers a free returns service.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La bibliothèque municipale ferme le lundi toute la journée.",
+    "en": "The public library is closed all day on Mondays.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'utilise une application pour suivre mes dépenses mensuelles.",
+    "en": "I use an app to track my monthly expenses.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons échangé nos numéros après la conférence networking.",
+    "en": "We exchanged phone numbers after the networking conference.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je me lève tôt pour éviter le trafic aux heures de pointe.",
+    "en": "I get up early to avoid rush-hour traffic.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Selon les sondages, l'opinion publique reste assez divisée.",
+    "en": "According to polls, public opinion remains fairly divided.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous envisageons de déménager dans un quartier plus calme.",
+    "en": "We are considering moving to a quieter neighborhood.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le plombier est passé réparer la fuite sous l'évier.",
+    "en": "The plumber came to fix the leak under the sink.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je pratique le yoga deux fois par semaine le soir.",
+    "en": "I practice yoga twice a week in the evening.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai des courbatures dans les cuisses après la séance de sport.",
+    "en": "I have soreness in my thighs after the workout session.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'article décrit les conséquences du changement climatique local.",
+    "en": "The article describes the consequences of local climate change.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon père prend sa retraite à la fin de l'année prochaine.",
+    "en": "My father is retiring at the end of next year.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le médecin m'a recommandé de limiter ma consommation de sel.",
+    "en": "The doctor recommended that I limit my salt intake.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La boutique en ligne propose la livraison gratuite dès cinquante euros.",
+    "en": "The online store offers free delivery from fifty euros onward.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le vol a été retardé d'une heure pour cause de brouillard.",
+    "en": "The flight was delayed by one hour due to fog.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'équipe présentera les résultats trimestriels vendredi matin.",
+    "en": "The team will present the quarterly results on Friday morning.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai activé l'authentification à deux facteurs sur mon compte.",
+    "en": "I enabled two-factor authentication on my account.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les élèves préparent une exposition sur la biodiversité locale.",
+    "en": "The students are preparing an exhibition on local biodiversity.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le festival de musique se tient en plein air chaque été.",
+    "en": "The music festival takes place outdoors every summer.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons planté des herbes aromatiques sur le balcon.",
+    "en": "We planted aromatic herbs on the balcony.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je consulte un médecin pour des migraines récurrentes.",
+    "en": "I am seeing a doctor about recurring migraines.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le ciel est couvert mais il ne devrait pas pleuvoir.",
+    "en": "The sky is overcast but it should not rain.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons invité des voisins à dîner samedi soir.",
+    "en": "We invited some neighbors over for dinner on Saturday evening.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je prépare généralement mon déjeuner la veille au soir.",
+    "en": "I usually prepare my lunch the evening before.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ce restaurant propose des plats sans gluten sur demande.",
+    "en": "This restaurant offers gluten-free dishes on request.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "À mon sens, il vaut mieux attendre plus d'informations.",
+    "en": "In my opinion, it is better to wait for more information.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous comptons partir en randonnée si le temps le permet.",
+    "en": "We plan to go hiking if the weather allows it.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'agence immobilière organise des visites le samedi matin.",
+    "en": "The estate agency organizes viewings on Saturday mornings.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je collectionne des vinyles depuis mon adolescence.",
+    "en": "I have been collecting vinyl records since my teenage years.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai une sensation de vertige quand je me lève trop vite.",
+    "en": "I feel dizzy when I stand up too quickly.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le documentaire explore la vie des communautés côtières.",
+    "en": "The documentary explores the life of coastal communities.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Il m'a carrément volé la vedette pendant la réunion.",
+    "en": "He totally stole the spotlight during the meeting.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'en ai marre de ces réunions qui n'aboutissent à rien.",
+    "en": "I'm fed up with these meetings that lead nowhere.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon ordinateur rame depuis que j'ai installé ce logiciel.",
+    "en": "My computer has been sluggish since I installed that software.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai laissé mon chargeur au bureau, quelle bourde.",
+    "en": "I left my charger at the office — what a blunder.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On s'est fait avoir avec ce restaurant trop cher.",
+    "en": "We got ripped off at that overpriced restaurant.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce resto fait des portions généreuses, on en a eu pour notre argent.",
+    "en": "This place serves generous portions — we got our money's worth.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai pas le moral aujourd'hui, je sais pas pourquoi.",
+    "en": "I'm feeling low today and I'm not sure why.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça m'a fait chaud au cœur de recevoir ce message.",
+    "en": "It warmed my heart to receive that message.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement, je vois pas l'intérêt de continuer comme ça.",
+    "en": "Honestly, I don't see the point of carrying on like this.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Moi je dirais qu'il faut jouer la carte de la prudence.",
+    "en": "I'd say we should play it safe on this one.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On improvise pour le dîner, t'as des idées ?",
+    "en": "We're winging it for dinner — any ideas?",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud pour un brunch dimanche si t'es dispo.",
+    "en": "I'm keen on a Sunday brunch if you're available.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai traîné au lit plus longtemps que prévu ce matin.",
+    "en": "I lingered in bed longer than planned this morning.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je fais tourner la machine à laver avant de sortir.",
+    "en": "I'm putting a load of laundry on before heading out.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On s'est croisés par hasard au marché ce matin.",
+    "en": "We bumped into each other by chance at the market this morning.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Elle est du genre à dire tout haut ce que tout le monde pense.",
+    "en": "She's the type to say out loud what everyone is thinking.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai eu un coup de fil inattendu de mon ancien collègue.",
+    "en": "I got an unexpected call from my former colleague.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon manager veut qu'on accélère le rythme sur ce projet.",
+    "en": "My manager wants us to pick up the pace on this project.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a fait un détour par la plage en rentrant.",
+    "en": "We took a detour via the beach on the way back.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "L'auberge était pleine, on a dû se débrouiller autrement.",
+    "en": "The hostel was full — we had to figure something else out.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai flippé quand j'ai vu le montant de la facture.",
+    "en": "I freaked out when I saw the amount on the bill.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai trouvé une pépite dans cette friperie du centre.",
+    "en": "I found a gem in that thrift shop downtown.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ma cheville est encore un peu gonflée après la entorse.",
+    "en": "My ankle is still a bit swollen after the sprain.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai mal aux genoux, je crois que j'ai trop forcé.",
+    "en": "My knees hurt — I think I overdid it.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le médecin m'a dit de pas paniquer, c'est bénin.",
+    "en": "The doctor told me not to panic — it's benign.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai attrapé un gros rhume, je suis cloué au lit.",
+    "en": "I caught a nasty cold and I'm stuck in bed.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il fait un froid de canard, mets ton manteau.",
+    "en": "It's freezing cold — put your coat on.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a eu une éclaircie en fin d'après-midi, enfin.",
+    "en": "We got a break in the clouds late in the afternoon, finally.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce coin du quartier est devenu super branché.",
+    "en": "This part of the neighborhood has become really trendy.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a attendu le bus une éternité sous la pluie.",
+    "en": "We waited for the bus forever in the rain.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ma sœur me prête sa voiture pour le week-end.",
+    "en": "My sister is lending me her car for the weekend.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On s'est disputés pour une bêtise, comme d'habitude.",
+    "en": "We argued over something silly, as usual.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai lu ce thriller d'une traite, impossible de m'arrêter.",
+    "en": "I read that thriller in one sitting — couldn't put it down.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Cette émission m'a fait rire aux larmes hier soir.",
+    "en": "That show had me in stitches last night.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai séché le cours de maths, je l'avoue.",
+    "en": "I skipped math class, I'll admit it.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le prof nous a lâché un contrôle surprise aujourd'hui.",
+    "en": "The teacher sprung a pop quiz on us today.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je me suis remis au piano pendant le confinement.",
+    "en": "I got back into piano during the lockdown.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il passe ses soirées à bricoler dans le garage.",
+    "en": "He spends his evenings tinkering in the garage.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La banque m'a bloqué ma carte par mesure de sécurité.",
+    "en": "The bank blocked my card as a security measure.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai galéré à remplir ce formulaire administratif.",
+    "en": "I struggled to fill out this administrative form.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y'a un truc qui cloche avec la douche, l'eau coule mal.",
+    "en": "Something's off with the shower — the water runs poorly.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a enfin rangé le grenier après des mois de procrastination.",
+    "en": "We finally cleared out the attic after months of procrastination.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon chat a renversé mon café sur le clavier, génial.",
+    "en": "My cat knocked my coffee onto the keyboard — great.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai un pote qui bosse dans la tech à Berlin.",
+    "en": "I've got a mate who works in tech in Berlin.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a papoté des heures sans s'en rendre compte.",
+    "en": "We chatted for hours without even realizing it.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis crevé, cette semaine m'a vidé.",
+    "en": "I'm wiped out — this week drained me.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis ravi que tu aies pu venir finalement.",
+    "en": "I'm thrilled you were able to come after all.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je trouve que c'est du gâchis de laisser ça de côté.",
+    "en": "I think it's a waste to leave this sitting aside.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Honnêtement, ça vaut le coup d'essayer au moins une fois.",
+    "en": "Honestly, it's worth giving it a try at least once.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se fait un apéro chez moi vendredi ?",
+    "en": "Shall we have drinks at my place on Friday?",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je vais faire les courses en rentrant du boulot.",
+    "en": "I'll do the grocery shopping on my way home from work.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai mis une éternité à me préparer ce matin.",
+    "en": "I took forever to get ready this morning.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le serveur nous a conseillé le plat du jour.",
+    "en": "The waiter recommended the dish of the day to us.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a testé ce nouveau food truck près du parc.",
+    "en": "We tried that new food truck near the park.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon téléphone a buggé et j'ai perdu mes notes.",
+    "en": "My phone glitched and I lost my notes.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai dû tout réinstaller après la panne.",
+    "en": "I had to reinstall everything after the crash.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le vol a été annulé, on est dans le flou total.",
+    "en": "The flight got cancelled — we're totally in the dark.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a loué des vélos pour visiter la ville.",
+    "en": "We rented bikes to explore the city.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La mairie traîne à traiter ma demande de permis.",
+    "en": "The town hall is dragging its feet on my permit request.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai eu un coup de soleil sur les épaules.",
+    "en": "I got sunburn on my shoulders.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  }
+]

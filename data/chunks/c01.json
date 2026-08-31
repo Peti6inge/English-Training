@@ -1,0 +1,802 @@
+[
+  {
+    "fr": "Mon casque audio a été envoyé en réparation.",
+    "en": "My headphones were sent for repair.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le médecin m'a prescrit des antibiotiques pour une semaine.",
+    "en": "The doctor prescribed antibiotics for one week.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons réservé une chambre avec vue sur la mer.",
+    "en": "We booked a room with a sea view.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le supermarché propose des sacs réutilisables à la caisse.",
+    "en": "The supermarket offers reusable bags at checkout.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon ordinateur portable ne démarre plus depuis hier matin.",
+    "en": "My laptop has not started since yesterday morning.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La bibliothèque municipale ferme à dix-huit heures le samedi.",
+    "en": "The public library closes at six on Saturdays.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai besoin d'une attestation de domicile pour mon dossier.",
+    "en": "I need a proof of address for my application.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le plombier interviendra demain entre neuf et onze heures.",
+    "en": "The plumber will come tomorrow between nine and eleven.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Cette recette demande du beurre, de la farine et des œufs.",
+    "en": "This recipe calls for butter, flour, and eggs.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le train direct pour Lyon part du quai numéro douze.",
+    "en": "The direct train to Lyon leaves from platform twelve.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon frère étudie l'architecture à l'université de Bordeaux.",
+    "en": "My brother studies architecture at the university of Bordeaux.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La température corporelle normale se situe autour de trente-sept degrés.",
+    "en": "Normal body temperature is around thirty-seven degrees.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'entreprise organise une formation sur la sécurité informatique.",
+    "en": "The company is running training on cybersecurity.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je dois renouveler mon abonnement au gym avant la fin du mois.",
+    "en": "I need to renew my gym membership before month end.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le musée expose des tableaux du dix-neuvième siècle.",
+    "en": "The museum displays paintings from the nineteenth century.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La mairie a installé de nouveaux panneaux dans le centre-ville.",
+    "en": "The town hall installed new signs in the city center.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon téléphone affiche un message de mise à jour disponible.",
+    "en": "My phone shows a message that an update is available.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les enfants ont un devoir de sciences à rendre vendredi.",
+    "en": "The children have a science assignment due on Friday.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons planté des tomates et des basilics sur le balcon.",
+    "en": "We planted tomatoes and basil on the balcony.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le bulletin météo annonce de la pluie pour demain après-midi.",
+    "en": "The weather forecast predicts rain for tomorrow afternoon.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ma grand-mère prépare un gâteau au chocolat chaque dimanche.",
+    "en": "My grandmother bakes a chocolate cake every Sunday.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le documentaire sur les océans dure environ une heure trente.",
+    "en": "The documentary about oceans lasts about ninety minutes.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai comparé les prix de trois magasins avant d'acheter.",
+    "en": "I compared prices at three stores before buying.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le dentiste m'a conseillé de changer ma brosse à dents.",
+    "en": "The dentist advised me to change my toothbrush.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La salle de sport propose des cours de yoga le mardi soir.",
+    "en": "The gym offers yoga classes on Tuesday evenings.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon collègue travaille sur un projet de développement durable.",
+    "en": "My colleague is working on a sustainable development project.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le bus de nuit circule toutes les heures jusqu'à minuit.",
+    "en": "The night bus runs every hour until midnight.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai téléchargé une application pour suivre mes dépenses.",
+    "en": "I downloaded an app to track my expenses.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La pharmacie de garde se trouve rue de la République.",
+    "en": "The emergency pharmacy is on Republic Street.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les épaules me font mal après cette longue séance de natation.",
+    "en": "My shoulders hurt after that long swimming session.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Nous avons visité une exposition de photographie en plein air.",
+    "en": "We visited an outdoor photography exhibition.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le contrat de location précise la durée du bail.",
+    "en": "The rental contract specifies the length of the lease.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon neveu apprend à jouer du piano depuis six mois.",
+    "en": "My nephew has been learning piano for six months.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le serveur du restaurant nous a recommandé le plat du jour.",
+    "en": "The restaurant server recommended the dish of the day.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La couverture réseau est faible dans cette zone rurale.",
+    "en": "Network coverage is weak in this rural area.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai pris rendez-vous chez le coiffeur pour samedi matin.",
+    "en": "I made a hair appointment for Saturday morning.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le parc national interdit les feux de camp en été.",
+    "en": "The national park bans campfires in summer.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ma sœur lit un roman policier avant de dormir.",
+    "en": "My sister reads a mystery novel before going to sleep.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le vent souffle fortement sur la côte atlantique aujourd'hui.",
+    "en": "The wind is blowing strongly on the Atlantic coast today.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'imprimante a besoin d'une nouvelle cartouche d'encre noire.",
+    "en": "The printer needs a new black ink cartridge.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Franchement, j'en ai marre d'attendre dans cette file.",
+    "en": "Honestly, I'm sick of waiting in this line.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Elle m'a un peu envoyé balader quand j'ai posé la question.",
+    "en": "She kinda brushed me off when I asked the question.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a fini par aller manger un truc en ville.",
+    "en": "We ended up grabbing a bite downtown.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai pas trop envie ce soir, honnêtement.",
+    "en": "I'm not really in the mood for that tonight.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu pourrais me prévenir à l'avance la prochaine fois ?",
+    "en": "Could you give me a heads-up next time?",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il esquive la question à chaque fois qu'on en parle.",
+    "en": "He keeps dodging the question every time we bring it up.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me paraît un peu forcé, franchement.",
+    "en": "That sounds like a stretch to me, honestly.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai des réunions en chaîne tout l'après-midi.",
+    "en": "I've got back-to-back meetings all afternoon.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra au feeling, on improvisera sur place.",
+    "en": "Let's play it by ear and figure it out there.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai complètement zappé notre déjeuner prévu hier.",
+    "en": "I totally spaced on our lunch we had planned yesterday.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je tourne à vide, là, j'ai besoin d'une pause.",
+    "en": "I'm running on fumes right now and need a break.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On peut reporter à la semaine prochaine, tu veux ?",
+    "en": "Can we rain-check until next week, if you want?",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il m'a convaincu de venir avec lui au concert.",
+    "en": "He talked me into coming along to the concert.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je voulais pas passer pour impoli avec eux.",
+    "en": "I didn't mean to come across as rude with them.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le wifi coupe toutes les cinq minutes chez moi.",
+    "en": "The wifi keeps dropping every five minutes at my place.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis partagé sur cette offre d'emploi.",
+    "en": "I'm on the fence about this job offer.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a été bloqués dans les bouchons longtemps.",
+    "en": "We got stuck in traffic for ages yesterday.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est pas le sujet de toute façon, on s'éloigne.",
+    "en": "That's beside the point anyway, we're going off track.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je t'enverrai un message quand je serai proche.",
+    "en": "I'll shoot you a text when I'm getting close.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'as une idée de ce qu'on pourrait faire ce week-end ?",
+    "en": "Got any idea what we could do this weekend?",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça m'a mis mal à l'aise pendant toute la soirée.",
+    "en": "It made me uncomfortable for the whole evening.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On s'est mis d'accord pour se retrouver à huit heures.",
+    "en": "We agreed to meet up at eight o'clock.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai craqué et j'ai pris un dessert en plus.",
+    "en": "I caved and got an extra dessert as well.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y'a pas moyen de négocier le prix, j'ai demandé.",
+    "en": "There's no way to negotiate the price, I asked.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon dos me fait un effet bizarre depuis ce matin.",
+    "en": "My back has felt weird since this morning.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il fait un temps de ouf, on reste dehors ?",
+    "en": "The weather is crazy nice, should we stay outside?",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai l'impression qu'on tourne en rond sur ce dossier.",
+    "en": "I feel like we're going in circles on this file.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ma mère m'a fait la morale pendant vingt minutes.",
+    "en": "My mom gave me a lecture for twenty minutes.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le film était sympa mais un peu long à mon goût.",
+    "en": "The movie was nice but a bit long for my taste.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai pas réussi à me concentrer en cours aujourd'hui.",
+    "en": "I couldn't really focus in class today at all.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a fait le tour du quartier à pied hier soir.",
+    "en": "We walked around the neighborhood last night.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je me suis fait avoir avec cette fausse promo.",
+    "en": "I got duped by that fake promotion deal.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut que je me bouge, je suis en retard.",
+    "en": "I gotta get moving, I'm running late already.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il a l'air crevé, on devrait peut-être partir.",
+    "en": "He looks wiped out, maybe we should head out.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai mis du temps à m'habituer au nouveau rythme.",
+    "en": "It took me a while to get used to the pace.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a papoté un bon moment sur la terrasse.",
+    "en": "We chatted for a good while on the terrace.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis à court d'idées pour le cadeau.",
+    "en": "I'm out of ideas for what gift to get.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça sent bon, t'as cuisiné quoi ce soir ?",
+    "en": "That smells great, what did you cook tonight?",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai laissé traîner mes affaires partout encore.",
+    "en": "I left my stuff lying around everywhere again.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le médecin m'a dit de prendre ça au sérieux.",
+    "en": "The doctor told me to take this seriously.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai envie de me mettre au vélo ce printemps.",
+    "en": "I feel like getting into cycling this spring.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ils ont repoussé la date limite de deux jours.",
+    "en": "They pushed back the deadline by two days.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On s'est perdus un moment dans les ruelles.",
+    "en": "We got lost for a while in the side streets.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai du mal à me faire à ce nouveau quartier.",
+    "en": "I'm having trouble getting used to this new area.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon frère me prête sa voiture pour le week-end.",
+    "en": "My brother is lending me his car for the weekend.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La série accroche bien dès le premier épisode.",
+    "en": "The series really hooks you from the first episode.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai besoin de décompresser après cette semaine.",
+    "en": "I need to unwind after this week, honestly.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra bien ce que ça donne demain matin.",
+    "en": "We'll see how it turns out tomorrow morning.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le plombier est passé, tout est réglé maintenant.",
+    "en": "The plumber came by, everything is sorted now.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai zappé de prendre mes médicaments ce matin.",
+    "en": "I forgot to take my meds this morning.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y'a du monde, on fera la queue un moment.",
+    "en": "It's crowded, we'll be waiting in line a while.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas sûr d'avoir bien compris la consigne.",
+    "en": "I'm not sure I understood the instructions properly.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça m'énerve quand le bus arrive en avance.",
+    "en": "It annoys me when the bus arrives early.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a fait une pause café entre deux rendez-vous.",
+    "en": "We grabbed a coffee break between two appointments.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai l'impression que mon téléphone rame un peu.",
+    "en": "I feel like my phone is lagging a bit lately.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut que je fasse le tri dans mes emails.",
+    "en": "I need to sort through my emails at some point.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il m'a fallu un moment pour retrouver mes clés.",
+    "en": "It took me a while to find my keys again.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a discuté politique, ça a un peu chauffé.",
+    "en": "We talked politics and things got a bit heated.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je me sens mieux depuis que je marche plus.",
+    "en": "I feel better since I've been walking more.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'as entendu parler du nouveau resto du coin ?",
+    "en": "Have you heard about the new place around here?",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  }
+]

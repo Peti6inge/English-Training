@@ -1,0 +1,20 @@
+[
+  {
+    "fr": "Mon ordinateur portable ne se connecte plus au wifi.",
+    "en": "My laptop won't connect to the wifi anymore.",
+    "tags": ["tech"],
+    "level": "vocab"
+  },
+  {
+    "fr": "On s'est mis d'accord pour se retrouver vers huit heures.",
+    "en": "We agreed to meet up around eight o'clock.",
+    "tags": ["plans"],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis resté bloqué dans l'ascenseur dix minutes.",
+    "en": "I got stuck in the elevator for ten minutes.",
+    "tags": ["city"],
+    "level": "vocab"
+  }
+]
