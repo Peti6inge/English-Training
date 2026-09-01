@@ -48,7 +48,7 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    /** During answer capture: only PREVIOUS is accepted as a live voice command. */
+    /** During answer capture: Previous by voice only; Repeat French via volant Previous. */
     listening: ["PREVIOUS"],
     /** Available after validation — correction / navigation phase. */
     correction: [

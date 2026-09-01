@@ -1,12 +1,22 @@
 /**
- * TTS wrapper around speechSynthesis.
- * French (fr-FR) for prompts, English (en-US) for answers and feedback.
+ * TTS: Web Speech API in browser, Android TextToSpeech in the native app.
  */
 
 import { CONFIG } from "./config.js";
+import { getNativeTts } from "./native-tts.js";
+
+function synth() {
+  try {
+    return globalThis.speechSynthesis ?? null;
+  } catch {
+    return null;
+  }
+}
 
 function pickVoice(lang) {
-  const voices = speechSynthesis.getVoices();
+  const ss = synth();
+  if (!ss) return null;
+  const voices = ss.getVoices();
   const prefix = lang.toLowerCase().slice(0, 2);
   const exact = voices.find((v) => v.lang.replace("_", "-").toLowerCase() === lang.toLowerCase());
   if (exact) return exact;
@@ -14,14 +24,16 @@ function pickVoice(lang) {
 }
 
 function waitForVoices() {
-  if (speechSynthesis.getVoices().length) return Promise.resolve();
+  const ss = synth();
+  if (!ss) return Promise.resolve();
+  if (ss.getVoices().length) return Promise.resolve();
   return new Promise((resolve) => {
     const done = () => {
-      speechSynthesis.removeEventListener("voiceschanged", done);
+      ss.removeEventListener("voiceschanged", done);
       resolve();
     };
-    speechSynthesis.addEventListener("voiceschanged", done);
-    speechSynthesis.getVoices();
+    ss.addEventListener("voiceschanged", done);
+    ss.getVoices();
     setTimeout(done, 1500);
   });
 }
@@ -29,16 +41,28 @@ function waitForVoices() {
 export const tts = {
   _ready: null,
   _current: null,
+  _native: null,
+
+  get available() {
+    return Boolean(this._native) || Boolean(synth());
+  },
 
   async init() {
+    const native = getNativeTts();
+    if (native) {
+      await native.init();
+      this._native = native;
+      return;
+    }
     if (!this._ready) this._ready = waitForVoices();
     await this._ready;
   },
 
-  cancel() {
+  async cancel() {
     this._current = null;
+    if (this._native) await this._native.cancel();
     try {
-      speechSynthesis.cancel();
+      synth()?.cancel();
     } catch {
       /* ignore */
     }
@@ -49,12 +73,25 @@ export const tts = {
    * @param {"fr-FR"|"en-US"|string} lang
    * @param {{ rate?: number, interrupt?: boolean }} [opts]
    */
-  speak(text, lang = CONFIG.TTS.fr, opts = {}) {
+  async speak(text, lang = CONFIG.TTS.fr, opts = {}) {
     const utteranceText = String(text || "").trim();
-    if (!utteranceText) return Promise.resolve();
-    if (!("speechSynthesis" in window)) return Promise.resolve();
+    if (!utteranceText) return;
 
-    if (opts.interrupt !== false) this.cancel();
+    if (opts.interrupt !== false) await this.cancel();
+
+    if (this._native) {
+      const token = {};
+      this._current = token;
+      try {
+        await this._native.speak(utteranceText, lang, { rate: opts.rate ?? CONFIG.TTS.rate });
+      } finally {
+        if (this._current === token) this._current = null;
+      }
+      return;
+    }
+
+    const ss = synth();
+    if (!ss || typeof SpeechSynthesisUtterance === "undefined") return;
 
     return new Promise((resolve, reject) => {
       const u = new SpeechSynthesisUtterance(utteranceText);
@@ -77,8 +114,8 @@ export const tts = {
         else reject(ev.error);
       };
 
-      speechSynthesis.resume();
-      speechSynthesis.speak(u);
+      ss.resume();
+      ss.speak(u);
     });
   },
 

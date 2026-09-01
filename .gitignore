@@ -6,3 +6,14 @@ models/*.tar.gz
 models/*.zip
 .env
 .env.*
+
+js/phrases-data.js
+android-app/www/
+android-app/android/.gradle/
+android-app/android/build/
+android-app/android/app/build/
+android-app/android/app/.cxx/
+android-app/android/local.properties
+android-app/android/captures/
+android-app/android/*.iml
+android-app/android/.idea/

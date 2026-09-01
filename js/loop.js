@@ -2,8 +2,7 @@
  * Hands-free loop (volant / validation manuelle):
  * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
  * CORRECTION → [Next volant] → NEXT_PHRASE → SPEAKING_FR
- * Previous volant : Remind + phrase précédente
- * Previous voix (phase saisie) : phrase précédente sans validation
+ * Previous volant en saisie : Repeat French · voix : Previous · correction : Remind + phrase suivante
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
@@ -106,24 +105,22 @@ export class LoopManager extends EventTarget {
     if (!this.running) return;
     this._emit("transcript", { buffer: detail.buffer, partial: detail.partial });
 
-    if (this.state !== LOOP_STATES.LISTENING || this._busy || !detail.text) return;
+    if (this._busy || this.state !== LOOP_STATES.LISTENING || detail.partial || !detail.text) return;
+
     const command = detectCommand(detail.buffer, { phase: "listening" });
     if (command?.type !== "PREVIOUS") return;
 
-    this._onVoicePreviousListening().catch((err) => {
-      this._emit("log", { level: "warn", message: String(err?.message || err) });
-    });
-  }
+    if (command.before) stt.setBuffer(command.before);
+    else stt.clearBuffer();
 
-  /** Live voice Previous during answer capture — skip validation, go back immediately. */
-  async _onVoicePreviousListening() {
-    if (!this.running || this._busy || this.state !== LOOP_STATES.LISTENING) return;
     this._busy = true;
-    try {
-      await this._onPrevious();
-    } finally {
-      this._busy = false;
-    }
+    this._onPrevious()
+      .catch((err) => {
+        this._emit("log", { level: "warn", message: String(err?.message || err) });
+      })
+      .finally(() => {
+        this._busy = false;
+      });
   }
 
   /**
@@ -158,7 +155,7 @@ export class LoopManager extends EventTarget {
   }
 
   /**
-   * Physical or UI Previous — Remind on current phrase, then go to previous.
+   * Physical or UI Previous — Repeat French while capturing; Remind + next in correction.
    */
   async onPhysicalPrevious() {
     if (!this.running || this._busy) return;
@@ -166,17 +163,20 @@ export class LoopManager extends EventTarget {
 
     this._busy = true;
     await stt.pause();
-    stt.clearBuffer();
 
     try {
+      if (this.state === LOOP_STATES.LISTENING) {
+        await this._onRepeatFrench();
+        return;
+      }
+
+      stt.clearBuffer();
       const phrase = queue.current();
       if (phrase) {
         storage.addRemind(phrase.id, "");
         this._emit("remind", { phrase, note: "" });
       }
-      const prev = queue.previous();
-      this.setState(LOOP_STATES.NEXT_PHRASE, { phrase: prev });
-      await this._speakCurrent();
+      await this._advanceFromCorrection();
     } finally {
       this._busy = false;
     }

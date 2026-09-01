@@ -1,0 +1,11 @@
+{
+  "appId": "com.peti6inge.englishtraining",
+  "appName": "English Training",
+  "webDir": "www",
+  "android": {
+    "path": "android"
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

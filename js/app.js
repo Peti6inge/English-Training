@@ -8,6 +8,7 @@ import { audioCues } from "./audio-cues.js";
 import { wakeLock } from "./wake-lock.js";
 import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
 import { initMediaSession } from "./media-session.js";
+import { initNativeCarMedia, isNativeAndroid } from "./car-media.js";
 
 const $ = (id) => document.getElementById(id);
 const STATES = [
@@ -37,7 +38,7 @@ function renderCommandList(state) {
   const title =
     state === LOOP_STATES.CORRECTION
       ? "Après correction — commande vocale + Next volant"
-      : "Pendant la saisie — Next volant · Previous voix ou volant";
+      : "Pendant la saisie — Next / Previous volant uniquement";
   $("commands-title").textContent = title;
   $("commands").innerHTML = labels
     .map(
@@ -119,11 +120,39 @@ function renderSettings() {
     : "Wake Lock non supporté sur ce navigateur — la veille peut interrompre la session.";
 }
 
+async function loadPhrases() {
+  try {
+    const mod = await import("./phrases-data.js");
+    if (Array.isArray(mod.PHRASES) && mod.PHRASES.length) {
+      return { data: mod.PHRASES, url: "./phrases-data.js" };
+    }
+  } catch {
+    /* generated module absent on some web deploys — try JSON next */
+  }
+
+  const urls = [
+    new URL("../phrases.json", import.meta.url).href,
+    new URL("../phrases.sample.json", import.meta.url).href,
+    "./phrases.json",
+    "./phrases.sample.json",
+  ];
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (Array.isArray(data) && data.length) return { data, url };
+    } catch {
+      /* try next source */
+    }
+  }
+  throw new Error("Aucune liste de phrases disponible");
+}
+
 async function boot() {
   renderMachine(LOOP_STATES.IDLE);
   renderCommandList(LOOP_STATES.IDLE);
   await storage.init();
-  await tts.init();
 
   wakeLock.init(() => {
     loop.resumeAfterBackground();
@@ -131,10 +160,24 @@ async function boot() {
   });
   renderSettings();
 
-  const phrases = await fetch("./phrases.sample.json").then((r) => r.json());
-  queue.load(phrases);
-  renderPhrase(queue.current());
-  renderStats();
+  try {
+    const { data: phrases, url: phrasesSource } = await loadPhrases();
+    queue.load(phrases);
+    renderPhrase(queue.current());
+    renderStats();
+    log(`${phrases.length} phrases chargées (${phrasesSource})`);
+  } catch (err) {
+    log(err.message || String(err));
+    setBadge("error", "Liste de phrases vide");
+  }
+
+  try {
+    await tts.init();
+    if (tts.available) log(tts._native ? "Synthèse vocale Android active" : "Synthèse vocale Web active");
+    else log("Synthèse vocale indisponible sur cet appareil");
+  } catch (err) {
+    log(`TTS: ${err.message || String(err)}`);
+  }
 
   stt.addEventListener("status", (ev) => {
     const { status, engine, message, ratio } = ev.detail;
@@ -205,8 +248,10 @@ async function boot() {
     $("btn-stop").disabled = false;
     try {
       await stt.init();
+      const nativeOk = await initNativeCarMedia(loop);
       const mediaOk = initMediaSession(loop);
-      if (mediaOk) log("Touches média volant actives (Next / Previous)");
+      if (nativeOk) log("Pont Android Auto / MediaSession natif actif");
+      else if (mediaOk) log("Touches média volant actives (Next / Previous)");
       await loop.start();
     } catch (err) {
       log(err.message || String(err));
@@ -242,7 +287,7 @@ async function boot() {
     if (ev.target.checked) audioCues.micOn();
   });
 
-  if ("serviceWorker" in navigator) {
+  if ("serviceWorker" in navigator && !isNativeAndroid()) {
     try {
       await navigator.serviceWorker.register("./sw.js");
       log("Service worker enregistré");
@@ -252,4 +297,7 @@ async function boot() {
   }
 }
 
-boot();
+boot().catch((err) => {
+  console.error(err);
+  log(err.message || String(err));
+});

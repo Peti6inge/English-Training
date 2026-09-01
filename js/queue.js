@@ -98,11 +98,19 @@ export const queue = {
     this.phrases = phrases;
     this.clearInterlude();
     const known = new Set(phrases.map((p) => p.id));
+    const poolIds = phrases.map((p) => p.id);
     const stored = storage.getQueue().filter((id) => known.has(id));
-    const queueMatchesPool = stored.length === phrases.length && phrases.every((p) => stored.includes(p.id));
+    const queueMatchesPool =
+      stored.length === poolIds.length && poolIds.every((id) => stored.includes(id));
 
-    this.ids = queueMatchesPool ? stored : buildQueue(phrases);
-    storage.setQueue(this.ids);
+    if (queueMatchesPool) {
+      this.ids = stored;
+    } else {
+      this.ids = buildQueue(phrases);
+      storage.setQueue(this.ids);
+      const max = Math.max(0, this.ids.length - 1);
+      if (storage.getCurrentIndex() > max) storage.setCurrentIndex(0);
+    }
     return this.ids;
   },
 

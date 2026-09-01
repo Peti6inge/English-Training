@@ -1,0 +1,19 @@
+{
+  "name": "english-training-android",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Wrapper Android Auto / MediaSession for English Training",
+  "scripts": {
+    "sync-www": "node ./scripts/sync-www.mjs",
+    "cap:sync": "npm run sync-www && npx cap sync android",
+    "open": "npx cap open android",
+    "build:apk": "npm run cap:sync && node ./scripts/assemble-debug.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}
