@@ -46,8 +46,8 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    /** No voice commands during answer capture — only physical Next / Previous. */
-    listening: [],
+    /** During answer capture: only PREVIOUS is accepted as a live voice command. */
+    listening: ["PREVIOUS"],
     /** Available after validation — correction / navigation phase. */
     correction: [
       "REPEAT_FRENCH",

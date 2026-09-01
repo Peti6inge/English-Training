@@ -3,13 +3,14 @@
  * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
  * CORRECTION → [Next volant] → NEXT_PHRASE → SPEAKING_FR
  * Previous volant : Remind + phrase précédente
+ * Previous voix (phase saisie) : phrase précédente sans validation
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
 import { tts } from "./tts.js";
 import { stt } from "./stt.js";
 import { wakeLock } from "./wake-lock.js";
-import { detectCommandOnPhysicalNext, stripCommands } from "./commands.js";
+import { detectCommand, detectCommandOnPhysicalNext, stripCommands } from "./commands.js";
 import { isMatch } from "./fuzzy.js";
 import { queue, applyAttempt } from "./queue.js";
 import { storage } from "./storage.js";
@@ -104,6 +105,25 @@ export class LoopManager extends EventTarget {
   _handleTranscript(detail) {
     if (!this.running) return;
     this._emit("transcript", { buffer: detail.buffer, partial: detail.partial });
+
+    if (this.state !== LOOP_STATES.LISTENING || this._busy || !detail.text) return;
+    const command = detectCommand(detail.buffer, { phase: "listening" });
+    if (command?.type !== "PREVIOUS") return;
+
+    this._onVoicePreviousListening().catch((err) => {
+      this._emit("log", { level: "warn", message: String(err?.message || err) });
+    });
+  }
+
+  /** Live voice Previous during answer capture — skip validation, go back immediately. */
+  async _onVoicePreviousListening() {
+    if (!this.running || this._busy || this.state !== LOOP_STATES.LISTENING) return;
+    this._busy = true;
+    try {
+      await this._onPrevious();
+    } finally {
+      this._busy = false;
+    }
   }
 
   /**

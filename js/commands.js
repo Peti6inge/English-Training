@@ -90,5 +90,5 @@ export const CORRECTION_COMMAND_LABELS = [
 export const LISTENING_COMMAND_LABELS = [
   { label: "Valider la tentative", code: "NEXT (volant / bouton)" },
   { label: "Remind + phrase précédente", code: "PREVIOUS (volant / bouton)" },
-  { label: "Aucune commande vocale", code: "—" },
+  { label: "Revenir à la phrase précédente", code: "PREVIOUS (voix)" },
 ];
