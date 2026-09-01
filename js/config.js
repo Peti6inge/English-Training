@@ -45,8 +45,8 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    /** Voice hints during answer capture — only applied on physical/UI Next, not auto. */
-    listening: ["REPEAT_FRENCH"],
+    /** No voice commands during answer capture — only physical Next / Previous. */
+    listening: [],
     /** Available after validation — correction / navigation phase. */
     correction: [
       "REPEAT_FRENCH",

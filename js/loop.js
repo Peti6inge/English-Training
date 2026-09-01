@@ -107,7 +107,7 @@ export class LoopManager extends EventTarget {
   }
 
   /**
-   * Physical or UI Next — sole trigger to validate answer or run a spoken command.
+   * Physical or UI Next — validates the answer (listening) or runs a voice command (correction).
    */
   async onPhysicalNext() {
     if (!this.running || this._busy) return;
@@ -119,22 +119,19 @@ export class LoopManager extends EventTarget {
 
     try {
       const spoken = stt.getBuffer().trim();
-      const phase = this._commandPhase();
-      const command = detectCommandOnPhysicalNext(spoken, { phase });
-
-      if (command) {
-        if (phase === "listening" && command.type === "REPEAT_FRENCH") {
-          stt.setBuffer(command.before);
-        }
-        await this._dispatch(command, { phase });
-        return;
-      }
 
       if (this.state === LOOP_STATES.LISTENING) {
         await this._finalizeAttempt(spoken, { force: true });
-      } else if (this.state === LOOP_STATES.CORRECTION) {
-        await this._advanceFromCorrection();
+        return;
       }
+
+      const command = detectCommandOnPhysicalNext(spoken, { phase: "correction" });
+      if (command) {
+        await this._dispatch(command, { phase: "correction" });
+        return;
+      }
+
+      await this._advanceFromCorrection();
     } finally {
       this._busy = false;
     }
@@ -188,7 +185,7 @@ export class LoopManager extends EventTarget {
     if (!phrase) return;
 
     this.setState(LOOP_STATES.EVALUATING, { phrase });
-    const spoken = stripCommands(spokenRaw);
+    const spoken = String(spokenRaw || "").trim();
     const { ok, score } = isMatch(spoken, phrase.en, CONFIG.SIMILARITY_THRESHOLD, {
       wordThreshold: CONFIG.KEYWORD_WORD_THRESHOLD,
     });

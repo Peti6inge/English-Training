@@ -36,8 +36,8 @@ function renderCommandList(state) {
   const labels = state === LOOP_STATES.CORRECTION ? CORRECTION_COMMAND_LABELS : LISTENING_COMMAND_LABELS;
   const title =
     state === LOOP_STATES.CORRECTION
-      ? "Après validation — commande + Next volant"
-      : "Pendant la saisie — Next / Previous volant";
+      ? "Après correction — commande vocale + Next volant"
+      : "Pendant la saisie — Next / Previous volant uniquement";
   $("commands-title").textContent = title;
   $("commands").innerHTML = labels
     .map(

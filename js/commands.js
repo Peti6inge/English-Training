@@ -55,44 +55,15 @@ export function detectCommand(buffer, opts = {}) {
   return null;
 }
 
-/** Commands recognised when the user presses physical Next during answer capture. */
-const LISTENING_PHYSICAL_NEXT = new Set(["REPEAT_FRENCH", "DONT_REMIND", "REMIND"]);
-
 /**
  * Detect a trailing voice command when the user presses physical/UI Next.
- * During listening, NEXT and STOP are ignored (default action = validate attempt).
+ * Only active in the correction phase (after feedback). Answer capture has no voice commands.
  * @param {string} buffer
  * @param {{ phase?: "listening"|"correction" }} [opts]
  */
 export function detectCommandOnPhysicalNext(buffer, opts = {}) {
-  const phase = opts.phase || "listening";
-  if (phase === "correction") {
-    return detectCommand(buffer, { phase: "correction" });
-  }
-
-  const raw = String(buffer || "").trim();
-  if (!raw) return null;
-
-  for (const name of ORDER) {
-    const type = TYPE_MAP[name];
-    if (!LISTENING_PHYSICAL_NEXT.has(type)) continue;
-    const patterns = CONFIG.COMMANDS.aliases[name] || [];
-    for (const pattern of patterns) {
-      const flags = pattern.flags.replace("g", "");
-      const re = new RegExp(`(?:${pattern.source})\\s*$`, flags);
-      const match = raw.match(re);
-      if (!match) continue;
-      const index = match.index ?? raw.length - match[0].length;
-      return {
-        type,
-        before: raw.slice(0, index).trim(),
-        after: "",
-        raw,
-      };
-    }
-  }
-
-  return null;
+  if (opts.phase !== "correction") return null;
+  return detectCommand(buffer, { phase: "correction" });
 }
 
 /** Remove trailing command words so remaining text can be scored against phrase.en */
@@ -119,6 +90,5 @@ export const CORRECTION_COMMAND_LABELS = [
 export const LISTENING_COMMAND_LABELS = [
   { label: "Valider la tentative", code: "NEXT (volant / bouton)" },
   { label: "Remind + phrase précédente", code: "PREVIOUS (volant / bouton)" },
-  { label: "Réécouter le français (dans la saisie + Next)", code: "REPEAT FRENCH" },
-  { label: "Retirer des révisions (dans la saisie + Next)", code: "DON'T REMIND" },
+  { label: "Aucune commande vocale", code: "—" },
 ];
