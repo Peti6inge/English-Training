@@ -1,14 +1,15 @@
 /**
- * Hands-free loop:
- * SPEAKING_FR → LISTENING (saisie incrémentale) → EVALUATING → FEEDBACK (audio) → CORRECTION
- * CORRECTION → NEXT → NEXT_PHRASE → SPEAKING_FR
+ * Hands-free loop (volant / validation manuelle):
+ * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
+ * CORRECTION → [Next volant] → NEXT_PHRASE → SPEAKING_FR
+ * Previous volant : Remind + phrase précédente
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
 import { tts } from "./tts.js";
 import { stt } from "./stt.js";
 import { wakeLock } from "./wake-lock.js";
-import { detectCommand, stripCommands } from "./commands.js";
+import { detectCommandOnPhysicalNext, stripCommands } from "./commands.js";
 import { isMatch } from "./fuzzy.js";
 import { queue, applyAttempt } from "./queue.js";
 import { storage } from "./storage.js";
@@ -24,7 +25,6 @@ export class LoopManager extends EventTarget {
     this.running = false;
     this._busy = false;
     this._onTranscript = (ev) => this._handleTranscript(ev.detail);
-    this._onSpeechEnd = (ev) => this._handleSpeechEnd(ev.detail);
   }
 
   _emit(name, detail) {
@@ -43,8 +43,8 @@ export class LoopManager extends EventTarget {
   async start() {
     if (this.running) return;
     this.running = true;
+    stt.setManualValidation(true);
     stt.addEventListener("transcript", this._onTranscript);
-    stt.addEventListener("speechend", this._onSpeechEnd);
     await wakeLock.acquire();
     await tts.init();
     this._busy = true;
@@ -58,8 +58,8 @@ export class LoopManager extends EventTarget {
 
   async stop() {
     this.running = false;
+    stt.setManualValidation(false);
     stt.removeEventListener("transcript", this._onTranscript);
-    stt.removeEventListener("speechend", this._onSpeechEnd);
     tts.cancel();
     await stt.pause();
     await wakeLock.release();
@@ -106,17 +106,21 @@ export class LoopManager extends EventTarget {
     this._emit("transcript", { buffer: detail.buffer, partial: detail.partial });
   }
 
-  async _handleSpeechEnd(detail) {
+  /**
+   * Physical or UI Next — sole trigger to validate answer or run a spoken command.
+   */
+  async onPhysicalNext() {
     if (!this.running || this._busy) return;
     if (this.state !== LOOP_STATES.LISTENING && this.state !== LOOP_STATES.CORRECTION) return;
 
     this._busy = true;
     await stt.pause();
+    stt.commitPartial();
 
     try {
-      const spoken = String(detail?.buffer || stt.getBuffer() || "").trim();
+      const spoken = stt.getBuffer().trim();
       const phase = this._commandPhase();
-      const command = detectCommand(spoken, { phase });
+      const command = detectCommandOnPhysicalNext(spoken, { phase });
 
       if (command) {
         if (phase === "listening" && command.type === "REPEAT_FRENCH") {
@@ -126,18 +130,36 @@ export class LoopManager extends EventTarget {
         return;
       }
 
-      if (this.state === LOOP_STATES.LISTENING && spoken) {
-        const answer = stripCommands(spoken);
-        const { ok } = isMatch(answer, queue.current()?.en || "", CONFIG.SIMILARITY_THRESHOLD, {
-          wordThreshold: CONFIG.KEYWORD_WORD_THRESHOLD,
-        });
-        if (ok) {
-          await this._finalizeAttempt(answer, { force: false });
-          return;
-        }
+      if (this.state === LOOP_STATES.LISTENING) {
+        await this._finalizeAttempt(spoken, { force: true });
+      } else if (this.state === LOOP_STATES.CORRECTION) {
+        await this._advanceFromCorrection();
       }
+    } finally {
+      this._busy = false;
+    }
+  }
 
-      if (this.running) this._resumeMic();
+  /**
+   * Physical or UI Previous — Remind on current phrase, then go to previous.
+   */
+  async onPhysicalPrevious() {
+    if (!this.running || this._busy) return;
+    if (this.state !== LOOP_STATES.LISTENING && this.state !== LOOP_STATES.CORRECTION) return;
+
+    this._busy = true;
+    await stt.pause();
+    stt.clearBuffer();
+
+    try {
+      const phrase = queue.current();
+      if (phrase) {
+        storage.addRemind(phrase.id, "");
+        this._emit("remind", { phrase, note: "" });
+      }
+      const prev = queue.previous();
+      this.setState(LOOP_STATES.NEXT_PHRASE, { phrase: prev });
+      await this._speakCurrent();
     } finally {
       this._busy = false;
     }
@@ -205,6 +227,7 @@ export class LoopManager extends EventTarget {
   }
 
   async _advanceFromCorrection() {
+    stt.clearBuffer();
     const nextPhrase = queue.next();
     this.setState(LOOP_STATES.NEXT_PHRASE, { phrase: nextPhrase });
     await this._speakCurrent();
@@ -215,6 +238,7 @@ export class LoopManager extends EventTarget {
     if (!phrase) return;
     const returnState =
       this.state === LOOP_STATES.CORRECTION ? LOOP_STATES.CORRECTION : LOOP_STATES.LISTENING;
+    stt.clearBuffer();
     await stt.pause();
     try {
       await tts.speakFr(phrase.fr);
@@ -229,6 +253,7 @@ export class LoopManager extends EventTarget {
   async _onRepeatEnglish() {
     const phrase = queue.current();
     if (!phrase) return;
+    stt.clearBuffer();
     await stt.pause();
     try {
       await tts.speakEn(phrase.en);
@@ -242,6 +267,7 @@ export class LoopManager extends EventTarget {
 
   async _onPrevious() {
     await stt.pause();
+    stt.clearBuffer();
     const phrase = queue.previous();
     this.setState(LOOP_STATES.NEXT_PHRASE, { phrase });
     await this._speakCurrent();
@@ -264,16 +290,30 @@ export class LoopManager extends EventTarget {
     await this._advanceFromCorrection();
   }
 
-  /** Manual UI triggers — same semantics as voice commands. */
+  /** Manual UI triggers — correction shortcuts or same semantics as physical keys. */
   async trigger(type, extra = {}) {
     if (!this.running) return;
-    if (this._busy && type !== "REPEAT_FRENCH" && type !== "REPEAT_ENGLISH" && type !== "STOP") return;
 
-    const spoken = extra.spoken || stt.getBuffer();
-    const fake = { type, before: spoken, after: extra.note || "", raw: spoken };
+    if (type === "NEXT") {
+      await this.onPhysicalNext();
+      return;
+    }
+    if (type === "PREVIOUS") {
+      await this.onPhysicalPrevious();
+      return;
+    }
+    if (type === "STOP") {
+      await this.stop();
+      return;
+    }
+
+    if (this._busy) return;
     this._busy = true;
     try {
       await stt.pause();
+      stt.commitPartial();
+      const spoken = extra.spoken ?? stt.getBuffer();
+      const fake = { type, before: spoken, after: extra.note || "", raw: spoken };
       await this._dispatch(fake, { phase: this._commandPhase() });
     } finally {
       this._busy = false;

@@ -7,6 +7,7 @@ import { loop } from "./loop.js";
 import { audioCues } from "./audio-cues.js";
 import { wakeLock } from "./wake-lock.js";
 import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
+import { initMediaSession } from "./media-session.js";
 
 const $ = (id) => document.getElementById(id);
 const STATES = [
@@ -35,8 +36,8 @@ function renderCommandList(state) {
   const labels = state === LOOP_STATES.CORRECTION ? CORRECTION_COMMAND_LABELS : LISTENING_COMMAND_LABELS;
   const title =
     state === LOOP_STATES.CORRECTION
-      ? "Commandes en phase de correction"
-      : "Pendant la saisie";
+      ? "Après validation — commande + Next volant"
+      : "Pendant la saisie — Next / Previous volant";
   $("commands-title").textContent = title;
   $("commands").innerHTML = labels
     .map(
@@ -99,7 +100,7 @@ function renderFeedback({ ok, score, spoken, phrase, phase }) {
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">${ok ? "Perfect, puis commandes de correction." : "Correction en anglais, puis commandes de correction."}</div>
+    <div class="hint">${ok ? "Perfect — puis commande + Next volant, ou Next seul pour continuer." : "Correction lue — puis commande + Next volant, ou Next seul."}</div>
   `;
 }
 
@@ -160,7 +161,7 @@ async function boot() {
     renderPhrase(ev.detail.phrase);
     renderCommandList(ev.detail.state);
     if (ev.detail.state === LOOP_STATES.LISTENING) {
-      setBadge("listen", `${stt.engine} · saisie incrémentale`);
+      setBadge("listen", `${stt.engine} · micro ouvert`);
       clearFeedback();
     }
     if (ev.detail.state === LOOP_STATES.CORRECTION) {
@@ -204,6 +205,8 @@ async function boot() {
     $("btn-stop").disabled = false;
     try {
       await stt.init();
+      const mediaOk = initMediaSession(loop);
+      if (mediaOk) log("Touches média volant actives (Next / Previous)");
       await loop.start();
     } catch (err) {
       log(err.message || String(err));
@@ -219,8 +222,8 @@ async function boot() {
 
   $("btn-repeat-fr").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
   $("btn-repeat-en").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
-  $("btn-prev").addEventListener("click", () => loop.trigger("PREVIOUS"));
-  $("btn-next").addEventListener("click", () => loop.trigger("NEXT", { spoken: stt.getBuffer() }));
+  $("btn-prev").addEventListener("click", () => loop.onPhysicalPrevious());
+  $("btn-next").addEventListener("click", () => loop.onPhysicalNext());
   $("btn-remind").addEventListener("click", () => loop.trigger("REMIND"));
   $("btn-dont-remind").addEventListener("click", () => loop.trigger("DONT_REMIND"));
   $("btn-reveal").addEventListener("click", () => {

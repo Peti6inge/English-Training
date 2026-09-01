@@ -45,8 +45,8 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    /** Available while the user is building an answer (incremental input). */
-    listening: ["NEXT", "REPEAT_FRENCH", "STOP"],
+    /** Voice hints during answer capture — only applied on physical/UI Next, not auto. */
+    listening: ["REPEAT_FRENCH"],
     /** Available after validation — correction / navigation phase. */
     correction: [
       "REPEAT_FRENCH",

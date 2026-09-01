@@ -69,6 +69,16 @@ export class STTService extends EventTarget {
     this._silenceTimer = null;
     this._lastPartial = "";
     this._mediaSampleRate = CONFIG.STT.sampleRate;
+    /** When true, mic stays open; speechend is never emitted (manual Next/Previous validation). */
+    this._manualValidation = false;
+  }
+
+  setManualValidation(enabled) {
+    this._manualValidation = !!enabled;
+  }
+
+  commitPartial() {
+    this._commitPartial();
   }
 
   _emit(name, detail) {
@@ -275,7 +285,7 @@ export class STTService extends EventTarget {
     if (!SR) return;
     const rec = new SR();
     rec.lang = CONFIG.STT.lang || "en-US";
-    // One-shot: the recognizer closes after an utterance, which drives auto-check.
+    // One-shot per Android utterance; in manual mode onend only restarts (no auto-check).
     rec.continuous = false;
     rec.interimResults = true;
     rec.maxAlternatives = 1;
@@ -297,6 +307,10 @@ export class STTService extends EventTarget {
     };
     rec.onend = () => {
       if (!this._listening || this._paused || this.engine !== "webspeech") return;
+      if (this._manualValidation) {
+        this._scheduleNativeRestart();
+        return;
+      }
       this._emitSpeechEnd();
     };
     this._recognition = rec;
@@ -317,6 +331,7 @@ export class STTService extends EventTarget {
   }
 
   _armUtteranceSilence(ms = CONFIG.STT.utteranceSilenceMs) {
+    if (this._manualValidation) return;
     this._clearSilenceTimer();
     this._silenceTimer = setTimeout(() => {
       this._silenceTimer = null;
