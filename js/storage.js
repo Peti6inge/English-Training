@@ -11,7 +11,13 @@ const LS = {
   phrasesState: `${CONFIG.STORAGE_PREFIX}.phrasesState`,
   customRemindList: `${CONFIG.STORAGE_PREFIX}.customRemindList`,
   queue: `${CONFIG.STORAGE_PREFIX}.queue`,
+  settings: `${CONFIG.STORAGE_PREFIX}.settings`,
 };
+
+const DEFAULT_SETTINGS = Object.freeze({
+  /** Play media-channel beeps when the microphone opens or closes. */
+  micCues: true,
+});
 
 function readJson(key, fallback) {
   try {
@@ -175,6 +181,15 @@ export const storage = {
     const list = this.getRemindList().filter((item) => item.phraseId !== phraseId);
     this.setRemindList(list);
     return list;
+  },
+
+  /** @returns {{ micCues: boolean }} */
+  getSettings() {
+    return { ...DEFAULT_SETTINGS, ...readJson(LS.settings, {}) };
+  },
+
+  setSettings(patch) {
+    writeJson(LS.settings, { ...this.getSettings(), ...patch });
   },
 
   getQueue() {

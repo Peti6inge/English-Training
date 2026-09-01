@@ -4,6 +4,8 @@ import { tts } from "./tts.js";
 import { stt } from "./stt.js";
 import { queue } from "./queue.js";
 import { loop } from "./loop.js";
+import { audioCues } from "./audio-cues.js";
+import { wakeLock } from "./wake-lock.js";
 import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
 
 const $ = (id) => document.getElementById(id);
@@ -107,11 +109,26 @@ function clearFeedback() {
   el.innerHTML = "";
 }
 
+function renderSettings() {
+  const settings = storage.getSettings();
+  $("setting-mic-cues").checked = settings.micCues;
+  const note = $("wake-lock-note");
+  note.textContent = wakeLock.supported
+    ? "Écran actif automatiquement pendant une session (Wake Lock)."
+    : "Wake Lock non supporté sur ce navigateur — la veille peut interrompre la session.";
+}
+
 async function boot() {
   renderMachine(LOOP_STATES.IDLE);
   renderCommandList(LOOP_STATES.IDLE);
   await storage.init();
   await tts.init();
+
+  wakeLock.init(() => {
+    loop.resumeAfterBackground();
+    log("Retour au premier plan — reprise du micro");
+  });
+  renderSettings();
 
   const phrases = await fetch("./phrases.sample.json").then((r) => r.json());
   queue.load(phrases);
@@ -215,6 +232,11 @@ async function boot() {
     queue.rebuild();
     renderPhrase(queue.current());
     renderStats();
+  });
+
+  $("setting-mic-cues").addEventListener("change", (ev) => {
+    storage.setSettings({ micCues: ev.target.checked });
+    if (ev.target.checked) audioCues.micOn();
   });
 
   if ("serviceWorker" in navigator) {

@@ -5,6 +5,7 @@
  */
 
 import { CONFIG } from "./config.js";
+import { audioCues } from "./audio-cues.js";
 
 function resample(input, fromRate, toRate) {
   if (fromRate === toRate) return input;
@@ -397,9 +398,11 @@ export class STTService extends EventTarget {
     if (this.engine === "vosk" && this._vosk) {
       await this._ensureStream();
       await this._startVoskCapture();
+      audioCues.micOn();
     } else if (this.engine === "whisper" && this._whisper) {
       await this._ensureStream();
       await this._startWhisperCapture();
+      audioCues.micOn();
     } else if (this._recognition) {
       this.engine = "webspeech";
       try {
@@ -407,6 +410,7 @@ export class STTService extends EventTarget {
       } catch {
         /* already started */
       }
+      audioCues.micOn();
     } else {
       this._listening = false;
       throw new Error("STT non initialisé");
@@ -415,6 +419,7 @@ export class STTService extends EventTarget {
   }
 
   async pause() {
+    const wasPaused = this._paused;
     this._paused = true;
     this._clearRestartTimer();
     this._clearSilenceTimer();
@@ -425,6 +430,7 @@ export class STTService extends EventTarget {
         /* ignore */
       }
     }
+    if (!wasPaused) audioCues.micOff();
   }
 
   async resume() {
@@ -435,6 +441,7 @@ export class STTService extends EventTarget {
     }
     if (this.engine === "webspeech" && this._recognition) {
       this._scheduleNativeRestart();
+      audioCues.micOn();
       return;
     }
     if ((this.engine === "vosk" && this._vosk) || (this.engine === "whisper" && this._whisper)) {
@@ -443,6 +450,7 @@ export class STTService extends EventTarget {
         if (this.engine === "vosk") await this._startVoskCapture();
         else await this._startWhisperCapture();
       }
+      audioCues.micOn();
     }
   }
 

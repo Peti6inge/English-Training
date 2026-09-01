@@ -15,6 +15,11 @@ export const CONFIG = {
   /** Pause (ms) before the post-validation audio sequence. */
   POST_VALIDATION_PAUSE_MS: 600,
 
+  AUDIO_CUES: {
+    micOn: { startHz: 880, endHz: 1175, durationMs: 120, volume: 0.18 },
+    micOff: { startHz: 1175, endHz: 740, durationMs: 100, volume: 0.14 },
+  },
+
   TTS: {
     fr: "fr-FR",
     en: "en-US",

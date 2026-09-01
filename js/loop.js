@@ -7,6 +7,7 @@
 import { CONFIG, LOOP_STATES } from "./config.js";
 import { tts } from "./tts.js";
 import { stt } from "./stt.js";
+import { wakeLock } from "./wake-lock.js";
 import { detectCommand, stripCommands } from "./commands.js";
 import { isMatch } from "./fuzzy.js";
 import { queue, applyAttempt } from "./queue.js";
@@ -44,6 +45,7 @@ export class LoopManager extends EventTarget {
     this.running = true;
     stt.addEventListener("transcript", this._onTranscript);
     stt.addEventListener("speechend", this._onSpeechEnd);
+    await wakeLock.acquire();
     await tts.init();
     this._busy = true;
     try {
@@ -60,6 +62,7 @@ export class LoopManager extends EventTarget {
     stt.removeEventListener("speechend", this._onSpeechEnd);
     tts.cancel();
     await stt.pause();
+    await wakeLock.release();
     this.setState(LOOP_STATES.IDLE);
     this._emit("session-stop");
   }
@@ -89,6 +92,13 @@ export class LoopManager extends EventTarget {
     stt.resume().catch((err) => {
       this._emit("log", { level: "warn", message: String(err?.message || err) });
     });
+  }
+
+  /** Resume mic/STT after the page returns to the foreground. */
+  resumeAfterBackground() {
+    if (!this.running || this._busy) return;
+    if (this.state !== LOOP_STATES.LISTENING && this.state !== LOOP_STATES.CORRECTION) return;
+    this._resumeMic();
   }
 
   _handleTranscript(detail) {
