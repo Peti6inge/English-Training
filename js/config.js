@@ -32,9 +32,11 @@ export const CONFIG = {
     sampleRate: 16000,
     chunkMs: 2500,
     overlapMs: 400,
-    /** Delay before restarting Android Web Speech after it auto-closes. Keep tiny in manual mode. */
-    nativeRestartMs: 50,
+    /** Delay before restarting Android Web Speech after it auto-closes. Too low = overlapping sessions. */
+    nativeRestartMs: 200,
     utteranceSilenceMs: 1400,
+    /** Window in which an identical final result is treated as an Android echo. */
+    finalEchoWindowMs: 1200,
     wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",
     transformersCdn: "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2",
