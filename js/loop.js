@@ -50,7 +50,7 @@ export class LoopManager extends EventTarget {
     await tts.init();
     this._busy = true;
     try {
-      if (!stt._listening) await stt.start();
+      // The first microphone acquisition happens only after the French prompt.
       await this._speakCurrent();
     } finally {
       this._busy = false;

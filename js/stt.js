@@ -1,7 +1,7 @@
 /**
  * Offline-first STT:
- * Mobile/Android: keep the native Web Speech recognizer (Chrome uses Android STT).
- * Desktop: Vosk WASM → Whisper WASM, with Web Speech as a fast fallback.
+ * Android/Desktop: Vosk WASM → Whisper WASM → Web Speech fallback.
+ * Other mobile devices keep native Web Speech when available.
  */
 
 import { CONFIG } from "./config.js";
@@ -152,27 +152,57 @@ export class STTService extends EventTarget {
   }
 
   /**
-   * Fast init: on phone, pin the native recognizer (Chrome Android = Speech-to-Text système).
-   * Whisper/Vosk WASM is skipped when native STT is available — it was degrading mobile quality.
+   * Android prefers Vosk/Whisper WASM so getUserMedia owns one stable microphone
+   * stream. Native Web Speech remains the last-resort fallback.
    */
   async init() {
-    this._startWebSpeechFallback();
+    if (!this._recognition) this._startWebSpeechFallback();
 
     const mobile = isMobileDevice();
     const android = isAndroidDevice();
 
-    if (this._recognition && mobile) {
-      this.engine = "webspeech";
-      this.setStatus("fallback", {
-        message: android
-          ? "STT natif Android (Speech-to-Text système)"
-          : "STT natif (Web Speech) — WASM désactivé sur mobile",
+    if (android) {
+      if (this.engine === "vosk" && this._vosk) {
+        this.setStatus("ready", { message: "Vosk WASM prêt (Android)" });
+        return;
+      }
+      if (this.engine === "whisper" && this._whisper) {
+        this.setStatus("ready", { message: "Whisper WASM prêt (Android)" });
+        return;
+      }
+
+      this.setStatus("loading-wasm", {
+        message: "Chargement du micro continu Vosk pour Android…",
       });
       this._emit("log", {
         level: "info",
-        message: android
-          ? "Moteur STT: webspeech (natif Android). Whisper ignoré pour la qualité."
-          : "Moteur STT: webspeech (natif). Whisper ignoré sur mobile.",
+        message: "Android: tentative Vosk WASM, puis Whisper; Web Speech seulement en secours.",
+      });
+
+      if (!this._wasmTask) this._wasmTask = this._loadWasmEngines();
+      await this._wasmTask;
+
+      if (this.engine === "vosk" || this.engine === "whisper") return;
+      if (this._recognition) {
+        this.engine = "webspeech";
+        this.setStatus("fallback", {
+          message: "WASM indisponible — secours STT natif Android",
+        });
+        return;
+      }
+
+      this.setStatus("error", { message: "Aucun moteur STT disponible" });
+      throw new Error("Vosk, Whisper et Web Speech sont indisponibles");
+    }
+
+    if (this._recognition && mobile) {
+      this.engine = "webspeech";
+      this.setStatus("fallback", {
+        message: "STT natif (Web Speech) — WASM désactivé sur cet appareil",
+      });
+      this._emit("log", {
+        level: "info",
+        message: "Moteur STT: webspeech natif sur mobile non-Android.",
       });
       return;
     }
@@ -201,21 +231,15 @@ export class STTService extends EventTarget {
   }
 
   async _loadWasmEngines() {
-    const mobile = isMobileDevice();
-
-    if (!mobile) {
-      try {
-        await withTimeout(this._initVosk(), CONFIG.STT.wasmTimeoutMs, "Vosk");
-        await this._switchEngine("vosk", "Vosk WASM prêt (hors-ligne)");
-        return;
-      } catch (err) {
-        this._emit("log", { level: "warn", message: `Vosk indisponible: ${err.message}` });
-      }
-    } else {
-      this._emit("log", {
-        level: "info",
-        message: "Vosk ignoré sur mobile (souvent bloquant) — Whisper en arrière-plan",
-      });
+    try {
+      await withTimeout(this._initVosk(), CONFIG.STT.wasmTimeoutMs, "Vosk");
+      await this._switchEngine(
+        "vosk",
+        isAndroidDevice() ? "Vosk WASM prêt — micro Android continu" : "Vosk WASM prêt (hors-ligne)",
+      );
+      return;
+    } catch (err) {
+      this._emit("log", { level: "warn", message: `Vosk indisponible: ${err.message}` });
     }
 
     try {
@@ -464,6 +488,13 @@ export class STTService extends EventTarget {
     });
   }
 
+  _setStreamEnabled(enabled) {
+    if (!this._stream) return;
+    for (const track of this._stream.getAudioTracks()) {
+      track.enabled = enabled;
+    }
+  }
+
   async start() {
     if (this._listening) return;
     this._listening = true;
@@ -471,10 +502,12 @@ export class STTService extends EventTarget {
 
     if (this.engine === "vosk" && this._vosk) {
       await this._ensureStream();
+      this._setStreamEnabled(true);
       await this._startVoskCapture();
       audioCues.micOn();
     } else if (this.engine === "whisper" && this._whisper) {
       await this._ensureStream();
+      this._setStreamEnabled(true);
       await this._startWhisperCapture();
       audioCues.micOn();
     } else if (this._recognition || this._speechRecognitionCtor()) {
@@ -492,6 +525,14 @@ export class STTService extends EventTarget {
     const wasPaused = this._paused;
     this._paused = true;
     this._clearSilenceTimer();
+
+    if (this.engine === "vosk" || this.engine === "whisper") {
+      // Mute the existing track without releasing it: no TTS is transcribed,
+      // while Android keeps one stable getUserMedia session.
+      this._setStreamEnabled(false);
+      if (!wasPaused) audioCues.micOff();
+      return;
+    }
 
     if (this._manualValidation && this.engine === "webspeech") {
       // Keep the native recognizer running. Stopping it drops Android Bluetooth SCO
@@ -523,8 +564,10 @@ export class STTService extends EventTarget {
       return;
     }
     if ((this.engine === "vosk" && this._vosk) || (this.engine === "whisper" && this._whisper)) {
+      this._setStreamEnabled(true);
       if (!this._processor) {
         await this._ensureStream();
+        this._setStreamEnabled(true);
         if (this.engine === "vosk") await this._startVoskCapture();
         else await this._startWhisperCapture();
       }
