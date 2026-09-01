@@ -32,7 +32,8 @@ export const CONFIG = {
     sampleRate: 16000,
     chunkMs: 2500,
     overlapMs: 400,
-    nativeRestartMs: 250,
+    /** Delay before restarting Android Web Speech after it auto-closes. Keep tiny in manual mode. */
+    nativeRestartMs: 50,
     utteranceSilenceMs: 1400,
     wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",

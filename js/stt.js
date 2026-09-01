@@ -64,6 +64,8 @@ export class STTService extends EventTarget {
     this._pcmSamples = 0;
     this._whisperBusy = false;
     this._recognition = null;
+    this._startingRecognition = false;
+    this._recLive = false;
     this._wasmTask = null;
     this._restartTimer = null;
     this._silenceTimer = null;
@@ -280,15 +282,21 @@ export class STTService extends EventTarget {
     }
   }
 
-  _startWebSpeechFallback() {
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SR) return;
-    const rec = new SR();
+  _speechRecognitionCtor() {
+    return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+  }
+
+  _bindWebSpeech(rec) {
     rec.lang = CONFIG.STT.lang || "en-US";
-    // One-shot per Android utterance; in manual mode onend only restarts (no auto-check).
-    rec.continuous = false;
+    // Android still closes after an utterance/silence; continuous + instant restart
+    // avoids the Bluetooth SCO drop as much as the Web Speech API allows.
+    rec.continuous = this._manualValidation || isAndroidDevice();
     rec.interimResults = true;
     rec.maxAlternatives = 1;
+    rec.onstart = () => {
+      this._startingRecognition = false;
+      this._recLive = true;
+    };
     rec.onresult = (event) => {
       if (this._paused || !this._listening || this.engine !== "webspeech") return;
       let interim = "";
@@ -304,16 +312,47 @@ export class STTService extends EventTarget {
     rec.onerror = (ev) => {
       if (ev.error === "no-speech" || ev.error === "aborted") return;
       this._emit("log", { level: "warn", message: `Web Speech: ${ev.error}` });
+      if (this._manualValidation && this._listening && (ev.error === "network" || ev.error === "audio-capture")) {
+        this._scheduleNativeRestart(200);
+      }
     };
     rec.onend = () => {
-      if (!this._listening || this._paused || this.engine !== "webspeech") return;
+      this._startingRecognition = false;
+      this._recLive = false;
+      if (!this._listening || this.engine !== "webspeech") return;
       if (this._manualValidation) {
-        this._scheduleNativeRestart();
+        this._scheduleNativeRestart(0);
         return;
       }
+      if (this._paused) return;
       this._emitSpeechEnd();
     };
+  }
+
+  _startWebSpeechFallback() {
+    const SR = this._speechRecognitionCtor();
+    if (!SR) return;
+    const rec = new SR();
+    this._bindWebSpeech(rec);
     this._recognition = rec;
+  }
+
+  _kickWebSpeech() {
+    if (!this._listening || this.engine !== "webspeech") return;
+    const SR = this._speechRecognitionCtor();
+    if (!SR) return;
+    if (this._startingRecognition || this._recLive) return;
+
+    const rec = new SR();
+    this._bindWebSpeech(rec);
+    this._recognition = rec;
+    this._startingRecognition = true;
+    try {
+      rec.start();
+    } catch {
+      this._startingRecognition = false;
+      this._scheduleNativeRestart(200);
+    }
   }
 
   _clearRestartTimer() {
@@ -340,18 +379,20 @@ export class STTService extends EventTarget {
     }, ms);
   }
 
-  _scheduleNativeRestart() {
+  _scheduleNativeRestart(delay) {
     this._clearRestartTimer();
-    const delay = isAndroidDevice() ? CONFIG.STT.nativeRestartMs : 80;
+    const wait =
+      delay != null
+        ? delay
+        : this._manualValidation
+          ? 0
+          : isAndroidDevice()
+            ? CONFIG.STT.nativeRestartMs
+            : 80;
     this._restartTimer = setTimeout(() => {
       this._restartTimer = null;
-      if (!this._listening || this._paused || this.engine !== "webspeech" || !this._recognition) return;
-      try {
-        this._recognition.start();
-      } catch {
-        /* already started */
-      }
-    }, delay);
+      this._kickWebSpeech();
+    }, wait);
   }
 
   async _initVosk() {
@@ -418,13 +459,9 @@ export class STTService extends EventTarget {
       await this._ensureStream();
       await this._startWhisperCapture();
       audioCues.micOn();
-    } else if (this._recognition) {
+    } else if (this._recognition || this._speechRecognitionCtor()) {
       this.engine = "webspeech";
-      try {
-        this._recognition.start();
-      } catch {
-        /* already started */
-      }
+      this._kickWebSpeech();
       audioCues.micOn();
     } else {
       this._listening = false;
@@ -436,8 +473,15 @@ export class STTService extends EventTarget {
   async pause() {
     const wasPaused = this._paused;
     this._paused = true;
-    this._clearRestartTimer();
     this._clearSilenceTimer();
+
+    if (this._manualValidation && this.engine === "webspeech") {
+      // Keep the native recognizer running. Stopping it drops Android Bluetooth SCO
+      // and is what makes the car stereo cut between utterances.
+      return;
+    }
+
+    this._clearRestartTimer();
     if (this._recognition) {
       try {
         this._recognition.stop();
@@ -454,9 +498,10 @@ export class STTService extends EventTarget {
       await this.start();
       return;
     }
-    if (this.engine === "webspeech" && this._recognition) {
-      this._scheduleNativeRestart();
-      audioCues.micOn();
+    if (this.engine === "webspeech") {
+      // Manual mode never stops the recognizer on pause — don't recreate it here
+      // or Bluetooth SCO drops on every TTS / Next. Restart only if it already died.
+      if (!this._manualValidation || !this._recLive) this._kickWebSpeech();
       return;
     }
     if ((this.engine === "vosk" && this._vosk) || (this.engine === "whisper" && this._whisper)) {
@@ -472,6 +517,8 @@ export class STTService extends EventTarget {
   async stop() {
     this._listening = false;
     this._paused = true;
+    this._startingRecognition = false;
+    this._recLive = false;
     this._clearRestartTimer();
     this._clearSilenceTimer();
     if (this._recognition) {
@@ -511,6 +558,7 @@ export class STTService extends EventTarget {
     }
     this._pcmChunks = [];
     this._pcmSamples = 0;
+    audioCues.micOff();
     this._emit("listening", { listening: false });
   }
 

@@ -61,7 +61,7 @@ export class LoopManager extends EventTarget {
     stt.setManualValidation(false);
     stt.removeEventListener("transcript", this._onTranscript);
     tts.cancel();
-    await stt.pause();
+    await stt.stop();
     await wakeLock.release();
     this.setState(LOOP_STATES.IDLE);
     this._emit("session-stop");
