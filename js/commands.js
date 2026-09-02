@@ -56,8 +56,8 @@ export function detectCommand(buffer, opts = {}) {
 }
 
 /**
- * Detect a trailing voice command when the user presses physical/UI Next.
- * Only active in the correction phase (after feedback). Answer capture has no voice commands.
+ * Detect a trailing voice command when the user presses physical/UI Next in correction.
+ * Also used when correction commands are spoken without Next (see loop._handleTranscript).
  * @param {string} buffer
  * @param {{ phase?: "listening"|"correction" }} [opts]
  */
@@ -81,10 +81,10 @@ export function stripCommands(buffer) {
 }
 
 export const CORRECTION_COMMAND_LABELS = [
-  { label: "Commande vocale + Next volant", code: "ex. REPEAT FRENCH" },
-  { label: "Phrase suivante (Next volant seul)", code: "NEXT" },
+  { label: "Commande vocale (immédiate)", code: "ex. REPEAT FRENCH" },
+  { label: "Phrase suivante (Next volant seul)", code: "NEXT (volant / bouton)" },
   { label: "Remind + phrase suivante", code: "PREVIOUS (volant / bouton)" },
-  { label: "Arrêter la session (Stop + Next)", code: "STOP" },
+  { label: "Arrêter la session", code: "STOP" },
 ];
 
 export const LISTENING_COMMAND_LABELS = [

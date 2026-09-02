@@ -1,7 +1,7 @@
 /**
  * Hands-free loop (volant / validation manuelle):
  * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
- * CORRECTION → [Next volant] → NEXT_PHRASE → SPEAKING_FR
+ * CORRECTION → commande vocale immédiate ou [Next volant seul] → NEXT_PHRASE → SPEAKING_FR
  * Previous volant en saisie : Repeat French · voix : Previous · correction : Remind + phrase suivante
  */
 
@@ -105,22 +105,44 @@ export class LoopManager extends EventTarget {
     if (!this.running) return;
     this._emit("transcript", { buffer: detail.buffer, partial: detail.partial });
 
-    if (this._busy || this.state !== LOOP_STATES.LISTENING || detail.partial || !detail.text) return;
+    if (this._busy || detail.partial || !detail.text) return;
 
-    const command = detectCommand(detail.buffer, { phase: "listening" });
-    if (command?.type !== "PREVIOUS") return;
+    if (this.state === LOOP_STATES.LISTENING) {
+      const command = detectCommand(detail.buffer, { phase: "listening" });
+      if (command?.type !== "PREVIOUS") return;
 
-    if (command.before) stt.setBuffer(command.before);
-    else stt.clearBuffer();
+      if (command.before) stt.setBuffer(command.before);
+      else stt.clearBuffer();
 
-    this._busy = true;
-    this._onPrevious()
-      .catch((err) => {
-        this._emit("log", { level: "warn", message: String(err?.message || err) });
-      })
-      .finally(() => {
-        this._busy = false;
-      });
+      this._busy = true;
+      this._onPrevious()
+        .catch((err) => {
+          this._emit("log", { level: "warn", message: String(err?.message || err) });
+        })
+        .finally(() => {
+          this._busy = false;
+        });
+      return;
+    }
+
+    // CORRECTION: voice commands apply immediately (same as LISTENING "previous").
+    // Physical Next without a trailing command still advances via onPhysicalNext().
+    if (this.state === LOOP_STATES.CORRECTION) {
+      const command = detectCommand(detail.buffer, { phase: "correction" });
+      if (!command) return;
+
+      stt.clearBuffer();
+      this._busy = true;
+      stt
+        .pause()
+        .then(() => this._dispatch(command, { phase: "correction" }))
+        .catch((err) => {
+          this._emit("log", { level: "warn", message: String(err?.message || err) });
+        })
+        .finally(() => {
+          this._busy = false;
+        });
+    }
   }
 
   /**
