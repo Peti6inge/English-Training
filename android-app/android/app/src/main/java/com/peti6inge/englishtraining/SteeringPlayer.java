@@ -82,25 +82,29 @@ final class SteeringPlayer extends ForwardingPlayer {
 
   @Override
   public void seekToNext() {
-    CarMediaBridge.emit("next");
+    CarMediaBridge.emit("next", "player");
+    super.seekToNext();
     CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToNextMediaItem() {
-    CarMediaBridge.emit("next");
+    CarMediaBridge.emit("next", "player");
+    super.seekToNextMediaItem();
     CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToPrevious() {
-    CarMediaBridge.emit("previous");
+    CarMediaBridge.emit("previous", "player");
+    super.seekToPrevious();
     CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToPreviousMediaItem() {
-    CarMediaBridge.emit("previous");
+    CarMediaBridge.emit("previous", "player");
+    super.seekToPreviousMediaItem();
     CarMediaService.ensurePlaying();
   }
 }

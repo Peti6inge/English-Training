@@ -89,9 +89,10 @@ public class CarMediaService extends MediaLibraryService {
     exoPlayer = new ExoPlayer.Builder(this).build();
     exoPlayer.setAudioAttributes(audioAttributes, /* handleAudioFocus= */ false);
     exoPlayer.setRepeatMode(Player.REPEAT_MODE_ALL);
+    exoPlayer.setPauseAtEndOfMediaItems(false);
     exoPlayer.setVolume(1f);
     player = new SteeringPlayer(exoPlayer);
-    exoPlayer.setMediaSource(CarMediaBridge.silenceSource());
+    exoPlayer.setMediaItems(CarMediaBridge.keepAliveQueue());
     exoPlayer.setPlayWhenReady(true);
     exoPlayer.prepare();
     exoPlayer.addListener(
@@ -107,7 +108,7 @@ public class CarMediaService extends MediaLibraryService {
           public void onPlaybackStateChanged(int playbackState) {
             if (stopping) return;
             if (playbackState == Player.STATE_ENDED || playbackState == Player.STATE_IDLE) {
-              handler.post(CarMediaService.this::restartSilence);
+              handler.post(CarMediaService.this::restartKeepAlive);
             }
           }
         });
@@ -154,9 +155,9 @@ public class CarMediaService extends MediaLibraryService {
     ensurePlayingInternal();
   }
 
-  private void restartSilence() {
+  private void restartKeepAlive() {
     if (stopping || exoPlayer == null) return;
-    exoPlayer.setMediaSource(CarMediaBridge.silenceSource());
+    exoPlayer.setMediaItems(CarMediaBridge.keepAliveQueue());
     exoPlayer.prepare();
     exoPlayer.setPlayWhenReady(true);
     exoPlayer.play();
@@ -166,7 +167,7 @@ public class CarMediaService extends MediaLibraryService {
     if (stopping || exoPlayer == null) return;
     int state = exoPlayer.getPlaybackState();
     if (state == Player.STATE_IDLE || state == Player.STATE_ENDED) {
-      restartSilence();
+      restartKeepAlive();
       return;
     }
     if (!exoPlayer.getPlayWhenReady()) {
@@ -246,27 +247,30 @@ public class CarMediaService extends MediaLibraryService {
     public boolean onMediaButtonEvent(
         MediaSession session, MediaSession.ControllerInfo controllerInfo, Intent intent) {
       KeyEvent event = intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
-      if (event != null && event.getAction() == KeyEvent.ACTION_DOWN) {
-        int code = event.getKeyCode();
-        if (code == KeyEvent.KEYCODE_MEDIA_NEXT
-            || code == KeyEvent.KEYCODE_MEDIA_SKIP_FORWARD
-            || code == KeyEvent.KEYCODE_MEDIA_FAST_FORWARD) {
-          CarMediaBridge.emit("next");
-          CarMediaService.ensurePlaying();
-          return true;
-        }
-        if (code == KeyEvent.KEYCODE_MEDIA_PREVIOUS
-            || code == KeyEvent.KEYCODE_MEDIA_SKIP_BACKWARD
-            || code == KeyEvent.KEYCODE_MEDIA_REWIND) {
-          CarMediaBridge.emit("previous");
-          CarMediaService.ensurePlaying();
-          return true;
-        }
-        if (code == KeyEvent.KEYCODE_MEDIA_PLAY
-            || code == KeyEvent.KEYCODE_MEDIA_PAUSE
-            || code == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
-          CarMediaService.ensurePlaying();
-          return true;
+      if (event != null) {
+        CarMediaBridge.emitKey(event.getKeyCode(), event.getAction());
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+          int code = event.getKeyCode();
+          if (code == KeyEvent.KEYCODE_MEDIA_NEXT
+              || code == KeyEvent.KEYCODE_MEDIA_SKIP_FORWARD
+              || code == KeyEvent.KEYCODE_MEDIA_FAST_FORWARD) {
+            CarMediaBridge.emit("next", "keycode");
+            CarMediaService.ensurePlaying();
+            return true;
+          }
+          if (code == KeyEvent.KEYCODE_MEDIA_PREVIOUS
+              || code == KeyEvent.KEYCODE_MEDIA_SKIP_BACKWARD
+              || code == KeyEvent.KEYCODE_MEDIA_REWIND) {
+            CarMediaBridge.emit("previous", "keycode");
+            CarMediaService.ensurePlaying();
+            return true;
+          }
+          if (code == KeyEvent.KEYCODE_MEDIA_PLAY
+              || code == KeyEvent.KEYCODE_MEDIA_PAUSE
+              || code == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
+            CarMediaService.ensurePlaying();
+            return true;
+          }
         }
       }
       return MediaLibraryService.MediaLibrarySession.Callback.super.onMediaButtonEvent(
@@ -290,7 +294,7 @@ public class CarMediaService extends MediaLibraryService {
         int pageSize,
         @Nullable MediaLibraryService.LibraryParams params) {
       return Futures.immediateFuture(
-          LibraryResult.ofItemList(ImmutableList.of(CarMediaBridge.playableItem()), params));
+          LibraryResult.ofItemList(ImmutableList.copyOf(CarMediaBridge.keepAliveQueue()), params));
     }
 
     @Override
@@ -298,7 +302,7 @@ public class CarMediaService extends MediaLibraryService {
         MediaLibraryService.MediaLibrarySession session,
         MediaSession.ControllerInfo browser,
         String mediaId) {
-      return Futures.immediateFuture(LibraryResult.ofItem(CarMediaBridge.playableItem(), null));
+      return Futures.immediateFuture(LibraryResult.ofItem(CarMediaBridge.keepAliveItem(mediaId), null));
     }
   }
 }
