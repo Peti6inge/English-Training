@@ -62,9 +62,9 @@ adb install -r android\app\build\outputs\apk\debug\app-debug.apk
 3. Aller tout en bas sur **Version**, taper 10 fois pour activer le **mode développeur**.
 4. Menu ⋮ → **Paramètres développeur** → activer **Sources inconnues**.
 5. Reconnecter le téléphone à la voiture.
-6. Dans Android Auto, ouvrir **English Training** comme source média.
+6. Dans Android Auto, ouvrir **English Training** comme source média (pas Spotify).
 7. Démarrer une session dans l’app (bouton Démarrer) : une notification « Session média voiture active » doit rester visible.
-8. Tester Next / Previous au volant.
+8. Tester Next / Previous au volant. La session média doit rester « en lecture » même pendant la dictée — c’est elle qui reçoit les touches du volant.
 
 Documentation Google :  
 https://developer.android.com/training/cars/testing

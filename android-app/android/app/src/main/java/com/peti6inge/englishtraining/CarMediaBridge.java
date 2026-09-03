@@ -48,6 +48,6 @@ final class CarMediaBridge {
   }
 
   static SilenceMediaSource silenceSource() {
-    return new SilenceMediaSource.Factory().setDurationUs(60_000_000L).createMediaSource();
+    return new SilenceMediaSource.Factory().setDurationUs(10L * 60L * 1_000_000L).createMediaSource();
   }
 }

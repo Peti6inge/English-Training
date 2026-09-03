@@ -39,6 +39,11 @@ final class SteeringPlayer extends ForwardingPlayer {
   }
 
   @Override
+  public MediaMetadata getPlaylistMetadata() {
+    return CarMediaBridge.metadata();
+  }
+
+  @Override
   public MediaItem getCurrentMediaItem() {
     MediaItem current = super.getCurrentMediaItem();
     if (current == null) {
@@ -48,22 +53,54 @@ final class SteeringPlayer extends ForwardingPlayer {
   }
 
   @Override
+  public void play() {
+    super.play();
+  }
+
+  @Override
+  public void pause() {
+    if (CarMediaService.isStopping()) {
+      super.pause();
+      return;
+    }
+    super.play();
+  }
+
+  @Override
+  public void stop() {
+    if (CarMediaService.isStopping()) {
+      super.stop();
+      return;
+    }
+    super.play();
+  }
+
+  @Override
+  public void setPlayWhenReady(boolean playWhenReady) {
+    super.setPlayWhenReady(CarMediaService.isStopping() ? playWhenReady : true);
+  }
+
+  @Override
   public void seekToNext() {
     CarMediaBridge.emit("next");
+    CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToNextMediaItem() {
     CarMediaBridge.emit("next");
+    CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToPrevious() {
     CarMediaBridge.emit("previous");
+    CarMediaService.ensurePlaying();
   }
 
   @Override
   public void seekToPreviousMediaItem() {
     CarMediaBridge.emit("previous");
+    CarMediaService.ensurePlaying();
   }
 }

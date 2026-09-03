@@ -46,6 +46,13 @@ public class CarMediaPlugin extends Plugin {
   }
 
   @PluginMethod
+  public void keepAlive(PluginCall call) {
+    startService(CarMediaService.ACTION_KEEP_ALIVE);
+    CarMediaService.ensurePlaying();
+    call.resolve();
+  }
+
+  @PluginMethod
   public void stopSession(PluginCall call) {
     Intent intent = new Intent(getContext(), CarMediaService.class);
     intent.setAction(CarMediaService.ACTION_STOP);

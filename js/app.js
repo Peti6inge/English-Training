@@ -247,11 +247,11 @@ async function boot() {
     $("btn-start").disabled = true;
     $("btn-stop").disabled = false;
     try {
-      await stt.init();
       const nativeOk = await initNativeCarMedia(loop);
-      const mediaOk = initMediaSession(loop);
+      const mediaOk = nativeOk ? false : initMediaSession(loop);
       if (nativeOk) log("Pont Android Auto / MediaSession natif actif");
       else if (mediaOk) log("Touches média volant actives (Next / Previous)");
+      await stt.init();
       await loop.start();
     } catch (err) {
       log(err.message || String(err));

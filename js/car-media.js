@@ -3,6 +3,9 @@
  * No-op in the browser PWA.
  */
 
+let listenersBound = false;
+let lastTitle = "";
+
 function nativePlugin() {
   const cap = globalThis.Capacitor;
   if (!cap?.isNativePlatform?.()) return null;
@@ -22,32 +25,40 @@ export async function initNativeCarMedia(loop) {
     title: phrase?.fr || "English Training",
     artist: "English Training · session",
   });
+  lastTitle = phrase?.fr || "English Training";
 
   const update = async (nextPhrase) => {
+    const title = nextPhrase?.fr || "English Training";
     try {
-      await plugin.updateMetadata({
-        title: nextPhrase?.fr || "English Training",
-        artist: "English Training · session",
-      });
+      if (title !== lastTitle) {
+        lastTitle = title;
+        await plugin.updateMetadata({
+          title,
+          artist: "English Training · session",
+        });
+      } else if (typeof plugin.keepAlive === "function") {
+        await plugin.keepAlive();
+      }
     } catch {
       /* native session may already be stopped */
     }
   };
 
-  await plugin.addListener("next", () => {
-    loop.onPhysicalNext();
-  });
-  await plugin.addListener("previous", () => {
-    loop.onPhysicalPrevious();
-  });
-
-  loop.addEventListener("state", (ev) => {
-    update(ev.detail.phrase);
-  });
-
-  loop.addEventListener("session-stop", () => {
-    plugin.stopSession().catch(() => {});
-  });
+  if (!listenersBound) {
+    listenersBound = true;
+    await plugin.addListener("next", () => {
+      loop.onPhysicalNext();
+    });
+    await plugin.addListener("previous", () => {
+      loop.onPhysicalPrevious();
+    });
+    loop.addEventListener("state", (ev) => {
+      update(ev.detail.phrase);
+    });
+    loop.addEventListener("session-stop", () => {
+      plugin.stopSession().catch(() => {});
+    });
+  }
 
   await update(phrase);
   return true;

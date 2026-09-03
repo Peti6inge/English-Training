@@ -1,6 +1,9 @@
 package com.peti6inge.englishtraining;
 
+import android.media.AudioAttributes;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import com.getcapacitor.Plugin;
@@ -12,18 +15,32 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @CapacitorPlugin(name = "NativeTts")
 public class NativeTtsPlugin extends Plugin {
+  private static final long SPEAK_TIMEOUT_MS = 20_000L;
+
   private TextToSpeech tts;
   private boolean ready = false;
   private PluginCall pendingSpeak;
+  private String pendingUtteranceId;
   private final AtomicInteger utteranceSeq = new AtomicInteger();
+  private final Handler main = new Handler(Looper.getMainLooper());
+  private final Runnable speakTimeout = this::timeoutSpeak;
 
   @Override
   public void load() {
-    tts = new TextToSpeech(getContext(), status -> ready = status == TextToSpeech.SUCCESS);
+    tts =
+        new TextToSpeech(
+            getContext(),
+            status -> {
+              ready = status == TextToSpeech.SUCCESS;
+              if (ready && tts != null) {
+                applySpeechAudioAttributes();
+              }
+            });
   }
 
   @Override
   protected void handleOnDestroy() {
+    main.removeCallbacks(speakTimeout);
     if (tts != null) {
       tts.shutdown();
       tts = null;
@@ -38,23 +55,19 @@ public class NativeTtsPlugin extends Plugin {
       call.resolve();
       return;
     }
-    getBridge()
-        .getWebView()
-        .postDelayed(
-            () -> {
-              if (ready) call.resolve();
-              else call.reject("TTS init failed");
-            },
-            800);
+    main.postDelayed(
+        () -> {
+          if (ready) call.resolve();
+          else call.reject("TTS init failed");
+        },
+        800);
   }
 
   @PluginMethod
   public void cancel(PluginCall call) {
-    if (pendingSpeak != null) {
-      pendingSpeak.resolve();
-      pendingSpeak = null;
-    }
+    finishSpeak(false);
     if (tts != null) tts.stop();
+    CarMediaService.ensurePlaying();
     call.resolve();
   }
 
@@ -70,10 +83,7 @@ public class NativeTtsPlugin extends Plugin {
       return;
     }
 
-    if (pendingSpeak != null) {
-      pendingSpeak.resolve();
-      pendingSpeak = null;
-    }
+    finishSpeak(false);
 
     String lang = call.getString("lang", "fr-FR");
     float rate = call.getFloat("rate", 0.95f);
@@ -83,36 +93,41 @@ public class NativeTtsPlugin extends Plugin {
       tts.setLanguage(Locale.getDefault());
     }
     tts.setSpeechRate(rate);
+    applySpeechAudioAttributes();
 
     String utteranceId = "et-" + utteranceSeq.incrementAndGet();
+    pendingUtteranceId = utteranceId;
     pendingSpeak = call;
     tts.setOnUtteranceProgressListener(
         new UtteranceProgressListener() {
           @Override
-          public void onStart(String id) {}
+          public void onStart(String id) {
+            CarMediaService.ensurePlaying();
+          }
 
           @Override
           public void onDone(String id) {
-            finishSpeak(id, false);
+            completeIfCurrent(id, false);
           }
 
           @Override
           @Deprecated
           public void onError(String id) {
-            finishSpeak(id, true);
+            completeIfCurrent(id, true);
           }
 
           @Override
           public void onError(String id, int errorCode) {
-            finishSpeak(id, true);
+            completeIfCurrent(id, true);
           }
 
-          private void finishSpeak(String id, boolean failed) {
-            if (!utteranceId.equals(id) || pendingSpeak == null) return;
-            PluginCall active = pendingSpeak;
-            pendingSpeak = null;
-            if (failed) active.reject("TTS playback error");
-            else active.resolve();
+          private void completeIfCurrent(String id, boolean failed) {
+            main.post(
+                () -> {
+                  if (!utteranceId.equals(id)) return;
+                  finishSpeak(failed);
+                  CarMediaService.ensurePlaying();
+                });
           }
         });
 
@@ -122,7 +137,37 @@ public class NativeTtsPlugin extends Plugin {
     int result = tts.speak(text, TextToSpeech.QUEUE_FLUSH, params, utteranceId);
     if (result != TextToSpeech.SUCCESS) {
       pendingSpeak = null;
+      pendingUtteranceId = null;
       call.reject("TTS speak failed");
+      CarMediaService.ensurePlaying();
+      return;
     }
+    main.removeCallbacks(speakTimeout);
+    main.postDelayed(speakTimeout, SPEAK_TIMEOUT_MS);
+  }
+
+  private void applySpeechAudioAttributes() {
+    if (tts == null) return;
+    AudioAttributes attrs =
+        new AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+            .build();
+    tts.setAudioAttributes(attrs);
+  }
+
+  private void timeoutSpeak() {
+    finishSpeak(false);
+    CarMediaService.ensurePlaying();
+  }
+
+  private void finishSpeak(boolean failed) {
+    main.removeCallbacks(speakTimeout);
+    PluginCall active = pendingSpeak;
+    pendingSpeak = null;
+    pendingUtteranceId = null;
+    if (active == null) return;
+    if (failed) active.reject("TTS playback error");
+    else active.resolve();
   }
 }
