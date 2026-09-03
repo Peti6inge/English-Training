@@ -48,9 +48,11 @@ function renderCommandList(state) {
     .join("");
 }
 
-function renderPhrase(phrase) {
+function renderPhrase(phrase, state = LOOP_STATES.IDLE) {
   if (!phrase) return;
-  $("phrase-fr").textContent = phrase.fr;
+  const showEn = state === LOOP_STATES.FEEDBACK || state === LOOP_STATES.CORRECTION;
+  $("phrase-kicker").textContent = showEn ? "Phrase anglaise" : "Phrase française";
+  $("phrase-fr").textContent = showEn ? phrase.en : phrase.fr;
   $("phrase-index").textContent = queue.isInterlude()
     ? `rappel · ${queue.indexOfCurrent() + 1} / ${queue.ids.length}`
     : `${queue.indexOfCurrent() + 1} / ${queue.ids.length}`;
@@ -203,7 +205,7 @@ async function boot() {
 
   loop.addEventListener("state", (ev) => {
     renderMachine(ev.detail.state);
-    renderPhrase(ev.detail.phrase);
+    renderPhrase(ev.detail.phrase, ev.detail.state);
     renderCommandList(ev.detail.state);
     if (ev.detail.state === LOOP_STATES.LISTENING) {
       setBadge("listen", `${stt.engine} · micro ouvert`);
