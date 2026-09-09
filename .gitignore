@@ -17,3 +17,10 @@ android-app/android/local.properties
 android-app/android/captures/
 android-app/android/*.iml
 android-app/android/.idea/
+commodo-lab/android/.gradle/
+commodo-lab/android/build/
+commodo-lab/android/app/build/
+commodo-lab/android/local.properties
+commodo-lab/android/captures/
+commodo-lab/android/*.iml
+commodo-lab/android/.idea/

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Commodolab"
+            android:textColor="@color/gold"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/muted"
+            android:textSize="13sp"
+            android:text="…" />
+
+        <TextView
+            android:id="@+id/verdict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gold"
+            android:textSize="16sp"
+            android:text="Verdict : —" />
+
+        <TextView
+            android:id="@+id/counters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text"
+            android:textSize="18sp"
+            android:text="Next 0 · Prev 0 · Miss 0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Mode player"
+            android:textColor="@color/gold"
+            android:textAllCaps="true"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:id="@+id/modes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/mode_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textColor="@color/text"
+                android:text="A — lecture keep-alive (comme English Training)" />
+
+            <RadioButton
+                android:id="@+id/mode_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="B — session en pause" />
+
+            <RadioButton
+                android:id="@+id/mode_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="C — pas de player média (touches brutes)" />
+
+            <RadioButton
+                android:id="@+id/mode_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="D — keep-alive + beep au skip" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Déclarer l’essai puis appuyer dans les 8 s"
+            android:textColor="@color/gold"
+            android:textAllCaps="true"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_commod_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Commodol NEXT" />
+
+        <Button
+            android:id="@+id/btn_commod_prev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Commodol PREV" />
+
+        <Button
+            android:id="@+id/btn_screen_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Écran AA NEXT" />
+
+        <Button
+            android:id="@+id/btn_screen_prev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Écran AA PREV" />
+
+        <Button
+            android:id="@+id/btn_unknown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INCONNU (j’appuie sans label)" />
+
+        <Button
+            android:id="@+id/btn_notif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accès notifications (sessions Spotify)" />
+
+        <Button
+            android:id="@+id/btn_export"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exporter JSONL" />
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/muted"
+            android:textSize="12sp"
+            android:text="Journal…" />
+    </LinearLayout>
+</ScrollView>

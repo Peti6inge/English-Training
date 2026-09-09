@@ -1,0 +1,9 @@
+{
+  "name": "commodo-lab",
+  "private": true,
+  "version": "1.0.0",
+  "description": "APK labo pour identifier le canal Next/Previous du commodo",
+  "scripts": {
+    "build:apk": "node ./scripts/assemble-debug.mjs"
+  }
+}
