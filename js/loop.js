@@ -24,6 +24,7 @@ export class LoopManager extends EventTarget {
     this.state = LOOP_STATES.IDLE;
     this.running = false;
     this._busy = false;
+    this._pendingWheel = null;
     this._onTranscript = (ev) => this._handleTranscript(ev.detail);
   }
 
@@ -34,6 +35,9 @@ export class LoopManager extends EventTarget {
   setState(state, extra = {}) {
     this.state = state;
     this._emit("state", { state, phrase: queue.current(), ...extra });
+    if (state === LOOP_STATES.LISTENING || state === LOOP_STATES.CORRECTION) {
+      this._flushWheel();
+    }
   }
 
   _commandPhase() {
@@ -52,12 +56,42 @@ export class LoopManager extends EventTarget {
       // The first microphone acquisition happens only after the French prompt.
       await this._speakCurrent();
     } finally {
-      this._busy = false;
+      this._releaseBusy();
     }
+  }
+
+  _wheelArmed() {
+    return (
+      this.running &&
+      !this._busy &&
+      (this.state === LOOP_STATES.LISTENING || this.state === LOOP_STATES.CORRECTION)
+    );
+  }
+
+  _releaseBusy() {
+    this._busy = false;
+    this._flushWheel();
+  }
+
+  _queueWheel(direction) {
+    if (!this.running) return Promise.resolve();
+    this._pendingWheel = direction;
+    return this._flushWheel();
+  }
+
+  _flushWheel() {
+    if (!this._pendingWheel || !this._wheelArmed()) return Promise.resolve();
+    const direction = this._pendingWheel;
+    this._pendingWheel = null;
+    const run = direction === "previous" ? this._executePhysicalPrevious() : this._executePhysicalNext();
+    return Promise.resolve(run).catch((err) => {
+      this._emit("log", { level: "warn", message: String(err?.message || err) });
+    });
   }
 
   async stop() {
     this.running = false;
+    this._pendingWheel = null;
     stt.setManualValidation(false);
     stt.removeEventListener("transcript", this._onTranscript);
     tts.cancel();
@@ -120,7 +154,7 @@ export class LoopManager extends EventTarget {
           this._emit("log", { level: "warn", message: String(err?.message || err) });
         })
         .finally(() => {
-          this._busy = false;
+          this._releaseBusy();
         });
       return;
     }
@@ -140,18 +174,27 @@ export class LoopManager extends EventTarget {
           this._emit("log", { level: "warn", message: String(err?.message || err) });
         })
         .finally(() => {
-          this._busy = false;
+          this._releaseBusy();
         });
     }
   }
 
   /**
    * Physical or UI Next — validates the answer (listening) or runs a voice command (correction).
+   * Appuis pendant TTS / évaluation sont mémorisés et rejoués dès LISTENING ou CORRECTION.
    */
-  async onPhysicalNext() {
-    if (!this.running || this._busy) return;
-    if (this.state !== LOOP_STATES.LISTENING && this.state !== LOOP_STATES.CORRECTION) return;
+  onPhysicalNext() {
+    return this._queueWheel("next");
+  }
 
+  /**
+   * Physical or UI Previous — Repeat French while capturing; Remind + next in correction.
+   */
+  onPhysicalPrevious() {
+    return this._queueWheel("previous");
+  }
+
+  async _executePhysicalNext() {
     this._busy = true;
     await stt.pause();
     stt.commitPartial();
@@ -172,17 +215,11 @@ export class LoopManager extends EventTarget {
 
       await this._advanceFromCorrection();
     } finally {
-      this._busy = false;
+      this._releaseBusy();
     }
   }
 
-  /**
-   * Physical or UI Previous — Repeat French while capturing; Remind + next in correction.
-   */
-  async onPhysicalPrevious() {
-    if (!this.running || this._busy) return;
-    if (this.state !== LOOP_STATES.LISTENING && this.state !== LOOP_STATES.CORRECTION) return;
-
+  async _executePhysicalPrevious() {
     this._busy = true;
     await stt.pause();
 
@@ -200,7 +237,7 @@ export class LoopManager extends EventTarget {
       }
       await this._advanceFromCorrection();
     } finally {
-      this._busy = false;
+      this._releaseBusy();
     }
   }
 
@@ -355,7 +392,7 @@ export class LoopManager extends EventTarget {
       const fake = { type, before: spoken, after: extra.note || "", raw: spoken };
       await this._dispatch(fake, { phase: this._commandPhase() });
     } finally {
-      this._busy = false;
+      this._releaseBusy();
     }
   }
 }

@@ -13,11 +13,21 @@ final class CarMediaBridge {
   static volatile CarMediaPlugin plugin;
   static volatile String title = "English Training";
   static volatile String artist = "Session";
-
-  private static long lastEmitAt;
-  private static String lastEmitEvent;
+  static final WheelCommandBuffer wheel = new WheelCommandBuffer();
 
   private CarMediaBridge() {}
+
+  static void attachPlugin(CarMediaPlugin next) {
+    plugin = next;
+    if (next != null) flushPending();
+  }
+
+  static void detachPlugin(CarMediaPlugin current) {
+    if (plugin == current) {
+      plugin = null;
+      wheel.markUndelivered();
+    }
+  }
 
   static void emit(String event) {
     emit(event, null);
@@ -25,18 +35,9 @@ final class CarMediaBridge {
 
   static void emit(String event, String source) {
     long now = SystemClock.elapsedRealtime();
-    if (event.equals(lastEmitEvent) && now - lastEmitAt < 280) {
-      return;
-    }
-    lastEmitAt = now;
-    lastEmitEvent = event;
-    CarMediaPlugin current = plugin;
-    if (current == null) return;
-    JSObject data = new JSObject();
-    if (source != null && !source.isEmpty()) {
-      data.put("source", source);
-    }
-    current.emit(event, data);
+    if (!wheel.accept(event, now)) return;
+    boolean delivered = deliver(event, source);
+    wheel.hold(event, source, now, delivered);
   }
 
   static void emitKey(int keyCode, int action) {
@@ -46,6 +47,38 @@ final class CarMediaBridge {
     data.put("keyCode", keyCode);
     data.put("action", action);
     current.emit("mediakey", data);
+  }
+
+  static JSObject drainPending() {
+    JSObject ret = new JSObject();
+    WheelCommandBuffer.Pending pending = wheel.takeUndelivered(SystemClock.elapsedRealtime());
+    if (pending == null) return ret;
+    ret.put("event", pending.event);
+    if (pending.source != null && !pending.source.isEmpty()) {
+      ret.put("source", pending.source);
+    }
+    return ret;
+  }
+
+  static void flushPending() {
+    CarMediaPlugin current = plugin;
+    if (current == null) return;
+    long now = SystemClock.elapsedRealtime();
+    WheelCommandBuffer.Pending pending = wheel.takeUndelivered(now);
+    if (pending == null) return;
+    boolean delivered = deliver(pending.event, pending.source);
+    wheel.hold(pending.event, pending.source, now, delivered);
+  }
+
+  private static boolean deliver(String event, String source) {
+    CarMediaPlugin current = plugin;
+    if (current == null) return false;
+    JSObject data = new JSObject();
+    if (source != null && !source.isEmpty()) {
+      data.put("source", source);
+    }
+    current.emit(event, data);
+    return true;
   }
 
   static MediaMetadata metadata() {

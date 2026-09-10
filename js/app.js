@@ -8,7 +8,7 @@ import { audioCues } from "./audio-cues.js";
 import { wakeLock } from "./wake-lock.js";
 import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
 import { initMediaSession } from "./media-session.js";
-import { initNativeCarMedia, isNativeAndroid, setNativeMediaRelay, openNotificationAccess } from "./car-media.js";
+import { initNativeCarMedia, holdNativeCarMedia, isNativeAndroid, setNativeMediaRelay, openNotificationAccess } from "./car-media.js";
 
 const $ = (id) => document.getElementById(id);
 const STATES = [
@@ -183,6 +183,15 @@ async function boot() {
     log(`TTS: ${err.message || String(err)}`);
   }
 
+  if (isNativeAndroid()) {
+    try {
+      const held = await holdNativeCarMedia(loop, { onLog: log });
+      if (held) log("Session média volant active (AVRCP / commodos)");
+    } catch (err) {
+      log(`Session média: ${err.message || String(err)}`);
+    }
+  }
+
   stt.addEventListener("status", (ev) => {
     const { status, engine, message, ratio } = ev.detail;
     const blockingLoad = status === "loading-wasm" && !stt._listening;
@@ -256,7 +265,7 @@ async function boot() {
         mediaRelay: storage.getSettings().mediaRelay,
       });
       const mediaOk = nativeOk ? false : initMediaSession(loop);
-      if (nativeOk) log("Pont Android Auto / MediaSession natif actif");
+      if (nativeOk) log("Commodos volant reliés à la session");
       else if (mediaOk) log("Touches média volant actives (Next / Previous)");
       await stt.init();
       await loop.start();

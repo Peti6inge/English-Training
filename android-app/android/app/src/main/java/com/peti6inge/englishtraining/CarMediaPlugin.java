@@ -15,29 +15,42 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "CarMedia")
 public class CarMediaPlugin extends Plugin {
   void emit(String event, JSObject data) {
-    notifyListeners(event, data != null ? data : new JSObject());
+    notifyListeners(event, data != null ? data : new JSObject(), true);
   }
 
   @Override
   public void load() {
-    CarMediaBridge.plugin = this;
+    CarMediaBridge.attachPlugin(this);
+    startHoldSession();
+  }
+
+  @Override
+  protected void handleOnResume() {
+    CarMediaBridge.attachPlugin(this);
+    super.handleOnResume();
   }
 
   @Override
   protected void handleOnDestroy() {
-    CarMediaBridge.plugin = null;
+    CarMediaBridge.detachPlugin(this);
     super.handleOnDestroy();
   }
 
   @PluginMethod
   public void startSession(PluginCall call) {
     applyCallMetadata(call);
-    startService(CarMediaService.ACTION_START);
+    startHoldSession();
+    CarMediaBridge.flushPending();
     JSObject ret = new JSObject();
     ret.put("ok", true);
     ret.put("notifications", hasNotificationPermission());
     ret.put("notificationListener", isNotificationListenerEnabled());
     call.resolve(ret);
+  }
+
+  @PluginMethod
+  public void drainPending(PluginCall call) {
+    call.resolve(CarMediaBridge.drainPending());
   }
 
   @PluginMethod
@@ -96,6 +109,14 @@ public class CarMediaPlugin extends Plugin {
     }
     if (artist != null && !artist.isEmpty()) {
       CarMediaBridge.artist = artist;
+    }
+  }
+
+  private void startHoldSession() {
+    try {
+      startService(CarMediaService.ACTION_START);
+    } catch (Exception ignored) {
+      /* JS boot retries via startSession */
     }
   }
 
