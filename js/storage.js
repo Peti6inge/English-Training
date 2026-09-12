@@ -17,8 +17,6 @@ const LS = {
 const DEFAULT_SETTINGS = Object.freeze({
   /** Play media-channel beeps when the microphone opens or closes. */
   micCues: true,
-  /** Relay steering-wheel skips from Spotify / other media apps. */
-  mediaRelay: false,
 });
 
 function readJson(key, fallback) {
@@ -185,7 +183,7 @@ export const storage = {
     return list;
   },
 
-  /** @returns {{ micCues: boolean, mediaRelay: boolean }} */
+  /** @returns {{ micCues: boolean }} */
   getSettings() {
     return { ...DEFAULT_SETTINGS, ...readJson(LS.settings, {}) };
   },

@@ -8,7 +8,7 @@ import { audioCues } from "./audio-cues.js";
 import { wakeLock } from "./wake-lock.js";
 import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
 import { initMediaSession } from "./media-session.js";
-import { initNativeCarMedia, holdNativeCarMedia, isNativeAndroid, setNativeMediaRelay, openNotificationAccess } from "./car-media.js";
+import { initNativeCarMedia, holdNativeCarMedia, isNativeAndroid } from "./car-media.js";
 
 const $ = (id) => document.getElementById(id);
 const STATES = [
@@ -116,8 +116,6 @@ function clearFeedback() {
 function renderSettings() {
   const settings = storage.getSettings();
   $("setting-mic-cues").checked = settings.micCues;
-  $("setting-media-relay").checked = settings.mediaRelay;
-  $("setting-media-relay-row").hidden = !isNativeAndroid();
   const note = $("wake-lock-note");
   note.textContent = wakeLock.supported
     ? "Écran actif automatiquement pendant une session (Wake Lock)."
@@ -260,10 +258,7 @@ async function boot() {
     $("btn-start").disabled = true;
     $("btn-stop").disabled = false;
     try {
-      const nativeOk = await initNativeCarMedia(loop, {
-        onLog: log,
-        mediaRelay: storage.getSettings().mediaRelay,
-      });
+      const nativeOk = await initNativeCarMedia(loop, { onLog: log });
       const mediaOk = nativeOk ? false : initMediaSession(loop);
       if (nativeOk) log("Commodos volant reliés à la session");
       else if (mediaOk) log("Touches média volant actives (Next / Previous)");
@@ -301,21 +296,6 @@ async function boot() {
   $("setting-mic-cues").addEventListener("change", (ev) => {
     storage.setSettings({ micCues: ev.target.checked });
     if (ev.target.checked) audioCues.micOn();
-  });
-
-  $("setting-media-relay").addEventListener("change", async (ev) => {
-    const enabled = ev.target.checked;
-    storage.setSettings({ mediaRelay: enabled });
-    if (!isNativeAndroid()) return;
-    const status = await setNativeMediaRelay(enabled);
-    if (enabled && !status.notificationListener) {
-      log("Autorisez l'accès aux notifications, puis relancez une session");
-      await openNotificationAccess();
-    } else if (enabled) {
-      log("Relais commodo via Spotify activé");
-    } else {
-      log("Relais commodo désactivé");
-    }
   });
 
   if ("serviceWorker" in navigator && !isNativeAndroid()) {

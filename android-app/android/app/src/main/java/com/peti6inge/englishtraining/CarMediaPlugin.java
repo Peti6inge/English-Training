@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.provider.Settings;
 import androidx.core.content.ContextCompat;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -40,17 +39,10 @@ public class CarMediaPlugin extends Plugin {
   public void startSession(PluginCall call) {
     applyCallMetadata(call);
     startHoldSession();
-    CarMediaBridge.flushPending();
     JSObject ret = new JSObject();
     ret.put("ok", true);
     ret.put("notifications", hasNotificationPermission());
-    ret.put("notificationListener", isNotificationListenerEnabled());
     call.resolve(ret);
-  }
-
-  @PluginMethod
-  public void drainPending(PluginCall call) {
-    call.resolve(CarMediaBridge.drainPending());
   }
 
   @PluginMethod
@@ -68,33 +60,7 @@ public class CarMediaPlugin extends Plugin {
   }
 
   @PluginMethod
-  public void setMediaRelay(PluginCall call) {
-    boolean enabled = Boolean.TRUE.equals(call.getBoolean("enabled", false));
-    MediaRelayService.setEnabled(enabled);
-    JSObject ret = new JSObject();
-    ret.put("enabled", enabled);
-    ret.put("notificationListener", isNotificationListenerEnabled());
-    call.resolve(ret);
-  }
-
-  @PluginMethod
-  public void notificationAccess(PluginCall call) {
-    JSObject ret = new JSObject();
-    ret.put("notificationListener", isNotificationListenerEnabled());
-    call.resolve(ret);
-  }
-
-  @PluginMethod
-  public void openNotificationAccess(PluginCall call) {
-    Intent intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    getContext().startActivity(intent);
-    call.resolve();
-  }
-
-  @PluginMethod
   public void stopSession(PluginCall call) {
-    MediaRelayService.setEnabled(false);
     Intent intent = new Intent(getContext(), CarMediaService.class);
     intent.setAction(CarMediaService.ACTION_STOP);
     getContext().startService(intent);
@@ -132,12 +98,5 @@ public class CarMediaPlugin extends Plugin {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return true;
     return ContextCompat.checkSelfPermission(getContext(), Manifest.permission.POST_NOTIFICATIONS)
         == PackageManager.PERMISSION_GRANTED;
-  }
-
-  private boolean isNotificationListenerEnabled() {
-    String flat =
-        Settings.Secure.getString(getContext().getContentResolver(), "enabled_notification_listeners");
-    String pkg = getContext().getPackageName();
-    return flat != null && pkg != null && flat.contains(pkg);
   }
 }

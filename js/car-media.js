@@ -3,8 +3,8 @@
  * No-op in the browser PWA.
  *
  * Steering-wheel Next/Previous on the Clio + wireless AA dongle arrive as AVRCP
- * keycodes, not as Android Auto seekToNext. Keep a MediaSession for the whole
- * app lifetime so those keycodes stay routed here.
+ * keycodes. CommodoLab modes A/D keep a playing MediaSession so those keycodes
+ * stay routed here instead of skipping Spotify in the background.
  */
 
 let listenersBound = false;
@@ -31,14 +31,10 @@ async function bindListeners(plugin, loop, log) {
     if (data?.source) log(`Previous volant (${data.source})`);
     loop.onPhysicalPrevious();
   });
-  await plugin.addListener("mediakey", (data) => {
-    if (data?.action === 0) log(`Touche média keyCode=${data.keyCode}`);
-  });
   loop.addEventListener("state", (ev) => {
     updateMetadata(plugin, ev.detail.phrase).catch(() => {});
   });
   loop.addEventListener("session-stop", () => {
-    plugin.setMediaRelay?.({ enabled: false }).catch(() => {});
     lastTitle = "English Training";
     plugin
       .updateMetadata?.({
@@ -66,17 +62,7 @@ async function updateMetadata(plugin, nextPhrase) {
   }
 }
 
-async function applyPending(plugin, loop, log) {
-  if (typeof plugin.drainPending !== "function") return;
-  const pending = await plugin.drainPending();
-  const event = pending?.event;
-  if (event !== "next" && event !== "previous") return;
-  if (pending.source) log(`${event === "next" ? "Next" : "Previous"} volant (${pending.source}, différé)`);
-  if (event === "next") loop.onPhysicalNext();
-  else loop.onPhysicalPrevious();
-}
-
-/** Hold the AVRCP MediaSession as soon as the Android app is up. */
+/** Hold the AVRCP MediaSession as soon as the Android app is up (Labo A/D). */
 export async function holdNativeCarMedia(loop, { onLog } = {}) {
   const plugin = nativePlugin();
   if (!plugin) return false;
@@ -90,11 +76,10 @@ export async function holdNativeCarMedia(loop, { onLog } = {}) {
     artist: "English Training · session",
   });
   lastTitle = phrase?.fr || "English Training";
-  await applyPending(plugin, loop, log);
   return true;
 }
 
-export async function initNativeCarMedia(loop, { onLog, mediaRelay = false } = {}) {
+export async function initNativeCarMedia(loop, { onLog } = {}) {
   const plugin = nativePlugin();
   if (!plugin) return false;
 
@@ -104,31 +89,5 @@ export async function initNativeCarMedia(loop, { onLog, mediaRelay = false } = {
 
   const phrase = loop.currentPhrase();
   await updateMetadata(plugin, phrase);
-
-  if (mediaRelay && typeof plugin.setMediaRelay === "function") {
-    const status = await plugin.setMediaRelay({ enabled: true });
-    if (status?.notificationListener) log("Relais commodo via Spotify / autre appli média actif");
-    else log("Relais commodo : autoriser l'accès aux notifications pour English Training");
-  }
-
   return true;
-}
-
-export async function setNativeMediaRelay(enabled) {
-  const plugin = nativePlugin();
-  if (!plugin?.setMediaRelay) return { enabled: false, notificationListener: false };
-  return plugin.setMediaRelay({ enabled: !!enabled });
-}
-
-export async function openNotificationAccess() {
-  const plugin = nativePlugin();
-  if (!plugin?.openNotificationAccess) return false;
-  await plugin.openNotificationAccess();
-  return true;
-}
-
-export async function notificationAccessStatus() {
-  const plugin = nativePlugin();
-  if (!plugin?.notificationAccess) return { notificationListener: false };
-  return plugin.notificationAccess();
 }

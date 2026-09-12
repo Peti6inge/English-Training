@@ -168,12 +168,10 @@ public class CarMediaService extends MediaLibraryService {
     int state = exoPlayer.getPlaybackState();
     if (state == Player.STATE_IDLE || state == Player.STATE_ENDED) {
       restartKeepAlive();
-      return;
     }
-    if (!exoPlayer.getPlayWhenReady()) {
-      exoPlayer.setPlayWhenReady(true);
-    }
+    exoPlayer.setPlayWhenReady(true);
     exoPlayer.play();
+    CarMediaBridge.ourPlaying = true;
   }
 
   private void stopPlayback() {
@@ -183,6 +181,7 @@ public class CarMediaService extends MediaLibraryService {
       exoPlayer.setPlayWhenReady(false);
       exoPlayer.stop();
     }
+    CarMediaBridge.ourPlaying = false;
     stopForeground(STOP_FOREGROUND_REMOVE);
     stopSelf();
   }
@@ -247,30 +246,16 @@ public class CarMediaService extends MediaLibraryService {
     public boolean onMediaButtonEvent(
         MediaSession session, MediaSession.ControllerInfo controllerInfo, Intent intent) {
       KeyEvent event = intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
-      if (event != null) {
-        CarMediaBridge.emitKey(event.getKeyCode(), event.getAction());
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-          int code = event.getKeyCode();
-          if (code == KeyEvent.KEYCODE_MEDIA_NEXT
-              || code == KeyEvent.KEYCODE_MEDIA_SKIP_FORWARD
-              || code == KeyEvent.KEYCODE_MEDIA_FAST_FORWARD) {
-            CarMediaBridge.emit("next", "keycode");
-            CarMediaService.ensurePlaying();
-            return true;
-          }
-          if (code == KeyEvent.KEYCODE_MEDIA_PREVIOUS
-              || code == KeyEvent.KEYCODE_MEDIA_SKIP_BACKWARD
-              || code == KeyEvent.KEYCODE_MEDIA_REWIND) {
-            CarMediaBridge.emit("previous", "keycode");
-            CarMediaService.ensurePlaying();
-            return true;
-          }
-          if (code == KeyEvent.KEYCODE_MEDIA_PLAY
-              || code == KeyEvent.KEYCODE_MEDIA_PAUSE
-              || code == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
-            CarMediaService.ensurePlaying();
-            return true;
-          }
+      if (event != null && event.getAction() == KeyEvent.ACTION_DOWN) {
+        String direction = KeyCodeMapper.directionFor(event.getKeyCode());
+        if (direction != null) {
+          CarMediaBridge.emit(direction, "keycode");
+          CarMediaService.ensurePlaying();
+          return true;
+        }
+        if (KeyCodeMapper.isTransport(event.getKeyCode())) {
+          CarMediaService.ensurePlaying();
+          return true;
         }
       }
       return MediaLibraryService.MediaLibrarySession.Callback.super.onMediaButtonEvent(
