@@ -73,6 +73,40 @@ class VerdictClassifierTest {
         assertTrue(text.contains("hfp=non"))
         assertTrue(text.contains("Renault"))
         assertTrue(text.contains("com.spotify.music"))
+        assertTrue(text.contains("mic=OFF"))
+        assertTrue(text.contains("audioMode=NORMAL"))
+        assertTrue(text.contains("sco=non"))
+    }
+
+    @Test
+    fun fingerprintExposesCommunicationMode() {
+        val snap =
+            EnvSnapshot(
+                at = 1,
+                aa = true,
+                btOn = true,
+                btDevices = listOf("RENAULT"),
+                a2dp = false,
+                hfp = true,
+                activeSessions = emptyList(),
+                ourPlaying = true,
+                mode = "A",
+                mic = MicMode.COMM.name,
+                audioMode = 3,
+                scoOn = true,
+            )
+        val text = VerdictClassifier.fingerprint(snap)
+        assertTrue(text.contains("mic=COMM"))
+        assertTrue(text.contains("audioMode=IN_COMMUNICATION"))
+        assertTrue(text.contains("sco=oui"))
+    }
+
+    @Test
+    fun audioModeLabels() {
+        assertEquals("NORMAL", VerdictClassifier.audioModeLabel(0))
+        assertEquals("IN_CALL", VerdictClassifier.audioModeLabel(2))
+        assertEquals("IN_COMMUNICATION", VerdictClassifier.audioModeLabel(3))
+        assertEquals("UNKNOWN(9)", VerdictClassifier.audioModeLabel(9))
     }
 
     @Test

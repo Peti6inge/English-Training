@@ -33,8 +33,19 @@ object VerdictClassifier {
         val sessions = snapshot.activeSessions.joinToString(",")
         return "aa=${yn(snapshot.aa)} btOn=${yn(snapshot.btOn)} a2dp=${yn(snapshot.a2dp)} " +
             "hfp=${yn(snapshot.hfp)} ourPlaying=${yn(snapshot.ourPlaying)} " +
-            "mode=${snapshot.mode} btDevices=[$devices] activeSessions=[$sessions]"
+            "mode=${snapshot.mode} mic=${snapshot.mic} audioMode=${audioModeLabel(snapshot.audioMode)} " +
+            "sco=${yn(snapshot.scoOn)} btDevices=[$devices] activeSessions=[$sessions]"
     }
+
+    fun audioModeLabel(mode: Int): String =
+        when (mode) {
+            0 -> "NORMAL"
+            1 -> "RINGTONE"
+            2 -> "IN_CALL"
+            3 -> "IN_COMMUNICATION"
+            4 -> "CALL_SCREENING"
+            else -> "UNKNOWN($mode)"
+        }
 
     private fun yn(value: Boolean): String = if (value) "oui" else "non"
 }

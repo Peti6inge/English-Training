@@ -50,6 +50,13 @@ final class CarMediaBridge {
     current.emit(event, data);
   }
 
+  /** Non-debounced diagnostic event (audio mode / SCO watchdog). */
+  static void emitRaw(String event, JSObject data) {
+    CarMediaPlugin current = plugin;
+    if (current == null) return;
+    current.emit(event, data);
+  }
+
   static MediaMetadata metadata() {
     return new MediaMetadata.Builder()
         .setTitle(title)

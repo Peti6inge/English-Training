@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.ServiceInfo;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,6 +21,7 @@ import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.session.LibraryResult;
 import androidx.media3.session.MediaLibraryService;
 import androidx.media3.session.MediaSession;
+import com.getcapacitor.JSObject;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -38,12 +41,15 @@ public class CarMediaService extends MediaLibraryService {
   private ExoPlayer exoPlayer;
   private SteeringPlayer player;
   private MediaLibraryService.MediaLibrarySession session;
+  private AudioManager audioManager;
+  private boolean lastAudioAbnormal;
   private final Handler handler = new Handler(Looper.getMainLooper());
   private final Runnable keepAliveTick =
       new Runnable() {
         @Override
         public void run() {
           ensurePlayingInternal();
+          guardAudioMode();
           if (!stopping && exoPlayer != null) {
             handler.postDelayed(this, KEEP_ALIVE_MS);
           }
@@ -65,6 +71,7 @@ public class CarMediaService extends MediaLibraryService {
     super.onCreate();
     stopping = false;
     instance = this;
+    audioManager = getSystemService(AudioManager.class);
     ensureChannel();
     NotificationCompat.Builder notif =
         new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -172,6 +179,54 @@ public class CarMediaService extends MediaLibraryService {
     exoPlayer.setPlayWhenReady(true);
     exoPlayer.play();
     CarMediaBridge.ourPlaying = true;
+  }
+
+  /**
+   * The car (HFP) treats MODE_IN_COMMUNICATION + Bluetooth SCO as a phone call and stops
+   * sending AVRCP MEDIA_NEXT/PREVIOUS. The WebView's getUserMedia used to trigger exactly
+   * that; capture is native now, but keep watching and restore MODE_NORMAL if anything
+   * (another app, Web Speech fallback) flips it again.
+   */
+  @SuppressWarnings("deprecation")
+  private void guardAudioMode() {
+    if (audioManager == null || stopping) return;
+    int mode;
+    boolean sco;
+    try {
+      mode = audioManager.getMode();
+      sco = audioManager.isBluetoothScoOn();
+      if (!sco && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        AudioDeviceInfo device = audioManager.getCommunicationDevice();
+        sco = device != null && device.getType() == AudioDeviceInfo.TYPE_BLUETOOTH_SCO;
+      }
+    } catch (Exception e) {
+      return;
+    }
+    boolean abnormal = mode != AudioManager.MODE_NORMAL || sco;
+    if (abnormal == lastAudioAbnormal) return;
+    lastAudioAbnormal = abnormal;
+
+    JSObject data = new JSObject();
+    data.put("audioMode", mode);
+    data.put("sco", sco);
+    data.put("restored", false);
+    if (abnormal) {
+      try {
+        if (sco) {
+          audioManager.setBluetoothScoOn(false);
+          audioManager.stopBluetoothSco();
+        }
+        if (mode != AudioManager.MODE_NORMAL) {
+          audioManager.setMode(AudioManager.MODE_NORMAL);
+        }
+        data.put("restored", true);
+      } catch (Exception e) {
+        data.put("error", String.valueOf(e.getMessage()));
+      }
+      CarMediaBridge.emitRaw("audio-warning", data);
+    } else {
+      CarMediaBridge.emitRaw("audio-normal", data);
+    }
   }
 
   private void stopPlayback() {

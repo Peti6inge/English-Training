@@ -37,6 +37,21 @@ Autoriser Bluetooth (noms d’appareils) et, pour le relais Spotify, **Accès au
 
 Si le Bluetooth se rallume entre le bouton et l’appui, l’essai reste valable : le snapshot le dira (`btOn=oui`).
 
+## Protocole micro (la variable qui manquait au labo)
+
+English Training ouvre le micro en continu via le WebView ; le labo ne l’ouvrait jamais. Le sélecteur **Micro** isole cette seule variable :
+
+- **OFF** — labo d’origine.
+- **MIC** — `AudioRecord(VOICE_RECOGNITION)`, mode audio `NORMAL`, pas de SCO.
+- **COMM** — ce que fait Chromium pour `getUserMedia` avec un casque HFP connecté : `MODE_IN_COMMUNICATION` + `startBluetoothSco()`.
+
+Mode A, puis 3 x **Commodol NEXT** dans chaque état micro. Le snapshot expose `mic`, `audioMode`, `sco`.
+
+| Résultat | Lecture |
+|---|---|
+| OFF = MIC = `HIT_KEYCODE`, COMM = `MISS` | confirmé : la Clio bascule en mode appel, les commodos ne parlent plus AVRCP média. Correctif : capture micro native dans English Training. |
+| COMM = `HIT_KEYCODE` | le micro n’est pas la cause ; retour à la piste pont Capacitor / cycle de vie. |
+
 ## Verdicts
 
 | Verdict | Signification |

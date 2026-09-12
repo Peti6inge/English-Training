@@ -95,6 +95,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:text="Micro (variable unique : English Training ouvre le micro, pas le labo)"
+            android:textColor="@color/gold"
+            android:textAllCaps="true"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:id="@+id/mics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/mic_off"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textColor="@color/text"
+                android:text="OFF — micro fermé (labo d’origine)" />
+
+            <RadioButton
+                android:id="@+id/mic_mic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="MIC — AudioRecord natif, mode audio NORMAL" />
+
+            <RadioButton
+                android:id="@+id/mic_comm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="COMM — comme le WebView : MODE_IN_COMMUNICATION + Bluetooth SCO" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Déclarer l’essai puis appuyer dans les 8 s"
             android:textColor="@color/gold"
             android:textAllCaps="true"

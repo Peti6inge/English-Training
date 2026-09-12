@@ -29,6 +29,9 @@ object LabHub {
     @Volatile
     var activeSessions: List<String> = emptyList()
 
+    @Volatile
+    var micMode: MicMode = MicMode.OFF
+
     val logListeners = CopyOnWriteArrayList<(String) -> Unit>()
     val probeListeners = CopyOnWriteArrayList<(ProbeEvent) -> Unit>()
     val statusListeners = CopyOnWriteArrayList<() -> Unit>()
@@ -65,6 +68,9 @@ object LabHub {
             activeSessions = activeSessions,
             ourPlaying = ourPlaying,
             mode = mode.name,
+            mic = micMode.name,
+            audioMode = MicProbe.audioMode(),
+            scoOn = MicProbe.scoOn(),
         )
 
     fun statusLine(): String {

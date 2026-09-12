@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         LabHub.statusListeners.add { runOnUiThread { refresh() } }
 
         requestRuntimePermissions()
+        MicProbe.init(this)
         tracker.start()
         applyMode(PlayerMode.A)
 
@@ -63,6 +64,20 @@ class MainActivity : AppCompatActivity() {
                 }
             applyMode(mode)
         }
+        findViewById<RadioGroup>(R.id.mics).setOnCheckedChangeListener { _, checkedId ->
+            val mic =
+                when (checkedId) {
+                    R.id.mic_mic -> MicMode.MIC
+                    R.id.mic_comm -> MicMode.COMM
+                    else -> MicMode.OFF
+                }
+            if (mic != MicMode.OFF && !hasRecordAudioPermission()) {
+                LabHub.log("RECORD_AUDIO manquant — accorder la permission puis réessayer")
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 2)
+            }
+            MicProbe.apply(mic)
+            refresh()
+        }
         refresh()
         LabHub.log("Commodolab prêt — choisir une intention puis appuyer dans les 8 s")
     }
@@ -75,6 +90,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         LabHub.logListeners.remove(onLog)
+        MicProbe.release()
         tracker.stop()
         super.onDestroy()
     }
@@ -158,10 +174,17 @@ class MainActivity : AppCompatActivity() {
         ) {
             needed.add(Manifest.permission.POST_NOTIFICATIONS)
         }
+        if (!hasRecordAudioPermission()) {
+            needed.add(Manifest.permission.RECORD_AUDIO)
+        }
         if (needed.isNotEmpty()) {
             ActivityCompat.requestPermissions(this, needed.toTypedArray(), 1)
         }
     }
+
+    private fun hasRecordAudioPermission(): Boolean =
+        ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) ==
+            PackageManager.PERMISSION_GRANTED
 
     private fun ts(): String {
         val now = java.util.Calendar.getInstance()

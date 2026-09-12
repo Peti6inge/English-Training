@@ -8,6 +8,7 @@ public class MainActivity extends BridgeActivity {
   public void onCreate(Bundle savedInstanceState) {
     registerPlugin(CarMediaPlugin.class);
     registerPlugin(NativeTtsPlugin.class);
+    registerPlugin(NativeMicPlugin.class);
     super.onCreate(savedInstanceState);
   }
 }

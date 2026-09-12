@@ -33,6 +33,7 @@ const files = [
   "js/app.js",
   "js/audio-cues.js",
   "js/native-tts.js",
+  "js/native-mic.js",
   "js/car-media.js",
   "js/commands.js",
   "js/config.js",

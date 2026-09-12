@@ -6,6 +6,7 @@
 
 import { CONFIG } from "./config.js";
 import { audioCues } from "./audio-cues.js";
+import { getNativeMic } from "./native-mic.js";
 
 function resample(input, fromRate, toRate) {
   if (fromRate === toRate) return input;
@@ -75,6 +76,18 @@ export class STTService extends EventTarget {
     this._mediaSampleRate = CONFIG.STT.sampleRate;
     /** When true, mic stays open; speechend is never emitted (manual Next/Previous validation). */
     this._manualValidation = false;
+    /**
+     * Android: capture via AudioRecord natif (VOICE_RECOGNITION) au lieu de getUserMedia.
+     * getUserMedia bascule Android en MODE_IN_COMMUNICATION + Bluetooth SCO : la voiture
+     * (HFP) croit à un appel et les commodos ne parlent plus AVRCP média.
+     */
+    this._nativeMic = getNativeMic();
+    this._nativeCapture = false;
+  }
+
+  /** Native PCM path is only wired for Vosk (Whisper/Web Speech stay browser-side). */
+  _useNativeMic() {
+    return !!this._nativeMic && this.engine === "vosk" && !!this._vosk;
   }
 
   setManualValidation(enabled) {
@@ -277,7 +290,7 @@ export class STTService extends EventTarget {
     this._emit("log", { level: "info", message: `Moteur STT: ${nextEngine}` });
 
     if (wasListening) {
-      if (nextEngine === "vosk" || nextEngine === "whisper") {
+      if ((nextEngine === "vosk" || nextEngine === "whisper") && !this._useNativeMic()) {
         await this._ensureStream();
       }
       await this._restartCapture();
@@ -285,6 +298,15 @@ export class STTService extends EventTarget {
   }
 
   async _restartCapture() {
+    if (this._nativeCapture) {
+      this._nativeCapture = false;
+      try {
+        await this._nativeMic.stop();
+      } catch {
+        /* ignore */
+      }
+      this._releaseVoskRecognizer();
+    }
     if (this._processor) {
       try {
         this._processor.disconnect();
@@ -310,7 +332,9 @@ export class STTService extends EventTarget {
       this._audioContext = null;
     }
 
-    if (this.engine === "vosk" && this._vosk) {
+    if (this._useNativeMic()) {
+      await this._startVoskNative();
+    } else if (this.engine === "vosk" && this._vosk) {
       await this._startVoskCapture();
     } else if (this.engine === "whisper" && this._whisper) {
       await this._startWhisperCapture();
@@ -500,7 +524,15 @@ export class STTService extends EventTarget {
     this._listening = true;
     this._paused = false;
 
-    if (this.engine === "vosk" && this._vosk) {
+    if (this._useNativeMic()) {
+      try {
+        await this._startVoskNative();
+      } catch (err) {
+        this._listening = false;
+        throw new Error(`Micro natif: ${err?.message || err}`);
+      }
+      audioCues.micOn();
+    } else if (this.engine === "vosk" && this._vosk) {
       await this._ensureStream();
       this._setStreamEnabled(true);
       await this._startVoskCapture();
@@ -525,6 +557,13 @@ export class STTService extends EventTarget {
     const wasPaused = this._paused;
     this._paused = true;
     this._clearSilenceTimer();
+
+    if (this._nativeCapture) {
+      // Keep AudioRecord open (no restart latency); native side drops frames while muted.
+      this._nativeMic.pause();
+      if (!wasPaused) audioCues.micOff();
+      return;
+    }
 
     if (this.engine === "vosk" || this.engine === "whisper") {
       // Mute the existing track without releasing it: no TTS is transcribed,
@@ -563,6 +602,12 @@ export class STTService extends EventTarget {
       this._kickWebSpeech();
       return;
     }
+    if (this._useNativeMic()) {
+      if (this._nativeCapture) await this._nativeMic.resume();
+      else await this._startVoskNative();
+      audioCues.micOn();
+      return;
+    }
     if ((this.engine === "vosk" && this._vosk) || (this.engine === "whisper" && this._whisper)) {
       this._setStreamEnabled(true);
       if (!this._processor) {
@@ -588,6 +633,15 @@ export class STTService extends EventTarget {
       } catch {
         /* ignore */
       }
+    }
+    if (this._nativeCapture) {
+      this._nativeCapture = false;
+      try {
+        await this._nativeMic.stop();
+      } catch {
+        /* ignore */
+      }
+      this._releaseVoskRecognizer();
     }
     if (this._processor) {
       try {
@@ -623,12 +677,9 @@ export class STTService extends EventTarget {
     this._emit("listening", { listening: false });
   }
 
-  async _startVoskCapture() {
-    const ctx = new AudioContext();
-    this._audioContext = ctx;
-    if (ctx.state === "suspended") await ctx.resume();
-    this._mediaSampleRate = ctx.sampleRate;
-    const recognizer = new this._vosk.model.KaldiRecognizer(ctx.sampleRate);
+  _createVoskRecognizer(sampleRate) {
+    this._releaseVoskRecognizer();
+    const recognizer = new this._vosk.model.KaldiRecognizer(sampleRate);
     if (typeof recognizer.setWords === "function") recognizer.setWords(true);
 
     recognizer.on("result", (message) => {
@@ -644,6 +695,52 @@ export class STTService extends EventTarget {
       const text = message?.result?.partial || "";
       this.appendTranscript(text, { replacePartial: true });
     });
+    this._vosk.recognizer = recognizer;
+    return recognizer;
+  }
+
+  _releaseVoskRecognizer() {
+    const current = this._vosk?.recognizer;
+    if (!current) return;
+    this._vosk.recognizer = null;
+    try {
+      current.remove?.();
+    } catch {
+      /* ignore */
+    }
+  }
+
+  /** Android: PCM 16 kHz from AudioRecord → Vosk, no getUserMedia, no AudioContext input. */
+  async _startVoskNative() {
+    const mic = this._nativeMic;
+    const state = await mic.start();
+    const sampleRate = state?.sampleRate || mic.sampleRate || 16000;
+    this._mediaSampleRate = sampleRate;
+    const recognizer = this._createVoskRecognizer(sampleRate);
+    await mic.onPcm(
+      (float32, rate) => {
+        if (this._paused || !this._listening) return;
+        try {
+          recognizer.acceptWaveformFloat(float32, rate || sampleRate);
+        } catch (err) {
+          this._emit("log", { level: "warn", message: String(err) });
+        }
+      },
+      (message) => {
+        this._emit("log", { level: "warn", message: `Micro natif: ${message}` });
+      },
+    );
+    await mic.resume();
+    this._nativeCapture = true;
+    this._emit("log", { level: "info", message: `Micro natif Android actif (${sampleRate} Hz, sans SCO)` });
+  }
+
+  async _startVoskCapture() {
+    const ctx = new AudioContext();
+    this._audioContext = ctx;
+    if (ctx.state === "suspended") await ctx.resume();
+    this._mediaSampleRate = ctx.sampleRate;
+    const recognizer = this._createVoskRecognizer(ctx.sampleRate);
 
     this._source = ctx.createMediaStreamSource(this._stream);
     const processor = ctx.createScriptProcessor(4096, 1, 1);
@@ -658,7 +755,6 @@ export class STTService extends EventTarget {
     this._processor = processor;
     this._source.connect(processor);
     processor.connect(ctx.destination);
-    this._vosk.recognizer = recognizer;
   }
 
   async _startWhisperCapture() {

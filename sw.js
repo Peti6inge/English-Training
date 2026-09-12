@@ -1,6 +1,6 @@
 /* English Training — caches the app shell and STT WASM/model requests for offline use. */
 
-const VERSION = "v1.4.0";
+const VERSION = "v1.4.1";
 const SHELL = `et-shell-${VERSION}`;
 const RUNTIME = `et-runtime-${VERSION}`;
 
@@ -22,6 +22,7 @@ const PRECACHE = [
   "./js/loop.js",
   "./js/media-session.js",
   "./js/native-tts.js",
+  "./js/native-mic.js",
   "./js/car-media.js",
   "./js/app.js",
   "./icons/icon.svg",
