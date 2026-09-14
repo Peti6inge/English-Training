@@ -364,7 +364,7 @@ export class LoopManager extends EventTarget {
   async _onDontRemind() {
     const phrase = queue.current();
     if (!phrase) return;
-    storage.removeRemind(phrase.id);
+    storage.addDontRemind(phrase.id);
     this._emit("dont-remind", { phrase });
     await this._advanceFromCorrection();
   }

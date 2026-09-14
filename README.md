@@ -53,11 +53,17 @@ Puis phase **CORRECTION** (micro ouvert).
 | `REPEAT ENGLISH` | Lit l'anglais |
 | `NEXT` | Phrase suivante |
 | `PREVIOUS` | Phrase précédente |
-| `REMIND` | Ajoute aux révisions, puis **Next** auto |
-| `DON'T REMIND` | Retire des révisions, puis **Next** auto |
+| `REMIND` | Repasse en Remind (sort de la blacklist), puis **Next** auto |
+| `DON'T REMIND` | Blacklist locale définitive, puis **Next** auto |
 | `STOP` | Arrêter la session |
 
-Les phrases `REMIND` sont réinjectées au hasard environ toutes les 4 phrases.
+Les phrases vues (hors blacklist Don't Remind) sont réinjectées au hasard avec la probabilité `REMIND_PROBABILITY` (30 %).
+
+| État | Signification |
+|---|---|
+| Non vue | Jamais tentée |
+| Remind | Vue, éligible aux rappels |
+| Don't Remind | Blacklist locale définitive |
 
 ## Jeu de données (~800 phrases)
 

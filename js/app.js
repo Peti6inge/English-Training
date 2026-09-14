@@ -56,8 +56,14 @@ function renderPhrase(phrase, state = LOOP_STATES.IDLE) {
   $("phrase-index").textContent = queue.isInterlude()
     ? `rappel · ${queue.indexOfCurrent() + 1} / ${queue.ids.length}`
     : `${queue.indexOfCurrent() + 1} / ${queue.ids.length}`;
-  const onRemind = queue.isInterlude() || storage.getRemindList().some((item) => item.phraseId === phrase.id);
-  $("phrase-tag").textContent = onRemind ? "remind" : (phrase.tags && phrase.tags[0]) || "phrase";
+  const blocked = storage.isDontRemind(phrase.id);
+  const status = storage.getPhraseState(phrase.id).lastAttemptStatus;
+  const onRemind = !blocked && (queue.isInterlude() || status === "correct" || status === "incorrect");
+  $("phrase-tag").textContent = blocked
+    ? "don't remind"
+    : onRemind
+      ? "remind"
+      : (phrase.tags && phrase.tags[0]) || "phrase";
   $("reveal").hidden = true;
   $("reveal").textContent = phrase.en;
 }
@@ -67,19 +73,18 @@ function renderStats() {
   $("stat-seen").textContent = s.seen;
   $("stat-ok").textContent = s.correct;
   $("stat-bad").textContent = s.incorrect;
-  $("stat-remind").textContent = s.remind;
+  $("stat-remind").textContent = s.dontRemind;
 
-  const list = storage.getRemindList();
+  const list = storage.getDontRemindList();
   const byId = new Map(queue.phrases.map((p) => [p.id, p]));
   $("remind-list").innerHTML = list.length
     ? list
         .map((item) => {
           const p = byId.get(item.phraseId);
-          const note = item.note ? ` — ${item.note}` : "";
-          return `<li>${p ? p.fr : item.phraseId}${note}</li>`;
+          return `<li>${p ? p.fr : item.phraseId}</li>`;
         })
         .join("")
-    : "<li>Aucune phrase prioritaire.</li>";
+    : "<li>Aucune phrase en don't remind.</li>";
 }
 
 function setBadge(kind, label) {
@@ -240,12 +245,12 @@ async function boot() {
 
   loop.addEventListener("remind", () => {
     renderStats();
-    log("Phrase ajoutée à customRemindList");
+    log("Phrase en Remind (retirée de Don't Remind si besoin)");
   });
 
   loop.addEventListener("dont-remind", () => {
     renderStats();
-    log("Phrase retirée de customRemindList");
+    log("Phrase ajoutée à Don't Remind (blacklist locale)");
   });
 
   loop.addEventListener("session-stop", () => {

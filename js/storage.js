@@ -1,7 +1,12 @@
 /**
  * Dual persistence: localStorage for the spec keys, IndexedDB as a durable mirror
  * plus session history. localStorage remains the source of truth for:
- *   currentIndex, phrasesState, customRemindList
+ *   currentIndex, phrasesState, customRemindList, dontRemindList
+ *
+ * Phrase recall states:
+ *   not seen yet → no attempt in phrasesState
+ *   remind       → seen, not on dontRemindList (eligible for REMIND_PROBABILITY interludes)
+ *   don't remind → on dontRemindList (local blacklist)
  */
 
 import { CONFIG } from "./config.js";
@@ -10,6 +15,7 @@ const LS = {
   currentIndex: `${CONFIG.STORAGE_PREFIX}.currentIndex`,
   phrasesState: `${CONFIG.STORAGE_PREFIX}.phrasesState`,
   customRemindList: `${CONFIG.STORAGE_PREFIX}.customRemindList`,
+  dontRemindList: `${CONFIG.STORAGE_PREFIX}.dontRemindList`,
   queue: `${CONFIG.STORAGE_PREFIX}.queue`,
   settings: `${CONFIG.STORAGE_PREFIX}.settings`,
 };
@@ -115,6 +121,7 @@ export const storage = {
         }
         if (mirrored.phrasesState) this.setPhrasesState(mirrored.phrasesState);
         if (mirrored.customRemindList) this.setRemindList(mirrored.customRemindList);
+        if (mirrored.dontRemindList) this.setDontRemindList(mirrored.dontRemindList);
         if (mirrored.queue) this.setQueue(mirrored.queue);
       }
     }
@@ -163,13 +170,15 @@ export const storage = {
     this._mirror();
   },
 
+  /** Mark as Remind: leave the don't-remind blacklist and optionally keep a note. */
   addRemind(phraseId, note = "") {
+    this.removeDontRemind(phraseId);
     const list = this.getRemindList();
     const existing = list.find((item) => item.phraseId === phraseId);
     if (existing) {
       existing.note = note || existing.note;
       existing.flaggedAt = new Date().toISOString();
-    } else {
+    } else if (note) {
       list.push({ phraseId, note, flaggedAt: new Date().toISOString() });
     }
     this.setRemindList(list);
@@ -180,6 +189,40 @@ export const storage = {
   removeRemind(phraseId) {
     const list = this.getRemindList().filter((item) => item.phraseId !== phraseId);
     this.setRemindList(list);
+    return list;
+  },
+
+  /** @returns {{ phraseId: string, flaggedAt: string }[]} */
+  getDontRemindList() {
+    return readJson(LS.dontRemindList, []);
+  },
+
+  setDontRemindList(list) {
+    writeJson(LS.dontRemindList, list);
+    this._mirror();
+  },
+
+  isDontRemind(phraseId) {
+    return this.getDontRemindList().some((item) => item.phraseId === phraseId);
+  },
+
+  addDontRemind(phraseId) {
+    this.removeRemind(phraseId);
+    const list = this.getDontRemindList();
+    const existing = list.find((item) => item.phraseId === phraseId);
+    if (existing) {
+      existing.flaggedAt = new Date().toISOString();
+    } else {
+      list.push({ phraseId, flaggedAt: new Date().toISOString() });
+    }
+    this.setDontRemindList(list);
+    this.patchPhraseState(phraseId, { reviewNext: false });
+    return list;
+  },
+
+  removeDontRemind(phraseId) {
+    const list = this.getDontRemindList().filter((item) => item.phraseId !== phraseId);
+    this.setDontRemindList(list);
     return list;
   },
 
@@ -213,6 +256,7 @@ export const storage = {
       currentIndex: this.getCurrentIndex(),
       phrasesState: this.getPhrasesState(),
       customRemindList: this.getRemindList(),
+      dontRemindList: this.getDontRemindList(),
       queue: this.getQueue(),
     };
   },
@@ -221,6 +265,7 @@ export const storage = {
     localStorage.removeItem(LS.currentIndex);
     localStorage.removeItem(LS.phrasesState);
     localStorage.removeItem(LS.customRemindList);
+    localStorage.removeItem(LS.dontRemindList);
     localStorage.removeItem(LS.queue);
     this._mirror();
   },

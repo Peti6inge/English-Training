@@ -77,7 +77,6 @@ export function applyAttempt(phraseId, correct) {
       repetitionCount,
       interval,
     });
-    storage.removeRemind(phraseId);
   } else {
     storage.patchPhraseState(phraseId, {
       lastAttemptStatus: "incorrect",
@@ -132,11 +131,16 @@ export const queue = {
   },
 
   remindPoolIds() {
-    const known = new Set(this.phrases.map((p) => p.id));
-    return storage
-      .getRemindList()
-      .map((item) => item.phraseId)
-      .filter((id) => known.has(id));
+    const blocked = new Set(storage.getDontRemindList().map((item) => item.phraseId));
+    const state = storage.getPhrasesState();
+    return this.phrases
+      .map((p) => p.id)
+      .filter((id) => {
+        if (blocked.has(id)) return false;
+        const s = state[id];
+        if (!s) return false;
+        return s.lastAttemptStatus === "correct" || s.lastAttemptStatus === "incorrect" || s.reviewNext;
+      });
   },
 
   _regularCurrent() {
@@ -209,7 +213,8 @@ export const queue = {
       seen,
       correct,
       incorrect,
-      remind: storage.getRemindList().length,
+      remind: this.remindPoolIds().length,
+      dontRemind: storage.getDontRemindList().length,
       remaining: Math.max(0, this.phrases.length - seen),
     };
   },
