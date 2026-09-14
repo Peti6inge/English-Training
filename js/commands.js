@@ -82,8 +82,8 @@ export function stripCommands(buffer) {
 
 export const CORRECTION_COMMAND_LABELS = [
   { label: "Commande vocale (immédiate)", code: "ex. REPEAT FRENCH" },
-  { label: "Phrase suivante (Next volant seul)", code: "NEXT (volant / bouton)" },
-  { label: "Remind + phrase suivante", code: "PREVIOUS (volant / bouton)" },
+  { label: "Phrase suivante (Previous volant seul)", code: "PREVIOUS (volant / bouton)" },
+  { label: "Remind + phrase suivante", code: "NEXT (volant / bouton)" },
   { label: "Arrêter la session", code: "STOP" },
 ];
 

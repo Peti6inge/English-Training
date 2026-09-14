@@ -1,8 +1,8 @@
 /**
  * Hands-free loop (volant / validation manuelle):
  * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
- * CORRECTION → commande vocale immédiate ou [Next volant seul] → NEXT_PHRASE → SPEAKING_FR
- * Previous volant en saisie : Repeat French · voix : Previous · correction : Remind + phrase suivante
+ * CORRECTION → commande vocale immédiate ou [Previous volant seul] → NEXT_PHRASE → SPEAKING_FR
+ * Previous volant en saisie : Repeat French · voix : Previous · correction : Next = Remind, Previous = suivant
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
@@ -81,8 +81,11 @@ export class LoopManager extends EventTarget {
 
   _flushWheel() {
     if (!this._pendingWheel || !this._wheelArmed()) return Promise.resolve();
-    const direction = this._pendingWheel;
+    let direction = this._pendingWheel;
     this._pendingWheel = null;
+    if (this.state === LOOP_STATES.CORRECTION) {
+      direction = direction === "next" ? "previous" : "next";
+    }
     const run = direction === "previous" ? this._executePhysicalPrevious() : this._executePhysicalNext();
     return Promise.resolve(run).catch((err) => {
       this._emit("log", { level: "warn", message: String(err?.message || err) });
@@ -180,7 +183,7 @@ export class LoopManager extends EventTarget {
   }
 
   /**
-   * Physical or UI Next — validates the answer (listening) or runs a voice command (correction).
+   * Physical or UI Next — validates the answer (listening) or Remind + next in correction.
    * Appuis pendant TTS / évaluation sont mémorisés et rejoués dès LISTENING ou CORRECTION.
    */
   onPhysicalNext() {
@@ -188,7 +191,7 @@ export class LoopManager extends EventTarget {
   }
 
   /**
-   * Physical or UI Previous — Repeat French while capturing; Remind + next in correction.
+   * Physical or UI Previous — Repeat French while capturing; phrase suivante in correction.
    */
   onPhysicalPrevious() {
     return this._queueWheel("previous");

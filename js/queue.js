@@ -92,7 +92,6 @@ export const queue = {
   phrases: [],
   _interludeId: null,
   _pendingIndex: null,
-  _regularsSinceRemind: 0,
 
   load(phrases) {
     this.phrases = phrases;
@@ -178,14 +177,12 @@ export const queue = {
     }
 
     const nextIndex = this.indexOfCurrent() + 1;
-    this._regularsSinceRemind += 1;
     const currentId = this._regularCurrent()?.id;
     const pool = this.remindPoolIds().filter((id) => id !== currentId);
 
-    if (pool.length && this._regularsSinceRemind >= CONFIG.REMIND_INSERT_EVERY) {
+    if (pool.length && Math.random() < CONFIG.REMIND_PROBABILITY) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
       this._pendingIndex = nextIndex;
-      this._regularsSinceRemind = 0;
       return this.current();
     }
 

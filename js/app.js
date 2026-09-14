@@ -37,7 +37,7 @@ function renderCommandList(state) {
   const labels = state === LOOP_STATES.CORRECTION ? CORRECTION_COMMAND_LABELS : LISTENING_COMMAND_LABELS;
   const title =
     state === LOOP_STATES.CORRECTION
-      ? "Après correction — commande vocale + Next volant"
+      ? "Après correction — commande vocale + Previous volant (suivant) ou Next (remind)"
       : "Pendant la saisie — Next / Previous volant uniquement";
   $("commands-title").textContent = title;
   $("commands").innerHTML = labels
@@ -103,7 +103,7 @@ function renderFeedback({ ok, score, spoken, phrase, phase }) {
     <div>Vous : ${spoken || "—"}</div>
     <div>Attendu : ${phrase.en}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">${ok ? "Perfect — puis commande + Next volant, ou Next seul pour continuer." : "Correction lue — puis commande + Next volant, ou Next seul."}</div>
+    <div class="hint">${ok ? "Perfect — puis commande vocale, Previous volant pour continuer, ou Next pour remind." : "Correction lue — puis commande vocale, Previous volant pour continuer, ou Next pour remind."}</div>
   `;
 }
 
