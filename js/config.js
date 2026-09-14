@@ -11,7 +11,7 @@ export const CONFIG = {
   /** Per-token similarity used when scanning expected keywords in order. */
   KEYWORD_WORD_THRESHOLD: 0.72,
   /** Chance (0–1) of inserting a random Remind phrase on each regular advance. */
-  REMIND_PROBABILITY: 0.3,
+  REMIND_PROBABILITY: 0.4,
   /** Pause (ms) before the post-validation audio sequence. */
   POST_VALIDATION_PAUSE_MS: 600,
 
