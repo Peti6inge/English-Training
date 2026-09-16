@@ -57,7 +57,7 @@ Puis phase **CORRECTION** (micro ouvert).
 | `DON'T REMIND` | Blacklist locale définitive, puis **Next** auto |
 | `STOP` | Arrêter la session |
 
-Les phrases vues (hors blacklist Don't Remind) sont réinjectées au hasard avec la probabilité `REMIND_PROBABILITY` (30 %).
+À chaque avance : tirage de Bernoulli `REMIND_PROBABILITY` (40 %) entre une phrase Remind (pool des vues hors blacklist) et la prochaine phrase non vue.
 
 | État | Signification |
 |---|---|

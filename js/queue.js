@@ -1,6 +1,7 @@
 /**
- * Session queue with shuffle, tag spacing, and occasional Remind interludes.
- * Priority: incorrect → unvisited → rest (each segment shuffled & tag-spaced).
+ * Session queue with shuffle, tag spacing, and Bernoulli Remind draws.
+ * Each advance: REMIND_PROBABILITY → random Remind pool hit, else → next unseen.
+ * Priority when building the unseen order: incorrect → unvisited → rest.
  */
 
 import { CONFIG } from "./config.js";
@@ -90,7 +91,6 @@ export const queue = {
   ids: [],
   phrases: [],
   _interludeId: null,
-  _pendingIndex: null,
 
   load(phrases) {
     this.phrases = phrases;
@@ -123,11 +123,16 @@ export const queue = {
 
   clearInterlude() {
     this._interludeId = null;
-    this._pendingIndex = null;
   },
 
   isInterlude() {
     return !!this._interludeId;
+  },
+
+  _isUnseen(phraseId) {
+    const s = storage.getPhrasesState()[phraseId];
+    if (!s) return true;
+    return !s.lastAttemptStatus && !s.reviewNext;
   },
 
   remindPoolIds() {
@@ -173,24 +178,47 @@ export const queue = {
     return this.current();
   },
 
+  /**
+   * Bernoulli draw on every advance (including after a Remind):
+   *   P(Remind) = REMIND_PROBABILITY when the Remind pool is non-empty and unseen remain
+   *   else next unseen ("nouvelle pioche")
+   * If no unseen remain → always Remind. If pool empty → always unseen/queue.
+   */
   next() {
-    if (this._interludeId) {
-      const idx = this._pendingIndex != null ? this._pendingIndex : this.indexOfCurrent() + 1;
-      this.clearInterlude();
-      return this.goTo(idx);
-    }
+    const justDidId = this.current()?.id;
+    this.clearInterlude();
 
-    const nextIndex = this.indexOfCurrent() + 1;
-    const currentId = this._regularCurrent()?.id;
-    const pool = this.remindPoolIds().filter((id) => id !== currentId);
+    const pool = this.remindPoolIds().filter((id) => id !== justDidId);
+    const hasUnseen = this.ids.some((id) => this._isUnseen(id));
 
-    if (pool.length && Math.random() < CONFIG.REMIND_PROBABILITY) {
+    let pickRemind = false;
+    if (pool.length && !hasUnseen) pickRemind = true;
+    else if (pool.length && hasUnseen) pickRemind = Math.random() < CONFIG.REMIND_PROBABILITY;
+
+    if (pickRemind) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
-      this._pendingIndex = nextIndex;
       return this.current();
     }
 
-    return this.goTo(nextIndex);
+    return this._goToNextUnseenFrom(this.indexOfCurrent(), justDidId);
+  },
+
+  _goToNextUnseenFrom(startIdx, excludeId) {
+    for (let step = 1; step <= this.ids.length; step++) {
+      const i = this.clampIndex(startIdx + step);
+      const id = this.ids[i];
+      if (id !== excludeId && this._isUnseen(id)) {
+        return this.goTo(i);
+      }
+    }
+
+    const pool = this.remindPoolIds().filter((id) => id !== excludeId);
+    if (pool.length) {
+      this._interludeId = pool[Math.floor(Math.random() * pool.length)];
+      return this.current();
+    }
+
+    return this.goTo(startIdx + 1);
   },
 
   previous() {
