@@ -88,7 +88,7 @@ export const CORRECTION_COMMAND_LABELS = [
 ];
 
 export const LISTENING_COMMAND_LABELS = [
-  { label: "Valider la tentative", code: "NEXT (volant / bouton)" },
-  { label: "Répéter le français", code: "PREVIOUS (volant / bouton)" },
+  { label: "Valider la tentative", code: "NEXT (volant / bouton ou voix)" },
+  { label: "Répéter le français", code: "PREVIOUS (volant / bouton) ou REPEAT FRENCH (voix)" },
   { label: "Phrase précédente", code: "PREVIOUS (voix)" },
 ];

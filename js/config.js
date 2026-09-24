@@ -48,8 +48,8 @@ export const CONFIG = {
   },
 
   COMMANDS: {
-    /** During answer capture: Previous by voice only; Repeat French via volant Previous. */
-    listening: ["PREVIOUS"],
+    /** During answer capture: navigation / replay by voice or volant. */
+    listening: ["PREVIOUS", "REPEAT_FRENCH", "NEXT"],
     /** Available after validation — correction / navigation phase. */
     correction: [
       "REPEAT_FRENCH",

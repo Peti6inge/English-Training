@@ -30,8 +30,10 @@ describe("correction voice commands (immediate dispatch)", () => {
     assert.equal(detectCommand("repeat french please", { phase: "correction" }), null);
   });
 
-  it("listening phase still only allows PREVIOUS", () => {
-    assert.equal(detectCommand("repeat french", { phase: "listening" }), null);
+  it("listening phase allows PREVIOUS, REPEAT_FRENCH, and NEXT", () => {
     assert.equal(detectCommand("previous", { phase: "listening" })?.type, "PREVIOUS");
+    assert.equal(detectCommand("repeat french", { phase: "listening" })?.type, "REPEAT_FRENCH");
+    assert.equal(detectCommand("next", { phase: "listening" })?.type, "NEXT");
+    assert.equal(detectCommand("remind", { phase: "listening" }), null);
   });
 });
