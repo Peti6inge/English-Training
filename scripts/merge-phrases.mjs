@@ -12,7 +12,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const chunksDir = join(root, "data", "chunks");
 const outPath = join(root, "phrases.json");
 
-const FORBIDDEN_END = /\b(next|stop|previous|remind|repeat(?:\s+(?:the\s+)?(?:french|english))?|dont|don't)\s*$/i;
+const FORBIDDEN_END =
+  /\b(next|stop|previous|remind|enough|repeats?|rebates?|repeat(?:\s+(?:the\s+)?(?:french|english))?)\s*$/i;
 
 function wordCount(text) {
   return String(text || "")

@@ -15,7 +15,7 @@ describe("correction voice commands (immediate dispatch)", () => {
     { buffer: "previous", type: "PREVIOUS" },
     { buffer: "next", type: "NEXT" },
     { buffer: "remind", type: "REMIND" },
-    { buffer: "don't remind", type: "DONT_REMIND" },
+    { buffer: "enough", type: "DONT_REMIND" },
     { buffer: "stop", type: "STOP" },
   ];
 
@@ -35,5 +35,12 @@ describe("correction voice commands (immediate dispatch)", () => {
     assert.equal(detectCommand("repeat french", { phase: "listening" })?.type, "REPEAT_FRENCH");
     assert.equal(detectCommand("next", { phase: "listening" })?.type, "NEXT");
     assert.equal(detectCommand("remind", { phase: "listening" }), null);
+  });
+
+  it("bare repeat and STT variants map by phase", () => {
+    for (const word of ["repeat", "repeats", "rebate", "rebates"]) {
+      assert.equal(detectCommand(word, { phase: "listening" })?.type, "REPEAT_FRENCH", word);
+      assert.equal(detectCommand(word, { phase: "correction" })?.type, "REPEAT_ENGLISH", word);
+    }
   });
 });

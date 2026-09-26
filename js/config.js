@@ -1,5 +1,8 @@
 /** Application-wide constants. Tune matching, engines, and storage here. */
 
+/** Bare "repeat" and common STT mishearings (repeats, rebate, rebates). */
+const VOICE_REPEAT_BARE = /\b(?:repeats?|rebates?)\b/i;
+
 export const CONFIG = {
   APP_NAME: "English Training",
   STORAGE_PREFIX: "english-training",
@@ -62,9 +65,9 @@ export const CONFIG = {
     ],
     aliases: {
       stop: [/\bstop\b/i],
-      dont_remind: [/\b(don't|dont|do not)\s+remind\b/i],
-      repeat_english: [/\brepeat(?:\s+the)?\s+english\b/i],
-      repeat_french: [/\brepeat(?:\s+the)?\s+french\b/i],
+      dont_remind: [/\benough\b/i],
+      repeat_english: [/\brepeat(?:\s+the)?\s+english\b/i, VOICE_REPEAT_BARE],
+      repeat_french: [/\brepeat(?:\s+the)?\s+french\b/i, VOICE_REPEAT_BARE],
       previous: [/\bprevious\b/i],
       next: [/\bnext\b/i],
       remind: [/\bremind\b/i],
