@@ -1,7 +1,11 @@
 /** Application-wide constants. Tune matching, engines, and storage here. */
 
-/** Bare "repeat" and common STT mishearings (repeats, rebate, rebates). */
-const VOICE_REPEAT_BARE = /\b(?:repeats?|rebates?)\b/i;
+/** "Repeat" and common STT transcriptions for the replay command. */
+const VOICE_REPEAT_TOKEN =
+  "(?:repeats?|rebates?|with\\s+it|repit|rippit|ribbit|rip\\s+it|rib\\s+it)";
+const VOICE_REPEAT_BARE = new RegExp(`\\b${VOICE_REPEAT_TOKEN}\\b`, "i");
+const VOICE_REPEAT_FRENCH = new RegExp(`\\b${VOICE_REPEAT_TOKEN}(?:\\s+the)?\\s+french\\b`, "i");
+const VOICE_REPEAT_ENGLISH = new RegExp(`\\b${VOICE_REPEAT_TOKEN}(?:\\s+the)?\\s+english\\b`, "i");
 
 export const CONFIG = {
   APP_NAME: "English Training",
@@ -13,8 +17,10 @@ export const CONFIG = {
   SIMILARITY_THRESHOLD: 0.85,
   /** Per-token similarity used when scanning expected keywords in order. */
   KEYWORD_WORD_THRESHOLD: 0.72,
-  /** Bernoulli chance of Remind vs next unseen on each advance (0–1). */
-  REMIND_PROBABILITY: 0.4,
+  /** Bernoulli chance of Remind vs next unseen when the recall pool is large enough (0–1). */
+  REMIND_PROBABILITY: 0.5,
+  /** Minimum number of seen, non-blacklisted phrases before automatic recall begins. */
+  REMIND_MIN_POOL_SIZE: 20,
   /** Pause (ms) before the post-validation audio sequence. */
   POST_VALIDATION_PAUSE_MS: 600,
 
@@ -65,9 +71,9 @@ export const CONFIG = {
     ],
     aliases: {
       stop: [/\bstop\b/i],
-      dont_remind: [/\benough\b/i],
-      repeat_english: [/\brepeat(?:\s+the)?\s+english\b/i, VOICE_REPEAT_BARE],
-      repeat_french: [/\brepeat(?:\s+the)?\s+french\b/i, VOICE_REPEAT_BARE],
+      dont_remind: [/\b(?:enough|he\s+knows?)\b/i],
+      repeat_english: [VOICE_REPEAT_ENGLISH, VOICE_REPEAT_BARE],
+      repeat_french: [VOICE_REPEAT_FRENCH, VOICE_REPEAT_BARE],
       previous: [/\bprevious\b/i],
       next: [/\bnext\b/i],
       remind: [/\bremind\b/i],

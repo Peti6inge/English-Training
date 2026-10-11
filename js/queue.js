@@ -1,6 +1,7 @@
 /**
  * Session queue with shuffle, tag spacing, and Bernoulli Remind draws.
- * Each advance: REMIND_PROBABILITY → random Remind pool hit, else → next unseen.
+ * Once the recall pool reaches REMIND_MIN_POOL_SIZE, each advance has a
+ * REMIND_PROBABILITY chance of selecting a previously seen phrase.
  * Priority when building the unseen order: incorrect → unvisited → rest.
  */
 
@@ -41,6 +42,11 @@ function diversifyTags(ids, tagById) {
     out.push(id);
   }
   return out;
+}
+
+export function shouldPickRemind({ poolSize, hasUnseen, random = Math.random() }) {
+  if (poolSize < CONFIG.REMIND_MIN_POOL_SIZE) return false;
+  return !hasUnseen || random < CONFIG.REMIND_PROBABILITY;
 }
 
 export function buildQueue(phrases) {
@@ -179,21 +185,19 @@ export const queue = {
   },
 
   /**
-   * Bernoulli draw on every advance (including after a Remind):
-   *   P(Remind) = REMIND_PROBABILITY when the Remind pool is non-empty and unseen remain
-   *   else next unseen ("nouvelle pioche")
-   * If no unseen remain → always Remind. If pool empty → always unseen/queue.
+   * Before the recall pool reaches REMIND_MIN_POOL_SIZE, advances always
+   * prefer unseen phrases. Once it does, a Bernoulli draw alternates recalls
+   * and unseen phrases. When none are unseen, recalls remain available.
    */
   next() {
     const justDidId = this.current()?.id;
     this.clearInterlude();
 
-    const pool = this.remindPoolIds().filter((id) => id !== justDidId);
+    const recallPool = this.remindPoolIds();
+    const pool = recallPool.filter((id) => id !== justDidId);
     const hasUnseen = this.ids.some((id) => this._isUnseen(id));
 
-    let pickRemind = false;
-    if (pool.length && !hasUnseen) pickRemind = true;
-    else if (pool.length && hasUnseen) pickRemind = Math.random() < CONFIG.REMIND_PROBABILITY;
+    const pickRemind = shouldPickRemind({ poolSize: recallPool.length, hasUnseen });
 
     if (pickRemind) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
@@ -212,8 +216,9 @@ export const queue = {
       }
     }
 
-    const pool = this.remindPoolIds().filter((id) => id !== excludeId);
-    if (pool.length) {
+    const recallPool = this.remindPoolIds();
+    const pool = recallPool.filter((id) => id !== excludeId);
+    if (pool.length && recallPool.length >= CONFIG.REMIND_MIN_POOL_SIZE) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
       return this.current();
     }

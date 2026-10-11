@@ -16,6 +16,8 @@ describe("correction voice commands (immediate dispatch)", () => {
     { buffer: "next", type: "NEXT" },
     { buffer: "remind", type: "REMIND" },
     { buffer: "enough", type: "DONT_REMIND" },
+    { buffer: "he know", type: "DONT_REMIND" },
+    { buffer: "he knows", type: "DONT_REMIND" },
     { buffer: "stop", type: "STOP" },
   ];
 
@@ -38,9 +40,39 @@ describe("correction voice commands (immediate dispatch)", () => {
   });
 
   it("bare repeat and STT variants map by phase", () => {
-    for (const word of ["repeat", "repeats", "rebate", "rebates"]) {
+    for (const word of [
+      "repeat",
+      "repeats",
+      "rebate",
+      "rebates",
+      "with it",
+      "repit",
+      "rippit",
+      "ribbit",
+      "rip it",
+      "rib it",
+    ]) {
       assert.equal(detectCommand(word, { phase: "listening" })?.type, "REPEAT_FRENCH", word);
       assert.equal(detectCommand(word, { phase: "correction" })?.type, "REPEAT_ENGLISH", word);
+    }
+  });
+
+  it("recognizes every repeat variant followed by french", () => {
+    for (const word of [
+      "repeat",
+      "repeats",
+      "rebate",
+      "rebates",
+      "with it",
+      "repit",
+      "rippit",
+      "ribbit",
+      "rip it",
+      "rib it",
+    ]) {
+      const command = `${word} french`;
+      assert.equal(detectCommand(command, { phase: "listening" })?.type, "REPEAT_FRENCH", command);
+      assert.equal(detectCommand(command, { phase: "correction" })?.type, "REPEAT_FRENCH", command);
     }
   });
 });

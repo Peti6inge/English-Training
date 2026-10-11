@@ -54,10 +54,10 @@ Puis phase **CORRECTION** (micro ouvert).
 | `NEXT` | Phrase suivante |
 | `PREVIOUS` | Phrase précédente |
 | `REMIND` | Repasse en Remind (sort de la blacklist), puis **Next** auto |
-| `DON'T REMIND` | Blacklist locale définitive, puis **Next** auto |
+| `ENOUGH` | Blacklist locale définitive, puis **Next** auto |
 | `STOP` | Arrêter la session |
 
-À chaque avance : tirage de Bernoulli `REMIND_PROBABILITY` (40 %) entre une phrase Remind (pool des vues hors blacklist) et la prochaine phrase non vue.
+À chaque avance, tant que le pool des phrases vues hors blacklist contient moins de 20 éléments, l'application présente une phrase non vue. À partir de 20 éléments, un tirage de Bernoulli `REMIND_PROBABILITY` (50 %) alterne approximativement entre une phrase Remind et la prochaine phrase non vue.
 
 | État | Signification |
 |---|---|
@@ -65,9 +65,9 @@ Puis phase **CORRECTION** (micro ouvert).
 | Remind | Vue, éligible aux rappels |
 | Don't Remind | Blacklist locale définitive |
 
-## Jeu de données (~800 phrases)
+## Jeu de données (~1 600 phrases)
 
-- **`phrases.json`** — pool servi par l'app (800 paires FR → EN)
+- **`phrases.json`** — pool servi par l'app (1 600 paires FR → EN)
 - **`data/chunks/`** — sources par lot (`c01.json` …), ~40 % vocabulaire neutre + ~60 % expressions orales
 - **`scripts/merge-phrases.mjs`** — regénère `phrases.json` (ids, dédoublonnage, validation longueur)
 

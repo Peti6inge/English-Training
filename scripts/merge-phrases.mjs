@@ -11,9 +11,10 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const chunksDir = join(root, "data", "chunks");
 const outPath = join(root, "phrases.json");
+const TARGET_PHRASE_COUNT = 1600;
 
 const FORBIDDEN_END =
-  /\b(next|stop|previous|remind|enough|repeats?|rebates?|repeat(?:\s+(?:the\s+)?(?:french|english))?)\s*$/i;
+  /\b(next|stop|previous|remind|enough|he\s+knows?|repeats?|rebates?|with\s+it|repit|rippit|ribbit|rip\s+it|rib\s+it|(?:repeats?|rebates?|with\s+it|repit|rippit|ribbit|rip\s+it|rib\s+it)(?:\s+(?:the\s+)?(?:french|english))?)\s*$/i;
 
 function wordCount(text) {
   return String(text || "")
@@ -65,9 +66,9 @@ for (const item of all) {
   out.push({ fr, en, tags: [tag] });
 }
 
-while (out.length > 800) out.pop();
-if (out.length < 800) {
-  console.warn(`Warning: only ${out.length} unique phrases (target 800)`);
+while (out.length > TARGET_PHRASE_COUNT) out.pop();
+if (out.length < TARGET_PHRASE_COUNT) {
+    console.warn(`Warning: only ${out.length} unique phrases (target ${TARGET_PHRASE_COUNT})`);
 }
 
 const phrases = out.map((p, i) => ({
