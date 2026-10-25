@@ -71,7 +71,7 @@ export const CONFIG = {
     ],
     aliases: {
       stop: [/\bstop\b/i],
-      dont_remind: [/\b(?:enough|he\s+knows?)\b/i],
+      dont_remind: [/\b(?:enough|he\s+knows?|you\s+know)\b/i],
       repeat_english: [VOICE_REPEAT_ENGLISH, VOICE_REPEAT_BARE],
       repeat_french: [VOICE_REPEAT_FRENCH, VOICE_REPEAT_BARE],
       previous: [/\bprevious\b/i],
