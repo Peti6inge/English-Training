@@ -48,15 +48,39 @@ body.view-legacy .legacy-view[hidden] {
 }
 
 .minimal-stage {
-  flex: 0 0 50vh;
-  flex-basis: 50dvh;
+  /* Cap at half the screen, but shrink on short viewports (APK / mobile chrome). */
+  flex: 1 1 0;
   min-height: 0;
+  max-height: 50vh;
+  max-height: 50dvh;
   display: flex;
   flex-direction: column;
 }
 
+.minimal-bottom {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: auto;
+  background: var(--min-bg);
+  position: relative;
+  z-index: 2;
+}
+
 .minimal.is-running .minimal-stage {
-  flex: 1 1 auto;
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: none;
+  overflow: hidden;
+}
+
+.minimal.is-running .minimal-data,
+.minimal.is-running .minimal-legacy {
+  display: none;
+}
+
+.minimal.is-running .minimal-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .minimal-start {
@@ -127,6 +151,17 @@ body.view-legacy .legacy-view[hidden] {
   display: none !important;
 }
 
+.minimal.is-running .phrase-hit {
+  flex: 1 1 0;
+  min-height: 0;
+  height: auto;
+  max-height: none;
+}
+
+.minimal.is-correction #ui-phrase-fr-wrap {
+  border-bottom: 1px solid var(--min-line);
+}
+
 #ui-phrase-en-wrap {
   display: none;
 }
@@ -136,8 +171,9 @@ body.view-legacy .legacy-view[hidden] {
 }
 
 .phrase-hit p {
-  flex: none;
+  flex: 1 1 auto;
   width: 100%;
+  min-height: 0;
   max-height: calc(33.333dvh - 72px);
   margin: 0;
   text-align: center;
@@ -148,6 +184,15 @@ body.view-legacy .legacy-view[hidden] {
   letter-spacing: -0.025em;
   line-height: 1.25;
   color: var(--min-text);
+}
+
+.minimal.is-running .phrase-hit p {
+  max-height: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .phrase-hit .speaker {
@@ -189,15 +234,24 @@ body.view-legacy .legacy-view[hidden] {
 }
 
 .minimal-info {
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto;
+  flex-shrink: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .minimal.is-running .minimal-info {
   flex: none;
+  overflow: visible;
+}
+
+.minimal.is-running .minimal-transcript {
+  flex: 0 1 auto;
+  max-height: 28%;
+  min-height: 2.5rem;
 }
 
 .minimal-row {
@@ -268,10 +322,14 @@ body.view-legacy .legacy-view[hidden] {
 
 .minimal-data {
   flex: none;
+  flex-shrink: 0;
   display: flex;
   gap: 8px;
-  padding: 10px 12px 0;
+  padding: 10px 12px;
   border-top: 1px solid var(--min-line, #3c4043);
+  background: var(--min-bg);
+  position: relative;
+  z-index: 2;
 }
 
 .minimal-data-btn {
@@ -297,9 +355,11 @@ body.view-legacy .legacy-view[hidden] {
 .minimal-legacy,
 .legacy-back {
   flex: none;
+  flex-shrink: 0;
   width: 100%;
   margin: 0;
-  padding: 14px 8px calc(14px + env(safe-area-inset-bottom));
+  padding: 14px 8px;
+  padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   border: 0;
   border-radius: 0;
   border-top: 1px solid var(--min-line, #3c4043);

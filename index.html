@@ -42,26 +42,28 @@
         </div>
       </div>
 
-      <section class="minimal-info" id="ui-info">
-        <div class="minimal-row" id="ui-controls">
-          <button type="button" id="ui-prev">Previous</button>
-          <button type="button" id="ui-dont-remind">Don't remind</button>
-          <button type="button" id="ui-next">Next</button>
-        </div>
-        <button type="button" id="ui-stop" class="minimal-stop" disabled>Stop</button>
-        <div class="minimal-stats" id="ui-idle-meta">
-          <p>Nombre de phrases vues = <span id="ui-seen">0</span>/<span id="ui-total-seen">0</span></p>
-          <p>Nombre de phrases validées = <span id="ui-validated">0</span>/<span id="ui-total-validated">0</span></p>
-          <button type="button" id="ui-reset">Réinitialiser</button>
-        </div>
-      </section>
+      <div class="minimal-bottom">
+        <section class="minimal-info" id="ui-info">
+          <div class="minimal-row" id="ui-controls">
+            <button type="button" id="ui-prev">Previous</button>
+            <button type="button" id="ui-dont-remind">Don't remind</button>
+            <button type="button" id="ui-next">Next</button>
+          </div>
+          <button type="button" id="ui-stop" class="minimal-stop" disabled>Stop</button>
+          <div class="minimal-stats" id="ui-idle-meta">
+            <p>Nombre de phrases vues = <span id="ui-seen">0</span>/<span id="ui-total-seen">0</span></p>
+            <p>Nombre de phrases validées = <span id="ui-validated">0</span>/<span id="ui-total-validated">0</span></p>
+            <button type="button" id="ui-reset">Réinitialiser</button>
+          </div>
+        </section>
 
-      <div class="minimal-data">
-        <button type="button" id="ui-export" class="minimal-data-btn">export</button>
-        <button type="button" id="ui-import" class="minimal-data-btn">import</button>
-        <input type="file" id="ui-import-file" accept=".json,application/json" hidden />
+        <div class="minimal-data">
+          <button type="button" id="ui-export" class="minimal-data-btn">export</button>
+          <button type="button" id="ui-import" class="minimal-data-btn">import</button>
+          <input type="file" id="ui-import-file" accept=".json,application/json" hidden />
+        </div>
+        <button type="button" id="ui-legacy" class="minimal-legacy">Mode legacy</button>
       </div>
-      <button type="button" id="ui-legacy" class="minimal-legacy">Mode legacy</button>
     </main>
 
     <div id="legacy-view" class="legacy-view" hidden>
