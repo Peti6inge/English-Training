@@ -1,0 +1,3202 @@
+[
+  {
+    "fr": "Après je sais pas, y a moyen que ça passe.",
+    "en": "I mean, I dunno, there's a chance it goes through.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai c'est toujours mieux que rien.",
+    "en": "Honestly, it's still better than nothing.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon y a un monde où il se pointe pas.",
+    "en": "Anyway, there's a world where he just doesn't show up.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu viens et tu vois si t'es chaud de rester.",
+    "en": "You might as well come and see if you're down to stay.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement ça passe, mais c'est limite, on devrait prévoir un plan B.",
+    "en": "It should be fine, but it's tight, so we ought to have a backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après ouais, j'avoue, j'y avais pas pensé.",
+    "en": "Yeah I mean, I'll admit I hadn't thought of that.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai ça me dit bien, faut juste que je check l'horaire.",
+    "en": "Honestly I'm into it, I just gotta check the timing.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je sois en retard, je te dis ça.",
+    "en": "There's a chance I'll be late, just a heads-up.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon on verra bien une fois sur place.",
+    "en": "We'll just see once we're there anyway.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on tente, et si ça prend pas on laisse tomber.",
+    "en": "We might as well try, and drop it if it doesn't land.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je suis dispo, sauf si ça déborde.",
+    "en": "I should be free, unless it runs over.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après c'est pas grave, on se rattrape plus tard.",
+    "en": "It's no big deal though, we'll make up for it later.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'hésite, les deux se valent un peu.",
+    "en": "Honestly I'm on the fence, they're kinda the same.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où on décale juste d'une heure.",
+    "en": "There's a world where we just push it an hour.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu me dis le matin même, je m'arrange.",
+    "en": "You could even tell me that morning, I'll make it work.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite pour le train, faut pas traîner.",
+    "en": "It's cutting it close for the train, so we can't hang around.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis chaud, mais seulement si ça reste tranquille.",
+    "en": "I'm down, but only if it stays pretty low-key.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon c'est déjà mieux que ce qu'on avait.",
+    "en": "Either way, it's already better than what we had.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement ça se fait, j'ai juste un doute sur le timing.",
+    "en": "It should work, I just have a doubt about the timing.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai t'inquiète, au pire on sort le plan B.",
+    "en": "Honestly don't sweat it, worst case we pull out the backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je resterais bien chez moi, mais je peux passer.",
+    "en": "Honestly I'd rather stay in, but I can still swing by.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le film peut attendre, je suis chaud pour manger d'abord.",
+    "en": "Honestly the movie can wait, I'm down to eat first.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai zappé de répondre, j'étais un peu partout.",
+    "en": "Honestly I forgot to reply, I was all over the place.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le trajet est trop long pour juste une soirée.",
+    "en": "Honestly the drive's too long for just one evening.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je suis pas au top, je te redis samedi.",
+    "en": "Honestly I'm not at my best, I'll let you know Saturday.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le prix est correct si l'endroit est bien.",
+    "en": "Honestly the price is fine if the place is decent.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai ça me dérange pas de conduire si quelqu'un guide.",
+    "en": "Honestly I don't mind driving if someone else navigates.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai l'ancien peut encore marcher, ça coûte rien de regarder.",
+    "en": "Honestly the old one might still work, worth a quick look.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je zapperais la partie si la pluie continue.",
+    "en": "Honestly I'd skip the game if the rain keeps up.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai un court appel ça le fait, pas besoin de se voir.",
+    "en": "Honestly a short call works, we don't have to meet.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je suis chaud fondue, le billard peut attendre.",
+    "en": "Honestly I'm down for fondue, pool can wait.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai aimé ça plus que ce que je pensais.",
+    "en": "Honestly I liked it more than I expected to.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai vous pouvez faire sans moi si je vous bloque.",
+    "en": "Honestly you can do it without me if I'm holding you up.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai la deuxième option est plus sûre pour le coup.",
+    "en": "Honestly the second option feels safer for this one.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai vu que l'extrait, pas le truc entier.",
+    "en": "Honestly I only saw the clip, not the whole thing.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai partir après le dîner, ça m'arrange mieux.",
+    "en": "Honestly leaving after dinner works better for me.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je peux ramener un truc simple si personne a le temps.",
+    "en": "Honestly I can bring something easy if nobody has time.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai en basse qualité ça devrait tourner sur mon portable.",
+    "en": "Honestly low settings should run fine on my laptop.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je préfère que tu choisisses, moi ça me va.",
+    "en": "Honestly I'd rather you pick, I'm good either way.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai dormir jusqu'à midi avant une partie de soir, ça passe.",
+    "en": "Honestly sleeping till noon before a night game seems fair.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai flippé une minute, mais là ça va.",
+    "en": "Honestly I got scared for a minute, but I'm fine now.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le buffet était top, j'y retournerais bien.",
+    "en": "Honestly the buffet was great, I'd go back sometime.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai je force pas si t'es pas chaud.",
+    "en": "Honestly I won't push it if you're not feeling it.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai un plan B me rassurerait un peu.",
+    "en": "Honestly a backup plan would calm me down a bit.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai loupé la mise à jour, je suis un peu perdu.",
+    "en": "Honestly I missed the update and now I'm kinda lost.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le week-end chez mes parents me tente plus.",
+    "en": "Honestly a weekend at my parents' sounds better to me.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon y a un monde où le resto est complet.",
+    "en": "Anyway, there's a world where the restaurant's already full.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où j'arrive après le début du film.",
+    "en": "There's a world where I get there after the movie starts.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où la voiture est pas prête demain.",
+    "en": "There's a world where the car isn't ready tomorrow.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où on trouve plus de places pour le match.",
+    "en": "There's a world where we can't find seats for the match.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où je reste chez mes parents dimanche.",
+    "en": "There's a world where I just stay at my parents' on Sunday.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où la pluie nous bloque à la maison.",
+    "en": "There's a world where the rain keeps us home.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où la mise à jour casse un truc.",
+    "en": "There's a world where the update breaks something.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où on se dit ça au dernier moment.",
+    "en": "There's a world where we only decide at the last minute.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où je rate le train de peu.",
+    "en": "There's a world where I miss the train by a little.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où personne est chaud pour sortir.",
+    "en": "There's a world where nobody's down to go out.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où le devis monte un peu trop.",
+    "en": "There's a world where the quote comes in kinda high.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où je finis les exams et je m'écroule.",
+    "en": "There's a world where I finish exams and just crash.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où on rate la cuisine et on commande.",
+    "en": "There's a world where we mess up cooking and just order.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où je peux pas monter ce week-end.",
+    "en": "There's a world where I can't come up this weekend.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où le lien tombe dans les spams.",
+    "en": "There's a world where the link lands in spam.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où on se pose au café et on bouge plus.",
+    "en": "There's a world where we sit at the café and never leave.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après y a un monde où ça se fait quand même.",
+    "en": "I mean, there's a world where it still works out.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je sais pas, y a moyen que je passe après le boulot.",
+    "en": "I mean, I dunno, there's a chance I swing by after work.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen qu'on ait encore une table si on se dépêche.",
+    "en": "There's a chance we still get a table if we hurry.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que le train soit à l'heure pour une fois.",
+    "en": "There's a chance the train's actually on time for once.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je sois là pour la deuxième mi-temps.",
+    "en": "There's a chance I make it for the second half.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que ça tourne sur mon ordi en qualité basse.",
+    "en": "There's a chance it runs on my laptop at low settings.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que la maison de mes parents soit libre.",
+    "en": "There's a chance my parents' house is free.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je pose vendredi si le rush retombe.",
+    "en": "There's a chance I take Friday off if the rush dies down.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen qu'on se cale ça en début de soirée.",
+    "en": "There's a chance we lock this in for early evening.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je ramène le dessert, je te confirme.",
+    "en": "There's a chance I bring dessert, I'll confirm.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que la pluie s'arrête avant qu'on parte.",
+    "en": "There's a chance the rain stops before we head out.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que le garagiste me rende la voiture demain.",
+    "en": "There's a chance the mechanic has the car ready tomorrow.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je révise mieux en visio avec toi.",
+    "en": "There's a chance I study better on a call with you.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je sais pas, y a moyen que ce soit déjà complet.",
+    "en": "I mean, I dunno, there's a chance it's already booked up.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je reste qu'une heure, je te dis ça.",
+    "en": "There's a chance I only stay an hour, just a heads-up.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen qu'on fasse le film et le resto le même soir.",
+    "en": "There's a chance we do the movie and dinner the same night.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que j'aie fini la réunion vers sept heures et demie.",
+    "en": "There's a chance I'm done with the meeting around seven thirty.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que le colis soit déjà au point de retrait.",
+    "en": "There's a chance the package is already at the pickup spot.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je dorme dans le train, je suis crevé.",
+    "en": "There's a chance I sleep on the train, I'm wiped.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que ça passe bien si on prévoit large.",
+    "en": "There's a chance it goes smoothly if we leave some margin.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on prend la table et les autres nous rejoignent.",
+    "en": "We might as well grab the table and let the others join.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu passes en coup de vent si t'es dans le coin.",
+    "en": "You might as well swing by quick if you're in the area.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je prends le train, la route me saoule un peu.",
+    "en": "I might as well take the train, the drive's getting old.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on commande, j'ai pas l'énergie de cuisiner.",
+    "en": "We might as well order, I don't have the energy to cook.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu m'envoies l'adresse, je me débrouille.",
+    "en": "You might as well just send the address, I'll figure it out.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on lance la partie, les autres arriveront.",
+    "en": "We might as well start the game, the others will show.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je mets les vidéos de côté et je pousse la musique.",
+    "en": "I might as well pause the videos and push the music.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on se fait un escape game si le resto saute.",
+    "en": "We might as well do an escape room if dinner falls through.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu regardes en magasin, les photos trompent.",
+    "en": "You might as well check it in store, photos can lie.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je redémarre, des fois ça règle le truc.",
+    "en": "I might as well restart it, sometimes that fixes the thing.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on décale à dimanche, samedi la route est longue.",
+    "en": "We might as well move it to Sunday, Saturday's drive is long.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je prends des softs, je conduis après.",
+    "en": "I might as well stick to soft drinks, I'm driving after.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu me dis non maintenant, je m'organise autrement.",
+    "en": "You could even say no now, I'll plan around it.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on sort le plan B avant d'être coincés.",
+    "en": "We might as well pull the backup before we're stuck.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je reste dormir, repartir ce soir c'est limite.",
+    "en": "I might as well stay over, leaving tonight is cutting it close.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on zappe l'entrée, le dessert compte plus.",
+    "en": "We might as well skip the starter, dessert matters more.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je révise à la bibliothèque, chez moi je décroche.",
+    "en": "I might as well study at the library, I zone out at home.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite tu viens au feu d'artifice et tu vois après.",
+    "en": "You might as well come to the fireworks and decide after.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement ça passe, mais c'est limite pour le dernier métro.",
+    "en": "It should be fine, but it's tight for the last subway.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je suis dispo le soir, sauf si la réunion déborde.",
+    "en": "I should be free at night, unless the meeting runs over.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement le trajet se fait en vingt minutes, sauf s'il pleut.",
+    "en": "The ride should take twenty minutes, unless it's raining.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement j'ai la maison, faut juste que je demande.",
+    "en": "I should have the house, I just gotta ask.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement ça tourne, j'ai juste un doute sur la mise à jour.",
+    "en": "It should run, I just have a doubt about the update.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement on est assez pour une table, je confirme demain.",
+    "en": "There should be enough of us for a table, I'll confirm tomorrow.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je ramène des feuilletés, sauf si quelqu'un gère déjà.",
+    "en": "I should bring the pastries, unless someone's already on it.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je suis chaud, faut juste que ça reste chill.",
+    "en": "I should be down, it just has to stay chill.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement le devis arrive cet après-midi, je te le transmets.",
+    "en": "The quote should land this afternoon, I'll pass it on.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement ça se fait en visio, j'ai cours juste avant.",
+    "en": "It should work on a video call, I've got class right before.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je pars vers huit heures, c'est un peu juste.",
+    "en": "I should leave around eight, it's a bit tight.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement y a de la place, mais on devrait quand même réserver.",
+    "en": "There should be room, but we ought to book anyway.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je dors dans le train et j'arrive frais.",
+    "en": "I should sleep on the train and get there fresh.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement le retour se fait, sauf si le brouillard tombe.",
+    "en": "The way back should be fine, unless the fog rolls in.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je te réponds ce soir, là je suis dans le rush.",
+    "en": "I should reply tonight, I'm in a rush right now.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement c'est jouable, j'ai juste peur que ça empiète.",
+    "en": "It should be doable, I'm just scared it'll spill over.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement la promo tient jusqu'à ce soir, à vérifier.",
+    "en": "The sale should last through tonight, worth checking.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je garde dimanche pour mes parents.",
+    "en": "I should keep Sunday for my parents.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon on verra bien en arrivant.",
+    "en": "We'll just see when we get there anyway.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon c'est déjà mieux que d'annuler.",
+    "en": "Either way, it's already better than canceling.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je te redis dans la journée.",
+    "en": "I'll get back to you later today anyway.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon c'est pas la fin du monde si on décale.",
+    "en": "It's not the end of the world if we push it anyway.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je m'adapte, tu me dis l'heure.",
+    "en": "I'll work around it anyway, just tell me the time.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon le plan B est déjà dans un coin de la tête.",
+    "en": "The backup's already sitting there anyway.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je suis crevé, une soirée courte me va.",
+    "en": "I'm wiped anyway, a short night works for me.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon on perd rien à tenter.",
+    "en": "We lose nothing by trying anyway.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je passe après la réunion.",
+    "en": "I'll come by after the meeting anyway.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon le match se regarde mieux à plusieurs.",
+    "en": "The match is better with a few people anyway.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je prends des softs, je repars en voiture.",
+    "en": "I'll stick to soft drinks anyway, I'm driving back.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon s'il pleut on se pose à l'intérieur.",
+    "en": "If it rains we'll just stay inside anyway.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je note ça, on se cale plus tard.",
+    "en": "I'll write it down anyway, we'll lock it in later.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon l'ancien ordi peut dépanner.",
+    "en": "The old computer can cover us anyway.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je suis en Bretagne ce coup-ci.",
+    "en": "I'll be in Brittany for this one anyway.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon même un petit truc c'est mieux que rien.",
+    "en": "Even something small is better than nothing anyway.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon vous me manquez, on trouvera un trou.",
+    "en": "I miss you guys anyway, we'll find a slot.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je laisse un double des clés au cas où.",
+    "en": "I'll leave a spare key anyway, just in case.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je reste une heure et je file.",
+    "en": "Worst case I stay an hour and then head out.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on commande des pizzas et c'est très bien.",
+    "en": "Worst case we order pizza and that's totally fine.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je me connecte de chez moi.",
+    "en": "Worst case I just log on from home.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on se retrouve devant la gare.",
+    "en": "Worst case we meet in front of the station.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je rate le début, vous m'attendez pas.",
+    "en": "Worst case I miss the start, don't wait on me.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je dors sur place et je repars demain.",
+    "en": "Worst case I sleep there and leave tomorrow.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on fait l'escape game un autre soir.",
+    "en": "Worst case we do the escape room another night.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je prends le modèle basique, c'est pas grave.",
+    "en": "Worst case I get the basic one, no big deal.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je pose une journée et je récupère après.",
+    "en": "Worst case I take a day and make it up later.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire mes parents me déposent, je leur demande.",
+    "en": "Worst case my parents drop me off, I'll ask them.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on se parle demain, là c'est le rush.",
+    "en": "Worst case we talk tomorrow, it's a rush right now.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire la visio coupe, on reprend au téléphone.",
+    "en": "Worst case the video drops, we switch to the phone.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je ramène que le dessert, le reste suivra.",
+    "en": "Worst case I only bring dessert, the rest can follow.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on décale d'une semaine, c'est pas bien grave.",
+    "en": "Worst case we push it a week, it's not a big deal.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je regarde le match en replay.",
+    "en": "Worst case I watch the match on replay.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire tu me redis le matin, je m'arrange.",
+    "en": "Worst case you tell me in the morning, I'll make it work.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire on marche dix minutes, se garer ici c'est mort.",
+    "en": "Worst case we walk ten minutes, parking here is hopeless.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai t'inquiète, au pire je viens plus tard.",
+    "en": "Honestly don't sweat it, worst case I come later.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je sais pas, peut-être que c'est mieux en plus petit.",
+    "en": "I mean, I dunno, maybe it's better if it's smaller.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après ouais, j'avoue que le timing est relou.",
+    "en": "Yeah I mean, I'll admit the timing's annoying.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après c'est pas grave si tu viens qu'au dessert.",
+    "en": "It's no big deal though if you only come for dessert.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis chaud, mais pas avant huit heures.",
+    "en": "I'm down, just not before eight.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après moi ça me va, faut voir pour les autres.",
+    "en": "Works for me though, we still gotta check with the others.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après on peut enchaîner après le film si on est encore chauds.",
+    "en": "I mean, we can keep going after the movie if we're still down.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je veux pas vous bloquer, faites sans moi si besoin.",
+    "en": "I mean, I don't wanna hold you up, go without me if you need.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après c'est stylé, j'aurais pas parié dessus.",
+    "en": "It's pretty cool though, I wouldn't have bet on it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis pas contre, j'ai juste un doute.",
+    "en": "I'm not against it though, I just have a doubt.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après bon, on verra le jour même.",
+    "en": "We'll just see on the day though.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je te cache pas, j'ai un peu la flemme.",
+    "en": "I won't lie though, I kinda can't be bothered.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après les deux se valent, c'est toi qui vois.",
+    "en": "They're kinda the same though, it's your call.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je peux me libérer, faut juste me prévenir tôt.",
+    "en": "I can free myself up though, just warn me early.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après le trajet sous la pluie m'a un peu achevé.",
+    "en": "That rainy drive kinda finished me off though.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après j'ai bien aimé, même si je m'y attendais pas.",
+    "en": "I did like it though, even if I didn't expect it.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après c'est jouable, mais faut pas traîner.",
+    "en": "It's doable though, but we can't hang around.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis partant pour l'escape game, le resto on verra.",
+    "en": "I'm in for the escape room though, dinner we can see.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après un week-end sur deux chez mes parents, ça me va.",
+    "en": "Every other weekend at my parents' works for me though.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après j'avoue, depuis la mise à jour je retrouve plus rien.",
+    "en": "I'll admit though, since the update I can't find anything.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je prends le train, j'ai pas envie de conduire de nuit.",
+    "en": "I'll take the train though, I don't wanna drive at night.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après c'est toujours mieux de prévenir que d'annuler sur place.",
+    "en": "It's still better to warn people than cancel once you're there.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après ouais, le buffet me tente plus que le resto chic.",
+    "en": "Yeah I mean, the buffet tempts me more than the fancy place.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis chaud musique ce soir, les jeux on verra.",
+    "en": "I'm down for music tonight though, games we can see.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après même si je suis en retard, comptez-moi.",
+    "en": "Even if I'm late though, count me in.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je sais pas trop, les avis sont bons mais bon.",
+    "en": "I mean, I dunno, the reviews are good, but still.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite pour arriver avant le début.",
+    "en": "It's cutting it close to get there before the start.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite niveau sommeil, je viens quand même.",
+    "en": "Sleep's kinda tight, but I'm still gonna come.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite de repartir ce soir avec cette pluie.",
+    "en": "It's borderline heading back tonight with this rain.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite sur le prix, mais l'endroit a l'air bien.",
+    "en": "It's borderline on price, but the place looks good.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite pour réviser tout ça avant demain.",
+    "en": "It's tight to review all that before tomorrow.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite, on devrait quand même garder un plan B.",
+    "en": "It's tight, so we should still keep a backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite côté timing, avec la réunion juste avant.",
+    "en": "The timing's tight with the meeting right before.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite de cuisiner pour tout le monde ce soir.",
+    "en": "It's a stretch to cook for everyone tonight.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite, mon ordi tient mais seulement en qualité basse.",
+    "en": "It's tight, my laptop can handle it but only on low.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite pour le dernier bus, faut pas traîner.",
+    "en": "It's cutting it close for the last bus, so we can't linger.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite, j'ai le dos en vrac après la route.",
+    "en": "It's borderline, my back's wrecked after that drive.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite question place, on devrait réserver.",
+    "en": "Space is tight, so we should probably book.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite, je tousse un peu, je viens quand même.",
+    "en": "It's borderline, I'm coughing a bit, but I'll still come.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite de tout caser le même week-end.",
+    "en": "It's a stretch to fit all of that in one weekend.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud pour ce soir, si la partie se fait.",
+    "en": "I'm down for tonight, if the game actually happens.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud fondue puis billard, par contre pas trop tard.",
+    "en": "I'm down for fondue then pool, just not too late.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de passer au feu d'artifice.",
+    "en": "I'm down to swing by the fireworks.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud, mais seulement si on se cale une heure précise.",
+    "en": "I'm down, but only if we lock in an actual time.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je suis chaud pour dimanche, samedi c'est mort.",
+    "en": "I'm down for Sunday though, Saturday's a no.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de ramener des feuilletés ou un dessert.",
+    "en": "I'm down to bring pastries or a dessert.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud d'essayer le jeu, je le connais pas du tout.",
+    "en": "I'm down to try the game, I don't know it at all.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de regarder le match, si on a des places.",
+    "en": "I'm down to watch the match if we can get seats.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud, faut juste que je finisse un truc avant.",
+    "en": "I'm down, I just gotta finish something first.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas ultra chaud, mais je viens quand même.",
+    "en": "I'm not super down, but I'll come anyway.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'es chaud de rester manger, ou tu files après ?",
+    "en": "Are you down to stay for food, or are you heading out?",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud pour la visio, par contre pas trop long.",
+    "en": "I'm down for the review call, just not a long one.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je serais chaud d'un week-end en Bretagne si ça se cale.",
+    "en": "I'd be down for a weekend in Brittany if we can lock it.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de cuisiner, par contre je sais pas encore quoi.",
+    "en": "I'm down to cook, I just don't know what yet.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud, au pire je repars tôt.",
+    "en": "I'm down, worst case I head out early.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement je suis chaud, ça me fait plaisir que vous ayez pensé à moi.",
+    "en": "Honestly I'm down, it means a lot that you thought of me.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de venir, c'est juste le trajet qui me freine.",
+    "en": "I'm down to come, it's just the drive that's slowing me.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, c'est vraiment pas si stressant.",
+    "en": "Don't sweat it, it's really not that stressful.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète pour le retard, je m'arrange.",
+    "en": "Don't sweat the delay, I'll work around it.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, au pire on a déjà un autre plan.",
+    "en": "Don't sweat it, worst case we already have another plan.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète si tu fais des fautes, on s'en fiche un peu.",
+    "en": "Don't sweat the mistakes, we really don't mind.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, je confirme demain matin.",
+    "en": "Don't sweat it, I'll confirm tomorrow morning.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, même si je suis en retard je viens.",
+    "en": "Don't sweat it, even if I'm late I'll still come.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète pour le plat, un truc simple ça suffit largement.",
+    "en": "Don't sweat the food, something simple is plenty.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, je retrouve le document et je te l'envoie.",
+    "en": "Don't sweat it, I'll find the document and send it over.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, on se capte plus tard, là c'est le rush.",
+    "en": "Don't sweat it, we'll catch up later, it's a rush right now.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, c'est toujours mieux que rien du tout.",
+    "en": "Don't sweat it, it's still better than nothing at all.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que je m'y attendais pas du tout.",
+    "en": "I'll admit I really wasn't expecting that.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, j'ai la flemme, mais je viens quand même.",
+    "en": "I'll admit I can't be bothered, but I'll come anyway.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que le trajet m'a achevé.",
+    "en": "I'll admit that drive finished me off.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, j'ai zappé de répondre, désolé.",
+    "en": "I'll admit I forgot to reply, sorry about that.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que les deux options me vont.",
+    "en": "I'll admit both options work for me.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, j'ai flippé pour pas grand-chose.",
+    "en": "I'll admit I freaked out over nothing much.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que je connaissais pas ce morceau.",
+    "en": "I'll admit I didn't know that track.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, je suis mitigé sur la fin.",
+    "en": "I'll admit I'm mixed on the ending.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que sans plan B je suis pas serein.",
+    "en": "I'll admit I'm not calm without a backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, j'ai trop mangé, le dessert va être dur.",
+    "en": "I'll admit I ate too much, dessert's gonna be tough.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que je préfère qu'on se voie tous ensemble.",
+    "en": "I'll admit I'd rather we all get together.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue, mon portable rame, faut que je ferme des onglets.",
+    "en": "I'll admit my laptop's dragging, I gotta close some tabs.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra bien sur place comment on s'organise.",
+    "en": "We'll see on the spot how we sort it out.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra demain matin si je suis en forme.",
+    "en": "We'll see tomorrow morning if I'm feeling up to it.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On avisera une fois que tout le monde a répondu.",
+    "en": "We'll play it by ear once everyone's replied.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra si le prix du refuge nous va.",
+    "en": "We'll see if the cabin price works for us.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra le jour même pour l'heure, te prends pas la tête.",
+    "en": "We'll see on the day for the time, don't overthink it.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra bien si la pluie se calme.",
+    "en": "We'll just see if the rain calms down.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On avisera pour le dessert une fois là-bas.",
+    "en": "We'll figure out dessert once we're there.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra si la manette marche encore.",
+    "en": "We'll see if the controller still works.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra, y a moyen que je sois en retard.",
+    "en": "We'll see, there's a chance I'll be late.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On avisera, au pire on a le plan B.",
+    "en": "We'll play it by ear, worst case we've got the backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra si mes parents sont là dimanche.",
+    "en": "We'll see if my parents are around on Sunday.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra bien, de toute façon c'est pas bloquant.",
+    "en": "We'll see, it's not a deal-breaker anyway.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra à la bibliothèque si on avance vraiment.",
+    "en": "We'll see at the library if we actually get anything done.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On verra le score et on avisera pour la suite.",
+    "en": "We'll see the score and figure out the rest after.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je suis pas dispo samedi, y a une cousinade.",
+    "en": "I'm not free Saturday though, there's a family thing.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre dix-huit heures c'est tôt, je vous rejoins quand même.",
+    "en": "Six is early though, I'll still come join you.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je conduis, je prends que des softs.",
+    "en": "I'm driving though, so I'll only have soft drinks.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre le trajet est long, je dormirai peut-être en route.",
+    "en": "The drive's long though, I might nap on the way.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre j'ai cours juste avant, je risque d'être juste.",
+    "en": "I've got class right before though, so I might be tight on time.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre s'il pleut, on décale sans se prendre la tête.",
+    "en": "If it rains though, we'll move it and not stress.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je veux le lien, le mail est peut-être dans les spams.",
+    "en": "I do want the link though, the email might be in spam.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre on devrait réserver, y a un monde où c'est complet.",
+    "en": "We should book though, there's a world where it's full.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je reste pas trop tard, je suis crevé.",
+    "en": "I won't stay too late though, I'm wiped.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre le modèle basique me va si le prix grimpe.",
+    "en": "The basic model is fine by me though if the price climbs.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je te rappelle après la réunion, pas avant.",
+    "en": "I'll call you after the meeting though, not before.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre envoie l'adresse, je sais pas exactement où c'est.",
+    "en": "Send the address though, I don't know exactly where it is.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre je suis chaud, faut juste que ça reste tranquille.",
+    "en": "I'm down though, it just has to stay low-key.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre j'ai mal au dos, je porterai pas grand-chose.",
+    "en": "My back hurts though, I won't carry much.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup on se dit vingt heures trente devant le resto ?",
+    "en": "So are we saying eight thirty outside the restaurant?",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je ramène le dessert, c'est ça ?",
+    "en": "So I'm bringing dessert, is that the plan?",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup y a moyen que je vienne que dimanche.",
+    "en": "So there's a chance I only come on Sunday.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup on fait un sondage, ce sera plus simple.",
+    "en": "So let's just run a poll, it'll be simpler.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je prends le train, la route me tente pas.",
+    "en": "So I'll take the train, I'm not feeling the drive.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup t'inquiète, on se rattrape plus tard.",
+    "en": "So don't sweat it, we'll make up for it later.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je suis chaud, vous me comptez.",
+    "en": "So I'm down, count me in.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup le plan B c'est le café si le resto est plein.",
+    "en": "So the backup is the café if the restaurant's full.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je te confirme demain, là je sais pas encore.",
+    "en": "So I'll confirm tomorrow, I don't know yet.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup on se pose chez moi si la maison est libre.",
+    "en": "So we can hang at mine if the house is free.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je pousse la musique et je mets les vidéos en pause.",
+    "en": "So I'll push the music and pause the videos for now.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup même en basse qualité je tente sur le portable.",
+    "en": "So I'll try it on my laptop even at low settings.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup on verra sur place, inutile de trop prévoir.",
+    "en": "So we'll see once we're there, no need to overplan.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je suis en Bretagne, je pourrai pas monter.",
+    "en": "So I'll be in Brittany, I won't be able to come up.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis ça demain, quand j'y verrai plus clair.",
+    "en": "I'll get back to you tomorrow, once it's clearer.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme dans l'après-midi, faut que je check un truc.",
+    "en": "I'll confirm this afternoon, I gotta check something.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis samedi matin si je suis en forme.",
+    "en": "I'll let you know Saturday morning if I'm up for it.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme l'heure dès que la réunion est calée.",
+    "en": "I'll confirm the time once the meeting's locked in.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis si mes parents libèrent la maison.",
+    "en": "I'll let you know if my parents free up the house.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme pour les feuilletés, normalement c'est bon.",
+    "en": "I'll confirm the pastries, it should be fine.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis si le train est dans les temps.",
+    "en": "I'll let you know if the train's running on time.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme que je suis chaud, par contre pas trop tard.",
+    "en": "I'll confirm I'm down, just not too late.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis si le devis est raisonnable.",
+    "en": "I'll let you know if the quote's reasonable.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme après avoir vu la météo.",
+    "en": "I'll confirm after I've seen the forecast.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te redis si mon ordi arrive à le lancer.",
+    "en": "I'll let you know if my laptop can actually run it.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te confirme, au pire je viens que pour le début.",
+    "en": "I'll confirm, worst case I only come for the start.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit bien, faut juste voir l'horaire.",
+    "en": "I'm into it, we just gotta sort the timing.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit moyen, y a un monde où je suis trop crevé.",
+    "en": "I'm kinda into it, there's a world where I'm too wiped.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit de tester, au pire on laisse tomber.",
+    "en": "I'm into trying it, worst case we drop it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit plus le buffet que le truc chic.",
+    "en": "I'm more into the buffet than the fancy spot.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit une soirée tranquille.",
+    "en": "I'm into keeping the night pretty low-key.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit, par contre je veux pas que ça déborde.",
+    "en": "I'm into it, I just don't want it to run over.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit de regarder le match ensemble.",
+    "en": "I'm into watching the match together.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit pas trop de conduire sous la pluie.",
+    "en": "I'm not really into driving in the rain.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit de passer après le film, on verra.",
+    "en": "I'm into coming after the movie, we'll see.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me dit bien de réviser ensemble, tout seul je décroche.",
+    "en": "I'm into studying together, I zone out on my own.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement c'est déjà pas mal.",
+    "en": "Honestly that's already pretty good.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement on perd rien à essayer.",
+    "en": "Honestly there's no harm in trying.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement je préfère qu'on fasse simple.",
+    "en": "Honestly I'd rather we keep it simple.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement le prix est correct pour ce que c'est.",
+    "en": "Honestly the price is fair for what it is.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement j'ai eu peur pour rien.",
+    "en": "Honestly I got scared over nothing.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement le dernier épisode m'a laissé sur ma faim.",
+    "en": "Honestly the last episode left me wanting more.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement se garer là le week-end, c'est mort.",
+    "en": "Honestly parking there on a weekend is hopeless.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement une douche après la route, ça change tout.",
+    "en": "Honestly a shower after the drive changes everything.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement je suis content que ça se passe bien pour toi.",
+    "en": "Honestly I'm glad things are going well for you.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement même raté, c'est mieux que de pas avoir essayé.",
+    "en": "Honestly even a miss is better than not trying.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, j'hésite encore.",
+    "en": "I won't lie, I'm still on the fence.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, le timing est relou.",
+    "en": "I won't lie, the timing's annoying.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, j'ai un peu le seum de pas être là.",
+    "en": "I won't lie, I'm bummed I can't be there.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, j'ai zappé, désolé.",
+    "en": "I won't lie, I spaced it, sorry.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, sans plan B je suis tendu.",
+    "en": "I won't lie, I'm tense without a backup.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, la route m'a cassé.",
+    "en": "I won't lie, that drive wore me out.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, je suis chaud mais je suis crevé.",
+    "en": "I won't lie, I'm down but I'm also wiped.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, les deux me vont à peu près.",
+    "en": "I won't lie, both are kinda fine by me.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, on se retrouve devant la gare.",
+    "en": "Let's keep it simple and meet in front of the station.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, je ramène un dessert et c'est bon.",
+    "en": "Let's keep it simple, I'll bring a dessert and we're good.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, tu me dis oui ou non demain.",
+    "en": "Let's keep it simple, just tell me yes or no tomorrow.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, au pire on commande.",
+    "en": "Let's keep it simple, worst case we order.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, un appel ça suffit.",
+    "en": "Let's keep it simple, a call is plenty.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, si t'es chaud tu viens, sinon c'est pas grave.",
+    "en": "Let's keep it simple, come if you're down, otherwise no stress.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, je prends le premier créneau qu'ils ont.",
+    "en": "Let's keep it simple, I'll take the first slot they've got.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On fait simple, on regarde la météo le matin même.",
+    "en": "Let's keep it simple and check the weather that morning.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable si on part un peu plus tôt.",
+    "en": "It's doable if we leave a bit earlier.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable, mais c'est limite niveau sommeil.",
+    "en": "It's doable, but sleep's gonna be tight.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable en visio si t'es pas sur place.",
+    "en": "It's doable on a video call if you can't be there.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable sur mon portable, en qualité basse.",
+    "en": "It's doable on my laptop, on low settings.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable dimanche, samedi le trajet est trop long.",
+    "en": "It's doable Sunday, Saturday's drive is too long.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable, y a moyen qu'on ait une table.",
+    "en": "It's doable, there's a chance we get a table.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable, au pire je dors sur place.",
+    "en": "It's doable, worst case I sleep over.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable, par contre faut un plan B.",
+    "en": "It's doable, though we do need a backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre, faut juste me dire l'heure.",
+    "en": "I'm not against it, just tell me the time.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre un truc plus tranquille.",
+    "en": "I'm not against something more low-key.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre de cuisiner, si c'est simple.",
+    "en": "I'm not against cooking, if it's something simple.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre d'y aller en train.",
+    "en": "I'm not against going by train.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre, y a un monde où ça me plaît.",
+    "en": "I'm not against it, there's a world where I like it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre de décaler d'une heure.",
+    "en": "I'm not against pushing it an hour.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre, par contre je reste pas tard.",
+    "en": "I'm not against it, I just won't stay late.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis pas contre de tenter, au pire on laisse tomber.",
+    "en": "I'm not against trying, worst case we drop it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir si tout le monde est chaud.",
+    "en": "We gotta see if everyone's actually down.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir la météo avant de se caler.",
+    "en": "We gotta check the forecast before we lock it in.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir si le prix reste correct.",
+    "en": "We gotta see if the price stays reasonable.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir, j'ai peut-être déjà un truc dimanche.",
+    "en": "We gotta see, I might already have something Sunday.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir si mon ordi le supporte.",
+    "en": "We gotta see if my laptop can handle it.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir avec mes parents pour la maison.",
+    "en": "We gotta check with my parents about the house.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir si on est assez de monde pour réserver.",
+    "en": "We gotta see if there are enough of us to book.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir le jour même, inutile de stresser maintenant.",
+    "en": "We gotta see on the day, no point stressing now.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte, tu me donnes l'heure quand tu sais.",
+    "en": "I'll adapt, give me the time whenever you know it.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte au train, c'est pas bloquant.",
+    "en": "I'll adapt to the train, it's not a deal-breaker.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte, au pire je viens plus tard.",
+    "en": "I'll adapt, worst case I show up later.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte si vous décalez au dimanche.",
+    "en": "I'll adapt if you move it to Sunday.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte, même si c'est en visio.",
+    "en": "I'll adapt, even if it's on a video call.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte niveau bouffe, je mange de tout.",
+    "en": "I'll adapt on the food, I eat pretty much everything.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte, par contre prévenez-moi un minimum.",
+    "en": "I'll adapt, just give me a little warning.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte à la météo, on a qu'à prévoir deux options.",
+    "en": "I'll adapt to the weather, we can just plan two options.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est déjà pas mal si on est trois.",
+    "en": "It's already pretty good if there's three of us.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est déjà pas mal d'avoir un plan B.",
+    "en": "It's already pretty good that we've got a backup.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est déjà mieux que la dernière fois.",
+    "en": "This is already better than last time.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est déjà pas mal, on ajustera plus tard.",
+    "en": "It's already decent, we can tighten it up later.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Même à moitié, c'est mieux que rien.",
+    "en": "Even halfway, it's better than nothing.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Un petit passage, c'est déjà ça.",
+    "en": "A short swing-by already counts for something.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Si on se parle cinq minutes, c'est déjà bien.",
+    "en": "If we talk for five minutes, that's already something.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Même en qualité moyenne, ça passe déjà.",
+    "en": "Even at medium quality, it already works.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je sais pas, y a moyen que la douche soit réparée demain.",
+    "en": "I mean, I dunno, there's a chance the shower's fixed tomorrow.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai j'ai le cou raide, mais je viens quand même.",
+    "en": "Honestly my neck's stiff, but I'm still coming.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je me couche tôt, là c'est raté.",
+    "en": "I should be in bed early, that's already failed.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je rappelle le garagiste demain.",
+    "en": "I'll call the mechanic back tomorrow anyway.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite je prends le premier rendez-vous qu'ils ont.",
+    "en": "I might as well take the earliest appointment they've got.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où le colis arrive pas avant vendredi.",
+    "en": "There's a world where the package doesn't show before Friday.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je garde le reçu et je renvoie si la taille va pas.",
+    "en": "Worst case I keep the receipt and send it back if the size is off.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre j'ai mal au dos, je porterai pas les courses.",
+    "en": "My back hurts though, I won't carry the groceries.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup on sort les poubelles ce soir, sinon j'oublie.",
+    "en": "So we take the trash out tonight, or I'll forget.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, j'ai mal dormi, la journée va être longue.",
+    "en": "I won't lie, I slept badly, the day's gonna drag.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement le pommeau est nickel, ça change la douche.",
+    "en": "Honestly the showerhead's perfect, it changes the shower.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est limite, j'ai les yeux fatigués, je coupe bientôt.",
+    "en": "It's tight, my eyes are tired, I'm logging off soon.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je sois en logement sur le campus l'an prochain.",
+    "en": "There's a chance I'll be in campus housing next year.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après ouais, j'avoue que j'ai trop tiré sur le sommeil.",
+    "en": "Yeah I mean, I'll admit I pushed my sleep too far.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on se pose à la maison, sortir me dit moyen.",
+    "en": "We might as well stay in, going out only kinda appeals.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement le rendez-vous est vendredi, je te redis si ça bouge.",
+    "en": "The appointment should be Friday, I'll say if it moves.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai t'inquiète pour moi, repose-toi si t'es à plat.",
+    "en": "Honestly don't worry about me, rest if you're run-down.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je note ce qui manque avant de retourner au magasin.",
+    "en": "I'll list what's missing before I go back to the store anyway.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a un monde où je finis le devoir et je m'endors dessus.",
+    "en": "There's a world where I finish the assignment and fall asleep on it.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je rends un truc simple, ce sera déjà pas mal.",
+    "en": "Worst case I hand in something simple, that'll already be decent.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre cette réunion aurait pu être un message.",
+    "en": "That meeting could've been a message though.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je te rappelle dès que c'est fini.",
+    "en": "So I'll call you as soon as it's over.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud de boucler ça ce soir, après je décroche.",
+    "en": "I'm down to wrap this up tonight, then I'm done.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Faut voir si le délai est vraiment aussi juste.",
+    "en": "We gotta see if the deadline's really that tight.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je m'adapte, on peut faire le point par écrit.",
+    "en": "I'll adapt, we can do the check-in in writing.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est jouable si on se met d'accord avant.",
+    "en": "It's doable if we get on the same page first.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après je suis pas contre un point court.",
+    "en": "I'm not against a short check-in though.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "En vrai le rush est passé, je peux enfin répondre tranquille.",
+    "en": "Honestly the rush is over, I can finally reply in peace.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Limite on dit l'essentiel et on raccroche.",
+    "en": "We might as well say the important stuff and hang up.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Normalement je suis libre après dix-neuf heures trente.",
+    "en": "I should be free after seven thirty.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "De toute façon je relis une fois avant d'envoyer.",
+    "en": "I'll read it once more before sending anyway.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Y a moyen que je pose un jour, je suis à plat.",
+    "en": "There's a chance I take a day off, I'm flat out.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au pire je viens en visio, le trajet me tente pas.",
+    "en": "Worst case I join on video, I'm not feeling the drive.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Par contre une piqûre m'a fait flipper, là ça va.",
+    "en": "A sting freaked me out though, I'm fine now.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Du coup je prends une veste, y a un monde où il pleut.",
+    "en": "So I'll bring a jacket, there's a world where it rains.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement le brouillard était abusé, on voyait rien.",
+    "en": "Honestly the fog was wild, we couldn't see a thing.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te cache pas, j'ai oublié la veste, évidemment il pleut.",
+    "en": "I won't lie, I forgot a jacket, and of course it's raining.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après ouais, même sous la pluie, c'est mieux que d'annuler.",
+    "en": "Yeah I mean, even in the rain, it's better than canceling.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  }
+]

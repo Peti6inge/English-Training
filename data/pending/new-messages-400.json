@@ -1,0 +1,3202 @@
+[
+  {
+    "fr": "J'ai le cou raide parce que j'ai dormi de travers.",
+    "en": "My neck is stiff because I slept at a weird angle.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je devrais m'étirer avant que les mollets se crispent.",
+    "en": "I should stretch before my calves start cramping.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai mal au dos après toutes ces heures de voiture.",
+    "en": "My back aches after all those hours in the car.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mes yeux fatiguent dès que je fixe l'écran trop longtemps.",
+    "en": "My eyes tire out when I stare at screens too long.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai les épaules tendues, je ne m'en rends compte que le soir.",
+    "en": "My shoulders stay tight and I only notice at night.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai marché trop vite, j'ai un point de côté.",
+    "en": "I walked too fast and got a stitch in my side.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai les mains gelées, j'ai oublié les gants.",
+    "en": "My hands are freezing because I forgot my gloves.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai une petite courbature, rien de méchant.",
+    "en": "I've got a mild ache, nothing serious at all.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je bâille depuis une heure, mon corps a compris.",
+    "en": "I've been yawning for an hour, my body caught on.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai le ventre noué avant de parler devant des gens.",
+    "en": "My stomach knots up before I have to speak in public.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Une douche chaude me détend le dos presque tout de suite.",
+    "en": "A hot shower loosens my back almost right away.",
+    "tags": [
+      "body"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Respirer lentement peut calmer le rythme cardiaque.",
+    "en": "Slow breathing can settle your heart rate down.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Rester assis trop longtemps raidit le bas du dos.",
+    "en": "Sitting for too long stiffens the lower back.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je fais une courte pause toutes les heures pour bouger.",
+    "en": "I take a short break every hour just to move.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une mauvaise posture devant l'écran use la nuque.",
+    "en": "Poor posture at a screen wears out your neck.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les crampes arrivent quand j'oublie de boire.",
+    "en": "Cramps show up whenever I forget to drink water.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Dix minutes de marche débloquent les jambes après le trajet.",
+    "en": "A ten minute walk loosens my legs after a long drive.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je masse les tempes dès que le mal de tête commence.",
+    "en": "I rub my temples as soon as a headache starts.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le corps encaisse mieux le stress quand le sommeil est régulier.",
+    "en": "Your body handles stress better when sleep stays regular.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je relâche la mâchoire, je la serre sans m'en apercevoir.",
+    "en": "I unclench my jaw because I tighten it without noticing.",
+    "tags": [
+      "body"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Se garer en centre-ville le week-end, c'est un cauchemar.",
+    "en": "Parking downtown on a weekend is a total nightmare.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je vous rejoins du côté du feu d'artifice.",
+    "en": "I'll join you over by the fireworks later.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce café est parfait pour regarder les gens passer.",
+    "en": "This café is perfect for watching people walk by.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis en ville ce soir, on peut se croiser.",
+    "en": "I'll be in town tonight, so we might cross paths.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le trajet jusqu'au centre m'a pris plus longtemps que prévu.",
+    "en": "The ride into town took longer than I expected.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se retrouve devant la gare, c'est plus simple.",
+    "en": "Let's meet in front of the station, it's much easier.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le quartier est calme le dimanche matin.",
+    "en": "The neighborhood feels quiet on a Sunday morning.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai marché vingt minutes, le plan était optimiste.",
+    "en": "I walked twenty minutes because the map was optimistic.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il y a un petit resto juste à côté de la place.",
+    "en": "There's a small restaurant just off the main square.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le dernier métro part tôt, il ne faut pas traîner.",
+    "en": "The last subway leaves early, so don't hang around.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu peux m'envoyer l'adresse exacte, on doit être tout près.",
+    "en": "Can you send the exact spot, I think we're basically next door.",
+    "tags": [
+      "city"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La ligne de bus relie le campus au centre-ville.",
+    "en": "The bus line links the campus with the city center.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les travaux ont dévié le chemin habituel.",
+    "en": "Roadwork has pushed us off the usual route.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un vélo en libre-service suffit pour traverser le centre.",
+    "en": "A rental bike is plenty for crossing the center.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le stationnement dans la rue est plus simple après dix-neuf heures.",
+    "en": "Street parking gets easier after seven in the evening.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je repère le point de rendez-vous avant de quitter la maison.",
+    "en": "I look up the meeting spot before I leave the house.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le marché du samedi occupe toute la place centrale.",
+    "en": "The Saturday market fills the whole central square.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une correspondance de trop rend le trajet pénible.",
+    "en": "One extra transfer makes the whole trip feel painful.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le quartier étudiant reste animé assez tard.",
+    "en": "The student area stays pretty lively late into the night.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère marcher dix minutes que chercher une place.",
+    "en": "I'd rather walk ten minutes than hunt for parking.",
+    "tags": [
+      "city"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je suis bien arrivé, tout s'est bien passé.",
+    "en": "I got there safely and everything went fine.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Désolé, j'étais dans le rush et j'ai oublié de répondre.",
+    "en": "Sorry, I was rushing and forgot to reply.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je vais me coucher, on se parle demain.",
+    "en": "I'm heading to bed, we'll talk tomorrow.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je me connecte dans une trentaine de minutes.",
+    "en": "I'll log on in about thirty minutes.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Quelle heure est-il chez toi ?",
+    "en": "What time is it on your side?",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je finis ça et je suis à toi.",
+    "en": "I'll finish this and then I'm all yours.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai une journée chargée, je te réponds ce soir.",
+    "en": "I've got a full day, so I'll reply tonight.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est noté, je m'en occupe demain matin.",
+    "en": "Noted, I'll handle it first thing tomorrow.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je pars dans cinq minutes, je suis déjà en retard.",
+    "en": "I'm leaving in five minutes and I'm already late.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se capte plus tard, là je suis en mouvement.",
+    "en": "We'll catch up later, I'm on the move right now.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je ne suis pas au top, je vous donne des nouvelles samedi matin.",
+    "en": "I'm not at my best, I'll update you Saturday morning.",
+    "tags": [
+      "daily"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je cale mes tâches du soir avant de décrocher.",
+    "en": "I line up my evening tasks before I switch off.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un rappel sur le téléphone m'évite d'oublier les petits trucs.",
+    "en": "A phone reminder stops me from forgetting the small stuff.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je regroupe mes messages pour répondre d'un seul coup.",
+    "en": "I group my messages and answer them in one go.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le matin, je regarde ce qui est urgent avant le reste.",
+    "en": "Each morning I check what's urgent before anything else.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère avancer un peu chaque jour que tout faire d'un bloc.",
+    "en": "I'd rather do a little daily than everything at once.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une checklist la veille au soir me sauve la matinée.",
+    "en": "A checklist the night before saves my whole morning.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je bloque une heure sans écran pour souffler.",
+    "en": "I block one screen-free hour so I can unwind.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Quand la journée déborde, je coupe ce qui n'est pas essentiel.",
+    "en": "When the day overflows, I drop whatever isn't essential.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je confirme les horaires le matin pour éviter les quiproquos.",
+    "en": "I confirm the times each morning to avoid mix-ups.",
+    "tags": [
+      "daily"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai du mal à concilier les cours et le reste.",
+    "en": "I'm struggling to balance classes with everything else.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai plutôt bien réussi les deux examens.",
+    "en": "I did pretty well on both exams.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au début c'est fatigant, mais on s'y fait.",
+    "en": "It's tiring at first, but you get used to it.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il ne faut pas se formaliser si on fait des fautes.",
+    "en": "Don't sweat it if you make a few mistakes.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce devoir m'a pris toute la soirée.",
+    "en": "That assignment took me the whole evening.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a beaucoup de contrôle continu cette année.",
+    "en": "We have a lot of continuous assessment this year.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je n'ai pas vraiment de méthode, j'improvise.",
+    "en": "I don't really have a method, I just improvise.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La séance de révision est en visio cet après-midi.",
+    "en": "The review session is on a video call this afternoon.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je peux t'appeler après la réunion, vers dix-neuf heures trente.",
+    "en": "I can call you after my meeting, around seven thirty.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Les cours se passent bien, j'aime presque toutes les matières.",
+    "en": "Classes are going well and I like almost every subject.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai l'impression d'avoir enfin compris les étapes.",
+    "en": "I feel like I finally understood the steps.",
+    "tags": [
+      "education"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le rendu final était plus clair que le brouillon.",
+    "en": "The final submission was clearer than the draft.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je suis passé dans une autre filière cette année.",
+    "en": "I switched into a different program this year.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je révise mieux quand je découpe le chapitre en petites parties.",
+    "en": "I study better when I split the chapter into small parts.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les partiels approchent et je commence à m'organiser.",
+    "en": "Finals are coming and I'm starting to get organized.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai de bons résultats même si l'emploi du temps est chargé.",
+    "en": "My grades are solid even with a packed schedule.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut se retrouver à la bibliothèque pour réviser ensemble.",
+    "en": "We can meet at the library and study together.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je promets d'essayer, sans garantir le résultat.",
+    "en": "I'll try my best without promising the result.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le campus est pratique, tout est à quelques minutes à pied.",
+    "en": "Campus is handy because everything is within walking distance.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'aimerais garder de bonnes notes sans lâcher mes projets perso.",
+    "en": "I'd like good grades without dropping my side projects.",
+    "tags": [
+      "education"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Trop content que ça se passe bien pour toi aussi.",
+    "en": "So glad things are going well for you too.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai le seum, j'aurais vraiment voulu être là.",
+    "en": "I'm bummed, I really wanted to be there.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "T'inquiète, ce n'est pas si stressant que ça.",
+    "en": "Don't worry, it's not nearly that stressful.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça m'a fait un choc, je m'attendais à tout sauf à ça.",
+    "en": "It shocked me, I expected anything but that.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Merci pour le soutien, ça compte beaucoup.",
+    "en": "Thanks for the support, it means a lot.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis un peu crevé, mais ça va quand même.",
+    "en": "I'm a bit wiped, but I'm still doing okay.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'étais déçu sur le moment, et puis j'ai relativisé.",
+    "en": "I was disappointed at first, then I gained some perspective.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Courage, ça va s'arranger plus vite que tu crois.",
+    "en": "Hang in there, it'll sort out sooner than you think.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis soulagé, j'ai cru que ça tournait mal.",
+    "en": "I'm relieved, I thought things were going badly.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me stresse un peu, mais je gère.",
+    "en": "It stresses me a bit, but I'm handling it.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça fait vraiment plaisir de te lire à nouveau.",
+    "en": "It's really good to hear from you again.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Cette nouvelle m'a fait plus plaisir que je ne le pensais.",
+    "en": "That news made me happier than I had expected.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai besoin de souffler avant de reprendre le rythme.",
+    "en": "I need a breather before I get back into the pace.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La déception est passée, il reste surtout de la gratitude.",
+    "en": "The disappointment passed and mostly gratitude remains.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je me sens plus serein quand le plan est clair.",
+    "en": "I feel calmer once the plan is actually clear.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un petit message peut vraiment remonter le moral.",
+    "en": "A short message can really lift someone's spirits.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'essaie de ne pas dramatiser, même quand ça pique.",
+    "en": "I try not to overreact even when it stings.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La fatigue rend tout plus émotif que nécessaire.",
+    "en": "Being tired makes everything feel more emotional.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je suis reconnaissant que vous ayez pensé à m'inclure.",
+    "en": "I'm grateful you thought to include me in this.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'attente est parfois plus dure que la nouvelle elle-même.",
+    "en": "Waiting is sometimes harder than the news itself.",
+    "tags": [
+      "emotions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je passe le week-end chez mes parents.",
+    "en": "I'm spending the weekend at my parents' place.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a une cousinade samedi, je ne pourrai pas venir.",
+    "en": "We've got a family gathering Saturday, so I can't come.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mes parents vont bien, merci d'avoir demandé.",
+    "en": "My parents are doing well, thanks for asking.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je serai en vacances avec mes parents la semaine prochaine.",
+    "en": "I'll be on holiday with my parents next week.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Dimanche je sors avec mes parents, le trajet est long.",
+    "en": "Sunday I'm out with my parents and the drive is long.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ma mère a encore l'ancien, je ne sais pas s'il marche.",
+    "en": "My mom still has the old one, not sure it works.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je passe voir la famille avant de reprendre les cours.",
+    "en": "I'll see the family before classes start up again.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On cuisine ensemble quand tout le monde est là.",
+    "en": "We cook together whenever the whole family is around.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Passe le bonjour à tes parents de ma part.",
+    "en": "Say hi to your parents for me, please.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je rentre tard, mes parents m'attendent pour dîner.",
+    "en": "I'll get home late, my parents are holding dinner.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Les fêtes en famille, c'est intense, mais ça fait du bien.",
+    "en": "Family holidays are intense, but they do me good.",
+    "tags": [
+      "family"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je préviens mes parents dès que l'horaire du train est fixé.",
+    "en": "I'll tell my parents once the train time is fixed.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Entre le déménagement et les fêtes, l'agenda va être chargé.",
+    "en": "Between a move and the holidays, the calendar gets hectic.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon frère peut me déposer si le trajet est trop long.",
+    "en": "My brother can drop me off if the drive runs long.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je garde le dimanche pour une visite en famille.",
+    "en": "I'm saving Sunday for a visit with the family.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les nouvelles de la famille m'arrivent souvent un peu tard.",
+    "en": "Family updates often reach me a little bit late.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On s'organise pour que personne ne fasse tout le trajet seul.",
+    "en": "We plan it so nobody drives the whole way alone.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je passe un coup de fil à la maison ce soir.",
+    "en": "I'll call home tonight and catch up properly.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un week-end chez les parents recharge plus qu'une grasse matinée.",
+    "en": "A weekend at my parents' restores me more than sleeping in.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note la date pour ne pas rater le repas de famille.",
+    "en": "I'll write the date down so I don't miss family dinner.",
+    "tags": [
+      "family"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je peux amener des feuilletés aux champignons ou un dessert.",
+    "en": "I can bring mushroom pastries or some dessert.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il faut laisser de la place, il y aura plusieurs desserts.",
+    "en": "We should save room, there'll be several desserts.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'hésite encore sur ce que je cuisine pour la soirée.",
+    "en": "I'm still deciding what to cook for the party.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce buffet était trop bien, on devrait y retourner.",
+    "en": "That buffet was so good we should go back.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se fait une fondue au resto, puis une partie de billard.",
+    "en": "Let's do fondue at a restaurant and then play pool.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le plateau de fruits de mer était vraiment généreux.",
+    "en": "The seafood platter was honestly pretty generous.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je prends des softs, je conduis après.",
+    "en": "I'll stick to soft drinks since I'm driving later.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ces donuts maison ont l'air dangereux.",
+    "en": "Those homemade donuts look dangerously good.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai perdu le fil, le plat est encore au four.",
+    "en": "I lost track of time and the dish is still baking.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On partage le dessert, je n'ai plus vraiment faim.",
+    "en": "Let's split dessert, I'm not really hungry anymore.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il y a un minimum de commande, autant remplir le panier.",
+    "en": "There's a minimum, so I might as well fill the basket.",
+    "tags": [
+      "food"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je peux préparer un truc simple si personne n'a le temps.",
+    "en": "I can make something simple if nobody has time.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le menu change souvent, mieux vaut vérifier avant de commander.",
+    "en": "The menu changes often, so check it before ordering.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une fondue suivie d'un billard, ça ferait une bonne soirée.",
+    "en": "Fondue followed by pool would make a solid night.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note les régimes de chacun avant de cuisiner.",
+    "en": "I'll note everyone's diets before I start cooking.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On commande à l'avance pour ne pas attendre sur place.",
+    "en": "We'll order ahead so we aren't waiting once we arrive.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le plat avait l'air bon malgré la photo un peu floue.",
+    "en": "The dish looked good despite the blurry photo.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je ramène de quoi grignoter si la soirée s'éternise.",
+    "en": "I'll bring snacks in case the night runs long.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut se retrouver autour d'un repas plutôt qu'au bar.",
+    "en": "We can meet over dinner rather than just drinks.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je passe prendre des biscuits apéro et une petite entrée cet après-midi.",
+    "en": "I'll grab some snacks and a small starter this afternoon.",
+    "tags": [
+      "food"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je me sens raplapla depuis le début de la semaine.",
+    "en": "I've been feeling run down since the week began.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je vais poser une journée pour me reposer.",
+    "en": "I'll take a day off so I can rest up.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je me suis fait piquer au cou, ça m'a fait flipper.",
+    "en": "Something stung my neck and it really freaked me out.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça sifflait un peu quand j'inspirais, ce n'était pas rassurant.",
+    "en": "It whistled a bit when I breathed in, which scared me.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça va mieux maintenant, j'ai eu peur pour rien de grave.",
+    "en": "I'm better now, I got scared over nothing much.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ces cachets me donnent sommeil.",
+    "en": "These pills make me really sleepy.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai mal dormi, la journée va être longue.",
+    "en": "I slept badly, so tomorrow is going to drag.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je bois de l'eau et je me couche tôt.",
+    "en": "I'll drink some water and get to bed early.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Un massage me ferait du bien là, tout de suite.",
+    "en": "A massage would do me a lot of good right now.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je tousse un peu, je reste à distance.",
+    "en": "I'm coughing a little, so I'll keep some distance.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il faut que je ralentisse, je ne tiens plus le rythme.",
+    "en": "I need to slow down, I can't hold this pace.",
+    "tags": [
+      "health"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Des contrôles réguliers permettent de voir les soucis tôt.",
+    "en": "Regular checkups can catch problems while they're still small.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note les symptômes avant de prendre rendez-vous.",
+    "en": "I'll write the symptoms down before I book a visit.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le repos compte autant que le traitement dans ce cas.",
+    "en": "Rest counts for as much as treatment in this case.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je décale le sport tant que la douleur est là.",
+    "en": "I'll pause workouts while the pain is still around.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une piqûre peut enfler vite, mieux vaut surveiller.",
+    "en": "A sting can swell quickly, so it's wise to watch it.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je demande conseil avant de reprendre ce médicament.",
+    "en": "I'll ask someone before I take that medicine again.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Dormir à heure fixe m'aide plus que les grasses matinées.",
+    "en": "Sleeping on a schedule helps me more than lying in late.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préviens si je dois annuler pour raison de santé.",
+    "en": "I'll tell you if I must cancel for health reasons.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une journée au calme vaut mieux qu'un rendez-vous forcé.",
+    "en": "A quiet day beats pushing through a packed appointment.",
+    "tags": [
+      "health"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'aimerais envoyer mes morceaux à des gens qui peuvent les diffuser.",
+    "en": "I'd like to send my tracks to people who might share them.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je mets les vidéos de côté pour me concentrer sur la musique.",
+    "en": "I'm setting the videos aside to focus on the music.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu y as déjà joué, ou c'est nouveau pour toi aussi ?",
+    "en": "Have you played this, or is it new for you too?",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis chaud pour une partie ce soir si vous êtes là.",
+    "en": "I'm down for a game tonight if you guys are around.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se fait un escape game, je suis partant.",
+    "en": "Let's do an escape room, I'm totally in.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai une vieille manette, pas sûr qu'elle marche encore.",
+    "en": "I've got an old controller and I'm not sure it works.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Dormir jusqu'à midi avant une partie le soir, ça ne me choque pas.",
+    "en": "Sleeping till noon before an evening game seems fair to me.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je finis mon épisode et j'arrive dans dix minutes.",
+    "en": "I'll finish this episode and be there in ten minutes.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On garde espoir, il reste encore une mi-temps.",
+    "en": "We'll keep hoping, there's still a half left to play.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ils étaient trop forts, presque impossibles à battre.",
+    "en": "They were far too strong and almost impossible to beat.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je regarde le match en vrai si on trouve des places.",
+    "en": "I'll watch the match live if we can find seats.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Promouvoir un morceau demande autant de temps que de l'écrire.",
+    "en": "Promoting a track takes as much time as writing it.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère jouer sur ordinateur quand c'est possible.",
+    "en": "I prefer playing on a computer whenever I can.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une session entre potes vaut mieux qu'une partie en solo.",
+    "en": "A session with friends beats playing on my own.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le classement ne veut rien dire si tout le monde n'a pas joué.",
+    "en": "The ranking means little if not everyone has played.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'améliore mon niveau petit à petit, sans me mettre la pression.",
+    "en": "I'm improving slowly without putting pressure on myself.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut lancer une partie dès que la mise à jour est finie.",
+    "en": "We can start a match once the update finishes.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note les règles avant de me lancer, sinon je suis perdu.",
+    "en": "I write the rules down first or I get lost.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ce sport se regarde mieux en groupe qu'en replay.",
+    "en": "This sport is better live with a group than on replay.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je réserve une session la prochaine fois pour ne pas la rater.",
+    "en": "I'll set a session aside next time so I don't miss it.",
+    "tags": [
+      "hobbies"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le pommeau de douche est impeccable, merci.",
+    "en": "The showerhead is perfect, thank you.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis dans un logement étudiant sur le campus.",
+    "en": "I'm in student housing right on campus.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai perdu des couverts, je dois refaire un peu le stock.",
+    "en": "I lost some cutlery, so I need to restock a little.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu peux me prendre une éponge en passant ?",
+    "en": "Can you grab me a sponge while you're out?",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est en face de la bibliothèque, comme les années d'avant.",
+    "en": "It's across from the library, same as the past years.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je rentre mardi soir ou mercredi, je te préviens.",
+    "en": "I'll be back Tuesday night or Wednesday, I'll let you know.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il faut que je range avant que les gens arrivent.",
+    "en": "I need to tidy up before people start arriving.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je demande si la maison est libre ce week-end.",
+    "en": "I'll ask whether the house is free this weekend.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai enfin retrouvé les clés, elles étaient dans un manteau.",
+    "en": "I finally found the keys, they were in a coat.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On sort les poubelles ce soir, j'oublie tout le temps.",
+    "en": "We should take the trash out tonight, I always forget.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "L'appart est petit, mais il est bien placé.",
+    "en": "The place is small, but the location is great.",
+    "tags": [
+      "home"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le propriétaire passe vendredi, je laisse tout accessible.",
+    "en": "The landlord comes Friday, so I'll leave everything accessible.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je cherche quatre verres et des cuillères qui vont ensemble.",
+    "en": "I'm looking for four matching glasses and some spoons.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une bonne douche après la route, ça change la soirée.",
+    "en": "A proper shower after a long drive changes the evening.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le logement est sur le campus, donc les cours sont à côté.",
+    "en": "The housing sits on campus, so class is close by.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note ce qu'il manque avant de refaire les courses.",
+    "en": "I'll list what's missing before I go shopping again.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'isolation est moyenne, on entend le couloir le soir.",
+    "en": "The insulation is average, so you hear the hallway at night.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je laisse un double des clés au cas où.",
+    "en": "I'll leave a spare key with someone just in case.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ranger dix minutes chaque soir évite le gros ménage.",
+    "en": "Ten minutes of tidying each night avoids a big clean.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La kitchenette suffit si on cuisine simple.",
+    "en": "The little kitchen works fine if we keep meals simple.",
+    "tags": [
+      "home"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Tu as vu cette série, ou je me tais ?",
+    "en": "Have you seen that show, or should I stay quiet?",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le film était incroyable, je ne m'y attendais pas.",
+    "en": "The movie was incredible and I didn't expect that.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avais déjà vu des vidéos dans le même genre.",
+    "en": "I'd already seen videos in that same style.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Cet extrait donne envie, je regarderai la suite.",
+    "en": "That clip makes me want to watch the rest.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je connaissais le morceau, mais pas cette version.",
+    "en": "I knew the song, but not this version of it.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La bande-son porte vraiment tout le film.",
+    "en": "The soundtrack basically carries the whole movie.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je ne l'ai pas encore regardé, je te dirai ce que j'en pense.",
+    "en": "I haven't watched it yet, I'll tell you what I think.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Cet artiste sample un classique, et ça passe quand même.",
+    "en": "This artist samples a classic and it still lands.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se fait le film, puis on enchaîne au resto.",
+    "en": "Let's watch the movie and then grab some dinner.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le dernier épisode m'a laissé sur ma faim.",
+    "en": "The last episode left me wanting a bit more.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je le mets dans ma liste, je le lance ce soir.",
+    "en": "I'll add it to my list and start it tonight.",
+    "tags": [
+      "media"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "L'image est floue, mais on comprend quand même la scène.",
+    "en": "The picture is blurry, but you can still follow the scene.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Cette série marche mieux si on la regarde dans l'ordre.",
+    "en": "This series works better if you watch it in order.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le montage rend les effets beaucoup plus lisibles.",
+    "en": "The editing makes the effects much easier to follow.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je compare souvent la version longue et la version courte.",
+    "en": "I often compare the long version with the short one.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un bon générique peut te faire rester jusqu'au bout.",
+    "en": "A strong opening theme can keep you until the credits.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les sous-titres aident quand les acteurs parlent trop vite.",
+    "en": "Subtitles help when the actors speak too quickly.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Ce documentaire explique les étapes sans trop simplifier.",
+    "en": "This documentary explains the steps without oversimplifying them.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère un podcast court quand je suis dans les transports.",
+    "en": "I prefer a short podcast during my commute.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La critique était dure, mais le public a l'air conquis.",
+    "en": "The review was harsh, but the audience seems convinced.",
+    "tags": [
+      "media"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "D'un côté ça donne envie, de l'autre j'ai un peu peur.",
+    "en": "Part of me wants to try it, and part of me is nervous.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est déjà très bien, je ne changerais pas grand-chose.",
+    "en": "It's already really good, I wouldn't change much.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je n'étais pas d'accord au début, et puis si.",
+    "en": "I didn't agree at first, and then I came around.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Franchement c'est stylé, je n'aurais pas parié dessus.",
+    "en": "Honestly it's cool, I wouldn't have bet on it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je trouve que c'est un peu trop, mais ça se défend.",
+    "en": "I think it's a bit much, but I see the point.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On est d'accord sur presque toute la ligne.",
+    "en": "We're on the same page about almost all of it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'avoue que ça m'a surpris dans le bon sens.",
+    "en": "I'll admit it surprised me in a good way.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce n'est pas objectif, mais j'assume mon avis.",
+    "en": "It's not objective, but I'll stand by my take.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Au final c'est mieux comme ça, même si ça pique.",
+    "en": "In the end it's better this way, even if it stings.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je pensais le contraire, et j'avais tort.",
+    "en": "I thought the opposite, and I turned out wrong.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça se tente, au pire on aura appris quelque chose.",
+    "en": "It's worth a try, and worst case we learned something.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je préfère un avis nuancé à un jugement trop rapide.",
+    "en": "I prefer a nuanced take over a snap judgment.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les notes ne sont pas encore assez nombreuses pour conclure.",
+    "en": "There aren't enough ratings yet to conclude anything.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "L'esthétique compte, mais la qualité doit suivre.",
+    "en": "Looks matter, but the build quality has to follow.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je me fie plus au retour d'un proche qu'à la pub.",
+    "en": "I trust a friend's feedback more than an advertisement.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les deux options se valent, le choix dépend du contexte.",
+    "en": "Both options work, and the choice depends on context.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je garde mon avis tant que je n'ai pas vu la suite.",
+    "en": "I'll hold my opinion until I've seen what comes after.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "C'est impressionnant, sans être vraiment indispensable.",
+    "en": "It's impressive without being truly necessary.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un bon compromis vaut mieux que d'attendre la solution parfaite.",
+    "en": "A decent compromise beats waiting for a perfect fix.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je comprends le raisonnement, même si je ne le suis pas.",
+    "en": "I follow the reasoning even when I don't share it.",
+    "tags": [
+      "opinions"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Il y a moyen que je sois là, je te confirme demain.",
+    "en": "There's a chance I'll make it, I'll confirm tomorrow.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Après le film, on pourrait enchaîner sur un resto.",
+    "en": "After the movie, we could grab dinner somewhere.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je ne suis libre que ce soir et demain avant de partir.",
+    "en": "I'm only free tonight and tomorrow before I leave.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se rejoint à vingt heures trente devant le resto.",
+    "en": "Let's meet at eight thirty outside the restaurant.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je prends une table, venez quand vous pouvez.",
+    "en": "I'll grab a table, come whenever you can.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ce week-end je suis pris, on décale.",
+    "en": "I'm booked this weekend, so let's push it later.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Si on n'est pas tous libres, on fait plus petit.",
+    "en": "If we can't all make it, we'll keep it smaller.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je bloque dimanche, le trajet du samedi est trop long.",
+    "en": "I'll save Sunday, since Saturday's drive is too long.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On ne perd pas de temps, on cale une date maintenant.",
+    "en": "Let's lock in a date now and not waste time.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je peux venir en soirée, vers vingt heures.",
+    "en": "I can come in the evening, around eight.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Dix-huit heures, c'est un peu tôt, mais je vous rejoins.",
+    "en": "Six o'clock is a bit early, but I'll still join you.",
+    "tags": [
+      "plans"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il faudrait réserver assez tôt si on veut une table.",
+    "en": "We should book early if we want a table.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je vérifie mes dispos et je vous réponds ce soir.",
+    "en": "I'll check my schedule and reply to you tonight.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le week-end d'après me convient mieux que celui-ci.",
+    "en": "The following weekend works better for me than this one.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut viser un créneau en début de soirée.",
+    "en": "We can aim for a slot early in the evening.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note l'invitation et je te dis si je peux monter.",
+    "en": "I'll note the invite and say if I can come up.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Trois semaines plus tard, ce serait plus jouable pour moi.",
+    "en": "Three weeks later would be more doable for me.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On se retrouve après le match si tout le monde est partant.",
+    "en": "We'll meet after the game if everyone's up for it.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère caler ça avant le voyage avec mes parents.",
+    "en": "I'd rather lock this in before the trip with my parents.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Si le premier plan tombe, on a une option de repli.",
+    "en": "If the first plan falls through, we have a backup option.",
+    "tags": [
+      "plans"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "J'ai enfin eu quelqu'un au téléphone.",
+    "en": "I finally reached an actual person on the phone.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le garagiste m'a envoyé le devis cet après-midi.",
+    "en": "The mechanic sent the estimate over this afternoon.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ils m'ont donné le premier créneau disponible.",
+    "en": "They booked me into the earliest open slot.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je dois résilier l'assurance de la voiture, j'ai déjà lancé la démarche.",
+    "en": "I need to cancel the car insurance and I already started.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu peux m'envoyer une photo du document, il est dans la boîte à gants.",
+    "en": "Can you snap the document from the glove box for me?",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le colis est arrivé, je passe le chercher.",
+    "en": "The package is here, so I'll go pick it up.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ils ont mis trois jours à répondre au mail.",
+    "en": "They took three days just to answer my email.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est noté, merci pour le tuyau.",
+    "en": "Noted, and thanks a lot for the tip.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le rendez-vous est confirmé pour vendredi matin.",
+    "en": "The appointment is set for Friday morning.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai dû rappeler deux fois avant d'avoir une réponse.",
+    "en": "I had to call twice before anyone answered me.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le devis est raisonnable, je leur dis de lancer.",
+    "en": "The quote looks fair, so I'll tell them to start.",
+    "tags": [
+      "services"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je compare deux devis avant de valider les réparations.",
+    "en": "I'll compare two quotes before I approve any repairs.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le suivi du dossier se fait en ligne, c'est plus simple.",
+    "en": "You can follow the case online, which is simpler.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Il me faut une copie du document pour clôturer le contrat.",
+    "en": "I need a copy of that paper to close out the contract.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le service client m'a proposé un créneau en fin de journée.",
+    "en": "Customer service offered me a slot late in the day.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je vérifie ce qui est couvert avant d'accepter le devis.",
+    "en": "I'll check the coverage before I accept their quote.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une confirmation écrite évite les malentendus ensuite.",
+    "en": "Written confirmation keeps us from misunderstanding each other later.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le retrait se fait au comptoir avec une pièce d'identité.",
+    "en": "Pickup happens at the counter if you bring an ID.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je demande une date écrite si la pièce n'est pas en stock.",
+    "en": "I'll ask for a written date if the part is out of stock.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le rendez-vous peut être déplacé une fois sans frais.",
+    "en": "The appointment can be moved once without a fee.",
+    "tags": [
+      "services"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je ne comptais pas l'acheter, et me voilà.",
+    "en": "I wasn't planning to buy it, and yet here I am.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ils avaient ma taille, j'ai eu de la chance.",
+    "en": "They had my size, so I got pretty lucky.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Cette promo se termine ce soir, apparemment.",
+    "en": "That sale wraps up tonight, from what I hear.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je compare en magasin avant de commander.",
+    "en": "I'll compare things in the store before I order.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est plus joli que le modèle basique.",
+    "en": "It looks nicer than the plain basic model.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Les avis sont bons, après je ne peux pas dire plus.",
+    "en": "The reviews look solid, beyond that I can't say much.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te laisse regarder sur place, merci.",
+    "en": "I'll let you check it in person, thanks.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est seulement en retrait, pas en rayon.",
+    "en": "It's pickup only, they don't have it on the shelf.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le vendeur était top, et la console a l'air presque neuve.",
+    "en": "The seller was kind and the console looks nearly new.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je prends le modèle bien noté, même s'il coûte un peu plus.",
+    "en": "I'll take the well-rated one even if it costs more.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La livraison est prévue demain, si tout va bien.",
+    "en": "Delivery is set for tomorrow if nothing goes wrong.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je vérifie la compatibilité avant de l'ajouter au panier.",
+    "en": "I check that it fits before I add it to the cart.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un numéro de suivi arrive par mail après la commande.",
+    "en": "A tracking number shows up by email after you order.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La cabine d'essayage est derrière les caisses, si tu veux essayer.",
+    "en": "The fitting room sits behind the registers if you want to try it.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je lis les dimensions, les photos sont souvent trompeuses.",
+    "en": "I read the measurements because photos can be misleading.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le retour est gratuit pendant quatorze jours.",
+    "en": "You can return it free for fourteen days.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je garde le reçu au cas où la taille ne va pas.",
+    "en": "I'll keep the receipt in case the size is wrong.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mieux vaut voir la couleur en vrai que sur l'écran.",
+    "en": "Better to judge the color in person than on a screen.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La promo ne s'applique qu'au modèle de base.",
+    "en": "The discount only applies to the basic model.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je commande deux tailles et je renvoie celle qui ne va pas.",
+    "en": "I'll order two sizes and send back whichever doesn't fit.",
+    "tags": [
+      "shopping"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Désolé d'avoir mis si longtemps à répondre.",
+    "en": "Sorry it took me so long to reply.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Ça me fait plaisir que tu aies pensé à moi.",
+    "en": "It means a lot that you thought of me.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On se retrouve vers vingt heures trente si ça te va.",
+    "en": "Let's meet around eight thirty if that works.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je finis ce que je fais et j'arrive dans dix minutes.",
+    "en": "I'll finish up and be there in ten minutes.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Passez une bonne soirée, on se voit demain.",
+    "en": "Have a great evening, and I'll see you tomorrow.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis partant pour sortir ce week-end si vous êtes libres.",
+    "en": "I'm down to go out this weekend if you're free.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Vous me manquez un peu, on se fait une sortie bientôt.",
+    "en": "I miss you guys a bit, let's hang out soon.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est noté, je bloque ça dans mon agenda.",
+    "en": "Got it, I'll block that off on my calendar.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je ne serai pas libre la semaine prochaine, désolé.",
+    "en": "I won't be free next week, sorry about that.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Merci pour ton message, ça m'a vraiment fait la journée.",
+    "en": "Thanks for the message, it really made my day.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Joyeux anniversaire, j'espère que la journée te traite bien.",
+    "en": "Happy birthday, hope the day treats you well.",
+    "tags": [
+      "social"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Une petite soirée entre amis me ferait du bien en ce moment.",
+    "en": "A small get-together with friends would do me some good.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je préfère qu'on se voie tous ensemble plutôt que chacun de son côté.",
+    "en": "I'd rather we all get together than meet separately.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Préviens-moi si tu passes dans le coin cette semaine.",
+    "en": "Let me know if you're passing through this week.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut caler les détails par message et se retrouver sur place.",
+    "en": "We can sort the details by text and meet there.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je confirme que je serai là samedi.",
+    "en": "I can confirm I'll be there on Saturday.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Désolé pour le retard, j'étais pris dans le rush.",
+    "en": "Sorry I'm late, I got caught in the rush.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Si l'horaire ne convient pas, on le décale sans souci.",
+    "en": "If that time doesn't work, we can shift it easily.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je vous rejoins dès que j'ai fini de mon côté.",
+    "en": "I'll join you as soon as I'm done on my end.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On lance un sondage pour trouver un moment qui arrange tout le monde.",
+    "en": "Let's run a poll to find a time that suits everyone.",
+    "tags": [
+      "social"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Mon appel s'est figé au pire moment.",
+    "en": "My call froze right at the worst possible moment.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La mise à jour a tout changé, je ne retrouve plus mes réglages.",
+    "en": "That update changed everything and now I can't find my settings.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Avec un vieux système, ça risque de mal passer.",
+    "en": "With an old system, this might not run well.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai reçu le mail, il était tombé dans les spams.",
+    "en": "I got the email, it had landed in my spam.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je peux le faire tourner en basse qualité sur mon portable.",
+    "en": "I can run it on low graphics on my laptop.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu es sur ordinateur ou sur téléphone ?",
+    "en": "Are you on a computer or on your phone?",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je n'avais pas vu la mise à jour, on ne peut pas revenir en arrière.",
+    "en": "I missed that update, and we can't roll it back.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le lien a marché du premier coup, c'est rare.",
+    "en": "The link worked on the first try, which is rare.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je redémarre, des fois ça suffit.",
+    "en": "I'll restart it, since sometimes that's all it takes.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Mon ordi rame dès que j'ouvre trop d'onglets.",
+    "en": "My laptop slows down when I open too many tabs.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je t'envoie le fichier dès que l'export est fini.",
+    "en": "I'll send the file over once the export is done.",
+    "tags": [
+      "tech"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "L'appairage ne marche que si les deux appareils restent proches.",
+    "en": "Pairing only works when both devices stay close.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une sauvegarde automatique la nuit m'évite les mauvaises surprises.",
+    "en": "A nightly automatic backup saves me from ugly surprises.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je vérifie la compatibilité avant de télécharger la mise à jour.",
+    "en": "I check compatibility before I download any update.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le mode hors ligne suffit pour avancer dans le train.",
+    "en": "Offline mode is plenty for getting work done on the train.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je coupe les notifications quand je dois me concentrer.",
+    "en": "I mute notifications whenever I really need to focus.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le partage d'écran aide quand on bloque sur la même étape.",
+    "en": "Screen sharing helps when we're stuck on the same step.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je change le mot de passe avant de prêter l'appareil.",
+    "en": "I'll change the password before I lend the device out.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Une connexion instable coupe la visio au milieu d'une phrase.",
+    "en": "A shaky connection drops the video call mid sentence.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je garde une copie locale au cas où le cloud lâche.",
+    "en": "I keep a local copy in case the cloud cuts out.",
+    "tags": [
+      "tech"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On a roulé des heures sous la pluie, c'était rude.",
+    "en": "We drove for hours in the rain and it was rough.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je suis bien arrivé, le trajet s'est bien passé.",
+    "en": "I arrived safely and the trip went smoothly.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Tu restes combien de temps sur place ?",
+    "en": "How long are you planning to stay there?",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Profitez bien, vous me raconterez.",
+    "en": "Enjoy the trip, you'll have to tell me everything.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je serai en Bretagne pour le coup.",
+    "en": "I'll be in Brittany for this one.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le trajet du week-end est un peu long pour moi.",
+    "en": "The weekend drive is a bit too long for me.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'hésite à monter, mais c'est noté si jamais.",
+    "en": "I'm unsure about coming up, but I'll keep it in mind.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a à peine eu le temps entre les deux correspondances.",
+    "en": "We barely had any time between the two connections.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je fais une sieste en route, je devrais arriver vers une heure et demie.",
+    "en": "I'll grab a nap on the road and arrive around one thirty.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je prends le train plutôt que la voiture cette fois.",
+    "en": "I'll take the train rather than drive this time.",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Vous y étiez déjà allés, ou c'était la première fois ?",
+    "en": "Had you been there before, or was it your first visit?",
+    "tags": [
+      "travel"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je réserve le refuge dès qu'on a une idée du prix.",
+    "en": "I'll book the cabin once we know roughly what it costs.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un mois sur place sans cours, ça se tente seulement si c'est autorisé.",
+    "en": "A month away without classes only works if it's allowed.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Tu le fais en bivouac, et en semaine en plus ?",
+    "en": "So you're camping, and you're doing it on a weekday?",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je compare les horaires avant de choisir le train.",
+    "en": "I compare the schedules before I choose a train.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On prévoit une marge entre l'arrivée et le premier rendez-vous.",
+    "en": "We'll leave a buffer between arrival and the first plan.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le retour de nuit est plus calme, mais plus fatigant.",
+    "en": "The night ride back is quieter but much more tiring.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note l'adresse du logement avant de perdre le réseau.",
+    "en": "I'll save the address before I lose phone signal.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un petit resto près de l'hôtel a sauvé la soirée.",
+    "en": "A small place near the hotel completely saved the evening.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Les vacances en famille demandent un peu plus de logistique.",
+    "en": "A family trip takes a bit more planning than you'd think.",
+    "tags": [
+      "travel"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Il a plu pendant tout le trajet, c'était pénible.",
+    "en": "It rained the entire drive and it was miserable.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'était brumeux, on ne voyait pas grand-chose.",
+    "en": "It was so foggy we could barely see anything.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le soleil est revenu, ça change tout.",
+    "en": "The sun came back and it changes the whole mood.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il fait un froid de canard ce matin.",
+    "en": "It's bitterly cold out this morning.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je n'ai pas pris de veste, et évidemment il pleut.",
+    "en": "I skipped a jacket, and of course it's raining.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le vent est fort, on ne reste pas longtemps dehors.",
+    "en": "The wind is strong, so we won't stay outside long.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il fait lourd, j'ai du mal à me concentrer.",
+    "en": "It's muggy today and I'm struggling to focus.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "La météo annonce de la pluie pour le week-end.",
+    "en": "The forecast is calling for rain all weekend.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On a eu un bel après-midi, ça compense la matinée.",
+    "en": "We got a nice afternoon, which makes up for this morning.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Il neige un peu, le trajet va être plus long.",
+    "en": "It's snowing a little, so the drive will take longer.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le ciel s'est dégagé, on peut enfin sortir.",
+    "en": "The sky cleared up, so we can finally head outside.",
+    "tags": [
+      "weather"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Une averse courte ne devrait pas annuler la sortie.",
+    "en": "A brief shower shouldn't force us to cancel the outing.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le brouillard du matin se lève en général avant midi.",
+    "en": "Morning fog usually lifts sometime before noon.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je vérifie la météo avant de partir en randonnée.",
+    "en": "I check the forecast before I head out on a hike.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La chaleur rend le long trajet en voiture beaucoup plus dur.",
+    "en": "The heat makes a long car ride much harder.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On décale si l'orage tombe pile sur notre créneau.",
+    "en": "We'll delay if a storm is timed right on our slot.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un temps couvert suffit pour marcher sans se presser.",
+    "en": "Overcast skies are fine for a slow walk outside.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le verglas du matin demande de partir plus tôt.",
+    "en": "Morning ice means we ought to leave a bit earlier.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "La température chute vite dès que le soleil disparaît.",
+    "en": "The temperature falls quickly once the sun goes down.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je prends une couche en plus, le soir se rafraîchit vite.",
+    "en": "I'll pack an extra layer because evenings cool off fast.",
+    "tags": [
+      "weather"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Cette réunion aurait vraiment pu être un court message.",
+    "en": "That meeting really could have been a short message.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je te rappelle dès que la réunion est finie.",
+    "en": "I'll call you as soon as the meeting is over.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Dix-neuf heures trente, ça me laisse le temps de finir.",
+    "en": "Seven thirty gives me enough time to finish.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'ai une longue route devant moi, je serai lessivé.",
+    "en": "I've got a long drive ahead, so I'll be wiped.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je ne suis pas dispo demain, on décale le point.",
+    "en": "I'm not free tomorrow, let's move our check-in.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Le rush est passé, je peux enfin répondre tranquillement.",
+    "en": "The rush is over, so I can finally reply properly.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "On est d'accord sur le fond, on peut avancer.",
+    "en": "We agree on the main point, so we can move forward.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je boucle ça ce soir et je t'envoie mon retour.",
+    "en": "I'll wrap this tonight and send you my feedback.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Préviens-moi si l'horaire de la réunion change.",
+    "en": "Let me know if the meeting time shifts.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "J'enchaîne deux trucs, je te rejoins juste après.",
+    "en": "I'm juggling two things, I'll join you right after.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "C'est bon pour moi, on peut lancer.",
+    "en": "That works for me, so we can get started.",
+    "tags": [
+      "work"
+    ],
+    "level": "casual"
+  },
+  {
+    "fr": "Je préfère un compte rendu court à une longue réunion.",
+    "en": "I prefer a short written recap over a long meeting.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le délai est serré, mais le livrable reste faisable.",
+    "en": "The deadline is tight, but the work is still doable.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On aligne les attentes avant d'entrer dans le détail.",
+    "en": "Let's align on expectations before we dive into details.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je bloque un créneau plutôt que de le caser entre deux tâches.",
+    "en": "I'll block a slot instead of squeezing it between tasks.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Un point de quinze minutes suffit si l'ordre du jour est clair.",
+    "en": "A fifteen-minute check-in works if the agenda is clear.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je relis une dernière fois avant d'envoyer.",
+    "en": "I'll read it through once more before I send it.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "On peut traiter ça par écrit si personne n'est libre.",
+    "en": "We can handle this in writing if nobody is free.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Je note les actions pour que rien ne se perde.",
+    "en": "I'll note the action items so nothing gets lost.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  },
+  {
+    "fr": "Le retour est positif, on peut passer à l'étape d'après.",
+    "en": "The feedback is good, so we can move to the following stage.",
+    "tags": [
+      "work"
+    ],
+    "level": "vocab"
+  }
+]
