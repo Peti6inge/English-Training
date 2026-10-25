@@ -20,6 +20,11 @@ const LS = {
   settings: `${CONFIG.STORAGE_PREFIX}.settings`,
 };
 
+const PROGRESS_EXPORT = Object.freeze({
+  format: "english-training-progress",
+  version: 1,
+});
+
 const DEFAULT_SETTINGS = Object.freeze({
   /** Play media-channel beeps when the microphone opens or closes. */
   micCues: true,
@@ -260,6 +265,59 @@ export const storage = {
       customRemindList: this.getRemindList(),
       dontRemindList: this.getDontRemindList(),
       queue: this.getQueue(),
+    };
+  },
+
+  exportProgressDocument() {
+    return {
+      ...PROGRESS_EXPORT,
+      exportedAt: new Date().toISOString(),
+      app: CONFIG.APP_NAME,
+      ...this.snapshot(),
+    };
+  },
+
+  /** @param {ReturnType<typeof storage.snapshot>} snapshot */
+  applySnapshot(snapshot) {
+    this.setCurrentIndex(snapshot.currentIndex);
+    this.setPhrasesState(snapshot.phrasesState);
+    this.setRemindList(snapshot.customRemindList);
+    this.setDontRemindList(snapshot.dontRemindList);
+    this.setQueue(snapshot.queue);
+  },
+
+  parseProgressFile(text) {
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error("Fichier JSON illisible");
+    }
+    if (!data || typeof data !== "object") {
+      throw new Error("Fichier de progression invalide");
+    }
+    if (data.format != null && data.format !== PROGRESS_EXPORT.format) {
+      throw new Error("Format de fichier non reconnu");
+    }
+    if (data.version != null && data.version !== PROGRESS_EXPORT.version) {
+      throw new Error(`Version de fichier non prise en charge (${data.version})`);
+    }
+    const currentIndex = Number(data.currentIndex);
+    if (!Number.isFinite(currentIndex) || currentIndex < 0) {
+      throw new Error("Index de progression invalide");
+    }
+    if (!data.phrasesState || typeof data.phrasesState !== "object" || Array.isArray(data.phrasesState)) {
+      throw new Error("État des phrases invalide");
+    }
+    if (!Array.isArray(data.customRemindList) || !Array.isArray(data.dontRemindList) || !Array.isArray(data.queue)) {
+      throw new Error("Listes de progression invalides");
+    }
+    return {
+      currentIndex,
+      phrasesState: data.phrasesState,
+      customRemindList: data.customRemindList,
+      dontRemindList: data.dontRemindList,
+      queue: data.queue,
     };
   },
 

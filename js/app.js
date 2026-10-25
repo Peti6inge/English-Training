@@ -159,6 +159,8 @@ function syncSessionUi(state = loop.state) {
   const dontRemindOk = !running || state === LOOP_STATES.CORRECTION;
   $("ui-dont-remind").disabled = !dontRemindOk;
   $("ui-idle-meta").hidden = running;
+  $("ui-export").disabled = running;
+  $("ui-import").disabled = running;
 }
 
 function resetProgress() {
@@ -167,6 +169,39 @@ function resetProgress() {
   queue.rebuild();
   renderPhrase(queue.current());
   renderStats();
+}
+
+const PROGRESS_FILENAME = "english-training-progress.json";
+
+function exportProgress() {
+  if (loop.running) return;
+  const doc = storage.exportProgressDocument();
+  const blob = new Blob([JSON.stringify(doc, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = PROGRESS_FILENAME;
+  a.click();
+  URL.revokeObjectURL(url);
+  log("Progression exportée");
+}
+
+async function importProgressFromFile(file) {
+  if (!file || loop.running) return;
+  let snapshot;
+  try {
+    const text = await file.text();
+    snapshot = storage.parseProgressFile(text);
+  } catch (err) {
+    alert(err.message || "Import impossible");
+    return;
+  }
+  if (!confirm("Remplacer toute la progression locale par ce fichier ?")) return;
+  storage.applySnapshot(snapshot);
+  queue.rebuild();
+  renderPhrase(queue.current());
+  renderStats();
+  log("Progression importée");
 }
 
 async function startSession() {
@@ -390,6 +425,15 @@ async function boot() {
   });
   $("btn-reset").addEventListener("click", () => resetProgress());
   $("ui-reset").addEventListener("click", () => resetProgress());
+
+  $("ui-export").addEventListener("click", () => exportProgress());
+  $("ui-import").addEventListener("click", () => $("ui-import-file").click());
+  $("ui-import-file").addEventListener("change", async (ev) => {
+    const input = ev.target;
+    const file = input.files?.[0];
+    input.value = "";
+    await importProgressFromFile(file);
+  });
 
   $("ui-legacy").addEventListener("click", () => applyView("legacy"));
   $("ui-modern").addEventListener("click", () => applyView("minimal"));

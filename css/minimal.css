@@ -266,6 +266,34 @@ body.view-legacy .legacy-view[hidden] {
   display: none;
 }
 
+.minimal-data {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 0;
+  border-top: 1px solid var(--min-line, #3c4043);
+}
+
+.minimal-data-btn {
+  flex: 1;
+  margin: 0;
+  padding: 8px 6px;
+  border: 1px solid var(--min-line, #3c4043);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--min-muted, #9aa0a6);
+  font-family: var(--min-font, system-ui, sans-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.minimal-data-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .minimal-legacy,
 .legacy-back {
   flex: none;
