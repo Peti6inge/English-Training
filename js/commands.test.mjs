@@ -18,6 +18,7 @@ describe("correction voice commands (immediate dispatch)", () => {
     { buffer: "enough", type: "DONT_REMIND" },
     { buffer: "he know", type: "DONT_REMIND" },
     { buffer: "he knows", type: "DONT_REMIND" },
+    { buffer: "you know", type: "DONT_REMIND" },
     { buffer: "stop", type: "STOP" },
   ];
 
