@@ -30,6 +30,7 @@ const files = [
   "phrases.json",
   "phrases.sample.json",
   "css/styles.css",
+  "css/minimal.css",
   "js/app.js",
   "js/audio-cues.js",
   "js/native-tts.js",

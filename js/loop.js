@@ -189,15 +189,25 @@ export class LoopManager extends EventTarget {
   /**
    * Physical or UI Next — validates the answer (listening) or Remind + next in correction.
    * Appuis pendant TTS / évaluation sont mémorisés et rejoués dès LISTENING ou CORRECTION.
+   * À l'arrêt, Next volant demande un Démarrer (géré par l'UI via `idle-start`).
    */
   onPhysicalNext() {
+    if (!this.running) {
+      this._emit("idle-start", { direction: "next" });
+      return Promise.resolve();
+    }
     return this._queueWheel("next");
   }
 
   /**
    * Physical or UI Previous — Repeat French while capturing; phrase suivante in correction.
+   * À l'arrêt, Previous volant demande un Démarrer (géré par l'UI via `idle-start`).
    */
   onPhysicalPrevious() {
+    if (!this.running) {
+      this._emit("idle-start", { direction: "previous" });
+      return Promise.resolve();
+    }
     return this._queueWheel("previous");
   }
 

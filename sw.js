@@ -1,6 +1,6 @@
 /* English Training — caches the app shell and STT WASM/model requests for offline use. */
 
-const VERSION = "v1.5.0";
+const VERSION = "v1.6.0";
 const SHELL = `et-shell-${VERSION}`;
 const RUNTIME = `et-runtime-${VERSION}`;
 
@@ -10,6 +10,7 @@ const PRECACHE = [
   "./manifest.json",
   "./phrases.json",
   "./css/styles.css",
+  "./css/minimal.css",
   "./js/config.js",
   "./js/storage.js",
   "./js/fuzzy.js",

@@ -2,88 +2,139 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0e1116" />
     <title>English Training</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/minimal.css" />
   </head>
-  <body>
-    <div class="app">
-      <header class="topbar">
-        <div class="brand">
-          <img src="./icons/icon.svg" alt="" />
-          <div>
-            <h1>English Training</h1>
-            <p>v5</p>
-          </div>
-        </div>
-        <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
-      </header>
-
-      <div class="grid">
-        <section class="card">
-          <p class="kicker" id="phrase-kicker">Phrase française</p>
-          <h2 id="phrase-fr" class="phrase-fr">Appuyez sur Démarrer</h2>
-          <div class="phrase-meta">
-            <span id="phrase-index">0 / 0</span>
-            <span id="phrase-tag" class="tag">—</span>
-          </div>
-
-          <div class="machine" id="machine"></div>
-
-          <div class="transcript" id="transcript">Le transcript vocal apparaîtra ici.</div>
-          <div class="feedback" id="feedback"></div>
-
-          <div class="actions">
-            <button id="btn-start" class="primary">Démarrer</button>
-            <button id="btn-stop" class="ghost" disabled>Stop</button>
-            <button id="btn-repeat-fr">Repeat French</button>
-            <button id="btn-repeat-en">Repeat English</button>
-            <button id="btn-prev">Previous</button>
-            <button id="btn-next">Next</button>
-            <button id="btn-remind">Remind</button>
-            <button id="btn-dont-remind">Don't Remind</button>
-            <button id="btn-reveal" class="ghost">Voir l'anglais</button>
-          </div>
-          <p class="reveal" id="reveal" hidden></p>
-        </section>
-
-        <aside class="card">
-          <p class="kicker">Progression</p>
-          <div class="stats">
-            <div class="stat"><b id="stat-seen">0</b><span>vues</span></div>
-            <div class="stat"><b id="stat-ok">0</b><span>correctes</span></div>
-            <div class="stat"><b id="stat-bad">0</b><span>à revoir</span></div>
-            <div class="stat"><b id="stat-remind">0</b><span>don't remind</span></div>
-          </div>
-
-          <p class="kicker" id="commands-title">Commandes vocales</p>
-          <div class="commands" id="commands">
-            <div class="cmd"><span>Valider la tentative</span><code>NEXT</code></div>
-            <div class="cmd"><span>Arrêter la session</span><code>STOP</code></div>
-          </div>
-
-          <p class="kicker" style="margin-top:16px">Réglages</p>
-          <label class="setting">
-            <span>
-              <strong>Bips micro</strong>
-              <small>Sons d'ouverture/fermeture du micro (flux média, audible en voiture)</small>
+  <body class="view-minimal">
+    <main id="minimal-view" class="minimal">
+      <div class="minimal-stage">
+        <button type="button" id="ui-start" class="minimal-start">Démarrer</button>
+        <div class="minimal-run">
+          <button type="button" id="ui-phrase-fr-wrap" class="phrase-hit">
+            <p id="ui-phrase-fr"></p>
+            <span class="speaker" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40">
+                <path
+                  fill="currentColor"
+                  d="M4 9v6h4l5 5V4L8 9H4zm11.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"
+                />
+              </svg>
             </span>
-            <input id="setting-mic-cues" type="checkbox" checked />
-          </label>
-          <p class="setting-note" id="wake-lock-note"></p>
-
-          <p class="kicker" style="margin-top:16px">Liste Don't Remind</p>
-          <ul class="remind-list" id="remind-list"></ul>
-          <div class="actions" style="margin-top:12px">
-            <button id="btn-reset" class="ghost">Réinitialiser</button>
-          </div>
-          <div class="log" id="log"></div>
-        </aside>
+          </button>
+          <button type="button" id="ui-phrase-en-wrap" class="phrase-hit" hidden>
+            <p id="ui-phrase-en"></p>
+            <span class="speaker" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40">
+                <path
+                  fill="currentColor"
+                  d="M4 9v6h4l5 5V4L8 9H4zm11.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div id="ui-transcript" class="minimal-transcript"></div>
+        </div>
       </div>
+
+      <section class="minimal-info" id="ui-info">
+        <div class="minimal-row" id="ui-controls">
+          <button type="button" id="ui-prev">Previous</button>
+          <button type="button" id="ui-dont-remind">Don't remind</button>
+          <button type="button" id="ui-next">Next</button>
+        </div>
+        <button type="button" id="ui-stop" class="minimal-stop" disabled>Stop</button>
+        <div class="minimal-stats" id="ui-idle-meta">
+          <p>Nombre de phrases vues = <span id="ui-seen">0</span>/<span id="ui-total-seen">0</span></p>
+          <p>Nombre de phrases validées = <span id="ui-validated">0</span>/<span id="ui-total-validated">0</span></p>
+          <button type="button" id="ui-reset">Réinitialiser</button>
+        </div>
+      </section>
+
+      <button type="button" id="ui-legacy" class="minimal-legacy">Mode legacy</button>
+    </main>
+
+    <div id="legacy-view" class="legacy-view" hidden>
+      <div class="app">
+        <header class="topbar">
+          <div class="brand">
+            <img src="./icons/icon.svg" alt="" />
+            <div>
+              <h1>English Training</h1>
+              <p>v5</p>
+            </div>
+          </div>
+          <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
+        </header>
+
+        <div class="grid">
+          <section class="card">
+            <p class="kicker" id="phrase-kicker">Phrase française</p>
+            <h2 id="phrase-fr" class="phrase-fr">Appuyez sur Démarrer</h2>
+            <div class="phrase-meta">
+              <span id="phrase-index">0 / 0</span>
+              <span id="phrase-tag" class="tag">—</span>
+            </div>
+
+            <div class="machine" id="machine"></div>
+
+            <div class="transcript" id="transcript">Le transcript vocal apparaîtra ici.</div>
+            <div class="feedback" id="feedback"></div>
+
+            <div class="actions">
+              <button id="btn-start" class="primary">Démarrer</button>
+              <button id="btn-stop" class="ghost" disabled>Stop</button>
+              <button id="btn-repeat-fr">Repeat French</button>
+              <button id="btn-repeat-en">Repeat English</button>
+              <button id="btn-prev">Previous</button>
+              <button id="btn-next">Next</button>
+              <button id="btn-remind">Remind</button>
+              <button id="btn-dont-remind">Don't Remind</button>
+              <button id="btn-reveal" class="ghost">Voir l'anglais</button>
+            </div>
+            <p class="reveal" id="reveal" hidden></p>
+          </section>
+
+          <aside class="card">
+            <p class="kicker">Progression</p>
+            <div class="stats">
+              <div class="stat"><b id="stat-seen">0</b><span>vues</span></div>
+              <div class="stat"><b id="stat-ok">0</b><span>correctes</span></div>
+              <div class="stat"><b id="stat-bad">0</b><span>à revoir</span></div>
+              <div class="stat"><b id="stat-remind">0</b><span>don't remind</span></div>
+            </div>
+
+            <p class="kicker" id="commands-title">Commandes vocales</p>
+            <div class="commands" id="commands">
+              <div class="cmd"><span>Valider la tentative</span><code>NEXT</code></div>
+              <div class="cmd"><span>Arrêter la session</span><code>STOP</code></div>
+            </div>
+
+            <p class="kicker" style="margin-top:16px">Réglages</p>
+            <label class="setting">
+              <span>
+                <strong>Bips micro</strong>
+                <small>Sons d'ouverture/fermeture du micro (flux média, audible en voiture)</small>
+              </span>
+              <input id="setting-mic-cues" type="checkbox" checked />
+            </label>
+            <p class="setting-note" id="wake-lock-note"></p>
+
+            <p class="kicker" style="margin-top:16px">Liste Don't Remind</p>
+            <ul class="remind-list" id="remind-list"></ul>
+            <div class="actions" style="margin-top:12px">
+              <button id="btn-reset" class="ghost">Réinitialiser</button>
+            </div>
+            <div class="log" id="log"></div>
+          </aside>
+        </div>
+      </div>
+      <button type="button" id="ui-modern" class="legacy-back">Mode principal</button>
     </div>
 
     <div class="overlay" id="overlay" hidden aria-hidden="true">

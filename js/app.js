@@ -20,10 +20,21 @@ const STATES = [
   LOOP_STATES.NEXT_PHRASE,
 ];
 
+let starting = false;
+
 function log(message) {
   const el = $("log");
   const line = `[${new Date().toLocaleTimeString()}] ${message}`;
   el.textContent = `${line}\n${el.textContent}`.slice(0, 1200);
+}
+
+function applyView(mode) {
+  const legacy = mode === "legacy";
+  document.body.classList.toggle("view-legacy", legacy);
+  document.body.classList.toggle("view-minimal", !legacy);
+  $("legacy-view").hidden = !legacy;
+  $("minimal-view").hidden = legacy;
+  storage.setSettings({ uiMode: legacy ? "legacy" : "minimal" });
 }
 
 function renderMachine(state) {
@@ -66,6 +77,12 @@ function renderPhrase(phrase, state = LOOP_STATES.IDLE) {
       : (phrase.tags && phrase.tags[0]) || "phrase";
   $("reveal").hidden = true;
   $("reveal").textContent = phrase.en;
+
+  $("ui-phrase-fr").textContent = phrase.fr;
+  $("ui-phrase-en").textContent = phrase.en;
+  const correction = state === LOOP_STATES.CORRECTION;
+  $("ui-phrase-en-wrap").hidden = !correction;
+  $("minimal-view").classList.toggle("is-correction", correction);
 }
 
 function renderStats() {
@@ -74,6 +91,11 @@ function renderStats() {
   $("stat-ok").textContent = s.correct;
   $("stat-bad").textContent = s.incorrect;
   $("stat-remind").textContent = s.dontRemind;
+
+  $("ui-seen").textContent = s.seen;
+  $("ui-total-seen").textContent = s.total;
+  $("ui-validated").textContent = s.dontRemind;
+  $("ui-total-validated").textContent = s.total;
 
   const list = storage.getDontRemindList();
   const byId = new Map(queue.phrases.map((p) => [p.id, p]));
@@ -127,6 +149,68 @@ function renderSettings() {
     : "Wake Lock non supporté sur ce navigateur — la veille peut interrompre la session.";
 }
 
+function syncSessionUi(state = loop.state) {
+  const running = loop.running;
+  $("minimal-view").classList.toggle("is-running", running);
+  $("btn-start").disabled = running;
+  $("btn-stop").disabled = !running;
+  $("ui-start").disabled = running;
+  $("ui-stop").disabled = !running;
+  const dontRemindOk = !running || state === LOOP_STATES.CORRECTION;
+  $("ui-dont-remind").disabled = !dontRemindOk;
+  $("ui-idle-meta").hidden = running;
+}
+
+function resetProgress() {
+  if (!confirm("Effacer la progression locale ?")) return;
+  storage.resetProgress();
+  queue.rebuild();
+  renderPhrase(queue.current());
+  renderStats();
+}
+
+async function startSession() {
+  if (loop.running || starting) return;
+  starting = true;
+  $("btn-start").disabled = true;
+  $("ui-start").disabled = true;
+  $("btn-stop").disabled = false;
+  $("ui-stop").disabled = false;
+  try {
+    const nativeOk = await initNativeCarMedia(loop, { onLog: log });
+    const mediaOk = nativeOk ? false : initMediaSession(loop);
+    if (nativeOk) log("Commodos volant reliés à la session");
+    else if (mediaOk) log("Touches média volant actives (Next / Previous)");
+    await stt.init();
+    await loop.start();
+    syncSessionUi(loop.state);
+  } catch (err) {
+    log(err.message || String(err));
+    setBadge("error", "Micro refusé");
+    $("btn-start").disabled = false;
+    $("btn-stop").disabled = true;
+    $("ui-start").disabled = false;
+    $("ui-stop").disabled = true;
+    syncSessionUi(LOOP_STATES.IDLE);
+  } finally {
+    starting = false;
+  }
+}
+
+function onDontRemind() {
+  if (!loop.running) {
+    const phrase = queue.current();
+    if (!phrase) return;
+    storage.addDontRemind(phrase.id);
+    queue.goTo(queue.indexOfCurrent() + 1);
+    renderPhrase(queue.current());
+    renderStats();
+    log("Phrase ajoutée à Don't Remind (blacklist locale)");
+    return;
+  }
+  loop.trigger("DONT_REMIND");
+}
+
 async function loadPhrases() {
   try {
     const mod = await import("./phrases-data.js");
@@ -160,6 +244,8 @@ async function boot() {
   renderMachine(LOOP_STATES.IDLE);
   renderCommandList(LOOP_STATES.IDLE);
   await storage.init();
+  applyView(storage.getSettings().uiMode === "legacy" ? "legacy" : "minimal");
+  syncSessionUi(LOOP_STATES.IDLE);
 
   wakeLock.init(() => {
     loop.resumeAfterBackground();
@@ -193,6 +279,8 @@ async function boot() {
     } catch (err) {
       log(`Session média: ${err.message || String(err)}`);
     }
+  } else {
+    initMediaSession(loop);
   }
 
   stt.addEventListener("status", (ev) => {
@@ -219,6 +307,7 @@ async function boot() {
     renderMachine(ev.detail.state);
     renderPhrase(ev.detail.phrase, ev.detail.state);
     renderCommandList(ev.detail.state);
+    syncSessionUi(ev.detail.state);
     if (ev.detail.state === LOOP_STATES.LISTENING) {
       setBadge("listen", `${stt.engine} · micro ouvert`);
       clearFeedback();
@@ -226,12 +315,17 @@ async function boot() {
     if (ev.detail.state === LOOP_STATES.CORRECTION) {
       setBadge("listen", `${stt.engine} · correction`);
     }
+    if (ev.detail.state === LOOP_STATES.SPEAKING_FR || ev.detail.state === LOOP_STATES.NEXT_PHRASE) {
+      $("ui-transcript").innerHTML = "";
+    }
     renderStats();
   });
 
   loop.addEventListener("transcript", (ev) => {
     const partial = ev.detail.partial ? ` <em>${ev.detail.partial}</em>` : "";
-    $("transcript").innerHTML = `<strong>${ev.detail.buffer || "…"}</strong>${partial}`;
+    const html = `<strong>${ev.detail.buffer || "…"}</strong>${partial}`;
+    $("transcript").innerHTML = html;
+    $("ui-transcript").innerHTML = html;
   });
 
   loop.addEventListener("feedback", (ev) => {
@@ -256,47 +350,49 @@ async function boot() {
   loop.addEventListener("session-stop", () => {
     $("btn-start").disabled = false;
     $("btn-stop").disabled = true;
+    $("ui-start").disabled = false;
+    $("ui-stop").disabled = true;
+    $("ui-transcript").innerHTML = "";
+    syncSessionUi(LOOP_STATES.IDLE);
+    renderPhrase(queue.current(), LOOP_STATES.IDLE);
     setBadge("ready", `${stt.engine} en pause`);
   });
 
-  $("btn-start").addEventListener("click", async () => {
-    $("btn-start").disabled = true;
-    $("btn-stop").disabled = false;
-    try {
-      const nativeOk = await initNativeCarMedia(loop, { onLog: log });
-      const mediaOk = nativeOk ? false : initMediaSession(loop);
-      if (nativeOk) log("Commodos volant reliés à la session");
-      else if (mediaOk) log("Touches média volant actives (Next / Previous)");
-      await stt.init();
-      await loop.start();
-    } catch (err) {
-      log(err.message || String(err));
-      setBadge("error", "Micro refusé");
-      $("btn-start").disabled = false;
-      $("btn-stop").disabled = true;
-    }
+  loop.addEventListener("idle-start", () => {
+    startSession();
   });
 
+  $("btn-start").addEventListener("click", () => startSession());
+  $("ui-start").addEventListener("click", () => startSession());
+
   $("btn-stop").addEventListener("click", async () => {
+    await loop.trigger("STOP");
+  });
+  $("ui-stop").addEventListener("click", async () => {
     await loop.trigger("STOP");
   });
 
   $("btn-repeat-fr").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
   $("btn-repeat-en").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
+  $("ui-phrase-fr-wrap").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
+  $("ui-phrase-en-wrap").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
+
   $("btn-prev").addEventListener("click", () => loop.onPhysicalPrevious());
   $("btn-next").addEventListener("click", () => loop.onPhysicalNext());
+  $("ui-prev").addEventListener("click", () => loop.onPhysicalPrevious());
+  $("ui-next").addEventListener("click", () => loop.onPhysicalNext());
+
   $("btn-remind").addEventListener("click", () => loop.trigger("REMIND"));
   $("btn-dont-remind").addEventListener("click", () => loop.trigger("DONT_REMIND"));
+  $("ui-dont-remind").addEventListener("click", () => onDontRemind());
   $("btn-reveal").addEventListener("click", () => {
     $("reveal").hidden = false;
   });
-  $("btn-reset").addEventListener("click", () => {
-    if (!confirm("Effacer la progression locale ?")) return;
-    storage.resetProgress();
-    queue.rebuild();
-    renderPhrase(queue.current());
-    renderStats();
-  });
+  $("btn-reset").addEventListener("click", () => resetProgress());
+  $("ui-reset").addEventListener("click", () => resetProgress());
+
+  $("ui-legacy").addEventListener("click", () => applyView("legacy"));
+  $("ui-modern").addEventListener("click", () => applyView("minimal"));
 
   $("setting-mic-cues").addEventListener("change", (ev) => {
     storage.setSettings({ micCues: ev.target.checked });
