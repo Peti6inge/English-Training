@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "s001",
+    "fr": "Une douleur persistante mérite un avis médical.",
+    "en": "Persistent pain deserves medical advice.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s002",
+    "fr": "Son excuse a calmé mon inquiétude.",
+    "en": "His apology eased my worry.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s003",
+    "fr": "Elle a refusé l'invitation avec gentillesse.",
+    "en": "She politely declined the invitation.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s004",
+    "fr": "Son raisonnement manque de preuves concrètes.",
+    "en": "His reasoning lacks concrete evidence.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s005",
+    "fr": "La sauvegarde automatique protège les fichiers importants.",
+    "en": "Automatic backup protects important files.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s006",
+    "fr": "La radiographie n'a montré aucune fracture.",
+    "en": "The X-ray showed no fractures.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s007",
+    "fr": "C'est un argument juste, en fait.",
+    "en": "That's a fair point, actually.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s008",
+    "fr": "Cette promo se termine ce soir, apparemment.",
+    "en": "That sale ends tonight, apparently.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s009",
+    "fr": "Sa réaction montrait une déception sincère.",
+    "en": "His reaction showed genuine disappointment.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s010",
+    "fr": "Il collectionne des vinyles de jazz ancien.",
+    "en": "He collects old jazz records.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s011",
+    "fr": "Le club propose des cours de poterie.",
+    "en": "The club offers pottery classes.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s012",
+    "fr": "Cette émission est sous-titrée en anglais.",
+    "en": "This show has English subtitles.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s013",
+    "fr": "Nous avons échangé nos numéros après le cours.",
+    "en": "We exchanged numbers after class.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s014",
+    "fr": "Son argument manque de preuves concrètes.",
+    "en": "His argument lacks solid evidence.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s015",
+    "fr": "Il y a toujours du monde dans ce quartier.",
+    "en": "This neighborhood is always busy.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s016",
+    "fr": "Il fait un froid de canard dehors aujourd'hui.",
+    "en": "It's freezing cold outside today.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s017",
+    "fr": "Le soleil tape fort aujourd'hui.",
+    "en": "The sun is blazing today.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s018",
+    "fr": "Pour moi, ça tient la route.",
+    "en": "It makes sense to me.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s019",
+    "fr": "On garde ça simple pour l'anniversaire.",
+    "en": "We're keeping the birthday low-key.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s020",
+    "fr": "La chaudière nécessite un entretien annuel.",
+    "en": "The boiler requires yearly maintenance.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s021",
+    "fr": "Cette sauce contient des herbes fraîches.",
+    "en": "This sauce contains fresh herbs.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s022",
+    "fr": "Le contrat précise les responsabilités de chacun.",
+    "en": "The contract outlines everyone's responsibilities.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s023",
+    "fr": "Cette appli me vide la batterie.",
+    "en": "This app drains my battery.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s024",
+    "fr": "J'ai attrapé un rhume de dingue.",
+    "en": "I caught a nasty cold.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s025",
+    "fr": "J'ai emprunté ses notes de cours.",
+    "en": "I borrowed her class notes.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s026",
+    "fr": "J'ai les doigts gelés dehors.",
+    "en": "My fingers are freezing outside.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s027",
+    "fr": "On joue aux cartes après le dîner.",
+    "en": "We're playing cards after dinner.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s028",
+    "fr": "J'ai pris une douche en vitesse.",
+    "en": "I took a quick shower.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s029",
+    "fr": "On commande à emporter ce soir ?",
+    "en": "Should we get takeout tonight?",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s030",
+    "fr": "La pharmacie vend des produits sans ordonnance.",
+    "en": "The pharmacy sells over-the-counter products.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s031",
+    "fr": "Franchement c'est déjà pas mal.",
+    "en": "Honestly that's already pretty good.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s032",
+    "fr": "Le pare-feu bloque les connexions suspectes.",
+    "en": "The firewall blocks suspicious connections.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s033",
+    "fr": "Le médecin a prescrit des séances de kinésithérapie.",
+    "en": "The doctor prescribed physiotherapy sessions.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s034",
+    "fr": "Le service des ressources humaines traite les demandes de congé.",
+    "en": "Human resources handles leave requests.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s035",
+    "fr": "Mon casque audio a été envoyé en réparation.",
+    "en": "My headphones were sent for repair.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s036",
+    "fr": "Nous avons visité une exposition de photographie en plein air.",
+    "en": "We visited an outdoor photography exhibition.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s037",
+    "fr": "J'ai des réunions en chaîne tout l'après-midi.",
+    "en": "I've got back-to-back meetings all afternoon.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s038",
+    "fr": "Notre vol comporte une escale de deux heures.",
+    "en": "Our flight has a two-hour layover.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s039",
+    "fr": "Cette garantie couvre les pièces et la main-d'œuvre.",
+    "en": "This warranty covers parts and labor.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s040",
+    "fr": "Nous avons isolé les fenêtres avant l'hiver.",
+    "en": "We insulated the windows before winter.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s041",
+    "fr": "Cette sauce contient des noix et du lait.",
+    "en": "This sauce contains nuts and milk.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s042",
+    "fr": "Le taux d'humidité reste élevé près de la côte.",
+    "en": "Humidity stays high near the coast.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s043",
+    "fr": "Cet épisode de podcast était étonnamment drôle.",
+    "en": "That podcast episode was surprisingly funny.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s044",
+    "fr": "Je suis soulagé qu'on ait tout discuté.",
+    "en": "I'm relieved we talked things through.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s045",
+    "fr": "Retrouvons-nous à mi-chemin après le travail.",
+    "en": "Let's meet somewhere halfway after work.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s046",
+    "fr": "Ça semble être un compromis raisonnable.",
+    "en": "That seems like a fair trade-off.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s047",
+    "fr": "Réglons les détails demain.",
+    "en": "Let's nail down the details tomorrow.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s048",
+    "fr": "On partira peut-être après le dîner.",
+    "en": "We might head out after dinner.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s049",
+    "fr": "Cette boulangerie au coin ouvre avant le lever du soleil.",
+    "en": "That corner bakery opens before sunrise.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s050",
+    "fr": "La facture indique des frais de service supplémentaires.",
+    "en": "The bill lists additional service charges.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s051",
+    "fr": "Le marché local vend des légumes de saison.",
+    "en": "The local market sells seasonal vegetables.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s052",
+    "fr": "Le directeur a approuvé mon demande de congé.",
+    "en": "The manager approved my leave request.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s053",
+    "fr": "Notre tante a apporté des albums de famille.",
+    "en": "Our aunt brought family photo albums.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s054",
+    "fr": "Ce titre m'a fait cliquer tout de suite.",
+    "en": "That headline made me click immediately.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s055",
+    "fr": "Ma routine du matin me fait gagner du temps.",
+    "en": "My morning routine saves me time.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s056",
+    "fr": "La nouvelle l'a laissée profondément déçue.",
+    "en": "The news left her deeply disappointed.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s057",
+    "fr": "Cette surprise a vraiment illuminé ma journée.",
+    "en": "That surprise totally made my day.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s058",
+    "fr": "J'ai acheté des chaussures de randonnée en promotion.",
+    "en": "I bought hiking shoes on sale.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s059",
+    "fr": "Cette couleur est plus belle en vrai.",
+    "en": "That color looks better in person.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s060",
+    "fr": "Notre voiture de location inclut le kilométrage illimité.",
+    "en": "Our rental car includes unlimited mileage.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s061",
+    "fr": "Le café du coin propose des pâtisseries maison.",
+    "en": "The corner café offers homemade pastries.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s062",
+    "fr": "Cet article cite plusieurs sources indépendantes.",
+    "en": "That article cites several independent sources.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s063",
+    "fr": "Je suis content qu'on ait mis ça au clair.",
+    "en": "I'm glad we talked that out.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s064",
+    "fr": "Je me sens raplapla depuis toute la semaine.",
+    "en": "I've been feeling run-down all week.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s065",
+    "fr": "Ces comprimés contre les allergies me donnent sommeil.",
+    "en": "These allergy pills make me sleepy.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s066",
+    "fr": "Ce devoir m'a pris toute la soirée.",
+    "en": "That homework took me all evening.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s067",
+    "fr": "Son poste implique de coordonner plusieurs services.",
+    "en": "His role involves coordinating several departments.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s068",
+    "fr": "J'ai rejoint un groupe de lecture en ligne.",
+    "en": "I joined an online book club.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s069",
+    "fr": "Cette fin a fait parler tout le monde après.",
+    "en": "That ending had everyone talking afterward.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s070",
+    "fr": "Elle a exprimé sa reconnaissance pour le soutien de tous.",
+    "en": "She expressed gratitude for everyone's support.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s071",
+    "fr": "Son argument repose sur plusieurs hypothèses.",
+    "en": "His argument relies on several assumptions.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s072",
+    "fr": "Je penche plutôt pour l'option la moins chère.",
+    "en": "I'm leaning toward the cheaper option.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s073",
+    "fr": "Je pense poser mon vendredi.",
+    "en": "I'm thinking about taking Friday off.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s074",
+    "fr": "Le trottoir est fermé pour des travaux.",
+    "en": "The sidewalk is closed for construction.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s075",
+    "fr": "Nous avons remplacé les rideaux du salon.",
+    "en": "We replaced the living room curtains.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s076",
+    "fr": "Le professeur a distribué une feuille d'exercices.",
+    "en": "The teacher handed out a worksheet.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s077",
+    "fr": "Ses épaules restent tendues après le travail.",
+    "en": "Her shoulders stay tense after work.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s078",
+    "fr": "Le budget prévisionnel doit être validé aujourd'hui.",
+    "en": "The projected budget needs approval today.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s079",
+    "fr": "Elle supervise une petite équipe à distance.",
+    "en": "She manages a small remote team.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s080",
+    "fr": "Ils ont annoncé leurs fiançailles dimanche dernier.",
+    "en": "They announced their engagement last Sunday.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s081",
+    "fr": "Je trouve cette solution plus réaliste.",
+    "en": "I find this solution more realistic.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s082",
+    "fr": "Le contrat prévoit un préavis de trois mois.",
+    "en": "The contract requires three months notice.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s083",
+    "fr": "Le chantier devrait commencer au début juin.",
+    "en": "Construction should begin in early June.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s084",
+    "fr": "J'ai effacé le message par accident.",
+    "en": "I deleted the message by accident.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s085",
+    "fr": "Je vais prendre rendez-vous chez le dentiste.",
+    "en": "I'm gonna book a dentist appointment.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s086",
+    "fr": "Ça ne vaut pas ce prix-là, franchement.",
+    "en": "It isn't worth that price, honestly.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s087",
+    "fr": "Ils n'avaient plus ma pointure en rayon.",
+    "en": "They were out of my size.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s088",
+    "fr": "La lumière de la cuisine clignote encore.",
+    "en": "The kitchen light is flickering again.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s089",
+    "fr": "On a pris des tacos après le ciné.",
+    "en": "We grabbed tacos after the movie.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s090",
+    "fr": "J'ai complètement séché le cours ce matin.",
+    "en": "I totally skipped class this morning.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s091",
+    "fr": "Le prof a décalé la date limite.",
+    "en": "The teacher pushed back the deadline.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s092",
+    "fr": "Mon chef veut ça pour hier.",
+    "en": "My boss wanted this done yesterday.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s093",
+    "fr": "J'ai passé la journée à répondre aux mails.",
+    "en": "I spent all day answering emails.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s094",
+    "fr": "On est à la bourre sur ce projet.",
+    "en": "We're running behind on this project.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s095",
+    "fr": "Je me suis remis au dessin récemment.",
+    "en": "I got back into drawing recently.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s096",
+    "fr": "Elle passe ses dimanches à faire du tricot chez elle.",
+    "en": "She spends Sundays knitting at home.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s097",
+    "fr": "Je galère encore avec les accords de guitare.",
+    "en": "I'm still struggling with guitar chords.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s098",
+    "fr": "J'ai binge-watché cette série tout le week-end.",
+    "en": "I binge-watched that show all weekend.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s099",
+    "fr": "La fin du film m'a laissé perplexe.",
+    "en": "The movie ending left me confused.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s100",
+    "fr": "Je traîne encore en pyjama.",
+    "en": "I'm still hanging around in pajamas.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s101",
+    "fr": "Ça m'a fait plaisir de l'entendre.",
+    "en": "That was really good to hear.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s102",
+    "fr": "Je suis un peu à cran aujourd'hui.",
+    "en": "I'm a little on edge today.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s103",
+    "fr": "J'étais trop content qu'elle soit venue.",
+    "en": "I was so glad she came.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s104",
+    "fr": "Ça te dit de venir avec nous ?",
+    "en": "Do you wanna come with us?",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s105",
+    "fr": "Je ne suis pas convaincu par son idée.",
+    "en": "I'm not sold on his idea.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s106",
+    "fr": "Je trouve ça un peu tiré par les cheveux.",
+    "en": "I think that's a bit far-fetched.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s107",
+    "fr": "Le navigateur bloque les fenêtres contextuelles automatiquement.",
+    "en": "The browser blocks pop-up windows automatically.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s108",
+    "fr": "Cette mise à jour corrige plusieurs failles de sécurité.",
+    "en": "This update fixes several security vulnerabilities.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s109",
+    "fr": "Le kinésithérapeute recommande des étirements quotidiens.",
+    "en": "The physical therapist recommends daily stretches.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s110",
+    "fr": "La facture détaillée arrive par courrier électronique.",
+    "en": "The itemized bill arrives by email.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s111",
+    "fr": "Le boulanger prépare le pain avant l'aube.",
+    "en": "The baker prepares bread before dawn.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s112",
+    "fr": "Elle a choisi une spécialisation en biologie.",
+    "en": "She chose a specialization in biology.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s113",
+    "fr": "Le médecin examine son poignet gonflé.",
+    "en": "The doctor examines his swollen wrist.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s114",
+    "fr": "Cette réunion rassemble les responsables régionaux.",
+    "en": "This meeting brings together regional managers.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s115",
+    "fr": "Elle apprend la photographie argentique le samedi.",
+    "en": "She learns film photography on Saturdays.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s116",
+    "fr": "Son neveu vient de commencer l'école primaire.",
+    "en": "Her nephew just started elementary school.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s117",
+    "fr": "Cette chaîne diffuse des informations toute la journée.",
+    "en": "That channel broadcasts news all day.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s118",
+    "fr": "Son encouragement m'a redonné confiance.",
+    "en": "Her encouragement gave me confidence again.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s119",
+    "fr": "Cette décision soulève plusieurs questions importantes.",
+    "en": "This decision raises several important questions.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s120",
+    "fr": "Je préfère une approche plus directe.",
+    "en": "I prefer a more direct approach.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s121",
+    "fr": "Ils envisagent de déménager avant la fin de l'année.",
+    "en": "They are considering moving before year-end.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s122",
+    "fr": "Je n'arrive jamais à retrouver mon chargeur.",
+    "en": "I can never find my charger.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s123",
+    "fr": "Je suis encore courbaturé de la salle.",
+    "en": "I'm still sore from the gym.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s124",
+    "fr": "Ça va mieux depuis que je dors plus.",
+    "en": "I feel better since sleeping more.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s125",
+    "fr": "Le siège du milieu était vraiment minuscule.",
+    "en": "The middle seat was really tiny.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s126",
+    "fr": "Je vais garder ça, finalement.",
+    "en": "I'm gonna keep this after all.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s127",
+    "fr": "On entend les sirènes toute la nuit.",
+    "en": "You can hear sirens all night.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s128",
+    "fr": "Ils m'ont envoyé le mauvais formulaire.",
+    "en": "They sent me the wrong form.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s129",
+    "fr": "On partage un dessert ou quoi ?",
+    "en": "Wanna split a dessert or what?",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s130",
+    "fr": "J'ai décroché pendant la présentation.",
+    "en": "I zoned out during the presentation.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s131",
+    "fr": "J'ai raté la dernière partie de bowling.",
+    "en": "I missed the last bowling game.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s132",
+    "fr": "Ça se couvre vraiment vite aujourd'hui.",
+    "en": "It's getting cloudy really fast today.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s133",
+    "fr": "Il pleut sans arrêt depuis hier.",
+    "en": "It has been raining since yesterday.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s134",
+    "fr": "Ma sœur m'a envoyé des photos du bébé.",
+    "en": "My sister sent me baby pictures.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s135",
+    "fr": "J'ai encore laissé mon parapluie quelque part.",
+    "en": "I left my umbrella somewhere again.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s136",
+    "fr": "J'ai binge-watché trois épisodes hier soir.",
+    "en": "I binge-watched three episodes last night.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s137",
+    "fr": "Je suis stressé pour aucune raison.",
+    "en": "I'm stressed out for no reason.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s138",
+    "fr": "On a papoté pendant une heure dehors.",
+    "en": "We chatted outside for an hour.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s139",
+    "fr": "Elle a annulé au dernier moment.",
+    "en": "She canceled at the last minute.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s140",
+    "fr": "Je réserve une table pour samedi.",
+    "en": "I'm booking a table for Saturday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s141",
+    "fr": "On décidera une fois que tout le monde sera là.",
+    "en": "We'll decide once everybody gets here.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s142",
+    "fr": "J'ai envie de rien de compliqué ce soir.",
+    "en": "I don't want anything complicated tonight.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s143",
+    "fr": "Ces donuts maison ont l'air dangereux.",
+    "en": "Those homemade donuts look dangerously good.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s144",
+    "fr": "Ces cachets me donnent sommeil.",
+    "en": "These pills make me really sleepy.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s145",
+    "fr": "Le pommeau de douche est impeccable, merci.",
+    "en": "The showerhead is perfect, thank you.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s146",
+    "fr": "C'est impressionnant, sans être vraiment indispensable.",
+    "en": "It's impressive without being truly necessary.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s147",
+    "fr": "Il fait un froid de canard ce matin.",
+    "en": "It's bitterly cold out this morning.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s148",
+    "fr": "En vrai c'est toujours mieux que rien.",
+    "en": "Honestly, it's still better than nothing.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s149",
+    "fr": "J'ai installé des étagères dans le couloir.",
+    "en": "I installed shelves in the hallway.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s150",
+    "fr": "De toute façon le plan B est déjà dans un coin de la tête.",
+    "en": "The backup's already sitting there anyway.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s151",
+    "fr": "De toute façon on perd rien à tenter.",
+    "en": "We lose nothing by trying anyway.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s152",
+    "fr": "Après je suis chaud, mais pas avant huit heures.",
+    "en": "I'm down, just not before eight.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s153",
+    "fr": "Le kinésithérapeute m'a montré des exercices d'étirement.",
+    "en": "The physiotherapist showed me stretching exercises.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s154",
+    "fr": "Le navigateur bloque les fenêtres publicitaires automatiquement.",
+    "en": "The browser blocks pop-up ads automatically.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s155",
+    "fr": "Du coup je suis chaud, vous me comptez.",
+    "en": "So I'm down, count me in.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s156",
+    "fr": "J'ai négocié une réduction de dix pour cent.",
+    "en": "I negotiated a ten percent discount.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s157",
+    "fr": "Ça me dit de regarder le match ensemble.",
+    "en": "I'm into watching the match together.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s158",
+    "fr": "Franchement on perd rien à essayer.",
+    "en": "Honestly there's no harm in trying.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s159",
+    "fr": "Franchement j'ai eu peur pour rien.",
+    "en": "Honestly I got scared over nothing.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s160",
+    "fr": "Je te cache pas, le timing est relou.",
+    "en": "I won't lie, the timing's annoying.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s161",
+    "fr": "Je suis pas contre un truc plus tranquille.",
+    "en": "I'm not against something more low-key.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s162",
+    "fr": "Je suis pas contre d'y aller en train.",
+    "en": "I'm not against going by train.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s163",
+    "fr": "Les collègues ont organisé un pot de bienvenue.",
+    "en": "The colleagues organized a welcome gathering.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s164",
+    "fr": "Même à moitié, c'est mieux que rien.",
+    "en": "Even halfway, it's better than nothing.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s165",
+    "fr": "Ma grand-mère m'a appris cette recette.",
+    "en": "My grandmother taught me this recipe.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s166",
+    "fr": "Le vol a atterri avec vingt minutes de retard.",
+    "en": "The flight landed twenty minutes late.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s167",
+    "fr": "J'ai regardé un documentaire sur la nature.",
+    "en": "I watched a documentary about nature.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s168",
+    "fr": "Le centre-ville est animé le samedi soir.",
+    "en": "Downtown is lively on Saturday evenings.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s169",
+    "fr": "J'ai mis à jour tous mes mots de passe.",
+    "en": "I updated all my passwords yesterday.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s170",
+    "fr": "Y'a du soleil mais il fait frais dehors.",
+    "en": "It's sunny but chilly outside today.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s171",
+    "fr": "Le cours de cuisine était vraiment sympa.",
+    "en": "The cooking class was really fun.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s172",
+    "fr": "Le directeur financier présente les résultats trimestriels.",
+    "en": "The CFO presents the quarterly results.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s173",
+    "fr": "L'ostéopathe a travaillé sur ma colonne vertébrale.",
+    "en": "The osteopath worked on my spine.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s174",
+    "fr": "Le marché propose du fromage de chèvre artisanal.",
+    "en": "The market sells artisan goat cheese.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s175",
+    "fr": "Nous avons listé les activités pour les vacances.",
+    "en": "We listed activities for the vacation.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s176",
+    "fr": "Le sommelier a recommandé un vin de la région.",
+    "en": "The sommelier recommended a local wine.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s177",
+    "fr": "J'ai pris un antibiotique pendant cinq jours.",
+    "en": "I took antibiotics for five days.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s178",
+    "fr": "Le serveur a oublié notre commande de boissons.",
+    "en": "The server forgot our drink order.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s179",
+    "fr": "On a discuté de nos opinions sans se disputer.",
+    "en": "We discussed our opinions without arguing.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s180",
+    "fr": "J'ai calé le rendez-vous chez le médecin.",
+    "en": "I locked in the doctor's appointment.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s181",
+    "fr": "On a fait une randonnée de six kilomètres.",
+    "en": "We went on a six-kilometer hike.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s182",
+    "fr": "Y'a un truc qui cloche avec ma connexion internet.",
+    "en": "Something's wrong with my internet connection.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s183",
+    "fr": "J'ai laissé traîner la vaisselle encore une fois.",
+    "en": "I left the dishes sitting again.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s184",
+    "fr": "J'ai eu un coup de soleil sur les épaules.",
+    "en": "I got sunburn on my shoulders.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s185",
+    "fr": "Nous avons signé un bail de douze mois renouvelable.",
+    "en": "We signed a twelve-month renewable lease.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s186",
+    "fr": "Le film a reçu des critiques globalement positives.",
+    "en": "The film received generally positive reviews.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s187",
+    "fr": "Nous avons discuté de politique sans se mettre en colère.",
+    "en": "We discussed politics without getting angry.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s188",
+    "fr": "J'ai résilié mon abonnement à la salle de sport.",
+    "en": "I cancelled my gym membership subscription.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s189",
+    "fr": "Franchement, je suis pas d'accord du tout avec ça.",
+    "en": "Honestly, I completely disagree with that.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s190",
+    "fr": "Le séminaire aborde les techniques de prise de parole.",
+    "en": "The seminar covers public speaking techniques.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s191",
+    "fr": "Le médecin m'a conseillé des exercices d'étirement quotidiens.",
+    "en": "The doctor advised daily stretching exercises.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s192",
+    "fr": "Franchement, je trouve que c'est exagéré comme réaction.",
+    "en": "Honestly, I think that's an overreaction.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s193",
+    "fr": "Je suis soulagée que tout se soit bien passé.",
+    "en": "I'm relieved that everything went smoothly.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s194",
+    "fr": "J'ai zappé mon réveil et j'ai raté le bus.",
+    "en": "I overslept and missed the bus.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s195",
+    "fr": "On appelle papi après le dîner ce soir.",
+    "en": "We're calling Grandpa after dinner tonight.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s196",
+    "fr": "Tout le monde cite cette vidéo en ligne.",
+    "en": "Everyone keeps quoting that video online.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s197",
+    "fr": "Le médecin m'a prescrit des antibiotiques pour une semaine.",
+    "en": "The doctor prescribed antibiotics for one week.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s198",
+    "fr": "Le supermarché propose des sacs réutilisables à la caisse.",
+    "en": "The supermarket offers reusable bags at checkout.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s199",
+    "fr": "La température corporelle normale se situe autour de trente-sept degrés.",
+    "en": "Normal body temperature is around thirty-seven degrees.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s200",
+    "fr": "L'entreprise organise une formation sur la sécurité informatique.",
+    "en": "The company is running training on cybersecurity.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s201",
+    "fr": "La pharmacie de garde se trouve rue de la République.",
+    "en": "The emergency pharmacy is on Republic Street.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s202",
+    "fr": "Le parc national interdit les feux de camp en été.",
+    "en": "The national park bans campfires in summer.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s203",
+    "fr": "On a fini par aller manger un truc en ville.",
+    "en": "We ended up grabbing a bite downtown.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s204",
+    "fr": "On a fait le tour du quartier à pied hier soir.",
+    "en": "We walked around the neighborhood last night.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s205",
+    "fr": "Partons tôt pour éviter les embouteillages.",
+    "en": "Let's leave early to beat the traffic.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s206",
+    "fr": "Mes allergies me gênent vraiment aujourd'hui.",
+    "en": "Those allergies are really acting up today.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s207",
+    "fr": "Le magasin accepte les retours dans les trente jours.",
+    "en": "The store accepts returns within thirty days.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s208",
+    "fr": "Le quartier possède plusieurs pistes cyclables sécurisées.",
+    "en": "The neighborhood has several protected bike lanes.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s209",
+    "fr": "Les lumières du centre-ville sont belles après la nuit tombée.",
+    "en": "The downtown lights look great after dark.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s210",
+    "fr": "Ils ont dit que mon colis arriverait mardi.",
+    "en": "They said my package should arrive Tuesday.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s211",
+    "fr": "Le détecteur de fumée nécessite une nouvelle pile.",
+    "en": "The smoke detector needs a new battery.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s212",
+    "fr": "Les voisins du dessus font encore du bruit.",
+    "en": "The upstairs neighbors are being loud again.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s213",
+    "fr": "J'ai enfin nettoyé le plan de travail de la cuisine.",
+    "en": "I finally wiped down the kitchen counter.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s214",
+    "fr": "Je meurs de faim, commandons vite quelque chose.",
+    "en": "I'm starving, so let's order something soon.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s215",
+    "fr": "J'ai la nuque raide après les longs trajets.",
+    "en": "My neck gets stiff after long drives.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s216",
+    "fr": "Je remplace à l'accueil pendant le déjeuner.",
+    "en": "I'm covering the front desk through lunch.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s217",
+    "fr": "J'ai emprunté ce roman à la bibliothèque.",
+    "en": "I borrowed this novel from the library.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s218",
+    "fr": "Un front froid arrivera dans la nuit.",
+    "en": "A cold front will move in overnight.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s219",
+    "fr": "On aura sûrement besoin de vestes après le coucher du soleil.",
+    "en": "Looks like we'll need jackets after sunset.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s220",
+    "fr": "Nous avons partagé les tâches pendant le déménagement.",
+    "en": "We split the chores during the move.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s221",
+    "fr": "Ta sœur a dit qu'elle appellerait après le travail.",
+    "en": "Your sister said she'd call after work.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s222",
+    "fr": "Le journal publie une enquête sur le logement.",
+    "en": "The newspaper published an investigation about housing.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s223",
+    "fr": "J'ai regardé la bande-annonce deux fois avant de décider.",
+    "en": "I watched the trailer twice before deciding.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s224",
+    "fr": "Tout le monde parle de cette nouvelle série.",
+    "en": "Everybody is talking about that new show.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s225",
+    "fr": "Je prépare mes affaires la veille au soir.",
+    "en": "I pack my things the night before.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s226",
+    "fr": "Le réveil sonne à six heures trente.",
+    "en": "The alarm goes off at six thirty.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s227",
+    "fr": "J'ai besoin de café avant de pouvoir fonctionner.",
+    "en": "I need coffee before I can function.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s228",
+    "fr": "J'ai sorti le chien avant le petit-déjeuner.",
+    "en": "I took the dog out before breakfast.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s229",
+    "fr": "Prenons des courses sur le chemin du retour.",
+    "en": "Let's grab groceries on the way home.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s230",
+    "fr": "Elle ressent une grande fierté après cette réussite.",
+    "en": "She feels great pride after that achievement.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s231",
+    "fr": "Cette remarque m'a complètement pris au dépourvu.",
+    "en": "That comment caught me completely off guard.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s232",
+    "fr": "Je ne l'ai pas reconnu sans ses lunettes.",
+    "en": "I didn't recognize him without his glasses.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s233",
+    "fr": "La conférence portera sur le changement climatique.",
+    "en": "The conference will focus on climate change.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s234",
+    "fr": "Ils sont arrivés bien plus tard que prévu.",
+    "en": "They showed up much later than expected.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s235",
+    "fr": "Cette mesure semble injuste pour les petites entreprises.",
+    "en": "That policy seems unfair to small businesses.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s236",
+    "fr": "Je ne crois pas du tout à cette explication.",
+    "en": "I don't buy that explanation at all.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s237",
+    "fr": "Pour moi, l'ancienne version fonctionnait mieux.",
+    "en": "To me, the old version worked better.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s238",
+    "fr": "Le calendrier prévoit une réunion de suivi mardi.",
+    "en": "The schedule includes a follow-up meeting Tuesday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s239",
+    "fr": "Je garde mon samedi libre au cas où.",
+    "en": "I'm keeping Saturday open just in case.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s240",
+    "fr": "Le navigateur bloque les fenêtres contextuelles par défaut.",
+    "en": "The browser blocks pop-up windows by default.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s241",
+    "fr": "J'ai oublié mon chargeur au bureau.",
+    "en": "I forgot my charger at the office.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s242",
+    "fr": "Ton mot de passe a besoin de quelques caractères en plus.",
+    "en": "Your password needs a few more characters.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "s243",
+    "fr": "Le médecin a écarté toute complication sérieuse.",
+    "en": "The doctor ruled out any serious complications.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s244",
+    "fr": "Le médecin généraliste m'a orienté vers un spécialiste.",
+    "en": "My GP referred me to a specialist.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s245",
+    "fr": "Le billet inclut un bagage cabine gratuit.",
+    "en": "The ticket includes one free carry-on bag.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s246",
+    "fr": "Le hall de cet hôtel sent les fleurs fraîches.",
+    "en": "That hotel lobby smells like fresh flowers.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "s247",
+    "fr": "Le produit est disponible dans plusieurs tailles.",
+    "en": "The product is available in several sizes.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s248",
+    "fr": "Je le retourne parce qu'il est arrivé abîmé.",
+    "en": "I'm returning this because it arrived damaged.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s249",
+    "fr": "Le trottoir est fermé pour des travaux urgents.",
+    "en": "The sidewalk is closed for emergency repairs.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s250",
+    "fr": "Ils ont déplacé mon rendez-vous sans appeler d'abord.",
+    "en": "They rescheduled my appointment without calling first.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s251",
+    "fr": "Nous avons réparé une fuite sous l'évier.",
+    "en": "We fixed a leak underneath the sink.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s252",
+    "fr": "Ce placard est rempli de manteaux d'hiver.",
+    "en": "That closet is packed with winter coats.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "s253",
+    "fr": "Le boulanger prépare le pain frais avant l'aube.",
+    "en": "The baker makes fresh bread before dawn.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s254",
+    "fr": "Je pourrais manger du petit-déjeuner à n'importe quelle heure.",
+    "en": "I could eat breakfast food any time.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s255",
+    "fr": "Mets de la sauce piquante sur le mien, s'il te plaît.",
+    "en": "Put some hot sauce on mine, please.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "s256",
+    "fr": "Le laboratoire sera accessible après le cours.",
+    "en": "The lab will be available after class.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s257",
+    "fr": "L'examen final compte pour quarante pour cent.",
+    "en": "The final exam counts for forty percent.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s258",
+    "fr": "J'ai raté la date limite pour ce devoir.",
+    "en": "I missed the deadline for that assignment.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s259",
+    "fr": "Notre professeur nous a donné des points bonus aujourd'hui.",
+    "en": "Our teacher gave us extra credit today.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "s260",
+    "fr": "Son pouls est resté stable pendant l'examen.",
+    "en": "Her pulse remained stable during the exam.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s261",
+    "fr": "J'ai les épaules douloureuses à force de porter des cartons.",
+    "en": "My shoulders are sore from carrying boxes.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s262",
+    "fr": "J'ai les mains gelées avec ce vent.",
+    "en": "My hands are freezing in this wind.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "s263",
+    "fr": "Le contrat définit clairement les responsabilités de chaque équipe.",
+    "en": "The contract clearly defines each team's responsibilities.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s264",
+    "fr": "Le budget annuel doit être approuvé vendredi.",
+    "en": "The annual budget must be approved Friday.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s265",
+    "fr": "Je croule sous les e-mails après mon absence.",
+    "en": "I'm buried under emails after being out.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s266",
+    "fr": "Elle a demandé des retours avant de l'envoyer.",
+    "en": "She asked for feedback before sending it.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s267",
+    "fr": "On est en retard sur la proposition client.",
+    "en": "We're running behind on the client proposal.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "s268",
+    "fr": "Il apprend des tours de magie grâce à des vidéos.",
+    "en": "He's been learning magic tricks from videos.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s269",
+    "fr": "Les prévisions indiquent des gelées pour la nuit prochaine.",
+    "en": "The forecast shows frost for tomorrow night.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s270",
+    "fr": "On est restés tard pour finir le puzzle.",
+    "en": "We stayed late to finish the puzzle.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "s271",
+    "fr": "Le brouillard réduit la visibilité sur l'autoroute.",
+    "en": "Fog is reducing visibility on the highway.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s272",
+    "fr": "L'air semble lourd avant un orage.",
+    "en": "The air feels heavy before a thunderstorm.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s273",
+    "fr": "Il est censé faire beau tout le week-end.",
+    "en": "It's supposed to be sunny all weekend.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "s274",
+    "fr": "Le bébé a fait ses premiers pas hier.",
+    "en": "The baby took its first steps yesterday.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s275",
+    "fr": "Mon oncle cultive des roses dans son jardin.",
+    "en": "My uncle grows roses in his garden.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s276",
+    "fr": "On récupère ma nièce après l'école.",
+    "en": "We're picking up my niece after school.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "s277",
+    "fr": "La critique souligne la qualité des dialogues du film.",
+    "en": "The review praises the film's dialogue quality.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s278",
+    "fr": "Il me reste trois épisodes cette saison.",
+    "en": "I've got three episodes left this season.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s279",
+    "fr": "On a mis le film en pause pour faire du pop-corn.",
+    "en": "We paused the movie to make popcorn.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s280",
+    "fr": "Je note les rendez-vous dans un agenda partagé.",
+    "en": "I put appointments in a shared calendar.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s281",
+    "fr": "Je n'ai encore plus de chaussettes propres.",
+    "en": "I ran out of clean socks again.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "s282",
+    "fr": "Le journal télévisé commence à vingt heures pile.",
+    "en": "The evening news starts at eight sharp.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "s283",
+    "fr": "J'éprouve de la gratitude envers toute l'équipe.",
+    "en": "I feel grateful to the whole team.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "s284",
+    "fr": "Ils ont échangé leurs coordonnées après la conférence.",
+    "en": "They exchanged contact information after the conference.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s285",
+    "fr": "Son voisinage organise une fête de rue annuelle.",
+    "en": "Her neighborhood hosts an annual block party.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s286",
+    "fr": "J'ai croisé un vieil ami au centre-ville.",
+    "en": "I bumped into an old friend downtown.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "s287",
+    "fr": "Cette proposition mérite une analyse plus approfondie.",
+    "en": "This proposal deserves a more thorough review.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s288",
+    "fr": "Le débat révèle deux approches très différentes.",
+    "en": "The debate reveals two very different approaches.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s289",
+    "fr": "Je ne suis pas convaincu que ce plan fonctionnera.",
+    "en": "I'm not convinced that plan will work.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s290",
+    "fr": "Je préférerais dépenser pour quelque chose d'utile.",
+    "en": "I'd rather spend money on something useful.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "s291",
+    "fr": "On peut peut-être le caser vendredi.",
+    "en": "Maybe we can squeeze it in Friday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s292",
+    "fr": "La salle d'attente du cabinet est assez spacieuse.",
+    "en": "The clinic waiting room is fairly spacious.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "s293",
+    "fr": "On pense faire une excursion à la journée.",
+    "en": "We're thinking about taking a day trip.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "s294",
+    "fr": "Regardons en ligne avant de l'acheter.",
+    "en": "Let's check online before we buy it.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "s295",
+    "fr": "Le passage piéton est équipé d'un signal sonore.",
+    "en": "The pedestrian crossing has an audible signal.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s296",
+    "fr": "Ce pâté de maisons devient très animé après la tombée de la nuit.",
+    "en": "This block gets really lively after dark.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s297",
+    "fr": "J'ai trouvé un raccourci à travers le parc.",
+    "en": "I found a shortcut through the park.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "s298",
+    "fr": "La banque exige deux pièces d'identité.",
+    "en": "The bank requires two forms of identification.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s299",
+    "fr": "La confirmation de votre rendez-vous arrive par SMS.",
+    "en": "Your appointment confirmation arrives by text message.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "s300",
+    "fr": "L'employé a dit que mes papiers étaient en ordre.",
+    "en": "The clerk said my paperwork looked good.",
+    "tags": [
+      "services"
+    ]
+  }
+]
