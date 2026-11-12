@@ -76,8 +76,8 @@ public class CarMediaService extends MediaLibraryService {
     NotificationCompat.Builder notif =
         new NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_stat_et)
-            .setContentTitle("English Training")
-            .setContentText("Session média voiture active")
+            .setContentTitle(getString(R.string.app_name))
+            .setContentText("Session Bluetooth voiture active")
             .setOngoing(true)
             .setSilent(true)
             .setContentIntent(sessionActivity());
@@ -182,14 +182,13 @@ public class CarMediaService extends MediaLibraryService {
   }
 
   /**
-   * The car (HFP) treats MODE_IN_COMMUNICATION + Bluetooth SCO as a phone call and stops
-   * sending AVRCP MEDIA_NEXT/PREVIOUS. The WebView's getUserMedia used to trigger exactly
-   * that; capture is native now, but keep watching and restore MODE_NORMAL if anything
-   * (another app, Web Speech fallback) flips it again.
+   * On the Duster plain-Bluetooth build, {@link NativeMicPlugin} owns SCO during capture.
+   * Only restore NORMAL / tear down SCO when the WebView or another app flips modes outside
+   * an intentional mic phase.
    */
   @SuppressWarnings("deprecation")
   private void guardAudioMode() {
-    if (audioManager == null || stopping) return;
+    if (audioManager == null || stopping || BluetoothScoHelper.isMicCaptureWantsSco()) return;
     int mode;
     boolean sco;
     try {

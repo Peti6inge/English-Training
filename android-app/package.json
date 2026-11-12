@@ -2,7 +2,7 @@
   "name": "english-training-android",
   "private": true,
   "version": "1.0.0",
-  "description": "Wrapper Android Auto / MediaSession for English Training",
+  "description": "Wrapper Bluetooth Duster / MediaSession for English Training",
   "scripts": {
     "sync-www": "node ./scripts/sync-www.mjs",
     "cap:sync": "npm run sync-www && npx cap sync android",

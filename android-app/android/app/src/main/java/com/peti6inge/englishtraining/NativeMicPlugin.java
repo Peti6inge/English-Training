@@ -17,12 +17,12 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
- * Native microphone capture for Vosk WASM.
+ * Native microphone for Vosk (Duster / plain Bluetooth variant).
  *
- * The WebView's getUserMedia switches Android to MODE_IN_COMMUNICATION and opens a
- * Bluetooth SCO link when an HFP head unit (the car) is connected: the car then
- * treats the session as a phone call and stops sending AVRCP MEDIA_NEXT/PREVIOUS.
- * This plugin records with VOICE_RECOGNITION and never touches AudioManager.
+ * During listening phases, opens Bluetooth SCO so {@link MediaRecorder.AudioSource#VOICE_COMMUNICATION}
+ * routes through the car hands-free mic. SCO is released on pause/stop so AVRCP steering keys keep
+ * working between utterances. Falls back to {@link MediaRecorder.AudioSource#VOICE_RECOGNITION}
+ * (phone mic) when SCO is unavailable.
  */
 @CapacitorPlugin(
     name = "NativeMic",
@@ -36,6 +36,8 @@ public class NativeMicPlugin extends Plugin {
   private Thread thread;
   private volatile boolean running;
   private volatile boolean muted;
+  private volatile boolean scoCapture;
+  private volatile int audioSource = MediaRecorder.AudioSource.VOICE_RECOGNITION;
 
   @PluginMethod
   public void start(PluginCall call) {
@@ -58,11 +60,16 @@ public class NativeMicPlugin extends Plugin {
   @PluginMethod
   public void pause(PluginCall call) {
     muted = true;
+    BluetoothScoHelper.releaseForMedia(getContext());
+    scoCapture = false;
     call.resolve(state());
   }
 
   @PluginMethod
   public void resume(PluginCall call) {
+    scoCapture = BluetoothScoHelper.acquireForCapture(getContext());
+    audioSource =
+        scoCapture ? MediaRecorder.AudioSource.VOICE_COMMUNICATION : MediaRecorder.AudioSource.VOICE_RECOGNITION;
     muted = false;
     call.resolve(state());
   }
@@ -89,16 +96,25 @@ public class NativeMicPlugin extends Plugin {
     ret.put("running", running);
     ret.put("muted", muted);
     ret.put("sampleRate", SAMPLE_RATE);
+    ret.put("btSco", scoCapture && BluetoothScoHelper.isScoConnected());
+    ret.put("audioSource", scoCapture ? "communication" : "recognition");
     return ret;
   }
 
   private synchronized void startCapture(PluginCall call) {
     if (running && record != null) {
+      scoCapture = BluetoothScoHelper.acquireForCapture(getContext());
+      audioSource =
+          scoCapture ? MediaRecorder.AudioSource.VOICE_COMMUNICATION : MediaRecorder.AudioSource.VOICE_RECOGNITION;
       muted = false;
       call.resolve(state());
       return;
     }
     stopCapture();
+
+    scoCapture = BluetoothScoHelper.acquireForCapture(getContext());
+    audioSource =
+        scoCapture ? MediaRecorder.AudioSource.VOICE_COMMUNICATION : MediaRecorder.AudioSource.VOICE_RECOGNITION;
 
     int minBuffer =
         AudioRecord.getMinBufferSize(SAMPLE_RATE, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT);
@@ -106,20 +122,40 @@ public class NativeMicPlugin extends Plugin {
     AudioRecord recorder;
     try {
       recorder =
-          new AudioRecord(
-              MediaRecorder.AudioSource.VOICE_RECOGNITION,
-              SAMPLE_RATE,
-              AudioFormat.CHANNEL_IN_MONO,
-              AudioFormat.ENCODING_PCM_16BIT,
-              bufferBytes);
+          new AudioRecord(audioSource, SAMPLE_RATE, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, bufferBytes);
     } catch (Exception e) {
+      BluetoothScoHelper.releaseForMedia(getContext());
+      scoCapture = false;
       call.reject("AudioRecord: " + e.getMessage());
       return;
     }
     if (recorder.getState() != AudioRecord.STATE_INITIALIZED) {
       recorder.release();
-      call.reject("AudioRecord non initialisé");
-      return;
+      if (scoCapture) {
+        scoCapture = false;
+        BluetoothScoHelper.releaseForMedia(getContext());
+        try {
+          recorder =
+              new AudioRecord(
+                  MediaRecorder.AudioSource.VOICE_RECOGNITION,
+                  SAMPLE_RATE,
+                  AudioFormat.CHANNEL_IN_MONO,
+                  AudioFormat.ENCODING_PCM_16BIT,
+                  bufferBytes);
+        } catch (Exception e) {
+          call.reject("AudioRecord: " + e.getMessage());
+          return;
+        }
+        if (recorder.getState() != AudioRecord.STATE_INITIALIZED) {
+          recorder.release();
+          call.reject("AudioRecord non initialisé");
+          return;
+        }
+        audioSource = MediaRecorder.AudioSource.VOICE_RECOGNITION;
+      } else {
+        call.reject("AudioRecord non initialisé");
+        return;
+      }
     }
 
     record = recorder;
@@ -131,17 +167,22 @@ public class NativeMicPlugin extends Plugin {
       running = false;
       recorder.release();
       record = null;
+      BluetoothScoHelper.releaseAll(getContext());
+      scoCapture = false;
       call.reject("startRecording: " + e.getMessage());
       return;
     }
 
+    final int captureSource = audioSource;
+    final boolean captureSco = scoCapture;
+    final AudioRecord activeRecord = recorder;
     thread =
         new Thread(
             () -> {
               short[] pcm = new short[CHUNK_SAMPLES];
               ByteBuffer bytes = ByteBuffer.allocate(CHUNK_SAMPLES * 2).order(ByteOrder.LITTLE_ENDIAN);
               while (running) {
-                int read = recorder.read(pcm, 0, pcm.length);
+                int read = activeRecord.read(pcm, 0, pcm.length);
                 if (read < 0) {
                   emitError("read=" + read);
                   break;
@@ -154,6 +195,8 @@ public class NativeMicPlugin extends Plugin {
                 payload.put("data", data);
                 payload.put("samples", read);
                 payload.put("sampleRate", SAMPLE_RATE);
+                payload.put("btSco", captureSco && BluetoothScoHelper.isScoConnected());
+                payload.put("audioSource", captureSource);
                 notifyListeners("pcm", payload);
               }
             },
@@ -183,6 +226,9 @@ public class NativeMicPlugin extends Plugin {
       record.release();
       record = null;
     }
+    BluetoothScoHelper.releaseAll(getContext());
+    scoCapture = false;
+    audioSource = MediaRecorder.AudioSource.VOICE_RECOGNITION;
   }
 
   private void emitError(String message) {

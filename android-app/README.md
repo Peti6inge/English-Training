@@ -1,6 +1,10 @@
 # English Training — application Android
 
-Wrapper Capacitor de la PWA, avec un service média natif pour **Android Auto** et les touches Next / Previous du volant.
+Wrapper Capacitor de la PWA, avec un service média natif pour les touches **Next / Previous** du volant.
+
+> **Branche `duster-bluetooth`** (cette variante) : build **Duster / Bluetooth seul** — pas d’Android Auto.
+> `applicationId` = `com.peti6inge.englishtraining.duster`, nom affiché « English Training Duster ».
+> Ne pas fusionner dans `main`.
 
 La PWA web n’est pas remplacée : ce dossier produit seulement l’APK.
 
@@ -90,19 +94,41 @@ Copier ce fichier sur le téléphone et l’ouvrir, ou :
 adb install -r android\app\build\outputs\apk\debug\app-debug.apk
 ```
 
-## Android Auto (Clio 5, usage personnel hors Play Store)
+## Variante Duster — Bluetooth seul (sans Android Auto)
 
-1. Installer l’APK sur le téléphone.
-2. Ouvrir **Paramètres → Applications → Android Auto → Paramètres supplémentaires**.
-3. Aller tout en bas sur **Version**, taper 10 fois pour activer le **mode développeur**.
-4. Menu ⋮ → **Paramètres développeur** → activer **Sources inconnues**.
-5. Reconnecter le téléphone à la voiture.
-6. Dans Android Auto, ouvrir **English Training** comme source média (pas Spotify).
-7. Démarrer une session dans l’app (bouton Démarrer) : une notification « Session média voiture active » doit rester visible.
-8. Tester Next / Previous au volant. La session média doit rester « en lecture » même pendant la dictée — c’est elle qui reçoit les touches du volant.
+### Installation
 
-Documentation Google :  
-https://developer.android.com/training/cars/testing
+1. Appairer le téléphone à l’autoradio Duster en **Bluetooth** (profils média + téléphone).
+2. Installer l’APK debug **English Training Duster** (coexiste avec l’app « English Training » standard).
+3. Au premier lancement, accorder :
+   - **Microphone**
+   - **Notifications** (session média au premier plan)
+   - **Appareils à proximité / Bluetooth** (Android 12+) si demandé
+4. Ouvrir l’app, appuyer sur **Démarrer** : la notification « Session Bluetooth voiture active » doit rester affichée.
+
+### Comportement attendu
+
+| Phase | Audio / micro | Volant |
+| --- | --- | --- |
+| TTS (phrase FR) | Sortie vers l’auto | Next / Previous doivent fonctionner (SCO coupé) |
+| Écoute (répétition EN) | **Micro voiture** via Bluetooth SCO si disponible, sinon micro téléphone | Pendant SCO actif, certains véhicules ne routent plus les commodos — relâcher après validation |
+| Entre phrases | SCO relâché automatiquement (`pause` STT) | Commodos AVRCP à nouveau disponibles |
+
+### Checklist en voiture
+
+1. Démarrer une session — lire une phrase FR sur l’autoradio.
+2. Parler en anglais : le journal dans l’app doit indiquer `micro voiture BT (SCO)` ou le repli téléphone.
+3. Sans toucher l’écran, appuyer **Next** puis **Previous** au volant entre deux phrases (hors écoute).
+4. Vérifier que l’app passe à la phrase suivante / précédente (log : `Next volant` / `Previous volant`).
+5. Si le volant ne répond pas : vérifier qu’aucune autre app musique n’est « en lecture » (Spotify, etc.).
+
+### Build sur cette branche
+
+```powershell
+cd android-app
+npm ci
+npm run build:apk
+```
 
 ## Après une modification de la PWA
 

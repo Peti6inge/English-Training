@@ -1,6 +1,6 @@
 {
-  "appId": "com.peti6inge.englishtraining",
-  "appName": "English Training",
+  "appId": "com.peti6inge.englishtraining.duster",
+  "appName": "English Training Duster",
   "webDir": "www",
   "android": {
     "path": "android"

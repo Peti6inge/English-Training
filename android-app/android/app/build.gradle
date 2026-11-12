@@ -15,11 +15,11 @@ android {
     namespace "com.peti6inge.englishtraining"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.peti6inge.englishtraining"
+        applicationId "com.peti6inge.englishtraining.duster"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 14
-        versionName "1.0.14"
+        versionName "1.0.14-duster"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

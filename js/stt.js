@@ -77,9 +77,8 @@ export class STTService extends EventTarget {
     /** When true, mic stays open; speechend is never emitted (manual Next/Previous validation). */
     this._manualValidation = false;
     /**
-     * Android: capture via AudioRecord natif (VOICE_RECOGNITION) au lieu de getUserMedia.
-     * getUserMedia bascule Android en MODE_IN_COMMUNICATION + Bluetooth SCO : la voiture
-     * (HFP) croit à un appel et les commodos ne parlent plus AVRCP média.
+     * Android: capture via AudioRecord natif (SCO volontaire sur la branche Duster).
+     * getUserMedia reste interdit : il couperait les commodos AVRCP en dehors des phases micro.
      */
     this._nativeMic = getNativeMic();
     this._nativeCapture = false;
@@ -732,7 +731,8 @@ export class STTService extends EventTarget {
     );
     await mic.resume();
     this._nativeCapture = true;
-    this._emit("log", { level: "info", message: `Micro natif Android actif (${sampleRate} Hz, sans SCO)` });
+    const sco = state?.btSco ? "micro voiture BT (SCO)" : "micro téléphone (SCO indisponible)";
+    this._emit("log", { level: "info", message: `Micro natif Android — ${sampleRate} Hz, ${sco}` });
   }
 
   async _startVoskCapture() {

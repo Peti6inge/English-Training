@@ -1,10 +1,9 @@
 /**
  * Android native microphone bridge (Capacitor `NativeMic`). No-op in browser.
  *
- * Why: the WebView's getUserMedia puts Android in MODE_IN_COMMUNICATION and opens a
- * Bluetooth SCO link to the car (HFP). The Clio then treats the session as a phone
- * call: steering-wheel Next/Previous stop being sent as AVRCP media keys and audio
- * drops to the 8 kHz SCO channel. Native AudioRecord(VOICE_RECOGNITION) never does that.
+ * Duster branch: native capture opens Bluetooth SCO during listening so VOICE_COMMUNICATION
+ * routes through the car hands-free mic; SCO is dropped on pause/TTS so AVRCP steering keys
+ * stay available between utterances.
  */
 
 function plugin() {

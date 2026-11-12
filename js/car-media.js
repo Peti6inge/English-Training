@@ -1,10 +1,9 @@
 /**
- * Native Android Auto / MediaSession bridge (Capacitor).
+ * Native MediaSession bridge (Capacitor) — Duster plain-Bluetooth build.
  * No-op in the browser PWA.
  *
- * Steering-wheel Next/Previous on the Clio + wireless AA dongle arrive as AVRCP
- * keycodes. CommodoLab modes A/D keep a playing MediaSession so those keycodes
- * stay routed here instead of skipping Spotify in the background.
+ * Steering-wheel Next/Previous arrive as AVRCP keycodes. A foreground keep-alive
+ * player holds the session so keys route here instead of another media app.
  */
 
 let listenersBound = false;
@@ -43,11 +42,11 @@ async function bindListeners(plugin, loop, log) {
   await plugin.addListener("audio-warning", (data) => {
     const mode = AUDIO_MODE_LABELS[data?.audioMode] ?? `mode ${data?.audioMode}`;
     const sco = data?.sco ? " + Bluetooth SCO" : "";
-    const fix = data?.restored ? " — rétabli en NORMAL" : data?.error ? ` — échec: ${data.error}` : "";
-    log(`Audio en mode appel (${mode}${sco}) : la voiture coupe les commodos${fix}`);
+    const fix = data?.restored ? " — audio rétabli hors appel" : data?.error ? ` — échec: ${data.error}` : "";
+    log(`Audio hors session micro (${mode}${sco})${fix}`);
   });
   await plugin.addListener("audio-normal", () => {
-    log("Audio revenu en mode NORMAL (commodos disponibles)");
+    log("Audio prêt pour commodos AVRCP");
   });
   loop.addEventListener("state", (ev) => {
     updateMetadata(plugin, ev.detail.phrase).catch(() => {});
