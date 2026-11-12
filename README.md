@@ -51,27 +51,38 @@ Puis phase **CORRECTION** (micro ouvert).
 |---|---|
 | `REPEAT FRENCH` | Relit le français |
 | `REPEAT ENGLISH` | Lit l'anglais |
-| `NEXT` | Phrase suivante |
+| `NEXT` | Monte d'un palier (Don't remind), puis phrase suivante |
 | `PREVIOUS` | Phrase précédente |
-| `REMIND` | Repasse en Remind (sort de la blacklist), puis **Next** auto |
-| `ENOUGH` | Blacklist locale définitive, puis **Next** auto |
+| `REMIND` | Descend d'un palier, puis phrase suivante |
+| `ENOUGH` | Même effet que Don't remind : un palier de plus, puis phrase suivante |
 | `STOP` | Arrêter la session |
 
-À chaque avance, tant que le pool des phrases vues hors blacklist contient moins de 20 éléments, l'application présente une phrase non vue. À partir de 20 éléments, un tirage de Bernoulli `REMIND_PROBABILITY` (50 %) alterne approximativement entre une phrase Remind et la prochaine phrase non vue.
+Les commandes, les boutons et la liste Don't remind restent les mêmes. La liste n'exclut plus la phrase. Chaque Don't remind / `ENOUGH` monte le score d'un cran et repousse l'échéance ; chaque `REMIND` le descend d'un cran. Le score 6 retire la phrase des rappels.
 
-| État | Signification |
-|---|---|
-| Non vue | Jamais tentée |
-| Remind | Vue, éligible aux rappels |
-| Don't Remind | Blacklist locale définitive |
+La validation orale compte aussi : une réponse reconnue monte d'un cran, une réponse ratée en descend un. Ces gestes s'additionnent. Par exemple, une bonne réponse suivie de Don't remind monte de deux crans.
 
-## Jeu de données (~1 600 phrases)
+Le délai appliqué est celui du score avant la montée :
 
-- **`phrases.json`** — pool servi par l'app (1 600 paires FR → EN)
+| Réussite au score | Échéance | Score ensuite |
+|---|---|---|
+| 0 | 8 h | 1 |
+| 1 | 24 h | 2 |
+| 2 | 3 jours | 3 |
+| 3 | 7 jours | 4 |
+| 4 | 16 jours | 5 |
+| 5 | plus de rappel | 6 |
+
+Un échec ou `REMIND` redescend d'un cran (plancher 0) et reprend le délai de ce cran. Un retour au score 5 attend 35 jours.
+
+À chaque avance, l'application rassemble les phrases dues maintenant. La probabilité de tomber sur un rappel plutôt que sur une phrase neuve est `n / (n + 7)`, où `n` est le nombre de phrases dues. Sans phrase neuve, un rappel dû est servi à chaque fois.
+
+## Jeu de données (~2 400 phrases)
+
+- **`phrases.json`** — pool servi par l'app (2 400 paires FR → EN)
 - **`data/chunks/`** — sources par lot (`c01.json` …), ~40 % vocabulaire neutre + ~60 % expressions orales
 - **`scripts/merge-phrases.mjs`** — regénère `phrases.json` (ids, dédoublonnage, validation longueur)
 
-L'ordre de passage est **mélangé** à chaque (re)construction de file : priorité aux phrases incorrectes / jamais vues, avec espacement des tags pour éviter les blocs thématiques.
+L'ordre de passage est **mélangé** à chaque (re)construction de file, avec espacement des tags pour éviter les blocs thématiques. Les phrases déjà vues ne reviennent que lorsque leur échéance est atteinte.
 
 Après mise à jour du pool, utiliser **Réinitialiser** dans l'app pour reconstruire la file.
 

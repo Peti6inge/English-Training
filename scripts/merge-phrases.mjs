@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const chunksDir = join(root, "data", "chunks");
 const outPath = join(root, "phrases.json");
-const TARGET_PHRASE_COUNT = 1600;
+const TARGET_PHRASE_COUNT = 2400;
 
 const FORBIDDEN_END =
   /\b(next|stop|previous|remind|enough|he\s+knows?|repeats?|rebates?|with\s+it|repit|rippit|ribbit|rip\s+it|rib\s+it|(?:repeats?|rebates?|with\s+it|repit|rippit|ribbit|rip\s+it|rib\s+it)(?:\s+(?:the\s+)?(?:french|english))?)\s*$/i;

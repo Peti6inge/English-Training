@@ -1,12 +1,12 @@
 /**
- * Session queue with shuffle, tag spacing, and Bernoulli Remind draws.
- * Once the recall pool reaches REMIND_MIN_POOL_SIZE, each advance has a
- * REMIND_PROBABILITY chance of selecting a previously seen phrase.
- * Priority when building the unseen order: incorrect → unvisited → rest.
+ * Session queue with shuffle, tag spacing, and forgetting-curve recalls.
+ * A phrase is due when its score is below the mastered step and nextDueAt
+ * has passed. P(recall) = due / (due + balance). The Don't remind list does
+ * not exclude a phrase; only the top score does.
  */
 
 import { CONFIG } from "./config.js";
-import { storage } from "./storage.js";
+import { lowerScore, raiseScore, storage } from "./storage.js";
 
 function unique(ids) {
   const seen = new Set();
@@ -44,53 +44,33 @@ function diversifyTags(ids, tagById) {
   return out;
 }
 
-export function shouldPickRemind({ poolSize, hasUnseen, random = Math.random() }) {
-  if (poolSize < CONFIG.REMIND_MIN_POOL_SIZE) return false;
-  return !hasUnseen || random < CONFIG.REMIND_PROBABILITY;
+export function remindProbability(eligibleCount) {
+  const due = Math.max(0, Number(eligibleCount) || 0);
+  if (!due) return 0;
+  return due / (due + CONFIG.FORGETTING.balance);
+}
+
+export function shouldPickRemind({ eligibleCount, hasUnseen, random = Math.random() }) {
+  if (!eligibleCount) return false;
+  if (!hasUnseen) return true;
+  return random < remindProbability(eligibleCount);
 }
 
 export function buildQueue(phrases) {
-  const state = storage.getPhrasesState();
   const allIds = phrases.map((p) => p.id);
   const tagById = new Map(phrases.map((p) => [p.id, p.tags?.[0] || "phrase"]));
-
-  const incorrect = allIds.filter((id) => {
-    const s = state[id];
-    return s && (s.lastAttemptStatus === "incorrect" || s.reviewNext);
-  });
-  const unvisited = allIds.filter((id) => !state[id] && !incorrect.includes(id));
-  const rest = allIds.filter((id) => !incorrect.includes(id) && !unvisited.includes(id));
-
-  const segments = [
-    diversifyTags(shuffle(incorrect), tagById),
-    diversifyTags(shuffle(unvisited), tagById),
-    diversifyTags(shuffle(rest), tagById),
-  ];
-
-  return unique(segments.flat());
+  return unique(diversifyTags(shuffle(allIds), tagById));
 }
 
-export function applyAttempt(phraseId, correct) {
+export function applyAttempt(phraseId, correct, now = Date.now()) {
   const prev = storage.getPhraseState(phraseId);
-  if (correct) {
-    const repetitionCount = (prev.repetitionCount || 0) + 1;
-    const interval = Math.min(
-      CONFIG.SM2.maxInterval,
-      Math.max(CONFIG.SM2.minInterval, Math.round((prev.interval || 1) * CONFIG.SM2.easyBonus || 1)),
-    );
-    storage.patchPhraseState(phraseId, {
-      lastAttemptStatus: "correct",
-      reviewNext: false,
-      repetitionCount,
-      interval,
-    });
-  } else {
-    storage.patchPhraseState(phraseId, {
-      lastAttemptStatus: "incorrect",
-      reviewNext: true,
-      interval: 0,
-    });
-  }
+  const schedule = correct ? raiseScore(prev, now) : lowerScore(prev, now);
+  storage.patchPhraseState(phraseId, {
+    ...schedule,
+    lastAttemptStatus: correct ? "correct" : "incorrect",
+    reviewNext: false,
+    repetitionCount: (prev.repetitionCount || 0) + (correct ? 1 : 0),
+  });
 }
 
 export const queue = {
@@ -138,19 +118,21 @@ export const queue = {
   _isUnseen(phraseId) {
     const s = storage.getPhrasesState()[phraseId];
     if (!s) return true;
-    return !s.lastAttemptStatus && !s.reviewNext;
+    return !s.lastAttemptStatus && !s.score && !s.nextDueAt;
   },
 
-  remindPoolIds() {
-    const blocked = new Set(storage.getDontRemindList().map((item) => item.phraseId));
+  /** Phrases whose ladder step is due at `now`. The Don't remind list is ignored. */
+  remindPoolIds(now = Date.now()) {
     const state = storage.getPhrasesState();
+    const mastered = CONFIG.FORGETTING.masteredScore;
     return this.phrases
       .map((p) => p.id)
       .filter((id) => {
-        if (blocked.has(id)) return false;
         const s = state[id];
-        if (!s) return false;
-        return s.lastAttemptStatus === "correct" || s.lastAttemptStatus === "incorrect" || s.reviewNext;
+        if (!s || !s.nextDueAt) return false;
+        if ((s.score || 0) >= mastered) return false;
+        const due = Date.parse(s.nextDueAt);
+        return Number.isFinite(due) && due <= now;
       });
   },
 
@@ -185,21 +167,19 @@ export const queue = {
   },
 
   /**
-   * Before the recall pool reaches REMIND_MIN_POOL_SIZE, advances always
-   * prefer unseen phrases. Once it does, a Bernoulli draw alternates recalls
-   * and unseen phrases. When none are unseen, recalls remain available.
+   * Due phrases compete with unseen ones. More phrases due right now means
+   * a higher chance of a recall. With nothing unseen left, a due phrase is
+   * served whenever one exists.
    */
   next() {
     const justDidId = this.current()?.id;
     this.clearInterlude();
 
-    const recallPool = this.remindPoolIds();
-    const pool = recallPool.filter((id) => id !== justDidId);
-    const hasUnseen = this.ids.some((id) => this._isUnseen(id));
+    const pool = this.remindPoolIds().filter((id) => id !== justDidId);
+    const hasUnseen = this.ids.some((id) => id !== justDidId && this._isUnseen(id));
+    const pickRemind = shouldPickRemind({ eligibleCount: pool.length, hasUnseen });
 
-    const pickRemind = shouldPickRemind({ poolSize: recallPool.length, hasUnseen });
-
-    if (pickRemind) {
+    if (pickRemind && pool.length) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
       return this.current();
     }
@@ -216,9 +196,8 @@ export const queue = {
       }
     }
 
-    const recallPool = this.remindPoolIds();
-    const pool = recallPool.filter((id) => id !== excludeId);
-    if (pool.length && recallPool.length >= CONFIG.REMIND_MIN_POOL_SIZE) {
+    const pool = this.remindPoolIds().filter((id) => id !== excludeId);
+    if (pool.length) {
       this._interludeId = pool[Math.floor(Math.random() * pool.length)];
       return this.current();
     }
@@ -246,6 +225,8 @@ export const queue = {
       seen,
       correct,
       incorrect,
+      due: this.remindPoolIds().length,
+      mastered: Object.values(state).filter((s) => (s.score || 0) >= CONFIG.FORGETTING.masteredScore).length,
       remind: this.remindPoolIds().length,
       dontRemind: storage.getDontRemindList().length,
       remaining: Math.max(0, this.phrases.length - seen),

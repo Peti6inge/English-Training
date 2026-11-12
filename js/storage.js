@@ -4,9 +4,12 @@
  *   currentIndex, phrasesState, customRemindList, dontRemindList
  *
  * Phrase recall states:
- *   not seen yet → no attempt in phrasesState
- *   remind       → seen, not on dontRemindList (eligible for REMIND_PROBABILITY interludes)
- *   don't remind → on dontRemindList (local blacklist)
+ *   not seen yet → score 0, no nextDueAt
+ *   learning     → score 1–5, nextDueAt on the forgetting ladder
+ *   mastered     → score 6, never recalled
+ * Don't remind / Remind keep their lists for the existing UI, but the list
+ * does not exclude a phrase. Each Don't remind raises the score by one;
+ * each Remind lowers it by one.
  */
 
 import { CONFIG } from "./config.js";
@@ -103,12 +106,63 @@ async function idbGet(store, key) {
   }
 }
 
+const HOUR_MS = 60 * 60 * 1000;
+
 function emptyPhraseState() {
   return {
     interval: 0,
     repetitionCount: 0,
     reviewNext: false,
     lastAttemptStatus: null,
+    score: 0,
+    lastReviewedAt: null,
+    nextDueAt: null,
+  };
+}
+
+/** Seen phrases saved before the ladder become score 1, due immediately. */
+export function normalizePhraseState(raw) {
+  const state = { ...emptyPhraseState(), ...raw };
+  if (raw == null || raw.score == null) {
+    if (state.lastAttemptStatus) {
+      state.score = 1;
+      if (!state.nextDueAt) state.nextDueAt = new Date().toISOString();
+    }
+  }
+  return state;
+}
+
+/**
+ * Successful step. The delay is the interval of the score just demonstrated,
+ * then the score increases. The top score clears the next due date.
+ */
+export function raiseScore(prev, now = Date.now()) {
+  const current = Math.max(0, Number(prev?.score) || 0);
+  const { intervalsHours, masteredScore } = CONFIG.FORGETTING;
+  const next = current + 1;
+  const at = new Date(now).toISOString();
+  if (next >= masteredScore) {
+    return { score: masteredScore, lastReviewedAt: at, nextDueAt: null, interval: 0 };
+  }
+  const hours = intervalsHours[Math.min(current, intervalsHours.length - 1)];
+  return {
+    score: next,
+    lastReviewedAt: at,
+    nextDueAt: new Date(now + hours * HOUR_MS).toISOString(),
+    interval: hours,
+  };
+}
+
+/** One step down the ladder (floor 0), then reschedule from that score. */
+export function lowerScore(prev, now = Date.now()) {
+  const { intervalsHours } = CONFIG.FORGETTING;
+  const score = Math.max(0, (Number(prev?.score) || 0) - 1);
+  const hours = intervalsHours[Math.min(score, intervalsHours.length - 1)];
+  return {
+    score,
+    lastReviewedAt: new Date(now).toISOString(),
+    nextDueAt: new Date(now + hours * HOUR_MS).toISOString(),
+    interval: hours,
   };
 }
 
@@ -145,9 +199,12 @@ export const storage = {
     this._mirror();
   },
 
-  /** @returns {Record<string, { interval: number, repetitionCount: number, reviewNext: boolean, lastAttemptStatus: string|null }>} */
+  /** @returns {Record<string, { score: number, nextDueAt: string|null, lastReviewedAt: string|null, interval: number, repetitionCount: number, reviewNext: boolean, lastAttemptStatus: string|null }>} */
   getPhrasesState() {
-    return readJson(LS.phrasesState, {});
+    const all = readJson(LS.phrasesState, {});
+    return Object.fromEntries(
+      Object.entries(all).map(([id, raw]) => [id, normalizePhraseState(raw)]),
+    );
   },
 
   setPhrasesState(map) {
@@ -177,7 +234,10 @@ export const storage = {
     this._mirror();
   },
 
-  /** Mark as Remind: leave the don't-remind blacklist and optionally keep a note. */
+  /**
+   * Same gesture as before (leave the Don't remind list, keep an optional note).
+   * The schedule effect is one score step down, not an immediate recall.
+   */
   addRemind(phraseId, note = "") {
     this.removeDontRemind(phraseId);
     const list = this.getRemindList();
@@ -189,7 +249,8 @@ export const storage = {
       list.push({ phraseId, note, flaggedAt: new Date().toISOString() });
     }
     this.setRemindList(list);
-    this.patchPhraseState(phraseId, { reviewNext: true });
+    const prev = this.getPhraseState(phraseId);
+    this.patchPhraseState(phraseId, { ...lowerScore(prev), reviewNext: false });
     return list;
   },
 
@@ -213,6 +274,7 @@ export const storage = {
     return this.getDontRemindList().some((item) => item.phraseId === phraseId);
   },
 
+  /** Same list gesture as before. The schedule effect is one score step up. */
   addDontRemind(phraseId) {
     this.removeRemind(phraseId);
     const list = this.getDontRemindList();
@@ -223,7 +285,8 @@ export const storage = {
       list.push({ phraseId, flaggedAt: new Date().toISOString() });
     }
     this.setDontRemindList(list);
-    this.patchPhraseState(phraseId, { reviewNext: false });
+    const prev = this.getPhraseState(phraseId);
+    this.patchPhraseState(phraseId, { ...raiseScore(prev), reviewNext: false });
     return list;
   },
 

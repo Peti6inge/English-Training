@@ -17,10 +17,16 @@ export const CONFIG = {
   SIMILARITY_THRESHOLD: 0.85,
   /** Per-token similarity used when scanning expected keywords in order. */
   KEYWORD_WORD_THRESHOLD: 0.72,
-  /** Bernoulli chance of Remind vs next unseen when the recall pool is large enough (0–1). */
-  REMIND_PROBABILITY: 0.5,
-  /** Minimum number of seen, non-blacklisted phrases before automatic recall begins. */
-  REMIND_MIN_POOL_SIZE: 20,
+  /**
+   * Forgetting-curve ladder. Index is the score before a successful step:
+   * score 0 is due again in 8h, score 5 in 840h, score 6 is mastered.
+   * P(recall) = due / (due + balance).
+   */
+  FORGETTING: {
+    intervalsHours: [8, 24, 72, 168, 384, 840],
+    masteredScore: 6,
+    balance: 7,
+  },
   /** Pause (ms) before the post-validation audio sequence. */
   POST_VALIDATION_PAUSE_MS: 600,
 
@@ -78,12 +84,6 @@ export const CONFIG = {
       next: [/\bnext\b/i],
       remind: [/\bremind\b/i],
     },
-  },
-
-  SM2: {
-    minInterval: 1,
-    maxInterval: 30,
-    easyBonus: 2.2,
   },
 };
 

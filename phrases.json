@@ -12798,5 +12798,6405 @@
     "tags": [
       "plans"
     ]
+  },
+  {
+    "id": "p1601",
+    "fr": "J'ai le cou raide parce que j'ai dormi de travers.",
+    "en": "My neck is stiff because I slept at a weird angle.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1602",
+    "fr": "Je devrais m'étirer avant que les mollets se crispent.",
+    "en": "I should stretch before my calves start cramping.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1603",
+    "fr": "J'ai mal au dos après toutes ces heures de voiture.",
+    "en": "My back aches after all those hours in the car.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1604",
+    "fr": "Mes yeux fatiguent dès que je fixe l'écran trop longtemps.",
+    "en": "My eyes tire out when I stare at screens too long.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1605",
+    "fr": "J'ai les épaules tendues, je ne m'en rends compte que le soir.",
+    "en": "My shoulders stay tight and I only notice at night.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1606",
+    "fr": "J'ai marché trop vite, j'ai un point de côté.",
+    "en": "I walked too fast and got a stitch in my side.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1607",
+    "fr": "J'ai les mains gelées, j'ai oublié les gants.",
+    "en": "My hands are freezing because I forgot my gloves.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1608",
+    "fr": "J'ai une petite courbature, rien de méchant.",
+    "en": "I've got a mild ache, nothing serious at all.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1609",
+    "fr": "Je bâille depuis une heure, mon corps a compris.",
+    "en": "I've been yawning for an hour, my body caught on.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1610",
+    "fr": "J'ai le ventre noué avant de parler devant des gens.",
+    "en": "My stomach knots up before I have to speak in public.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1611",
+    "fr": "Une douche chaude me détend le dos presque tout de suite.",
+    "en": "A hot shower loosens my back almost right away.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1612",
+    "fr": "Respirer lentement peut calmer le rythme cardiaque.",
+    "en": "Slow breathing can settle your heart rate down.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1613",
+    "fr": "Rester assis trop longtemps raidit le bas du dos.",
+    "en": "Sitting for too long stiffens the lower back.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1614",
+    "fr": "Je fais une courte pause toutes les heures pour bouger.",
+    "en": "I take a short break every hour just to move.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1615",
+    "fr": "Une mauvaise posture devant l'écran use la nuque.",
+    "en": "Poor posture at a screen wears out your neck.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1616",
+    "fr": "Les crampes arrivent quand j'oublie de boire.",
+    "en": "Cramps show up whenever I forget to drink water.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1617",
+    "fr": "Dix minutes de marche débloquent les jambes après le trajet.",
+    "en": "A ten minute walk loosens my legs after a long drive.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1618",
+    "fr": "Je masse les tempes dès que le mal de tête commence.",
+    "en": "I rub my temples as soon as a headache starts.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1619",
+    "fr": "Le corps encaisse mieux le stress quand le sommeil est régulier.",
+    "en": "Your body handles stress better when sleep stays regular.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1620",
+    "fr": "Je relâche la mâchoire, je la serre sans m'en apercevoir.",
+    "en": "I unclench my jaw because I tighten it without noticing.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p1621",
+    "fr": "Se garer en centre-ville le week-end, c'est un cauchemar.",
+    "en": "Parking downtown on a weekend is a total nightmare.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1622",
+    "fr": "Je vous rejoins du côté du feu d'artifice.",
+    "en": "I'll join you over by the fireworks later.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1623",
+    "fr": "Ce café est parfait pour regarder les gens passer.",
+    "en": "This café is perfect for watching people walk by.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1624",
+    "fr": "Je suis en ville ce soir, on peut se croiser.",
+    "en": "I'll be in town tonight, so we might cross paths.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1625",
+    "fr": "Le trajet jusqu'au centre m'a pris plus longtemps que prévu.",
+    "en": "The ride into town took longer than I expected.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1626",
+    "fr": "On se retrouve devant la gare, c'est plus simple.",
+    "en": "Let's meet in front of the station, it's much easier.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1627",
+    "fr": "Le quartier est calme le dimanche matin.",
+    "en": "The neighborhood feels quiet on a Sunday morning.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1628",
+    "fr": "J'ai marché vingt minutes, le plan était optimiste.",
+    "en": "I walked twenty minutes because the map was optimistic.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1629",
+    "fr": "Il y a un petit resto juste à côté de la place.",
+    "en": "There's a small restaurant just off the main square.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1630",
+    "fr": "Le dernier métro part tôt, il ne faut pas traîner.",
+    "en": "The last subway leaves early, so don't hang around.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1631",
+    "fr": "Tu peux m'envoyer l'adresse exacte, on doit être tout près.",
+    "en": "Can you send the exact spot, I think we're basically next door.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1632",
+    "fr": "La ligne de bus relie le campus au centre-ville.",
+    "en": "The bus line links the campus with the city center.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1633",
+    "fr": "Les travaux ont dévié le chemin habituel.",
+    "en": "Roadwork has pushed us off the usual route.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1634",
+    "fr": "Un vélo en libre-service suffit pour traverser le centre.",
+    "en": "A rental bike is plenty for crossing the center.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1635",
+    "fr": "Le stationnement dans la rue est plus simple après dix-neuf heures.",
+    "en": "Street parking gets easier after seven in the evening.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1636",
+    "fr": "Je repère le point de rendez-vous avant de quitter la maison.",
+    "en": "I look up the meeting spot before I leave the house.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1637",
+    "fr": "Le marché du samedi occupe toute la place centrale.",
+    "en": "The Saturday market fills the whole central square.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1638",
+    "fr": "Une correspondance de trop rend le trajet pénible.",
+    "en": "One extra transfer makes the whole trip feel painful.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1639",
+    "fr": "Le quartier étudiant reste animé assez tard.",
+    "en": "The student area stays pretty lively late into the night.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1640",
+    "fr": "Je préfère marcher dix minutes que chercher une place.",
+    "en": "I'd rather walk ten minutes than hunt for parking.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p1641",
+    "fr": "Je suis bien arrivé, tout s'est bien passé.",
+    "en": "I got there safely and everything went fine.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1642",
+    "fr": "Désolé, j'étais dans le rush et j'ai oublié de répondre.",
+    "en": "Sorry, I was rushing and forgot to reply.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1643",
+    "fr": "Je vais me coucher, on se parle demain.",
+    "en": "I'm heading to bed, we'll talk tomorrow.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1644",
+    "fr": "Je me connecte dans une trentaine de minutes.",
+    "en": "I'll log on in about thirty minutes.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1645",
+    "fr": "Quelle heure est-il chez toi ?",
+    "en": "What time is it on your side?",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1646",
+    "fr": "Je finis ça et je suis à toi.",
+    "en": "I'll finish this and then I'm all yours.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1647",
+    "fr": "J'ai une journée chargée, je te réponds ce soir.",
+    "en": "I've got a full day, so I'll reply tonight.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1648",
+    "fr": "C'est noté, je m'en occupe demain matin.",
+    "en": "Noted, I'll handle it first thing tomorrow.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1649",
+    "fr": "Je pars dans cinq minutes, je suis déjà en retard.",
+    "en": "I'm leaving in five minutes and I'm already late.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1650",
+    "fr": "On se capte plus tard, là je suis en mouvement.",
+    "en": "We'll catch up later, I'm on the move right now.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1651",
+    "fr": "Je ne suis pas au top, je vous donne des nouvelles samedi matin.",
+    "en": "I'm not at my best, I'll update you Saturday morning.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1652",
+    "fr": "Je cale mes tâches du soir avant de décrocher.",
+    "en": "I line up my evening tasks before I switch off.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1653",
+    "fr": "Un rappel sur le téléphone m'évite d'oublier les petits trucs.",
+    "en": "A phone reminder stops me from forgetting the small stuff.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1654",
+    "fr": "Je regroupe mes messages pour répondre d'un seul coup.",
+    "en": "I group my messages and answer them in one go.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1655",
+    "fr": "Le matin, je regarde ce qui est urgent avant le reste.",
+    "en": "Each morning I check what's urgent before anything else.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1656",
+    "fr": "Je préfère avancer un peu chaque jour que tout faire d'un bloc.",
+    "en": "I'd rather do a little daily than everything at once.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1657",
+    "fr": "Une checklist la veille au soir me sauve la matinée.",
+    "en": "A checklist the night before saves my whole morning.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1658",
+    "fr": "Je bloque une heure sans écran pour souffler.",
+    "en": "I block one screen-free hour so I can unwind.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1659",
+    "fr": "Quand la journée déborde, je coupe ce qui n'est pas essentiel.",
+    "en": "When the day overflows, I drop whatever isn't essential.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1660",
+    "fr": "Je confirme les horaires le matin pour éviter les quiproquos.",
+    "en": "I confirm the times each morning to avoid mix-ups.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p1661",
+    "fr": "J'ai du mal à concilier les cours et le reste.",
+    "en": "I'm struggling to balance classes with everything else.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1662",
+    "fr": "J'ai plutôt bien réussi les deux examens.",
+    "en": "I did pretty well on both exams.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1663",
+    "fr": "Au début c'est fatigant, mais on s'y fait.",
+    "en": "It's tiring at first, but you get used to it.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1664",
+    "fr": "Il ne faut pas se formaliser si on fait des fautes.",
+    "en": "Don't sweat it if you make a few mistakes.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1665",
+    "fr": "Ce devoir m'a pris toute la soirée.",
+    "en": "That assignment took me the whole evening.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1666",
+    "fr": "On a beaucoup de contrôle continu cette année.",
+    "en": "We have a lot of continuous assessment this year.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1667",
+    "fr": "Je n'ai pas vraiment de méthode, j'improvise.",
+    "en": "I don't really have a method, I just improvise.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1668",
+    "fr": "La séance de révision est en visio cet après-midi.",
+    "en": "The review session is on a video call this afternoon.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1669",
+    "fr": "Je peux t'appeler après la réunion, vers dix-neuf heures trente.",
+    "en": "I can call you after my meeting, around seven thirty.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1670",
+    "fr": "Les cours se passent bien, j'aime presque toutes les matières.",
+    "en": "Classes are going well and I like almost every subject.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1671",
+    "fr": "J'ai l'impression d'avoir enfin compris les étapes.",
+    "en": "I feel like I finally understood the steps.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1672",
+    "fr": "Le rendu final était plus clair que le brouillon.",
+    "en": "The final submission was clearer than the draft.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1673",
+    "fr": "Je suis passé dans une autre filière cette année.",
+    "en": "I switched into a different program this year.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1674",
+    "fr": "Je révise mieux quand je découpe le chapitre en petites parties.",
+    "en": "I study better when I split the chapter into small parts.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1675",
+    "fr": "Les partiels approchent et je commence à m'organiser.",
+    "en": "Finals are coming and I'm starting to get organized.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1676",
+    "fr": "J'ai de bons résultats même si l'emploi du temps est chargé.",
+    "en": "My grades are solid even with a packed schedule.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1677",
+    "fr": "On peut se retrouver à la bibliothèque pour réviser ensemble.",
+    "en": "We can meet at the library and study together.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1678",
+    "fr": "Je promets d'essayer, sans garantir le résultat.",
+    "en": "I'll try my best without promising the result.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1679",
+    "fr": "Le campus est pratique, tout est à quelques minutes à pied.",
+    "en": "Campus is handy because everything is within walking distance.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1680",
+    "fr": "J'aimerais garder de bonnes notes sans lâcher mes projets perso.",
+    "en": "I'd like good grades without dropping my side projects.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p1681",
+    "fr": "Trop content que ça se passe bien pour toi aussi.",
+    "en": "So glad things are going well for you too.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1682",
+    "fr": "J'ai le seum, j'aurais vraiment voulu être là.",
+    "en": "I'm bummed, I really wanted to be there.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1683",
+    "fr": "T'inquiète, ce n'est pas si stressant que ça.",
+    "en": "Don't worry, it's not nearly that stressful.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1684",
+    "fr": "Ça m'a fait un choc, je m'attendais à tout sauf à ça.",
+    "en": "It shocked me, I expected anything but that.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1685",
+    "fr": "Merci pour le soutien, ça compte beaucoup.",
+    "en": "Thanks for the support, it means a lot.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1686",
+    "fr": "Je suis un peu crevé, mais ça va quand même.",
+    "en": "I'm a bit wiped, but I'm still doing okay.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1687",
+    "fr": "J'étais déçu sur le moment, et puis j'ai relativisé.",
+    "en": "I was disappointed at first, then I gained some perspective.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1688",
+    "fr": "Courage, ça va s'arranger plus vite que tu crois.",
+    "en": "Hang in there, it'll sort out sooner than you think.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1689",
+    "fr": "Je suis soulagé, j'ai cru que ça tournait mal.",
+    "en": "I'm relieved, I thought things were going badly.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1690",
+    "fr": "Ça me stresse un peu, mais je gère.",
+    "en": "It stresses me a bit, but I'm handling it.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1691",
+    "fr": "Ça fait vraiment plaisir de te lire à nouveau.",
+    "en": "It's really good to hear from you again.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1692",
+    "fr": "Cette nouvelle m'a fait plus plaisir que je ne le pensais.",
+    "en": "That news made me happier than I had expected.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1693",
+    "fr": "J'ai besoin de souffler avant de reprendre le rythme.",
+    "en": "I need a breather before I get back into the pace.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1694",
+    "fr": "La déception est passée, il reste surtout de la gratitude.",
+    "en": "The disappointment passed and mostly gratitude remains.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1695",
+    "fr": "Je me sens plus serein quand le plan est clair.",
+    "en": "I feel calmer once the plan is actually clear.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1696",
+    "fr": "Un petit message peut vraiment remonter le moral.",
+    "en": "A short message can really lift someone's spirits.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1697",
+    "fr": "J'essaie de ne pas dramatiser, même quand ça pique.",
+    "en": "I try not to overreact even when it stings.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1698",
+    "fr": "La fatigue rend tout plus émotif que nécessaire.",
+    "en": "Being tired makes everything feel more emotional.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1699",
+    "fr": "Je suis reconnaissant que vous ayez pensé à m'inclure.",
+    "en": "I'm grateful you thought to include me in this.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1700",
+    "fr": "L'attente est parfois plus dure que la nouvelle elle-même.",
+    "en": "Waiting is sometimes harder than the news itself.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p1701",
+    "fr": "Je passe le week-end chez mes parents.",
+    "en": "I'm spending the weekend at my parents' place.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1702",
+    "fr": "On a une cousinade samedi, je ne pourrai pas venir.",
+    "en": "We've got a family gathering Saturday, so I can't come.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1703",
+    "fr": "Mes parents vont bien, merci d'avoir demandé.",
+    "en": "My parents are doing well, thanks for asking.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1704",
+    "fr": "Je serai en vacances avec mes parents la semaine prochaine.",
+    "en": "I'll be on holiday with my parents next week.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1705",
+    "fr": "Dimanche je sors avec mes parents, le trajet est long.",
+    "en": "Sunday I'm out with my parents and the drive is long.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1706",
+    "fr": "Ma mère a encore l'ancien, je ne sais pas s'il marche.",
+    "en": "My mom still has the old one, not sure it works.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1707",
+    "fr": "Je passe voir la famille avant de reprendre les cours.",
+    "en": "I'll see the family before classes start up again.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1708",
+    "fr": "On cuisine ensemble quand tout le monde est là.",
+    "en": "We cook together whenever the whole family is around.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1709",
+    "fr": "Passe le bonjour à tes parents de ma part.",
+    "en": "Say hi to your parents for me, please.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1710",
+    "fr": "Je rentre tard, mes parents m'attendent pour dîner.",
+    "en": "I'll get home late, my parents are holding dinner.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1711",
+    "fr": "Les fêtes en famille, c'est intense, mais ça fait du bien.",
+    "en": "Family holidays are intense, but they do me good.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1712",
+    "fr": "Je préviens mes parents dès que l'horaire du train est fixé.",
+    "en": "I'll tell my parents once the train time is fixed.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1713",
+    "fr": "Entre le déménagement et les fêtes, l'agenda va être chargé.",
+    "en": "Between a move and the holidays, the calendar gets hectic.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1714",
+    "fr": "Mon frère peut me déposer si le trajet est trop long.",
+    "en": "My brother can drop me off if the drive runs long.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1715",
+    "fr": "Je garde le dimanche pour une visite en famille.",
+    "en": "I'm saving Sunday for a visit with the family.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1716",
+    "fr": "Les nouvelles de la famille m'arrivent souvent un peu tard.",
+    "en": "Family updates often reach me a little bit late.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1717",
+    "fr": "On s'organise pour que personne ne fasse tout le trajet seul.",
+    "en": "We plan it so nobody drives the whole way alone.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1718",
+    "fr": "Je passe un coup de fil à la maison ce soir.",
+    "en": "I'll call home tonight and catch up properly.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1719",
+    "fr": "Un week-end chez les parents recharge plus qu'une grasse matinée.",
+    "en": "A weekend at my parents' restores me more than sleeping in.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1720",
+    "fr": "Je note la date pour ne pas rater le repas de famille.",
+    "en": "I'll write the date down so I don't miss family dinner.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p1721",
+    "fr": "Je peux amener des feuilletés aux champignons ou un dessert.",
+    "en": "I can bring mushroom pastries or some dessert.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1722",
+    "fr": "Il faut laisser de la place, il y aura plusieurs desserts.",
+    "en": "We should save room, there'll be several desserts.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1723",
+    "fr": "J'hésite encore sur ce que je cuisine pour la soirée.",
+    "en": "I'm still deciding what to cook for the party.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1724",
+    "fr": "Ce buffet était trop bien, on devrait y retourner.",
+    "en": "That buffet was so good we should go back.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1725",
+    "fr": "On se fait une fondue au resto, puis une partie de billard.",
+    "en": "Let's do fondue at a restaurant and then play pool.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1726",
+    "fr": "Le plateau de fruits de mer était vraiment généreux.",
+    "en": "The seafood platter was honestly pretty generous.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1727",
+    "fr": "Je prends des softs, je conduis après.",
+    "en": "I'll stick to soft drinks since I'm driving later.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1728",
+    "fr": "Ces donuts maison ont l'air dangereux.",
+    "en": "Those homemade donuts look dangerously good.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1729",
+    "fr": "J'ai perdu le fil, le plat est encore au four.",
+    "en": "I lost track of time and the dish is still baking.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1730",
+    "fr": "On partage le dessert, je n'ai plus vraiment faim.",
+    "en": "Let's split dessert, I'm not really hungry anymore.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1731",
+    "fr": "Il y a un minimum de commande, autant remplir le panier.",
+    "en": "There's a minimum, so I might as well fill the basket.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1732",
+    "fr": "Je peux préparer un truc simple si personne n'a le temps.",
+    "en": "I can make something simple if nobody has time.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1733",
+    "fr": "Le menu change souvent, mieux vaut vérifier avant de commander.",
+    "en": "The menu changes often, so check it before ordering.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1734",
+    "fr": "Une fondue suivie d'un billard, ça ferait une bonne soirée.",
+    "en": "Fondue followed by pool would make a solid night.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1735",
+    "fr": "Je note les régimes de chacun avant de cuisiner.",
+    "en": "I'll note everyone's diets before I start cooking.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1736",
+    "fr": "On commande à l'avance pour ne pas attendre sur place.",
+    "en": "We'll order ahead so we aren't waiting once we arrive.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1737",
+    "fr": "Le plat avait l'air bon malgré la photo un peu floue.",
+    "en": "The dish looked good despite the blurry photo.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1738",
+    "fr": "Je ramène de quoi grignoter si la soirée s'éternise.",
+    "en": "I'll bring snacks in case the night runs long.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1739",
+    "fr": "On peut se retrouver autour d'un repas plutôt qu'au bar.",
+    "en": "We can meet over dinner rather than just drinks.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1740",
+    "fr": "Je passe prendre des biscuits apéro et une petite entrée cet après-midi.",
+    "en": "I'll grab some snacks and a small starter this afternoon.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p1741",
+    "fr": "Je me sens raplapla depuis le début de la semaine.",
+    "en": "I've been feeling run down since the week began.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1742",
+    "fr": "Je vais poser une journée pour me reposer.",
+    "en": "I'll take a day off so I can rest up.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1743",
+    "fr": "Je me suis fait piquer au cou, ça m'a fait flipper.",
+    "en": "Something stung my neck and it really freaked me out.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1744",
+    "fr": "Ça sifflait un peu quand j'inspirais, ce n'était pas rassurant.",
+    "en": "It whistled a bit when I breathed in, which scared me.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1745",
+    "fr": "Ça va mieux maintenant, j'ai eu peur pour rien de grave.",
+    "en": "I'm better now, I got scared over nothing much.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1746",
+    "fr": "Ces cachets me donnent sommeil.",
+    "en": "These pills make me really sleepy.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1747",
+    "fr": "J'ai mal dormi, la journée va être longue.",
+    "en": "I slept badly, so tomorrow is going to drag.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1748",
+    "fr": "Je bois de l'eau et je me couche tôt.",
+    "en": "I'll drink some water and get to bed early.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1749",
+    "fr": "Un massage me ferait du bien là, tout de suite.",
+    "en": "A massage would do me a lot of good right now.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1750",
+    "fr": "Je tousse un peu, je reste à distance.",
+    "en": "I'm coughing a little, so I'll keep some distance.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1751",
+    "fr": "Il faut que je ralentisse, je ne tiens plus le rythme.",
+    "en": "I need to slow down, I can't hold this pace.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1752",
+    "fr": "Des contrôles réguliers permettent de voir les soucis tôt.",
+    "en": "Regular checkups can catch problems while they're still small.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1753",
+    "fr": "Je note les symptômes avant de prendre rendez-vous.",
+    "en": "I'll write the symptoms down before I book a visit.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1754",
+    "fr": "Le repos compte autant que le traitement dans ce cas.",
+    "en": "Rest counts for as much as treatment in this case.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1755",
+    "fr": "Je décale le sport tant que la douleur est là.",
+    "en": "I'll pause workouts while the pain is still around.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1756",
+    "fr": "Une piqûre peut enfler vite, mieux vaut surveiller.",
+    "en": "A sting can swell quickly, so it's wise to watch it.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1757",
+    "fr": "Je demande conseil avant de reprendre ce médicament.",
+    "en": "I'll ask someone before I take that medicine again.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1758",
+    "fr": "Dormir à heure fixe m'aide plus que les grasses matinées.",
+    "en": "Sleeping on a schedule helps me more than lying in late.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1759",
+    "fr": "Je préviens si je dois annuler pour raison de santé.",
+    "en": "I'll tell you if I must cancel for health reasons.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1760",
+    "fr": "Une journée au calme vaut mieux qu'un rendez-vous forcé.",
+    "en": "A quiet day beats pushing through a packed appointment.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p1761",
+    "fr": "J'aimerais envoyer mes morceaux à des gens qui peuvent les diffuser.",
+    "en": "I'd like to send my tracks to people who might share them.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1762",
+    "fr": "Je mets les vidéos de côté pour me concentrer sur la musique.",
+    "en": "I'm setting the videos aside to focus on the music.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1763",
+    "fr": "Tu y as déjà joué, ou c'est nouveau pour toi aussi ?",
+    "en": "Have you played this, or is it new for you too?",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1764",
+    "fr": "Je suis chaud pour une partie ce soir si vous êtes là.",
+    "en": "I'm down for a game tonight if you guys are around.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1765",
+    "fr": "On se fait un escape game, je suis partant.",
+    "en": "Let's do an escape room, I'm totally in.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1766",
+    "fr": "J'ai une vieille manette, pas sûr qu'elle marche encore.",
+    "en": "I've got an old controller and I'm not sure it works.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1767",
+    "fr": "Dormir jusqu'à midi avant une partie le soir, ça ne me choque pas.",
+    "en": "Sleeping till noon before an evening game seems fair to me.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1768",
+    "fr": "Je finis mon épisode et j'arrive dans dix minutes.",
+    "en": "I'll finish this episode and be there in ten minutes.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1769",
+    "fr": "On garde espoir, il reste encore une mi-temps.",
+    "en": "We'll keep hoping, there's still a half left to play.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1770",
+    "fr": "Ils étaient trop forts, presque impossibles à battre.",
+    "en": "They were far too strong and almost impossible to beat.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1771",
+    "fr": "Je regarde le match en vrai si on trouve des places.",
+    "en": "I'll watch the match live if we can find seats.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1772",
+    "fr": "Promouvoir un morceau demande autant de temps que de l'écrire.",
+    "en": "Promoting a track takes as much time as writing it.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1773",
+    "fr": "Je préfère jouer sur ordinateur quand c'est possible.",
+    "en": "I prefer playing on a computer whenever I can.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1774",
+    "fr": "Une session entre potes vaut mieux qu'une partie en solo.",
+    "en": "A session with friends beats playing on my own.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1775",
+    "fr": "Le classement ne veut rien dire si tout le monde n'a pas joué.",
+    "en": "The ranking means little if not everyone has played.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1776",
+    "fr": "J'améliore mon niveau petit à petit, sans me mettre la pression.",
+    "en": "I'm improving slowly without putting pressure on myself.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1777",
+    "fr": "On peut lancer une partie dès que la mise à jour est finie.",
+    "en": "We can start a match once the update finishes.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1778",
+    "fr": "Je note les règles avant de me lancer, sinon je suis perdu.",
+    "en": "I write the rules down first or I get lost.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1779",
+    "fr": "Ce sport se regarde mieux en groupe qu'en replay.",
+    "en": "This sport is better live with a group than on replay.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1780",
+    "fr": "Je réserve une session la prochaine fois pour ne pas la rater.",
+    "en": "I'll set a session aside next time so I don't miss it.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p1781",
+    "fr": "Le pommeau de douche est impeccable, merci.",
+    "en": "The showerhead is perfect, thank you.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1782",
+    "fr": "Je suis dans un logement étudiant sur le campus.",
+    "en": "I'm in student housing right on campus.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1783",
+    "fr": "J'ai perdu des couverts, je dois refaire un peu le stock.",
+    "en": "I lost some cutlery, so I need to restock a little.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1784",
+    "fr": "Tu peux me prendre une éponge en passant ?",
+    "en": "Can you grab me a sponge while you're out?",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1785",
+    "fr": "C'est en face de la bibliothèque, comme les années d'avant.",
+    "en": "It's across from the library, same as the past years.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1786",
+    "fr": "Je rentre mardi soir ou mercredi, je te préviens.",
+    "en": "I'll be back Tuesday night or Wednesday, I'll let you know.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1787",
+    "fr": "Il faut que je range avant que les gens arrivent.",
+    "en": "I need to tidy up before people start arriving.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1788",
+    "fr": "Je demande si la maison est libre ce week-end.",
+    "en": "I'll ask whether the house is free this weekend.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1789",
+    "fr": "J'ai enfin retrouvé les clés, elles étaient dans un manteau.",
+    "en": "I finally found the keys, they were in a coat.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1790",
+    "fr": "On sort les poubelles ce soir, j'oublie tout le temps.",
+    "en": "We should take the trash out tonight, I always forget.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1791",
+    "fr": "L'appart est petit, mais il est bien placé.",
+    "en": "The place is small, but the location is great.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1792",
+    "fr": "Le propriétaire passe vendredi, je laisse tout accessible.",
+    "en": "The landlord comes Friday, so I'll leave everything accessible.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1793",
+    "fr": "Je cherche quatre verres et des cuillères qui vont ensemble.",
+    "en": "I'm looking for four matching glasses and some spoons.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1794",
+    "fr": "Une bonne douche après la route, ça change la soirée.",
+    "en": "A proper shower after a long drive changes the evening.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1795",
+    "fr": "Le logement est sur le campus, donc les cours sont à côté.",
+    "en": "The housing sits on campus, so class is close by.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1796",
+    "fr": "Je note ce qu'il manque avant de refaire les courses.",
+    "en": "I'll list what's missing before I go shopping again.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1797",
+    "fr": "L'isolation est moyenne, on entend le couloir le soir.",
+    "en": "The insulation is average, so you hear the hallway at night.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1798",
+    "fr": "Je laisse un double des clés au cas où.",
+    "en": "I'll leave a spare key with someone just in case.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1799",
+    "fr": "Ranger dix minutes chaque soir évite le gros ménage.",
+    "en": "Ten minutes of tidying each night avoids a big clean.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1800",
+    "fr": "La kitchenette suffit si on cuisine simple.",
+    "en": "The little kitchen works fine if we keep meals simple.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p1801",
+    "fr": "Tu as vu cette série, ou je me tais ?",
+    "en": "Have you seen that show, or should I stay quiet?",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1802",
+    "fr": "Le film était incroyable, je ne m'y attendais pas.",
+    "en": "The movie was incredible and I didn't expect that.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1803",
+    "fr": "J'avais déjà vu des vidéos dans le même genre.",
+    "en": "I'd already seen videos in that same style.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1804",
+    "fr": "Cet extrait donne envie, je regarderai la suite.",
+    "en": "That clip makes me want to watch the rest.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1805",
+    "fr": "Je connaissais le morceau, mais pas cette version.",
+    "en": "I knew the song, but not this version of it.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1806",
+    "fr": "La bande-son porte vraiment tout le film.",
+    "en": "The soundtrack basically carries the whole movie.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1807",
+    "fr": "Je ne l'ai pas encore regardé, je te dirai ce que j'en pense.",
+    "en": "I haven't watched it yet, I'll tell you what I think.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1808",
+    "fr": "Cet artiste sample un classique, et ça passe quand même.",
+    "en": "This artist samples a classic and it still lands.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1809",
+    "fr": "On se fait le film, puis on enchaîne au resto.",
+    "en": "Let's watch the movie and then grab some dinner.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1810",
+    "fr": "Le dernier épisode m'a laissé sur ma faim.",
+    "en": "The last episode left me wanting a bit more.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1811",
+    "fr": "Je le mets dans ma liste, je le lance ce soir.",
+    "en": "I'll add it to my list and start it tonight.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1812",
+    "fr": "L'image est floue, mais on comprend quand même la scène.",
+    "en": "The picture is blurry, but you can still follow the scene.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1813",
+    "fr": "Cette série marche mieux si on la regarde dans l'ordre.",
+    "en": "This series works better if you watch it in order.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1814",
+    "fr": "Le montage rend les effets beaucoup plus lisibles.",
+    "en": "The editing makes the effects much easier to follow.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1815",
+    "fr": "Je compare souvent la version longue et la version courte.",
+    "en": "I often compare the long version with the short one.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1816",
+    "fr": "Un bon générique peut te faire rester jusqu'au bout.",
+    "en": "A strong opening theme can keep you until the credits.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1817",
+    "fr": "Les sous-titres aident quand les acteurs parlent trop vite.",
+    "en": "Subtitles help when the actors speak too quickly.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1818",
+    "fr": "Ce documentaire explique les étapes sans trop simplifier.",
+    "en": "This documentary explains the steps without oversimplifying them.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1819",
+    "fr": "Je préfère un podcast court quand je suis dans les transports.",
+    "en": "I prefer a short podcast during my commute.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1820",
+    "fr": "La critique était dure, mais le public a l'air conquis.",
+    "en": "The review was harsh, but the audience seems convinced.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p1821",
+    "fr": "D'un côté ça donne envie, de l'autre j'ai un peu peur.",
+    "en": "Part of me wants to try it, and part of me is nervous.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1822",
+    "fr": "C'est déjà très bien, je ne changerais pas grand-chose.",
+    "en": "It's already really good, I wouldn't change much.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1823",
+    "fr": "Je n'étais pas d'accord au début, et puis si.",
+    "en": "I didn't agree at first, and then I came around.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1824",
+    "fr": "Franchement c'est stylé, je n'aurais pas parié dessus.",
+    "en": "Honestly it's cool, I wouldn't have bet on it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1825",
+    "fr": "Je trouve que c'est un peu trop, mais ça se défend.",
+    "en": "I think it's a bit much, but I see the point.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1826",
+    "fr": "On est d'accord sur presque toute la ligne.",
+    "en": "We're on the same page about almost all of it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1827",
+    "fr": "J'avoue que ça m'a surpris dans le bon sens.",
+    "en": "I'll admit it surprised me in a good way.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1828",
+    "fr": "Ce n'est pas objectif, mais j'assume mon avis.",
+    "en": "It's not objective, but I'll stand by my take.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1829",
+    "fr": "Au final c'est mieux comme ça, même si ça pique.",
+    "en": "In the end it's better this way, even if it stings.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1830",
+    "fr": "Je pensais le contraire, et j'avais tort.",
+    "en": "I thought the opposite, and I turned out wrong.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1831",
+    "fr": "Ça se tente, au pire on aura appris quelque chose.",
+    "en": "It's worth a try, and worst case we learned something.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1832",
+    "fr": "Je préfère un avis nuancé à un jugement trop rapide.",
+    "en": "I prefer a nuanced take over a snap judgment.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1833",
+    "fr": "Les notes ne sont pas encore assez nombreuses pour conclure.",
+    "en": "There aren't enough ratings yet to conclude anything.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1834",
+    "fr": "L'esthétique compte, mais la qualité doit suivre.",
+    "en": "Looks matter, but the build quality has to follow.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1835",
+    "fr": "Je me fie plus au retour d'un proche qu'à la pub.",
+    "en": "I trust a friend's feedback more than an advertisement.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1836",
+    "fr": "Les deux options se valent, le choix dépend du contexte.",
+    "en": "Both options work, and the choice depends on context.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1837",
+    "fr": "Je garde mon avis tant que je n'ai pas vu la suite.",
+    "en": "I'll hold my opinion until I've seen what comes after.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1838",
+    "fr": "C'est impressionnant, sans être vraiment indispensable.",
+    "en": "It's impressive without being truly necessary.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1839",
+    "fr": "Un bon compromis vaut mieux que d'attendre la solution parfaite.",
+    "en": "A decent compromise beats waiting for a perfect fix.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1840",
+    "fr": "Je comprends le raisonnement, même si je ne le suis pas.",
+    "en": "I follow the reasoning even when I don't share it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p1841",
+    "fr": "Il y a moyen que je sois là, je te confirme demain.",
+    "en": "There's a chance I'll make it, I'll confirm tomorrow.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1842",
+    "fr": "Après le film, on pourrait enchaîner sur un resto.",
+    "en": "After the movie, we could grab dinner somewhere.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1843",
+    "fr": "Je ne suis libre que ce soir et demain avant de partir.",
+    "en": "I'm only free tonight and tomorrow before I leave.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1844",
+    "fr": "On se rejoint à vingt heures trente devant le resto.",
+    "en": "Let's meet at eight thirty outside the restaurant.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1845",
+    "fr": "Je prends une table, venez quand vous pouvez.",
+    "en": "I'll grab a table, come whenever you can.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1846",
+    "fr": "Ce week-end je suis pris, on décale.",
+    "en": "I'm booked this weekend, so let's push it later.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1847",
+    "fr": "Si on n'est pas tous libres, on fait plus petit.",
+    "en": "If we can't all make it, we'll keep it smaller.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1848",
+    "fr": "Je bloque dimanche, le trajet du samedi est trop long.",
+    "en": "I'll save Sunday, since Saturday's drive is too long.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1849",
+    "fr": "On ne perd pas de temps, on cale une date maintenant.",
+    "en": "Let's lock in a date now and not waste time.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1850",
+    "fr": "Je peux venir en soirée, vers vingt heures.",
+    "en": "I can come in the evening, around eight.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1851",
+    "fr": "Dix-huit heures, c'est un peu tôt, mais je vous rejoins.",
+    "en": "Six o'clock is a bit early, but I'll still join you.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1852",
+    "fr": "Il faudrait réserver assez tôt si on veut une table.",
+    "en": "We should book early if we want a table.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1853",
+    "fr": "Je vérifie mes dispos et je vous réponds ce soir.",
+    "en": "I'll check my schedule and reply to you tonight.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1854",
+    "fr": "Le week-end d'après me convient mieux que celui-ci.",
+    "en": "The following weekend works better for me than this one.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1855",
+    "fr": "On peut viser un créneau en début de soirée.",
+    "en": "We can aim for a slot early in the evening.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1856",
+    "fr": "Je note l'invitation et je te dis si je peux monter.",
+    "en": "I'll note the invite and say if I can come up.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1857",
+    "fr": "Trois semaines plus tard, ce serait plus jouable pour moi.",
+    "en": "Three weeks later would be more doable for me.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1858",
+    "fr": "On se retrouve après le match si tout le monde est partant.",
+    "en": "We'll meet after the game if everyone's up for it.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1859",
+    "fr": "Je préfère caler ça avant le voyage avec mes parents.",
+    "en": "I'd rather lock this in before the trip with my parents.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1860",
+    "fr": "Si le premier plan tombe, on a une option de repli.",
+    "en": "If the first plan falls through, we have a backup option.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p1861",
+    "fr": "J'ai enfin eu quelqu'un au téléphone.",
+    "en": "I finally reached an actual person on the phone.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1862",
+    "fr": "Le garagiste m'a envoyé le devis cet après-midi.",
+    "en": "The mechanic sent the estimate over this afternoon.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1863",
+    "fr": "Ils m'ont donné le premier créneau disponible.",
+    "en": "They booked me into the earliest open slot.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1864",
+    "fr": "Je dois résilier l'assurance de la voiture, j'ai déjà lancé la démarche.",
+    "en": "I need to cancel the car insurance and I already started.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1865",
+    "fr": "Tu peux m'envoyer une photo du document, il est dans la boîte à gants.",
+    "en": "Can you snap the document from the glove box for me?",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1866",
+    "fr": "Le colis est arrivé, je passe le chercher.",
+    "en": "The package is here, so I'll go pick it up.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1867",
+    "fr": "Ils ont mis trois jours à répondre au mail.",
+    "en": "They took three days just to answer my email.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1868",
+    "fr": "C'est noté, merci pour le tuyau.",
+    "en": "Noted, and thanks a lot for the tip.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1869",
+    "fr": "Le rendez-vous est confirmé pour vendredi matin.",
+    "en": "The appointment is set for Friday morning.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1870",
+    "fr": "J'ai dû rappeler deux fois avant d'avoir une réponse.",
+    "en": "I had to call twice before anyone answered me.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1871",
+    "fr": "Le devis est raisonnable, je leur dis de lancer.",
+    "en": "The quote looks fair, so I'll tell them to start.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1872",
+    "fr": "Je compare deux devis avant de valider les réparations.",
+    "en": "I'll compare two quotes before I approve any repairs.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1873",
+    "fr": "Le suivi du dossier se fait en ligne, c'est plus simple.",
+    "en": "You can follow the case online, which is simpler.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1874",
+    "fr": "Il me faut une copie du document pour clôturer le contrat.",
+    "en": "I need a copy of that paper to close out the contract.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1875",
+    "fr": "Le service client m'a proposé un créneau en fin de journée.",
+    "en": "Customer service offered me a slot late in the day.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1876",
+    "fr": "Je vérifie ce qui est couvert avant d'accepter le devis.",
+    "en": "I'll check the coverage before I accept their quote.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1877",
+    "fr": "Une confirmation écrite évite les malentendus ensuite.",
+    "en": "Written confirmation keeps us from misunderstanding each other later.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1878",
+    "fr": "Le retrait se fait au comptoir avec une pièce d'identité.",
+    "en": "Pickup happens at the counter if you bring an ID.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1879",
+    "fr": "Je demande une date écrite si la pièce n'est pas en stock.",
+    "en": "I'll ask for a written date if the part is out of stock.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1880",
+    "fr": "Le rendez-vous peut être déplacé une fois sans frais.",
+    "en": "The appointment can be moved once without a fee.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p1881",
+    "fr": "Je ne comptais pas l'acheter, et me voilà.",
+    "en": "I wasn't planning to buy it, and yet here I am.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1882",
+    "fr": "Ils avaient ma taille, j'ai eu de la chance.",
+    "en": "They had my size, so I got pretty lucky.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1883",
+    "fr": "Cette promo se termine ce soir, apparemment.",
+    "en": "That sale wraps up tonight, from what I hear.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1884",
+    "fr": "Je compare en magasin avant de commander.",
+    "en": "I'll compare things in the store before I order.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1885",
+    "fr": "C'est plus joli que le modèle basique.",
+    "en": "It looks nicer than the plain basic model.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1886",
+    "fr": "Les avis sont bons, après je ne peux pas dire plus.",
+    "en": "The reviews look solid, beyond that I can't say much.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1887",
+    "fr": "Je te laisse regarder sur place, merci.",
+    "en": "I'll let you check it in person, thanks.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1888",
+    "fr": "C'est seulement en retrait, pas en rayon.",
+    "en": "It's pickup only, they don't have it on the shelf.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1889",
+    "fr": "Le vendeur était top, et la console a l'air presque neuve.",
+    "en": "The seller was kind and the console looks nearly new.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1890",
+    "fr": "Je prends le modèle bien noté, même s'il coûte un peu plus.",
+    "en": "I'll take the well-rated one even if it costs more.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1891",
+    "fr": "La livraison est prévue demain, si tout va bien.",
+    "en": "Delivery is set for tomorrow if nothing goes wrong.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1892",
+    "fr": "Je vérifie la compatibilité avant de l'ajouter au panier.",
+    "en": "I check that it fits before I add it to the cart.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1893",
+    "fr": "Un numéro de suivi arrive par mail après la commande.",
+    "en": "A tracking number shows up by email after you order.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1894",
+    "fr": "La cabine d'essayage est derrière les caisses, si tu veux essayer.",
+    "en": "The fitting room sits behind the registers if you want to try it.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1895",
+    "fr": "Je lis les dimensions, les photos sont souvent trompeuses.",
+    "en": "I read the measurements because photos can be misleading.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1896",
+    "fr": "Le retour est gratuit pendant quatorze jours.",
+    "en": "You can return it free for fourteen days.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1897",
+    "fr": "Je garde le reçu au cas où la taille ne va pas.",
+    "en": "I'll keep the receipt in case the size is wrong.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1898",
+    "fr": "Mieux vaut voir la couleur en vrai que sur l'écran.",
+    "en": "Better to judge the color in person than on a screen.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1899",
+    "fr": "La promo ne s'applique qu'au modèle de base.",
+    "en": "The discount only applies to the basic model.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1900",
+    "fr": "Je commande deux tailles et je renvoie celle qui ne va pas.",
+    "en": "I'll order two sizes and send back whichever doesn't fit.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p1901",
+    "fr": "Désolé d'avoir mis si longtemps à répondre.",
+    "en": "Sorry it took me so long to reply.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1902",
+    "fr": "Ça me fait plaisir que tu aies pensé à moi.",
+    "en": "It means a lot that you thought of me.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1903",
+    "fr": "On se retrouve vers vingt heures trente si ça te va.",
+    "en": "Let's meet around eight thirty if that works.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1904",
+    "fr": "Je finis ce que je fais et j'arrive dans dix minutes.",
+    "en": "I'll finish up and be there in ten minutes.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1905",
+    "fr": "Passez une bonne soirée, on se voit demain.",
+    "en": "Have a great evening, and I'll see you tomorrow.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1906",
+    "fr": "Je suis partant pour sortir ce week-end si vous êtes libres.",
+    "en": "I'm down to go out this weekend if you're free.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1907",
+    "fr": "Vous me manquez un peu, on se fait une sortie bientôt.",
+    "en": "I miss you guys a bit, let's hang out soon.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1908",
+    "fr": "C'est noté, je bloque ça dans mon agenda.",
+    "en": "Got it, I'll block that off on my calendar.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1909",
+    "fr": "Je ne serai pas libre la semaine prochaine, désolé.",
+    "en": "I won't be free next week, sorry about that.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1910",
+    "fr": "Merci pour ton message, ça m'a vraiment fait la journée.",
+    "en": "Thanks for the message, it really made my day.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1911",
+    "fr": "Joyeux anniversaire, j'espère que la journée te traite bien.",
+    "en": "Happy birthday, hope the day treats you well.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1912",
+    "fr": "Une petite soirée entre amis me ferait du bien en ce moment.",
+    "en": "A small get-together with friends would do me some good.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1913",
+    "fr": "Je préfère qu'on se voie tous ensemble plutôt que chacun de son côté.",
+    "en": "I'd rather we all get together than meet separately.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1914",
+    "fr": "Préviens-moi si tu passes dans le coin cette semaine.",
+    "en": "Let me know if you're passing through this week.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1915",
+    "fr": "On peut caler les détails par message et se retrouver sur place.",
+    "en": "We can sort the details by text and meet there.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1916",
+    "fr": "Je confirme que je serai là samedi.",
+    "en": "I can confirm I'll be there on Saturday.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1917",
+    "fr": "Désolé pour le retard, j'étais pris dans le rush.",
+    "en": "Sorry I'm late, I got caught in the rush.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1918",
+    "fr": "Si l'horaire ne convient pas, on le décale sans souci.",
+    "en": "If that time doesn't work, we can shift it easily.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1919",
+    "fr": "Je vous rejoins dès que j'ai fini de mon côté.",
+    "en": "I'll join you as soon as I'm done on my end.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1920",
+    "fr": "On lance un sondage pour trouver un moment qui arrange tout le monde.",
+    "en": "Let's run a poll to find a time that suits everyone.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p1921",
+    "fr": "Mon appel s'est figé au pire moment.",
+    "en": "My call froze right at the worst possible moment.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1922",
+    "fr": "La mise à jour a tout changé, je ne retrouve plus mes réglages.",
+    "en": "That update changed everything and now I can't find my settings.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1923",
+    "fr": "Avec un vieux système, ça risque de mal passer.",
+    "en": "With an old system, this might not run well.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1924",
+    "fr": "J'ai reçu le mail, il était tombé dans les spams.",
+    "en": "I got the email, it had landed in my spam.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1925",
+    "fr": "Je peux le faire tourner en basse qualité sur mon portable.",
+    "en": "I can run it on low graphics on my laptop.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1926",
+    "fr": "Tu es sur ordinateur ou sur téléphone ?",
+    "en": "Are you on a computer or on your phone?",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1927",
+    "fr": "Je n'avais pas vu la mise à jour, on ne peut pas revenir en arrière.",
+    "en": "I missed that update, and we can't roll it back.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1928",
+    "fr": "Le lien a marché du premier coup, c'est rare.",
+    "en": "The link worked on the first try, which is rare.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1929",
+    "fr": "Je redémarre, des fois ça suffit.",
+    "en": "I'll restart it, since sometimes that's all it takes.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1930",
+    "fr": "Mon ordi rame dès que j'ouvre trop d'onglets.",
+    "en": "My laptop slows down when I open too many tabs.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1931",
+    "fr": "Je t'envoie le fichier dès que l'export est fini.",
+    "en": "I'll send the file over once the export is done.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1932",
+    "fr": "L'appairage ne marche que si les deux appareils restent proches.",
+    "en": "Pairing only works when both devices stay close.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1933",
+    "fr": "Une sauvegarde automatique la nuit m'évite les mauvaises surprises.",
+    "en": "A nightly automatic backup saves me from ugly surprises.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1934",
+    "fr": "Je vérifie la compatibilité avant de télécharger la mise à jour.",
+    "en": "I check compatibility before I download any update.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1935",
+    "fr": "Le mode hors ligne suffit pour avancer dans le train.",
+    "en": "Offline mode is plenty for getting work done on the train.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1936",
+    "fr": "Je coupe les notifications quand je dois me concentrer.",
+    "en": "I mute notifications whenever I really need to focus.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1937",
+    "fr": "Le partage d'écran aide quand on bloque sur la même étape.",
+    "en": "Screen sharing helps when we're stuck on the same step.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1938",
+    "fr": "Je change le mot de passe avant de prêter l'appareil.",
+    "en": "I'll change the password before I lend the device out.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1939",
+    "fr": "Une connexion instable coupe la visio au milieu d'une phrase.",
+    "en": "A shaky connection drops the video call mid sentence.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1940",
+    "fr": "Je garde une copie locale au cas où le cloud lâche.",
+    "en": "I keep a local copy in case the cloud cuts out.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p1941",
+    "fr": "On a roulé des heures sous la pluie, c'était rude.",
+    "en": "We drove for hours in the rain and it was rough.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1942",
+    "fr": "Je suis bien arrivé, le trajet s'est bien passé.",
+    "en": "I arrived safely and the trip went smoothly.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1943",
+    "fr": "Tu restes combien de temps sur place ?",
+    "en": "How long are you planning to stay there?",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1944",
+    "fr": "Profitez bien, vous me raconterez.",
+    "en": "Enjoy the trip, you'll have to tell me everything.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1945",
+    "fr": "Je serai en Bretagne pour le coup.",
+    "en": "I'll be in Brittany for this one.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1946",
+    "fr": "Le trajet du week-end est un peu long pour moi.",
+    "en": "The weekend drive is a bit too long for me.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1947",
+    "fr": "J'hésite à monter, mais c'est noté si jamais.",
+    "en": "I'm unsure about coming up, but I'll keep it in mind.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1948",
+    "fr": "On a à peine eu le temps entre les deux correspondances.",
+    "en": "We barely had any time between the two connections.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1949",
+    "fr": "Je fais une sieste en route, je devrais arriver vers une heure et demie.",
+    "en": "I'll grab a nap on the road and arrive around one thirty.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1950",
+    "fr": "Je prends le train plutôt que la voiture cette fois.",
+    "en": "I'll take the train rather than drive this time.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1951",
+    "fr": "Vous y étiez déjà allés, ou c'était la première fois ?",
+    "en": "Had you been there before, or was it your first visit?",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1952",
+    "fr": "Je réserve le refuge dès qu'on a une idée du prix.",
+    "en": "I'll book the cabin once we know roughly what it costs.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1953",
+    "fr": "Un mois sur place sans cours, ça se tente seulement si c'est autorisé.",
+    "en": "A month away without classes only works if it's allowed.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1954",
+    "fr": "Tu le fais en bivouac, et en semaine en plus ?",
+    "en": "So you're camping, and you're doing it on a weekday?",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1955",
+    "fr": "Je compare les horaires avant de choisir le train.",
+    "en": "I compare the schedules before I choose a train.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1956",
+    "fr": "On prévoit une marge entre l'arrivée et le premier rendez-vous.",
+    "en": "We'll leave a buffer between arrival and the first plan.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1957",
+    "fr": "Le retour de nuit est plus calme, mais plus fatigant.",
+    "en": "The night ride back is quieter but much more tiring.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1958",
+    "fr": "Je note l'adresse du logement avant de perdre le réseau.",
+    "en": "I'll save the address before I lose phone signal.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1959",
+    "fr": "Un petit resto près de l'hôtel a sauvé la soirée.",
+    "en": "A small place near the hotel completely saved the evening.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1960",
+    "fr": "Les vacances en famille demandent un peu plus de logistique.",
+    "en": "A family trip takes a bit more planning than you'd think.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p1961",
+    "fr": "Il a plu pendant tout le trajet, c'était pénible.",
+    "en": "It rained the entire drive and it was miserable.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1962",
+    "fr": "C'était brumeux, on ne voyait pas grand-chose.",
+    "en": "It was so foggy we could barely see anything.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1963",
+    "fr": "Le soleil est revenu, ça change tout.",
+    "en": "The sun came back and it changes the whole mood.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1964",
+    "fr": "Il fait un froid de canard ce matin.",
+    "en": "It's bitterly cold out this morning.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1965",
+    "fr": "Je n'ai pas pris de veste, et évidemment il pleut.",
+    "en": "I skipped a jacket, and of course it's raining.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1966",
+    "fr": "Le vent est fort, on ne reste pas longtemps dehors.",
+    "en": "The wind is strong, so we won't stay outside long.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1967",
+    "fr": "Il fait lourd, j'ai du mal à me concentrer.",
+    "en": "It's muggy today and I'm struggling to focus.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1968",
+    "fr": "La météo annonce de la pluie pour le week-end.",
+    "en": "The forecast is calling for rain all weekend.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1969",
+    "fr": "On a eu un bel après-midi, ça compense la matinée.",
+    "en": "We got a nice afternoon, which makes up for this morning.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1970",
+    "fr": "Il neige un peu, le trajet va être plus long.",
+    "en": "It's snowing a little, so the drive will take longer.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1971",
+    "fr": "Le ciel s'est dégagé, on peut enfin sortir.",
+    "en": "The sky cleared up, so we can finally head outside.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1972",
+    "fr": "Une averse courte ne devrait pas annuler la sortie.",
+    "en": "A brief shower shouldn't force us to cancel the outing.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1973",
+    "fr": "Le brouillard du matin se lève en général avant midi.",
+    "en": "Morning fog usually lifts sometime before noon.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1974",
+    "fr": "Je vérifie la météo avant de partir en randonnée.",
+    "en": "I check the forecast before I head out on a hike.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1975",
+    "fr": "La chaleur rend le long trajet en voiture beaucoup plus dur.",
+    "en": "The heat makes a long car ride much harder.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1976",
+    "fr": "On décale si l'orage tombe pile sur notre créneau.",
+    "en": "We'll delay if a storm is timed right on our slot.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1977",
+    "fr": "Un temps couvert suffit pour marcher sans se presser.",
+    "en": "Overcast skies are fine for a slow walk outside.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1978",
+    "fr": "Le verglas du matin demande de partir plus tôt.",
+    "en": "Morning ice means we ought to leave a bit earlier.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1979",
+    "fr": "La température chute vite dès que le soleil disparaît.",
+    "en": "The temperature falls quickly once the sun goes down.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1980",
+    "fr": "Je prends une couche en plus, le soir se rafraîchit vite.",
+    "en": "I'll pack an extra layer because evenings cool off fast.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p1981",
+    "fr": "Cette réunion aurait vraiment pu être un court message.",
+    "en": "That meeting really could have been a short message.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1982",
+    "fr": "Je te rappelle dès que la réunion est finie.",
+    "en": "I'll call you as soon as the meeting is over.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1983",
+    "fr": "Dix-neuf heures trente, ça me laisse le temps de finir.",
+    "en": "Seven thirty gives me enough time to finish.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1984",
+    "fr": "J'ai une longue route devant moi, je serai lessivé.",
+    "en": "I've got a long drive ahead, so I'll be wiped.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1985",
+    "fr": "Je ne suis pas dispo demain, on décale le point.",
+    "en": "I'm not free tomorrow, let's move our check-in.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1986",
+    "fr": "Le rush est passé, je peux enfin répondre tranquillement.",
+    "en": "The rush is over, so I can finally reply properly.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1987",
+    "fr": "On est d'accord sur le fond, on peut avancer.",
+    "en": "We agree on the main point, so we can move forward.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1988",
+    "fr": "Je boucle ça ce soir et je t'envoie mon retour.",
+    "en": "I'll wrap this tonight and send you my feedback.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1989",
+    "fr": "Préviens-moi si l'horaire de la réunion change.",
+    "en": "Let me know if the meeting time shifts.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1990",
+    "fr": "J'enchaîne deux trucs, je te rejoins juste après.",
+    "en": "I'm juggling two things, I'll join you right after.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1991",
+    "fr": "C'est bon pour moi, on peut lancer.",
+    "en": "That works for me, so we can get started.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1992",
+    "fr": "Je préfère un compte rendu court à une longue réunion.",
+    "en": "I prefer a short written recap over a long meeting.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1993",
+    "fr": "Le délai est serré, mais le livrable reste faisable.",
+    "en": "The deadline is tight, but the work is still doable.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1994",
+    "fr": "On aligne les attentes avant d'entrer dans le détail.",
+    "en": "Let's align on expectations before we dive into details.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1995",
+    "fr": "Je bloque un créneau plutôt que de le caser entre deux tâches.",
+    "en": "I'll block a slot instead of squeezing it between tasks.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1996",
+    "fr": "Un point de quinze minutes suffit si l'ordre du jour est clair.",
+    "en": "A fifteen-minute check-in works if the agenda is clear.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1997",
+    "fr": "Je relis une dernière fois avant d'envoyer.",
+    "en": "I'll read it through once more before I send it.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1998",
+    "fr": "On peut traiter ça par écrit si personne n'est libre.",
+    "en": "We can handle this in writing if nobody is free.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p1999",
+    "fr": "Je note les actions pour que rien ne se perde.",
+    "en": "I'll note the action items so nothing gets lost.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2000",
+    "fr": "Le retour est positif, on peut passer à l'étape d'après.",
+    "en": "The feedback is good, so we can move to the following stage.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2001",
+    "fr": "Après je sais pas, y a moyen que ça passe.",
+    "en": "I mean, I dunno, there's a chance it goes through.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2002",
+    "fr": "En vrai c'est toujours mieux que rien.",
+    "en": "Honestly, it's still better than nothing.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2003",
+    "fr": "De toute façon y a un monde où il se pointe pas.",
+    "en": "Anyway, there's a world where he just doesn't show up.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2004",
+    "fr": "Limite tu viens et tu vois si t'es chaud de rester.",
+    "en": "You might as well come and see if you're down to stay.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2005",
+    "fr": "Normalement ça passe, mais c'est limite, on devrait prévoir un plan B.",
+    "en": "It should be fine, but it's tight, so we ought to have a backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2006",
+    "fr": "Après ouais, j'avoue, j'y avais pas pensé.",
+    "en": "Yeah I mean, I'll admit I hadn't thought of that.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2007",
+    "fr": "En vrai ça me dit bien, faut juste que je check l'horaire.",
+    "en": "Honestly I'm into it, I just gotta check the timing.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2008",
+    "fr": "Y a moyen que je sois en retard, je te dis ça.",
+    "en": "There's a chance I'll be late, just a heads-up.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2009",
+    "fr": "De toute façon on verra bien une fois sur place.",
+    "en": "We'll just see once we're there anyway.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2010",
+    "fr": "Limite on tente, et si ça prend pas on laisse tomber.",
+    "en": "We might as well try, and drop it if it doesn't land.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2011",
+    "fr": "Normalement je suis dispo, sauf si ça déborde.",
+    "en": "I should be free, unless it runs over.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2012",
+    "fr": "Après c'est pas grave, on se rattrape plus tard.",
+    "en": "It's no big deal though, we'll make up for it later.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2013",
+    "fr": "En vrai j'hésite, les deux se valent un peu.",
+    "en": "Honestly I'm on the fence, they're kinda the same.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2014",
+    "fr": "Y a un monde où on décale juste d'une heure.",
+    "en": "There's a world where we just push it an hour.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2015",
+    "fr": "Limite tu me dis le matin même, je m'arrange.",
+    "en": "You could even tell me that morning, I'll make it work.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2016",
+    "fr": "C'est limite pour le train, faut pas traîner.",
+    "en": "It's cutting it close for the train, so we can't hang around.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2017",
+    "fr": "Après je suis chaud, mais seulement si ça reste tranquille.",
+    "en": "I'm down, but only if it stays pretty low-key.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2018",
+    "fr": "De toute façon c'est déjà mieux que ce qu'on avait.",
+    "en": "Either way, it's already better than what we had.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2019",
+    "fr": "Normalement ça se fait, j'ai juste un doute sur le timing.",
+    "en": "It should work, I just have a doubt about the timing.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2020",
+    "fr": "En vrai t'inquiète, au pire on sort le plan B.",
+    "en": "Honestly don't sweat it, worst case we pull out the backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2021",
+    "fr": "En vrai je resterais bien chez moi, mais je peux passer.",
+    "en": "Honestly I'd rather stay in, but I can still swing by.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2022",
+    "fr": "En vrai le film peut attendre, je suis chaud pour manger d'abord.",
+    "en": "Honestly the movie can wait, I'm down to eat first.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2023",
+    "fr": "En vrai j'ai zappé de répondre, j'étais un peu partout.",
+    "en": "Honestly I forgot to reply, I was all over the place.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2024",
+    "fr": "En vrai le trajet est trop long pour juste une soirée.",
+    "en": "Honestly the drive's too long for just one evening.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2025",
+    "fr": "En vrai je suis pas au top, je te redis samedi.",
+    "en": "Honestly I'm not at my best, I'll let you know Saturday.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2026",
+    "fr": "En vrai le prix est correct si l'endroit est bien.",
+    "en": "Honestly the price is fine if the place is decent.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2027",
+    "fr": "En vrai ça me dérange pas de conduire si quelqu'un guide.",
+    "en": "Honestly I don't mind driving if someone else navigates.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2028",
+    "fr": "En vrai l'ancien peut encore marcher, ça coûte rien de regarder.",
+    "en": "Honestly the old one might still work, worth a quick look.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2029",
+    "fr": "En vrai je zapperais la partie si la pluie continue.",
+    "en": "Honestly I'd skip the game if the rain keeps up.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2030",
+    "fr": "En vrai un court appel ça le fait, pas besoin de se voir.",
+    "en": "Honestly a short call works, we don't have to meet.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2031",
+    "fr": "En vrai je suis chaud fondue, le billard peut attendre.",
+    "en": "Honestly I'm down for fondue, pool can wait.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2032",
+    "fr": "En vrai j'ai aimé ça plus que ce que je pensais.",
+    "en": "Honestly I liked it more than I expected to.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2033",
+    "fr": "En vrai vous pouvez faire sans moi si je vous bloque.",
+    "en": "Honestly you can do it without me if I'm holding you up.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2034",
+    "fr": "En vrai la deuxième option est plus sûre pour le coup.",
+    "en": "Honestly the second option feels safer for this one.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2035",
+    "fr": "En vrai j'ai vu que l'extrait, pas le truc entier.",
+    "en": "Honestly I only saw the clip, not the whole thing.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2036",
+    "fr": "En vrai partir après le dîner, ça m'arrange mieux.",
+    "en": "Honestly leaving after dinner works better for me.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2037",
+    "fr": "En vrai je peux ramener un truc simple si personne a le temps.",
+    "en": "Honestly I can bring something easy if nobody has time.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2038",
+    "fr": "En vrai en basse qualité ça devrait tourner sur mon portable.",
+    "en": "Honestly low settings should run fine on my laptop.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2039",
+    "fr": "En vrai je préfère que tu choisisses, moi ça me va.",
+    "en": "Honestly I'd rather you pick, I'm good either way.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2040",
+    "fr": "En vrai dormir jusqu'à midi avant une partie de soir, ça passe.",
+    "en": "Honestly sleeping till noon before a night game seems fair.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2041",
+    "fr": "En vrai j'ai flippé une minute, mais là ça va.",
+    "en": "Honestly I got scared for a minute, but I'm fine now.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2042",
+    "fr": "En vrai le buffet était top, j'y retournerais bien.",
+    "en": "Honestly the buffet was great, I'd go back sometime.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2043",
+    "fr": "En vrai je force pas si t'es pas chaud.",
+    "en": "Honestly I won't push it if you're not feeling it.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2044",
+    "fr": "En vrai un plan B me rassurerait un peu.",
+    "en": "Honestly a backup plan would calm me down a bit.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2045",
+    "fr": "En vrai j'ai loupé la mise à jour, je suis un peu perdu.",
+    "en": "Honestly I missed the update and now I'm kinda lost.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2046",
+    "fr": "En vrai le week-end chez mes parents me tente plus.",
+    "en": "Honestly a weekend at my parents' sounds better to me.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2047",
+    "fr": "De toute façon y a un monde où le resto est complet.",
+    "en": "Anyway, there's a world where the restaurant's already full.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2048",
+    "fr": "Y a un monde où j'arrive après le début du film.",
+    "en": "There's a world where I get there after the movie starts.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2049",
+    "fr": "Y a un monde où la voiture est pas prête demain.",
+    "en": "There's a world where the car isn't ready tomorrow.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2050",
+    "fr": "Y a un monde où on trouve plus de places pour le match.",
+    "en": "There's a world where we can't find seats for the match.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2051",
+    "fr": "Y a un monde où je reste chez mes parents dimanche.",
+    "en": "There's a world where I just stay at my parents' on Sunday.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2052",
+    "fr": "Y a un monde où la pluie nous bloque à la maison.",
+    "en": "There's a world where the rain keeps us home.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2053",
+    "fr": "Y a un monde où la mise à jour casse un truc.",
+    "en": "There's a world where the update breaks something.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2054",
+    "fr": "Y a un monde où on se dit ça au dernier moment.",
+    "en": "There's a world where we only decide at the last minute.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2055",
+    "fr": "Y a un monde où je rate le train de peu.",
+    "en": "There's a world where I miss the train by a little.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2056",
+    "fr": "Y a un monde où personne est chaud pour sortir.",
+    "en": "There's a world where nobody's down to go out.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2057",
+    "fr": "Y a un monde où le devis monte un peu trop.",
+    "en": "There's a world where the quote comes in kinda high.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2058",
+    "fr": "Y a un monde où je finis les exams et je m'écroule.",
+    "en": "There's a world where I finish exams and just crash.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2059",
+    "fr": "Y a un monde où on rate la cuisine et on commande.",
+    "en": "There's a world where we mess up cooking and just order.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2060",
+    "fr": "Y a un monde où je peux pas monter ce week-end.",
+    "en": "There's a world where I can't come up this weekend.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2061",
+    "fr": "Y a un monde où le lien tombe dans les spams.",
+    "en": "There's a world where the link lands in spam.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2062",
+    "fr": "Y a un monde où on se pose au café et on bouge plus.",
+    "en": "There's a world where we sit at the café and never leave.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2063",
+    "fr": "Après y a un monde où ça se fait quand même.",
+    "en": "I mean, there's a world where it still works out.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2064",
+    "fr": "Après je sais pas, y a moyen que je passe après le boulot.",
+    "en": "I mean, I dunno, there's a chance I swing by after work.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2065",
+    "fr": "Y a moyen qu'on ait encore une table si on se dépêche.",
+    "en": "There's a chance we still get a table if we hurry.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2066",
+    "fr": "Y a moyen que le train soit à l'heure pour une fois.",
+    "en": "There's a chance the train's actually on time for once.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2067",
+    "fr": "Y a moyen que je sois là pour la deuxième mi-temps.",
+    "en": "There's a chance I make it for the second half.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2068",
+    "fr": "Y a moyen que ça tourne sur mon ordi en qualité basse.",
+    "en": "There's a chance it runs on my laptop at low settings.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2069",
+    "fr": "Y a moyen que la maison de mes parents soit libre.",
+    "en": "There's a chance my parents' house is free.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2070",
+    "fr": "Y a moyen que je pose vendredi si le rush retombe.",
+    "en": "There's a chance I take Friday off if the rush dies down.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2071",
+    "fr": "Y a moyen qu'on se cale ça en début de soirée.",
+    "en": "There's a chance we lock this in for early evening.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2072",
+    "fr": "Y a moyen que je ramène le dessert, je te confirme.",
+    "en": "There's a chance I bring dessert, I'll confirm.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2073",
+    "fr": "Y a moyen que la pluie s'arrête avant qu'on parte.",
+    "en": "There's a chance the rain stops before we head out.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2074",
+    "fr": "Y a moyen que le garagiste me rende la voiture demain.",
+    "en": "There's a chance the mechanic has the car ready tomorrow.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2075",
+    "fr": "Y a moyen que je révise mieux en visio avec toi.",
+    "en": "There's a chance I study better on a call with you.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2076",
+    "fr": "Après je sais pas, y a moyen que ce soit déjà complet.",
+    "en": "I mean, I dunno, there's a chance it's already booked up.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2077",
+    "fr": "Y a moyen que je reste qu'une heure, je te dis ça.",
+    "en": "There's a chance I only stay an hour, just a heads-up.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2078",
+    "fr": "Y a moyen qu'on fasse le film et le resto le même soir.",
+    "en": "There's a chance we do the movie and dinner the same night.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2079",
+    "fr": "Y a moyen que j'aie fini la réunion vers sept heures et demie.",
+    "en": "There's a chance I'm done with the meeting around seven thirty.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2080",
+    "fr": "Y a moyen que le colis soit déjà au point de retrait.",
+    "en": "There's a chance the package is already at the pickup spot.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2081",
+    "fr": "Y a moyen que je dorme dans le train, je suis crevé.",
+    "en": "There's a chance I sleep on the train, I'm wiped.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2082",
+    "fr": "Y a moyen que ça passe bien si on prévoit large.",
+    "en": "There's a chance it goes smoothly if we leave some margin.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2083",
+    "fr": "Limite on prend la table et les autres nous rejoignent.",
+    "en": "We might as well grab the table and let the others join.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2084",
+    "fr": "Limite tu passes en coup de vent si t'es dans le coin.",
+    "en": "You might as well swing by quick if you're in the area.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2085",
+    "fr": "Limite je prends le train, la route me saoule un peu.",
+    "en": "I might as well take the train, the drive's getting old.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2086",
+    "fr": "Limite on commande, j'ai pas l'énergie de cuisiner.",
+    "en": "We might as well order, I don't have the energy to cook.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2087",
+    "fr": "Limite tu m'envoies l'adresse, je me débrouille.",
+    "en": "You might as well just send the address, I'll figure it out.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2088",
+    "fr": "Limite on lance la partie, les autres arriveront.",
+    "en": "We might as well start the game, the others will show.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2089",
+    "fr": "Limite je mets les vidéos de côté et je pousse la musique.",
+    "en": "I might as well pause the videos and push the music.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2090",
+    "fr": "Limite on se fait un escape game si le resto saute.",
+    "en": "We might as well do an escape room if dinner falls through.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2091",
+    "fr": "Limite tu regardes en magasin, les photos trompent.",
+    "en": "You might as well check it in store, photos can lie.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2092",
+    "fr": "Limite je redémarre, des fois ça règle le truc.",
+    "en": "I might as well restart it, sometimes that fixes the thing.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2093",
+    "fr": "Limite on décale à dimanche, samedi la route est longue.",
+    "en": "We might as well move it to Sunday, Saturday's drive is long.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2094",
+    "fr": "Limite je prends des softs, je conduis après.",
+    "en": "I might as well stick to soft drinks, I'm driving after.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2095",
+    "fr": "Limite tu me dis non maintenant, je m'organise autrement.",
+    "en": "You could even say no now, I'll plan around it.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2096",
+    "fr": "Limite on sort le plan B avant d'être coincés.",
+    "en": "We might as well pull the backup before we're stuck.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2097",
+    "fr": "Limite je reste dormir, repartir ce soir c'est limite.",
+    "en": "I might as well stay over, leaving tonight is cutting it close.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2098",
+    "fr": "Limite on zappe l'entrée, le dessert compte plus.",
+    "en": "We might as well skip the starter, dessert matters more.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2099",
+    "fr": "Limite je révise à la bibliothèque, chez moi je décroche.",
+    "en": "I might as well study at the library, I zone out at home.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2100",
+    "fr": "Limite tu viens au feu d'artifice et tu vois après.",
+    "en": "You might as well come to the fireworks and decide after.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2101",
+    "fr": "Normalement ça passe, mais c'est limite pour le dernier métro.",
+    "en": "It should be fine, but it's tight for the last subway.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2102",
+    "fr": "Normalement je suis dispo le soir, sauf si la réunion déborde.",
+    "en": "I should be free at night, unless the meeting runs over.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2103",
+    "fr": "Normalement le trajet se fait en vingt minutes, sauf s'il pleut.",
+    "en": "The ride should take twenty minutes, unless it's raining.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2104",
+    "fr": "Normalement j'ai la maison, faut juste que je demande.",
+    "en": "I should have the house, I just gotta ask.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2105",
+    "fr": "Normalement ça tourne, j'ai juste un doute sur la mise à jour.",
+    "en": "It should run, I just have a doubt about the update.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2106",
+    "fr": "Normalement on est assez pour une table, je confirme demain.",
+    "en": "There should be enough of us for a table, I'll confirm tomorrow.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2107",
+    "fr": "Normalement je ramène des feuilletés, sauf si quelqu'un gère déjà.",
+    "en": "I should bring the pastries, unless someone's already on it.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2108",
+    "fr": "Normalement je suis chaud, faut juste que ça reste chill.",
+    "en": "I should be down, it just has to stay chill.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2109",
+    "fr": "Normalement le devis arrive cet après-midi, je te le transmets.",
+    "en": "The quote should land this afternoon, I'll pass it on.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2110",
+    "fr": "Normalement ça se fait en visio, j'ai cours juste avant.",
+    "en": "It should work on a video call, I've got class right before.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2111",
+    "fr": "Normalement je pars vers huit heures, c'est un peu juste.",
+    "en": "I should leave around eight, it's a bit tight.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2112",
+    "fr": "Normalement y a de la place, mais on devrait quand même réserver.",
+    "en": "There should be room, but we ought to book anyway.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2113",
+    "fr": "Normalement je dors dans le train et j'arrive frais.",
+    "en": "I should sleep on the train and get there fresh.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2114",
+    "fr": "Normalement le retour se fait, sauf si le brouillard tombe.",
+    "en": "The way back should be fine, unless the fog rolls in.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2115",
+    "fr": "Normalement je te réponds ce soir, là je suis dans le rush.",
+    "en": "I should reply tonight, I'm in a rush right now.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2116",
+    "fr": "Normalement c'est jouable, j'ai juste peur que ça empiète.",
+    "en": "It should be doable, I'm just scared it'll spill over.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2117",
+    "fr": "Normalement la promo tient jusqu'à ce soir, à vérifier.",
+    "en": "The sale should last through tonight, worth checking.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2118",
+    "fr": "Normalement je garde dimanche pour mes parents.",
+    "en": "I should keep Sunday for my parents.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2119",
+    "fr": "De toute façon on verra bien en arrivant.",
+    "en": "We'll just see when we get there anyway.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2120",
+    "fr": "De toute façon c'est déjà mieux que d'annuler.",
+    "en": "Either way, it's already better than canceling.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2121",
+    "fr": "De toute façon je te redis dans la journée.",
+    "en": "I'll get back to you later today anyway.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2122",
+    "fr": "De toute façon c'est pas la fin du monde si on décale.",
+    "en": "It's not the end of the world if we push it anyway.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2123",
+    "fr": "De toute façon je m'adapte, tu me dis l'heure.",
+    "en": "I'll work around it anyway, just tell me the time.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2124",
+    "fr": "De toute façon le plan B est déjà dans un coin de la tête.",
+    "en": "The backup's already sitting there anyway.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2125",
+    "fr": "De toute façon je suis crevé, une soirée courte me va.",
+    "en": "I'm wiped anyway, a short night works for me.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2126",
+    "fr": "De toute façon on perd rien à tenter.",
+    "en": "We lose nothing by trying anyway.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2127",
+    "fr": "De toute façon je passe après la réunion.",
+    "en": "I'll come by after the meeting anyway.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2128",
+    "fr": "De toute façon le match se regarde mieux à plusieurs.",
+    "en": "The match is better with a few people anyway.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2129",
+    "fr": "De toute façon je prends des softs, je repars en voiture.",
+    "en": "I'll stick to soft drinks anyway, I'm driving back.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2130",
+    "fr": "De toute façon s'il pleut on se pose à l'intérieur.",
+    "en": "If it rains we'll just stay inside anyway.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2131",
+    "fr": "De toute façon je note ça, on se cale plus tard.",
+    "en": "I'll write it down anyway, we'll lock it in later.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2132",
+    "fr": "De toute façon l'ancien ordi peut dépanner.",
+    "en": "The old computer can cover us anyway.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2133",
+    "fr": "De toute façon je suis en Bretagne ce coup-ci.",
+    "en": "I'll be in Brittany for this one anyway.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2134",
+    "fr": "De toute façon même un petit truc c'est mieux que rien.",
+    "en": "Even something small is better than nothing anyway.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2135",
+    "fr": "De toute façon vous me manquez, on trouvera un trou.",
+    "en": "I miss you guys anyway, we'll find a slot.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2136",
+    "fr": "De toute façon je laisse un double des clés au cas où.",
+    "en": "I'll leave a spare key anyway, just in case.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2137",
+    "fr": "Au pire je reste une heure et je file.",
+    "en": "Worst case I stay an hour and then head out.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2138",
+    "fr": "Au pire on commande des pizzas et c'est très bien.",
+    "en": "Worst case we order pizza and that's totally fine.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2139",
+    "fr": "Au pire je me connecte de chez moi.",
+    "en": "Worst case I just log on from home.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2140",
+    "fr": "Au pire on se retrouve devant la gare.",
+    "en": "Worst case we meet in front of the station.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2141",
+    "fr": "Au pire je rate le début, vous m'attendez pas.",
+    "en": "Worst case I miss the start, don't wait on me.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2142",
+    "fr": "Au pire je dors sur place et je repars demain.",
+    "en": "Worst case I sleep there and leave tomorrow.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2143",
+    "fr": "Au pire on fait l'escape game un autre soir.",
+    "en": "Worst case we do the escape room another night.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2144",
+    "fr": "Au pire je prends le modèle basique, c'est pas grave.",
+    "en": "Worst case I get the basic one, no big deal.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2145",
+    "fr": "Au pire je pose une journée et je récupère après.",
+    "en": "Worst case I take a day and make it up later.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2146",
+    "fr": "Au pire mes parents me déposent, je leur demande.",
+    "en": "Worst case my parents drop me off, I'll ask them.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2147",
+    "fr": "Au pire on se parle demain, là c'est le rush.",
+    "en": "Worst case we talk tomorrow, it's a rush right now.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2148",
+    "fr": "Au pire la visio coupe, on reprend au téléphone.",
+    "en": "Worst case the video drops, we switch to the phone.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2149",
+    "fr": "Au pire je ramène que le dessert, le reste suivra.",
+    "en": "Worst case I only bring dessert, the rest can follow.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2150",
+    "fr": "Au pire on décale d'une semaine, c'est pas bien grave.",
+    "en": "Worst case we push it a week, it's not a big deal.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2151",
+    "fr": "Au pire je regarde le match en replay.",
+    "en": "Worst case I watch the match on replay.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2152",
+    "fr": "Au pire tu me redis le matin, je m'arrange.",
+    "en": "Worst case you tell me in the morning, I'll make it work.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2153",
+    "fr": "Au pire on marche dix minutes, se garer ici c'est mort.",
+    "en": "Worst case we walk ten minutes, parking here is hopeless.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2154",
+    "fr": "En vrai t'inquiète, au pire je viens plus tard.",
+    "en": "Honestly don't sweat it, worst case I come later.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2155",
+    "fr": "Après je sais pas, peut-être que c'est mieux en plus petit.",
+    "en": "I mean, I dunno, maybe it's better if it's smaller.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2156",
+    "fr": "Après ouais, j'avoue que le timing est relou.",
+    "en": "Yeah I mean, I'll admit the timing's annoying.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2157",
+    "fr": "Après c'est pas grave si tu viens qu'au dessert.",
+    "en": "It's no big deal though if you only come for dessert.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2158",
+    "fr": "Après je suis chaud, mais pas avant huit heures.",
+    "en": "I'm down, just not before eight.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2159",
+    "fr": "Après moi ça me va, faut voir pour les autres.",
+    "en": "Works for me though, we still gotta check with the others.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2160",
+    "fr": "Après on peut enchaîner après le film si on est encore chauds.",
+    "en": "I mean, we can keep going after the movie if we're still down.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2161",
+    "fr": "Après je veux pas vous bloquer, faites sans moi si besoin.",
+    "en": "I mean, I don't wanna hold you up, go without me if you need.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2162",
+    "fr": "Après c'est stylé, j'aurais pas parié dessus.",
+    "en": "It's pretty cool though, I wouldn't have bet on it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2163",
+    "fr": "Après je suis pas contre, j'ai juste un doute.",
+    "en": "I'm not against it though, I just have a doubt.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2164",
+    "fr": "Après bon, on verra le jour même.",
+    "en": "We'll just see on the day though.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2165",
+    "fr": "Après je te cache pas, j'ai un peu la flemme.",
+    "en": "I won't lie though, I kinda can't be bothered.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2166",
+    "fr": "Après les deux se valent, c'est toi qui vois.",
+    "en": "They're kinda the same though, it's your call.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2167",
+    "fr": "Après je peux me libérer, faut juste me prévenir tôt.",
+    "en": "I can free myself up though, just warn me early.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2168",
+    "fr": "Après le trajet sous la pluie m'a un peu achevé.",
+    "en": "That rainy drive kinda finished me off though.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2169",
+    "fr": "Après j'ai bien aimé, même si je m'y attendais pas.",
+    "en": "I did like it though, even if I didn't expect it.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2170",
+    "fr": "Après c'est jouable, mais faut pas traîner.",
+    "en": "It's doable though, but we can't hang around.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2171",
+    "fr": "Après je suis partant pour l'escape game, le resto on verra.",
+    "en": "I'm in for the escape room though, dinner we can see.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2172",
+    "fr": "Après un week-end sur deux chez mes parents, ça me va.",
+    "en": "Every other weekend at my parents' works for me though.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2173",
+    "fr": "Après j'avoue, depuis la mise à jour je retrouve plus rien.",
+    "en": "I'll admit though, since the update I can't find anything.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2174",
+    "fr": "Après je prends le train, j'ai pas envie de conduire de nuit.",
+    "en": "I'll take the train though, I don't wanna drive at night.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2175",
+    "fr": "Après c'est toujours mieux de prévenir que d'annuler sur place.",
+    "en": "It's still better to warn people than cancel once you're there.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2176",
+    "fr": "Après ouais, le buffet me tente plus que le resto chic.",
+    "en": "Yeah I mean, the buffet tempts me more than the fancy place.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2177",
+    "fr": "Après je suis chaud musique ce soir, les jeux on verra.",
+    "en": "I'm down for music tonight though, games we can see.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2178",
+    "fr": "Après même si je suis en retard, comptez-moi.",
+    "en": "Even if I'm late though, count me in.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2179",
+    "fr": "Après je sais pas trop, les avis sont bons mais bon.",
+    "en": "I mean, I dunno, the reviews are good, but still.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2180",
+    "fr": "C'est limite pour arriver avant le début.",
+    "en": "It's cutting it close to get there before the start.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2181",
+    "fr": "C'est limite niveau sommeil, je viens quand même.",
+    "en": "Sleep's kinda tight, but I'm still gonna come.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2182",
+    "fr": "C'est limite de repartir ce soir avec cette pluie.",
+    "en": "It's borderline heading back tonight with this rain.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2183",
+    "fr": "C'est limite sur le prix, mais l'endroit a l'air bien.",
+    "en": "It's borderline on price, but the place looks good.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2184",
+    "fr": "C'est limite pour réviser tout ça avant demain.",
+    "en": "It's tight to review all that before tomorrow.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2185",
+    "fr": "C'est limite, on devrait quand même garder un plan B.",
+    "en": "It's tight, so we should still keep a backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2186",
+    "fr": "C'est limite côté timing, avec la réunion juste avant.",
+    "en": "The timing's tight with the meeting right before.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2187",
+    "fr": "C'est limite de cuisiner pour tout le monde ce soir.",
+    "en": "It's a stretch to cook for everyone tonight.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2188",
+    "fr": "C'est limite, mon ordi tient mais seulement en qualité basse.",
+    "en": "It's tight, my laptop can handle it but only on low.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2189",
+    "fr": "C'est limite pour le dernier bus, faut pas traîner.",
+    "en": "It's cutting it close for the last bus, so we can't linger.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2190",
+    "fr": "C'est limite, j'ai le dos en vrac après la route.",
+    "en": "It's borderline, my back's wrecked after that drive.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p2191",
+    "fr": "C'est limite question place, on devrait réserver.",
+    "en": "Space is tight, so we should probably book.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2192",
+    "fr": "C'est limite, je tousse un peu, je viens quand même.",
+    "en": "It's borderline, I'm coughing a bit, but I'll still come.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2193",
+    "fr": "C'est limite de tout caser le même week-end.",
+    "en": "It's a stretch to fit all of that in one weekend.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2194",
+    "fr": "Je suis chaud pour ce soir, si la partie se fait.",
+    "en": "I'm down for tonight, if the game actually happens.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2195",
+    "fr": "Je suis chaud fondue puis billard, par contre pas trop tard.",
+    "en": "I'm down for fondue then pool, just not too late.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2196",
+    "fr": "Je suis chaud de passer au feu d'artifice.",
+    "en": "I'm down to swing by the fireworks.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2197",
+    "fr": "Je suis chaud, mais seulement si on se cale une heure précise.",
+    "en": "I'm down, but only if we lock in an actual time.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2198",
+    "fr": "Par contre je suis chaud pour dimanche, samedi c'est mort.",
+    "en": "I'm down for Sunday though, Saturday's a no.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2199",
+    "fr": "Je suis chaud de ramener des feuilletés ou un dessert.",
+    "en": "I'm down to bring pastries or a dessert.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2200",
+    "fr": "Je suis chaud d'essayer le jeu, je le connais pas du tout.",
+    "en": "I'm down to try the game, I don't know it at all.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2201",
+    "fr": "Je suis chaud de regarder le match, si on a des places.",
+    "en": "I'm down to watch the match if we can get seats.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2202",
+    "fr": "Je suis chaud, faut juste que je finisse un truc avant.",
+    "en": "I'm down, I just gotta finish something first.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2203",
+    "fr": "Je suis pas ultra chaud, mais je viens quand même.",
+    "en": "I'm not super down, but I'll come anyway.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2204",
+    "fr": "T'es chaud de rester manger, ou tu files après ?",
+    "en": "Are you down to stay for food, or are you heading out?",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2205",
+    "fr": "Je suis chaud pour la visio, par contre pas trop long.",
+    "en": "I'm down for the review call, just not a long one.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2206",
+    "fr": "Je serais chaud d'un week-end en Bretagne si ça se cale.",
+    "en": "I'd be down for a weekend in Brittany if we can lock it.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2207",
+    "fr": "Je suis chaud de cuisiner, par contre je sais pas encore quoi.",
+    "en": "I'm down to cook, I just don't know what yet.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2208",
+    "fr": "Je suis chaud, au pire je repars tôt.",
+    "en": "I'm down, worst case I head out early.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2209",
+    "fr": "Franchement je suis chaud, ça me fait plaisir que vous ayez pensé à moi.",
+    "en": "Honestly I'm down, it means a lot that you thought of me.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2210",
+    "fr": "Je suis chaud de venir, c'est juste le trajet qui me freine.",
+    "en": "I'm down to come, it's just the drive that's slowing me.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2211",
+    "fr": "T'inquiète, c'est vraiment pas si stressant.",
+    "en": "Don't sweat it, it's really not that stressful.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2212",
+    "fr": "T'inquiète pour le retard, je m'arrange.",
+    "en": "Don't sweat the delay, I'll work around it.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2213",
+    "fr": "T'inquiète, au pire on a déjà un autre plan.",
+    "en": "Don't sweat it, worst case we already have another plan.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2214",
+    "fr": "T'inquiète si tu fais des fautes, on s'en fiche un peu.",
+    "en": "Don't sweat the mistakes, we really don't mind.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2215",
+    "fr": "T'inquiète, je confirme demain matin.",
+    "en": "Don't sweat it, I'll confirm tomorrow morning.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2216",
+    "fr": "T'inquiète, même si je suis en retard je viens.",
+    "en": "Don't sweat it, even if I'm late I'll still come.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2217",
+    "fr": "T'inquiète pour le plat, un truc simple ça suffit largement.",
+    "en": "Don't sweat the food, something simple is plenty.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2218",
+    "fr": "T'inquiète, je retrouve le document et je te l'envoie.",
+    "en": "Don't sweat it, I'll find the document and send it over.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2219",
+    "fr": "T'inquiète, on se capte plus tard, là c'est le rush.",
+    "en": "Don't sweat it, we'll catch up later, it's a rush right now.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2220",
+    "fr": "T'inquiète, c'est toujours mieux que rien du tout.",
+    "en": "Don't sweat it, it's still better than nothing at all.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2221",
+    "fr": "J'avoue que je m'y attendais pas du tout.",
+    "en": "I'll admit I really wasn't expecting that.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2222",
+    "fr": "J'avoue, j'ai la flemme, mais je viens quand même.",
+    "en": "I'll admit I can't be bothered, but I'll come anyway.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2223",
+    "fr": "J'avoue que le trajet m'a achevé.",
+    "en": "I'll admit that drive finished me off.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2224",
+    "fr": "J'avoue, j'ai zappé de répondre, désolé.",
+    "en": "I'll admit I forgot to reply, sorry about that.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2225",
+    "fr": "J'avoue que les deux options me vont.",
+    "en": "I'll admit both options work for me.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2226",
+    "fr": "J'avoue, j'ai flippé pour pas grand-chose.",
+    "en": "I'll admit I freaked out over nothing much.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2227",
+    "fr": "J'avoue que je connaissais pas ce morceau.",
+    "en": "I'll admit I didn't know that track.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2228",
+    "fr": "J'avoue, je suis mitigé sur la fin.",
+    "en": "I'll admit I'm mixed on the ending.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2229",
+    "fr": "J'avoue que sans plan B je suis pas serein.",
+    "en": "I'll admit I'm not calm without a backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2230",
+    "fr": "J'avoue, j'ai trop mangé, le dessert va être dur.",
+    "en": "I'll admit I ate too much, dessert's gonna be tough.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2231",
+    "fr": "J'avoue que je préfère qu'on se voie tous ensemble.",
+    "en": "I'll admit I'd rather we all get together.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2232",
+    "fr": "J'avoue, mon portable rame, faut que je ferme des onglets.",
+    "en": "I'll admit my laptop's dragging, I gotta close some tabs.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2233",
+    "fr": "On verra bien sur place comment on s'organise.",
+    "en": "We'll see on the spot how we sort it out.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2234",
+    "fr": "On verra demain matin si je suis en forme.",
+    "en": "We'll see tomorrow morning if I'm feeling up to it.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2235",
+    "fr": "On avisera une fois que tout le monde a répondu.",
+    "en": "We'll play it by ear once everyone's replied.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2236",
+    "fr": "On verra si le prix du refuge nous va.",
+    "en": "We'll see if the cabin price works for us.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2237",
+    "fr": "On verra le jour même pour l'heure, te prends pas la tête.",
+    "en": "We'll see on the day for the time, don't overthink it.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2238",
+    "fr": "On verra bien si la pluie se calme.",
+    "en": "We'll just see if the rain calms down.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2239",
+    "fr": "On avisera pour le dessert une fois là-bas.",
+    "en": "We'll figure out dessert once we're there.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2240",
+    "fr": "On verra si la manette marche encore.",
+    "en": "We'll see if the controller still works.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2241",
+    "fr": "On verra, y a moyen que je sois en retard.",
+    "en": "We'll see, there's a chance I'll be late.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2242",
+    "fr": "On avisera, au pire on a le plan B.",
+    "en": "We'll play it by ear, worst case we've got the backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2243",
+    "fr": "On verra si mes parents sont là dimanche.",
+    "en": "We'll see if my parents are around on Sunday.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2244",
+    "fr": "On verra bien, de toute façon c'est pas bloquant.",
+    "en": "We'll see, it's not a deal-breaker anyway.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2245",
+    "fr": "On verra à la bibliothèque si on avance vraiment.",
+    "en": "We'll see at the library if we actually get anything done.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2246",
+    "fr": "On verra le score et on avisera pour la suite.",
+    "en": "We'll see the score and figure out the rest after.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2247",
+    "fr": "Par contre je suis pas dispo samedi, y a une cousinade.",
+    "en": "I'm not free Saturday though, there's a family thing.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2248",
+    "fr": "Par contre dix-huit heures c'est tôt, je vous rejoins quand même.",
+    "en": "Six is early though, I'll still come join you.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2249",
+    "fr": "Par contre je conduis, je prends que des softs.",
+    "en": "I'm driving though, so I'll only have soft drinks.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2250",
+    "fr": "Par contre le trajet est long, je dormirai peut-être en route.",
+    "en": "The drive's long though, I might nap on the way.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2251",
+    "fr": "Par contre j'ai cours juste avant, je risque d'être juste.",
+    "en": "I've got class right before though, so I might be tight on time.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2252",
+    "fr": "Par contre s'il pleut, on décale sans se prendre la tête.",
+    "en": "If it rains though, we'll move it and not stress.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2253",
+    "fr": "Par contre je veux le lien, le mail est peut-être dans les spams.",
+    "en": "I do want the link though, the email might be in spam.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2254",
+    "fr": "Par contre on devrait réserver, y a un monde où c'est complet.",
+    "en": "We should book though, there's a world where it's full.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2255",
+    "fr": "Par contre je reste pas trop tard, je suis crevé.",
+    "en": "I won't stay too late though, I'm wiped.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2256",
+    "fr": "Par contre le modèle basique me va si le prix grimpe.",
+    "en": "The basic model is fine by me though if the price climbs.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2257",
+    "fr": "Par contre je te rappelle après la réunion, pas avant.",
+    "en": "I'll call you after the meeting though, not before.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2258",
+    "fr": "Par contre envoie l'adresse, je sais pas exactement où c'est.",
+    "en": "Send the address though, I don't know exactly where it is.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2259",
+    "fr": "Par contre je suis chaud, faut juste que ça reste tranquille.",
+    "en": "I'm down though, it just has to stay low-key.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2260",
+    "fr": "Par contre j'ai mal au dos, je porterai pas grand-chose.",
+    "en": "My back hurts though, I won't carry much.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p2261",
+    "fr": "Du coup on se dit vingt heures trente devant le resto ?",
+    "en": "So are we saying eight thirty outside the restaurant?",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2262",
+    "fr": "Du coup je ramène le dessert, c'est ça ?",
+    "en": "So I'm bringing dessert, is that the plan?",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2263",
+    "fr": "Du coup y a moyen que je vienne que dimanche.",
+    "en": "So there's a chance I only come on Sunday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2264",
+    "fr": "Du coup on fait un sondage, ce sera plus simple.",
+    "en": "So let's just run a poll, it'll be simpler.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2265",
+    "fr": "Du coup je prends le train, la route me tente pas.",
+    "en": "So I'll take the train, I'm not feeling the drive.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2266",
+    "fr": "Du coup t'inquiète, on se rattrape plus tard.",
+    "en": "So don't sweat it, we'll make up for it later.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2267",
+    "fr": "Du coup je suis chaud, vous me comptez.",
+    "en": "So I'm down, count me in.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2268",
+    "fr": "Du coup le plan B c'est le café si le resto est plein.",
+    "en": "So the backup is the café if the restaurant's full.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2269",
+    "fr": "Du coup je te confirme demain, là je sais pas encore.",
+    "en": "So I'll confirm tomorrow, I don't know yet.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2270",
+    "fr": "Du coup on se pose chez moi si la maison est libre.",
+    "en": "So we can hang at mine if the house is free.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2271",
+    "fr": "Du coup je pousse la musique et je mets les vidéos en pause.",
+    "en": "So I'll push the music and pause the videos for now.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2272",
+    "fr": "Du coup même en basse qualité je tente sur le portable.",
+    "en": "So I'll try it on my laptop even at low settings.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2273",
+    "fr": "Du coup on verra sur place, inutile de trop prévoir.",
+    "en": "So we'll see once we're there, no need to overplan.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2274",
+    "fr": "Du coup je suis en Bretagne, je pourrai pas monter.",
+    "en": "So I'll be in Brittany, I won't be able to come up.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2275",
+    "fr": "Je te redis ça demain, quand j'y verrai plus clair.",
+    "en": "I'll get back to you tomorrow, once it's clearer.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2276",
+    "fr": "Je te confirme dans l'après-midi, faut que je check un truc.",
+    "en": "I'll confirm this afternoon, I gotta check something.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2277",
+    "fr": "Je te redis samedi matin si je suis en forme.",
+    "en": "I'll let you know Saturday morning if I'm up for it.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2278",
+    "fr": "Je te confirme l'heure dès que la réunion est calée.",
+    "en": "I'll confirm the time once the meeting's locked in.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2279",
+    "fr": "Je te redis si mes parents libèrent la maison.",
+    "en": "I'll let you know if my parents free up the house.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2280",
+    "fr": "Je te confirme pour les feuilletés, normalement c'est bon.",
+    "en": "I'll confirm the pastries, it should be fine.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2281",
+    "fr": "Je te redis si le train est dans les temps.",
+    "en": "I'll let you know if the train's running on time.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2282",
+    "fr": "Je te confirme que je suis chaud, par contre pas trop tard.",
+    "en": "I'll confirm I'm down, just not too late.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2283",
+    "fr": "Je te redis si le devis est raisonnable.",
+    "en": "I'll let you know if the quote's reasonable.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2284",
+    "fr": "Je te confirme après avoir vu la météo.",
+    "en": "I'll confirm after I've seen the forecast.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2285",
+    "fr": "Je te redis si mon ordi arrive à le lancer.",
+    "en": "I'll let you know if my laptop can actually run it.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2286",
+    "fr": "Je te confirme, au pire je viens que pour le début.",
+    "en": "I'll confirm, worst case I only come for the start.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2287",
+    "fr": "Ça me dit bien, faut juste voir l'horaire.",
+    "en": "I'm into it, we just gotta sort the timing.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2288",
+    "fr": "Ça me dit moyen, y a un monde où je suis trop crevé.",
+    "en": "I'm kinda into it, there's a world where I'm too wiped.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2289",
+    "fr": "Ça me dit de tester, au pire on laisse tomber.",
+    "en": "I'm into trying it, worst case we drop it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2290",
+    "fr": "Ça me dit plus le buffet que le truc chic.",
+    "en": "I'm more into the buffet than the fancy spot.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2291",
+    "fr": "Ça me dit une soirée tranquille.",
+    "en": "I'm into keeping the night pretty low-key.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2292",
+    "fr": "Ça me dit, par contre je veux pas que ça déborde.",
+    "en": "I'm into it, I just don't want it to run over.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2293",
+    "fr": "Ça me dit de regarder le match ensemble.",
+    "en": "I'm into watching the match together.",
+    "tags": [
+      "hobbies"
+    ]
+  },
+  {
+    "id": "p2294",
+    "fr": "Ça me dit pas trop de conduire sous la pluie.",
+    "en": "I'm not really into driving in the rain.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2295",
+    "fr": "Ça me dit de passer après le film, on verra.",
+    "en": "I'm into coming after the movie, we'll see.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2296",
+    "fr": "Ça me dit bien de réviser ensemble, tout seul je décroche.",
+    "en": "I'm into studying together, I zone out on my own.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2297",
+    "fr": "Franchement c'est déjà pas mal.",
+    "en": "Honestly that's already pretty good.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2298",
+    "fr": "Franchement on perd rien à essayer.",
+    "en": "Honestly there's no harm in trying.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2299",
+    "fr": "Franchement je préfère qu'on fasse simple.",
+    "en": "Honestly I'd rather we keep it simple.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2300",
+    "fr": "Franchement le prix est correct pour ce que c'est.",
+    "en": "Honestly the price is fair for what it is.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2301",
+    "fr": "Franchement j'ai eu peur pour rien.",
+    "en": "Honestly I got scared over nothing.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2302",
+    "fr": "Franchement le dernier épisode m'a laissé sur ma faim.",
+    "en": "Honestly the last episode left me wanting more.",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "p2303",
+    "fr": "Franchement se garer là le week-end, c'est mort.",
+    "en": "Honestly parking there on a weekend is hopeless.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2304",
+    "fr": "Franchement une douche après la route, ça change tout.",
+    "en": "Honestly a shower after the drive changes everything.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2305",
+    "fr": "Franchement je suis content que ça se passe bien pour toi.",
+    "en": "Honestly I'm glad things are going well for you.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2306",
+    "fr": "Franchement même raté, c'est mieux que de pas avoir essayé.",
+    "en": "Honestly even a miss is better than not trying.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2307",
+    "fr": "Je te cache pas, j'hésite encore.",
+    "en": "I won't lie, I'm still on the fence.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2308",
+    "fr": "Je te cache pas, le timing est relou.",
+    "en": "I won't lie, the timing's annoying.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2309",
+    "fr": "Je te cache pas, j'ai un peu le seum de pas être là.",
+    "en": "I won't lie, I'm bummed I can't be there.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2310",
+    "fr": "Je te cache pas, j'ai zappé, désolé.",
+    "en": "I won't lie, I spaced it, sorry.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2311",
+    "fr": "Je te cache pas, sans plan B je suis tendu.",
+    "en": "I won't lie, I'm tense without a backup.",
+    "tags": [
+      "emotions"
+    ]
+  },
+  {
+    "id": "p2312",
+    "fr": "Je te cache pas, la route m'a cassé.",
+    "en": "I won't lie, that drive wore me out.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2313",
+    "fr": "Je te cache pas, je suis chaud mais je suis crevé.",
+    "en": "I won't lie, I'm down but I'm also wiped.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2314",
+    "fr": "Je te cache pas, les deux me vont à peu près.",
+    "en": "I won't lie, both are kinda fine by me.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2315",
+    "fr": "On fait simple, on se retrouve devant la gare.",
+    "en": "Let's keep it simple and meet in front of the station.",
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "p2316",
+    "fr": "On fait simple, je ramène un dessert et c'est bon.",
+    "en": "Let's keep it simple, I'll bring a dessert and we're good.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2317",
+    "fr": "On fait simple, tu me dis oui ou non demain.",
+    "en": "Let's keep it simple, just tell me yes or no tomorrow.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2318",
+    "fr": "On fait simple, au pire on commande.",
+    "en": "Let's keep it simple, worst case we order.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2319",
+    "fr": "On fait simple, un appel ça suffit.",
+    "en": "Let's keep it simple, a call is plenty.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2320",
+    "fr": "On fait simple, si t'es chaud tu viens, sinon c'est pas grave.",
+    "en": "Let's keep it simple, come if you're down, otherwise no stress.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2321",
+    "fr": "On fait simple, je prends le premier créneau qu'ils ont.",
+    "en": "Let's keep it simple, I'll take the first slot they've got.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2322",
+    "fr": "On fait simple, on regarde la météo le matin même.",
+    "en": "Let's keep it simple and check the weather that morning.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2323",
+    "fr": "C'est jouable si on part un peu plus tôt.",
+    "en": "It's doable if we leave a bit earlier.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2324",
+    "fr": "C'est jouable, mais c'est limite niveau sommeil.",
+    "en": "It's doable, but sleep's gonna be tight.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2325",
+    "fr": "C'est jouable en visio si t'es pas sur place.",
+    "en": "It's doable on a video call if you can't be there.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2326",
+    "fr": "C'est jouable sur mon portable, en qualité basse.",
+    "en": "It's doable on my laptop, on low settings.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2327",
+    "fr": "C'est jouable dimanche, samedi le trajet est trop long.",
+    "en": "It's doable Sunday, Saturday's drive is too long.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2328",
+    "fr": "C'est jouable, y a moyen qu'on ait une table.",
+    "en": "It's doable, there's a chance we get a table.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2329",
+    "fr": "C'est jouable, au pire je dors sur place.",
+    "en": "It's doable, worst case I sleep over.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2330",
+    "fr": "C'est jouable, par contre faut un plan B.",
+    "en": "It's doable, though we do need a backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2331",
+    "fr": "Je suis pas contre, faut juste me dire l'heure.",
+    "en": "I'm not against it, just tell me the time.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2332",
+    "fr": "Je suis pas contre un truc plus tranquille.",
+    "en": "I'm not against something more low-key.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2333",
+    "fr": "Je suis pas contre de cuisiner, si c'est simple.",
+    "en": "I'm not against cooking, if it's something simple.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2334",
+    "fr": "Je suis pas contre d'y aller en train.",
+    "en": "I'm not against going by train.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2335",
+    "fr": "Je suis pas contre, y a un monde où ça me plaît.",
+    "en": "I'm not against it, there's a world where I like it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2336",
+    "fr": "Je suis pas contre de décaler d'une heure.",
+    "en": "I'm not against pushing it an hour.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2337",
+    "fr": "Je suis pas contre, par contre je reste pas tard.",
+    "en": "I'm not against it, I just won't stay late.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2338",
+    "fr": "Je suis pas contre de tenter, au pire on laisse tomber.",
+    "en": "I'm not against trying, worst case we drop it.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2339",
+    "fr": "Faut voir si tout le monde est chaud.",
+    "en": "We gotta see if everyone's actually down.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2340",
+    "fr": "Faut voir la météo avant de se caler.",
+    "en": "We gotta check the forecast before we lock it in.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2341",
+    "fr": "Faut voir si le prix reste correct.",
+    "en": "We gotta see if the price stays reasonable.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2342",
+    "fr": "Faut voir, j'ai peut-être déjà un truc dimanche.",
+    "en": "We gotta see, I might already have something Sunday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2343",
+    "fr": "Faut voir si mon ordi le supporte.",
+    "en": "We gotta see if my laptop can handle it.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2344",
+    "fr": "Faut voir avec mes parents pour la maison.",
+    "en": "We gotta check with my parents about the house.",
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "p2345",
+    "fr": "Faut voir si on est assez de monde pour réserver.",
+    "en": "We gotta see if there are enough of us to book.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2346",
+    "fr": "Faut voir le jour même, inutile de stresser maintenant.",
+    "en": "We gotta see on the day, no point stressing now.",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": "p2347",
+    "fr": "Je m'adapte, tu me donnes l'heure quand tu sais.",
+    "en": "I'll adapt, give me the time whenever you know it.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2348",
+    "fr": "Je m'adapte au train, c'est pas bloquant.",
+    "en": "I'll adapt to the train, it's not a deal-breaker.",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": "p2349",
+    "fr": "Je m'adapte, au pire je viens plus tard.",
+    "en": "I'll adapt, worst case I show up later.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2350",
+    "fr": "Je m'adapte si vous décalez au dimanche.",
+    "en": "I'll adapt if you move it to Sunday.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2351",
+    "fr": "Je m'adapte, même si c'est en visio.",
+    "en": "I'll adapt, even if it's on a video call.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2352",
+    "fr": "Je m'adapte niveau bouffe, je mange de tout.",
+    "en": "I'll adapt on the food, I eat pretty much everything.",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": "p2353",
+    "fr": "Je m'adapte, par contre prévenez-moi un minimum.",
+    "en": "I'll adapt, just give me a little warning.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2354",
+    "fr": "Je m'adapte à la météo, on a qu'à prévoir deux options.",
+    "en": "I'll adapt to the weather, we can just plan two options.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2355",
+    "fr": "C'est déjà pas mal si on est trois.",
+    "en": "It's already pretty good if there's three of us.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2356",
+    "fr": "C'est déjà pas mal d'avoir un plan B.",
+    "en": "It's already pretty good that we've got a backup.",
+    "tags": [
+      "plans"
+    ]
+  },
+  {
+    "id": "p2357",
+    "fr": "C'est déjà mieux que la dernière fois.",
+    "en": "This is already better than last time.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2358",
+    "fr": "C'est déjà pas mal, on ajustera plus tard.",
+    "en": "It's already decent, we can tighten it up later.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2359",
+    "fr": "Même à moitié, c'est mieux que rien.",
+    "en": "Even halfway, it's better than nothing.",
+    "tags": [
+      "opinions"
+    ]
+  },
+  {
+    "id": "p2360",
+    "fr": "Un petit passage, c'est déjà ça.",
+    "en": "A short swing-by already counts for something.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2361",
+    "fr": "Si on se parle cinq minutes, c'est déjà bien.",
+    "en": "If we talk for five minutes, that's already something.",
+    "tags": [
+      "social"
+    ]
+  },
+  {
+    "id": "p2362",
+    "fr": "Même en qualité moyenne, ça passe déjà.",
+    "en": "Even at medium quality, it already works.",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": "p2363",
+    "fr": "Après je sais pas, y a moyen que la douche soit réparée demain.",
+    "en": "I mean, I dunno, there's a chance the shower's fixed tomorrow.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2364",
+    "fr": "En vrai j'ai le cou raide, mais je viens quand même.",
+    "en": "Honestly my neck's stiff, but I'm still coming.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p2365",
+    "fr": "Normalement je me couche tôt, là c'est raté.",
+    "en": "I should be in bed early, that's already failed.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2366",
+    "fr": "De toute façon je rappelle le garagiste demain.",
+    "en": "I'll call the mechanic back tomorrow anyway.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2367",
+    "fr": "Limite je prends le premier rendez-vous qu'ils ont.",
+    "en": "I might as well take the earliest appointment they've got.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2368",
+    "fr": "Y a un monde où le colis arrive pas avant vendredi.",
+    "en": "There's a world where the package doesn't show before Friday.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2369",
+    "fr": "Au pire je garde le reçu et je renvoie si la taille va pas.",
+    "en": "Worst case I keep the receipt and send it back if the size is off.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2370",
+    "fr": "Par contre j'ai mal au dos, je porterai pas les courses.",
+    "en": "My back hurts though, I won't carry the groceries.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p2371",
+    "fr": "Du coup on sort les poubelles ce soir, sinon j'oublie.",
+    "en": "So we take the trash out tonight, or I'll forget.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2372",
+    "fr": "Je te cache pas, j'ai mal dormi, la journée va être longue.",
+    "en": "I won't lie, I slept badly, the day's gonna drag.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2373",
+    "fr": "Franchement le pommeau est nickel, ça change la douche.",
+    "en": "Honestly the showerhead's perfect, it changes the shower.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2374",
+    "fr": "C'est limite, j'ai les yeux fatigués, je coupe bientôt.",
+    "en": "It's tight, my eyes are tired, I'm logging off soon.",
+    "tags": [
+      "body"
+    ]
+  },
+  {
+    "id": "p2375",
+    "fr": "Y a moyen que je sois en logement sur le campus l'an prochain.",
+    "en": "There's a chance I'll be in campus housing next year.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2376",
+    "fr": "Après ouais, j'avoue que j'ai trop tiré sur le sommeil.",
+    "en": "Yeah I mean, I'll admit I pushed my sleep too far.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2377",
+    "fr": "Limite on se pose à la maison, sortir me dit moyen.",
+    "en": "We might as well stay in, going out only kinda appeals.",
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "p2378",
+    "fr": "Normalement le rendez-vous est vendredi, je te redis si ça bouge.",
+    "en": "The appointment should be Friday, I'll say if it moves.",
+    "tags": [
+      "services"
+    ]
+  },
+  {
+    "id": "p2379",
+    "fr": "En vrai t'inquiète pour moi, repose-toi si t'es à plat.",
+    "en": "Honestly don't worry about me, rest if you're run-down.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2380",
+    "fr": "De toute façon je note ce qui manque avant de retourner au magasin.",
+    "en": "I'll list what's missing before I go back to the store anyway.",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "p2381",
+    "fr": "Y a un monde où je finis le devoir et je m'endors dessus.",
+    "en": "There's a world where I finish the assignment and fall asleep on it.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2382",
+    "fr": "Au pire je rends un truc simple, ce sera déjà pas mal.",
+    "en": "Worst case I hand in something simple, that'll already be decent.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2383",
+    "fr": "Par contre cette réunion aurait pu être un message.",
+    "en": "That meeting could've been a message though.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2384",
+    "fr": "Du coup je te rappelle dès que c'est fini.",
+    "en": "So I'll call you as soon as it's over.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2385",
+    "fr": "Je suis chaud de boucler ça ce soir, après je décroche.",
+    "en": "I'm down to wrap this up tonight, then I'm done.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2386",
+    "fr": "Faut voir si le délai est vraiment aussi juste.",
+    "en": "We gotta see if the deadline's really that tight.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2387",
+    "fr": "Je m'adapte, on peut faire le point par écrit.",
+    "en": "I'll adapt, we can do the check-in in writing.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2388",
+    "fr": "C'est jouable si on se met d'accord avant.",
+    "en": "It's doable if we get on the same page first.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2389",
+    "fr": "Après je suis pas contre un point court.",
+    "en": "I'm not against a short check-in though.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2390",
+    "fr": "En vrai le rush est passé, je peux enfin répondre tranquille.",
+    "en": "Honestly the rush is over, I can finally reply in peace.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2391",
+    "fr": "Limite on dit l'essentiel et on raccroche.",
+    "en": "We might as well say the important stuff and hang up.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2392",
+    "fr": "Normalement je suis libre après dix-neuf heures trente.",
+    "en": "I should be free after seven thirty.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2393",
+    "fr": "De toute façon je relis une fois avant d'envoyer.",
+    "en": "I'll read it once more before sending anyway.",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": "p2394",
+    "fr": "Y a moyen que je pose un jour, je suis à plat.",
+    "en": "There's a chance I take a day off, I'm flat out.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2395",
+    "fr": "Au pire je viens en visio, le trajet me tente pas.",
+    "en": "Worst case I join on video, I'm not feeling the drive.",
+    "tags": [
+      "education"
+    ]
+  },
+  {
+    "id": "p2396",
+    "fr": "Par contre une piqûre m'a fait flipper, là ça va.",
+    "en": "A sting freaked me out though, I'm fine now.",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "p2397",
+    "fr": "Du coup je prends une veste, y a un monde où il pleut.",
+    "en": "So I'll bring a jacket, there's a world where it rains.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2398",
+    "fr": "Franchement le brouillard était abusé, on voyait rien.",
+    "en": "Honestly the fog was wild, we couldn't see a thing.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2399",
+    "fr": "Je te cache pas, j'ai oublié la veste, évidemment il pleut.",
+    "en": "I won't lie, I forgot a jacket, and of course it's raining.",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": "p2400",
+    "fr": "Après ouais, même sous la pluie, c'est mieux que d'annuler.",
+    "en": "Yeah I mean, even in the rain, it's better than canceling.",
+    "tags": [
+      "weather"
+    ]
   }
 ]
