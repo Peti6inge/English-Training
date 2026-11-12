@@ -14,6 +14,9 @@ android-app/android/build/
 android-app/android/app/build/
 android-app/android/app/.cxx/
 android-app/android/local.properties
+android-app/android/keystore.properties
+**/*.jks
+**/*.keystore
 android-app/android/captures/
 android-app/android/*.iml
 android-app/android/.idea/

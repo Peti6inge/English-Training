@@ -11,6 +11,7 @@ function findSdk() {
   const candidates = [
     process.env.ANDROID_HOME,
     process.env.ANDROID_SDK_ROOT,
+    "/opt/android-sdk",
     process.env.LOCALAPPDATA && join(process.env.LOCALAPPDATA, "Android", "Sdk"),
     process.env.USERPROFILE && join(process.env.USERPROFILE, "AppData", "Local", "Android", "Sdk"),
   ].filter(Boolean);

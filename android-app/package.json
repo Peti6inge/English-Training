@@ -7,7 +7,8 @@
     "sync-www": "node ./scripts/sync-www.mjs",
     "cap:sync": "npm run sync-www && npx cap sync android",
     "open": "npx cap open android",
-    "build:apk": "npm run cap:sync && node ./scripts/assemble-debug.mjs"
+    "build:apk": "npm run cap:sync && node ./scripts/assemble-debug.mjs",
+    "build:apk:release": "npm run cap:sync && node ./scripts/assemble-release.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
