@@ -6,7 +6,7 @@
  */
 
 import { CONFIG } from "./config.js";
-import { lowerScore, raiseScore, storage } from "./storage.js";
+import { storage } from "./storage.js";
 
 function unique(ids) {
   const seen = new Set();
@@ -64,9 +64,7 @@ export function buildQueue(phrases) {
 
 export function applyAttempt(phraseId, correct, now = Date.now()) {
   const prev = storage.getPhraseState(phraseId);
-  const schedule = correct ? raiseScore(prev, now) : lowerScore(prev, now);
   storage.patchPhraseState(phraseId, {
-    ...schedule,
     lastAttemptStatus: correct ? "correct" : "incorrect",
     reviewNext: false,
     repetitionCount: (prev.repetitionCount || 0) + (correct ? 1 : 0),

@@ -240,7 +240,7 @@ function onDontRemind() {
     queue.goTo(queue.indexOfCurrent() + 1);
     renderPhrase(queue.current());
     renderStats();
-    log("Phrase ajoutée à Don't Remind (blacklist locale)");
+    log("Don't remind (+1 au score SRS)");
     return;
   }
   loop.trigger("DONT_REMIND");
@@ -379,7 +379,7 @@ async function boot() {
 
   loop.addEventListener("dont-remind", () => {
     renderStats();
-    log("Phrase ajoutée à Don't Remind (blacklist locale)");
+    log("Don't remind (+1 au score SRS)");
   });
 
   loop.addEventListener("session-stop", () => {

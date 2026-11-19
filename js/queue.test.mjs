@@ -61,38 +61,27 @@ describe("forgetting-curve recall probability", () => {
   });
 });
 
-describe("score ladder", () => {
-  it("schedules the first success eight hours later and stores score 1", () => {
+describe("SRS score changes", () => {
+  it("applyAttempt on success does not change SRS score or schedule", () => {
     storage.resetProgress();
+    storage.patchPhraseState("p001", dueState(2, NOW - HOUR_MS));
     applyAttempt("p001", true, NOW);
     const state = storage.getPhraseState("p001");
-    assert.equal(state.score, 1);
-    assert.equal(Date.parse(state.nextDueAt) - NOW, 8 * HOUR_MS);
+    assert.equal(state.score, 2);
+    assert.equal(state.nextDueAt, new Date(NOW - HOUR_MS).toISOString());
+    assert.equal(state.lastAttemptStatus, "correct");
+    assert.equal(state.repetitionCount, 1);
   });
 
-  it("steps the delay up after each success and stops at score 6", () => {
-    storage.resetProgress();
-    const delays = [8, 24, 72, 168, 384, 840];
-    for (let step = 0; step < delays.length; step += 1) {
-      applyAttempt("p001", true, NOW + step);
-      const state = storage.getPhraseState("p001");
-      if (step < 5) {
-        assert.equal(state.score, step + 1);
-        assert.equal(Date.parse(state.nextDueAt) - (NOW + step), delays[step] * HOUR_MS);
-      }
-    }
-    const mastered = storage.getPhraseState("p001");
-    assert.equal(mastered.score, 6);
-    assert.equal(mastered.nextDueAt, null);
-  });
-
-  it("drops one score on a miss and reschedules that step", () => {
+  it("applyAttempt on failure does not change SRS score or schedule", () => {
     storage.resetProgress();
     storage.patchPhraseState("p001", dueState(3, NOW - HOUR_MS));
     applyAttempt("p001", false, NOW);
     const state = storage.getPhraseState("p001");
-    assert.equal(state.score, 2);
-    assert.equal(Date.parse(state.nextDueAt) - NOW, 72 * HOUR_MS);
+    assert.equal(state.score, 3);
+    assert.equal(state.nextDueAt, new Date(NOW - HOUR_MS).toISOString());
+    assert.equal(state.lastAttemptStatus, "incorrect");
+    assert.equal(state.repetitionCount, 0);
   });
 
   it("raises one score on Don't remind without a hard exclusion", () => {
@@ -115,6 +104,31 @@ describe("score ladder", () => {
     assert.equal(state.score, 3);
     assert.equal(Date.parse(state.nextDueAt) - Date.parse(state.lastReviewedAt), 168 * HOUR_MS);
     assert.equal(storage.isDontRemind("p001"), false);
+  });
+
+  it("correction voice NEXT lowers score via the Remind path", async () => {
+    const { LOOP_STATES } = await import("./config.js");
+    const { LoopManager } = await import("./loop.js");
+    const { stt } = await import("./stt.js");
+    const { tts } = await import("./tts.js");
+    storage.resetProgress();
+    queue.load(makePhrases(2));
+    storage.patchPhraseState("p001", {
+      score: 3,
+      lastAttemptStatus: "incorrect",
+      nextDueAt: new Date(NOW - HOUR_MS).toISOString(),
+    });
+    stt.clearBuffer = () => {};
+    stt.pause = async () => {};
+    stt.resume = async () => {};
+    tts.speakFr = async () => {};
+
+    const mgr = new LoopManager();
+    mgr.running = true;
+    mgr.state = LOOP_STATES.CORRECTION;
+    await mgr._dispatch({ type: "NEXT", before: "", after: "" }, { phase: "correction" });
+
+    assert.equal(storage.getPhraseState("p001").score, 2);
   });
 });
 

@@ -2,7 +2,7 @@
  * Hands-free loop (volant / validation manuelle):
  * SPEAKING_FR → LISTENING (micro ouvert) → [Next volant] → EVALUATING → FEEDBACK → CORRECTION
  * CORRECTION → commande vocale immédiate ou [Previous volant seul] → NEXT_PHRASE → SPEAKING_FR
- * En saisie : volant Previous = Repeat French · voix Previous / Repeat French / Next · correction : Next = Remind, Previous = don't remind + suivant
+ * En saisie : volant Previous = Repeat French · voix Previous / Repeat French / Next · correction : Next volant/voix = Remind (−1), Previous volant / enough = don't remind (+1)
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
@@ -267,7 +267,7 @@ export class LoopManager extends EventTarget {
     else if (command.type === "REPEAT_ENGLISH") await this._onRepeatEnglish();
     else if (command.type === "NEXT") {
       if (phase === "correction" || this.state === LOOP_STATES.CORRECTION) {
-        await this._onDontRemind();
+        await this._onRemind({ after: "" });
       } else {
         await this._finalizeAttempt(stripCommands(command.before || ""), { force: true });
       }
