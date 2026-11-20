@@ -7,6 +7,7 @@
 import { CONFIG } from "./config.js";
 import { audioCues } from "./audio-cues.js";
 import { getNativeMic } from "./native-mic.js";
+import { getAnswerSttLang, getSttProfile } from "./study-mode.js";
 
 function resample(input, fromRate, toRate) {
   if (fromRate === toRate) return input;
@@ -83,6 +84,54 @@ export class STTService extends EventTarget {
      */
     this._nativeMic = getNativeMic();
     this._nativeCapture = false;
+    this._profileLang = getAnswerSttLang();
+    this._wasmLoadedFor = null;
+  }
+
+  _activeProfile() {
+    return getSttProfile();
+  }
+
+  _syncWebSpeechLang() {
+    const lang = this._activeProfile().lang;
+    if (this._recognition) this._recognition.lang = lang;
+    this._profileLang = lang;
+  }
+
+  /** Drop WASM engines so the next init loads models for the current study direction. */
+  async _releaseWasmEngines() {
+    this._releaseVoskRecognizer();
+    if (this._vosk?.model) {
+      try {
+        this._vosk.model.terminate?.();
+      } catch {
+        /* ignore */
+      }
+    }
+    this._vosk = null;
+    this._whisper = null;
+    this._wasmTask = null;
+    this._wasmLoadedFor = null;
+    if (this.engine === "vosk" || this.engine === "whisper") this.engine = "none";
+  }
+
+  /**
+   * Rebind STT to the expected answer language (call while idle, after toggling study mode).
+   * Web Speech switches immediately; Vosk/Whisper reload on the next init().
+   */
+  async reconfigureForStudyMode() {
+    if (this._listening) throw new Error("STT busy");
+    this._syncWebSpeechLang();
+    const lang = this._profileLang;
+    if (this._wasmLoadedFor && this._wasmLoadedFor !== lang) {
+      await this._releaseWasmEngines();
+    }
+    if (this._recognition) {
+      this.engine = "webspeech";
+      this.setStatus("ready", { message: `Web Speech · ${lang}` });
+    } else if (this.engine === "none") {
+      this.setStatus("idle", { message: `STT prêt pour ${lang}` });
+    }
   }
 
   /** Native PCM path is only wired for Vosk (Whisper/Web Speech stay browser-side). */
@@ -169,7 +218,18 @@ export class STTService extends EventTarget {
    * stream. Native Web Speech remains the last-resort fallback.
    */
   async init() {
+    this._syncWebSpeechLang();
     if (!this._recognition) this._startWebSpeechFallback();
+    else this._syncWebSpeechLang();
+
+    const lang = this._profileLang;
+    if (this._wasmLoadedFor === lang && (this.engine === "vosk" || this.engine === "whisper")) {
+      this.setStatus("ready", { message: `Moteur ${this.engine} (${lang})` });
+      return;
+    }
+    if (this._wasmLoadedFor && this._wasmLoadedFor !== lang) {
+      await this._releaseWasmEngines();
+    }
 
     const mobile = isMobileDevice();
     const android = isAndroidDevice();
@@ -348,7 +408,7 @@ export class STTService extends EventTarget {
   }
 
   _bindWebSpeech(rec) {
-    rec.lang = CONFIG.STT.lang || "en-US";
+    rec.lang = this._activeProfile().lang || CONFIG.STT.lang || "en-US";
     // Android still closes after an utterance/silence; continuous + quick restart
     // avoids the Bluetooth SCO drop as much as the Web Speech API allows.
     rec.continuous = this._manualValidation || isAndroidDevice();
@@ -465,12 +525,14 @@ export class STTService extends EventTarget {
     this.setStatus("loading-wasm", { message: "Téléchargement Vosk…", ratio: 0 });
     const { createModel } = await import(/* @vite-ignore */ CONFIG.STT.voskCdn);
     let lastError = null;
-    for (const url of CONFIG.STT.voskModelUrls) {
+    const profile = this._activeProfile();
+    for (const url of profile.voskModelUrls) {
       const name = url.split("/").pop();
       try {
         this.setStatus("loading-wasm", { message: `Vosk: ${name}`, ratio: 0 });
         const model = await createModel(url);
         this._vosk = { model, url };
+        this._wasmLoadedFor = profile.lang;
         return;
       } catch (err) {
         lastError = err;
@@ -481,14 +543,15 @@ export class STTService extends EventTarget {
   }
 
   async _initWhisper() {
-    this.setStatus("loading-wasm", { message: "Chargement Whisper tiny.en…", ratio: 0 });
+    const profile = this._activeProfile();
+    this.setStatus("loading-wasm", { message: `Chargement Whisper (${profile.lang})…`, ratio: 0 });
     const { pipeline, env } = await import(/* @vite-ignore */ `${CONFIG.STT.transformersCdn}`);
     env.allowRemoteModels = true;
     env.useBrowserCache = true;
     if (env.backends?.onnx?.wasm) {
       env.backends.onnx.wasm.wasmPaths = `${CONFIG.STT.transformersCdn}/dist/`;
     }
-    this._whisper = await pipeline("automatic-speech-recognition", CONFIG.STT.whisperModel, {
+    this._whisper = await pipeline("automatic-speech-recognition", profile.whisperModel, {
       progress_callback: (p) => {
         const ratio = p?.progress != null ? p.progress / 100 : p?.status === "done" ? 1 : undefined;
         this.setStatus("loading-wasm", {
@@ -497,6 +560,7 @@ export class STTService extends EventTarget {
         });
       },
     });
+    this._wasmLoadedFor = profile.lang;
   }
 
   async _ensureStream() {

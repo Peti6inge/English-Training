@@ -54,11 +54,16 @@ export const CONFIG = {
     finalEchoWindowMs: 1200,
     wasmTimeoutMs: 90_000,
     whisperModel: "Xenova/whisper-tiny.en",
+    whisperModelFr: "Xenova/whisper-tiny",
     transformersCdn: "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2",
     voskCdn: "https://cdn.jsdelivr.net/npm/vosk-browser@0.0.8/+esm",
     voskModelUrls: [
       "https://ccoreilly.github.io/vosk-browser/models/vosk-model-small-en-us-0.15.tar.gz",
       "https://huggingface.co/ccoreilly/vosk-model-small-en-us-0.15/resolve/main/model.tar.gz",
+    ],
+    voskModelUrlsFr: [
+      "https://ccoreilly.github.io/vosk-browser/models/vosk-model-small-fr-0.22.tar.gz",
+      "https://huggingface.co/ccoreilly/vosk-model-small-fr-0.22/resolve/main/model.tar.gz",
     ],
   },
 

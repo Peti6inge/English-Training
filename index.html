@@ -58,6 +58,7 @@
         </section>
 
         <div class="minimal-data">
+          <button type="button" id="ui-lang-toggle" class="minimal-lang-toggle">Mode anglais</button>
           <button type="button" id="ui-export" class="minimal-data-btn">export</button>
           <button type="button" id="ui-import" class="minimal-data-btn">import</button>
           <input type="file" id="ui-import-file" accept=".json,application/json" hidden />
@@ -76,7 +77,10 @@
               <p>v5</p>
             </div>
           </div>
-          <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
+          <div class="topbar-actions">
+            <button type="button" id="ui-lang-toggle-legacy" class="ghost lang-toggle-btn">Mode anglais</button>
+            <div id="engine-badge" class="badge loading"><span class="dot"></span><span id="engine-label">Initialisation</span></div>
+          </div>
         </header>
 
         <div class="grid">

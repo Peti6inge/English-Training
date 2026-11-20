@@ -6,6 +6,7 @@
  */
 
 import { CONFIG, LOOP_STATES } from "./config.js";
+import { isEnToFr, phraseAnswer, phrasePrompt } from "./study-mode.js";
 import { tts } from "./tts.js";
 import { stt } from "./stt.js";
 import { wakeLock } from "./wake-lock.js";
@@ -116,7 +117,8 @@ export class LoopManager extends EventTarget {
     await stt.pause();
     stt.clearBuffer();
     try {
-      await tts.speakFr(phrase.fr);
+      if (isEnToFr()) await tts.speakEn(phrasePrompt(phrase));
+      else await tts.speakFr(phrasePrompt(phrase));
     } catch {
       /* TTS may be blocked; continue to listening */
     }
@@ -242,7 +244,7 @@ export class LoopManager extends EventTarget {
 
     try {
       if (this.state === LOOP_STATES.LISTENING) {
-        await this._onRepeatFrench();
+        await this._onRepeatPrompt();
         return;
       }
 
@@ -282,7 +284,8 @@ export class LoopManager extends EventTarget {
 
     this.setState(LOOP_STATES.EVALUATING, { phrase });
     const spoken = String(spokenRaw || "").trim();
-    const { ok, score } = isMatch(spoken, phrase.en, CONFIG.SIMILARITY_THRESHOLD, {
+    const expected = phraseAnswer(phrase);
+    const { ok, score } = isMatch(spoken, expected, CONFIG.SIMILARITY_THRESHOLD, {
       wordThreshold: CONFIG.KEYWORD_WORD_THRESHOLD,
     });
 
@@ -290,7 +293,7 @@ export class LoopManager extends EventTarget {
     await storage.logAttempt({
       phraseId: phrase.id,
       spoken,
-      expected: phrase.en,
+      expected,
       score,
       ok,
       via: force ? "next" : "auto",
@@ -304,9 +307,12 @@ export class LoopManager extends EventTarget {
 
     try {
       if (ok) {
-        await tts.speakEn("Perfect");
+        if (isEnToFr()) await tts.speakFr("Parfait");
+        else await tts.speakEn("Perfect");
+      } else if (isEnToFr()) {
+        await tts.speakFr(phraseAnswer(phrase));
       } else {
-        await tts.speakEn(phrase.en);
+        await tts.speakEn(phraseAnswer(phrase));
       }
     } catch {
       /* TTS blocked */
@@ -326,11 +332,34 @@ export class LoopManager extends EventTarget {
     await this._speakCurrent();
   }
 
+  async _onRepeatPrompt() {
+    const phrase = queue.current();
+    if (!phrase) return;
+    const returnState =
+      this.state === LOOP_STATES.CORRECTION ? LOOP_STATES.CORRECTION : LOOP_STATES.LISTENING;
+    stt.clearBuffer();
+    await stt.pause();
+    try {
+      if (isEnToFr()) await tts.speakEn(phrasePrompt(phrase));
+      else await tts.speakFr(phrasePrompt(phrase));
+    } catch {
+      /* ignore */
+    }
+    if (!this.running) return;
+    this.setState(returnState, { phrase });
+    this._resumeMic();
+  }
+
   async _onRepeatFrench() {
     const phrase = queue.current();
     if (!phrase) return;
     const returnState =
       this.state === LOOP_STATES.CORRECTION ? LOOP_STATES.CORRECTION : LOOP_STATES.LISTENING;
+    const duringListening = this.state === LOOP_STATES.LISTENING;
+    if (duringListening && isEnToFr()) {
+      await this._onRepeatPrompt();
+      return;
+    }
     stt.clearBuffer();
     await stt.pause();
     try {
@@ -346,6 +375,11 @@ export class LoopManager extends EventTarget {
   async _onRepeatEnglish() {
     const phrase = queue.current();
     if (!phrase) return;
+    const duringListening = this.state === LOOP_STATES.LISTENING;
+    if (duringListening && !isEnToFr()) {
+      await this._onRepeatPrompt();
+      return;
+    }
     stt.clearBuffer();
     await stt.pause();
     try {

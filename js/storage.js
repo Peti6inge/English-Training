@@ -33,6 +33,8 @@ const DEFAULT_SETTINGS = Object.freeze({
   micCues: true,
   /** "minimal" is the default UI; "legacy" restores the previous interface. */
   uiMode: "minimal",
+  /** fr-en: French prompt → English answer; en-fr: English prompt → French answer. */
+  studyDirection: "fr-en",
 });
 
 function readJson(key, fallback) {

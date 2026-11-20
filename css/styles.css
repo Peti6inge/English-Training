@@ -48,6 +48,19 @@ body {
   margin-bottom: 20px;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.lang-toggle-btn {
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
 .brand {
   display: flex;
   align-items: center;

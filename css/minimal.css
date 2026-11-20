@@ -332,6 +332,25 @@ body.view-legacy .legacy-view[hidden] {
   z-index: 2;
 }
 
+.minimal-lang-toggle {
+  flex: 1.4;
+  margin: 0;
+  padding: 8px 6px;
+  border: 1px solid var(--min-line, #3c4043);
+  border-radius: 6px;
+  background: var(--min-btn, #202124);
+  color: var(--min-text, #f1f3f4);
+  font-family: var(--min-font, system-ui, sans-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.minimal-lang-toggle:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .minimal-data-btn {
   flex: 1;
   margin: 0;

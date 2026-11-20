@@ -6,7 +6,17 @@ import { queue } from "./queue.js";
 import { loop } from "./loop.js";
 import { audioCues } from "./audio-cues.js";
 import { wakeLock } from "./wake-lock.js";
-import { CORRECTION_COMMAND_LABELS, LISTENING_COMMAND_LABELS } from "./commands.js";
+import {
+  getStudyDirection,
+  isEnToFr,
+  phraseAnswer,
+  phrasePrompt,
+  repeatAnswerCommand,
+  repeatPromptCommand,
+  setStudyDirection,
+  STUDY_DIRECTION,
+} from "./study-mode.js";
+import { applyStaticI18n, getCommandLabels, t } from "./i18n.js";
 import { initMediaSession } from "./media-session.js";
 import { initNativeCarMedia, holdNativeCarMedia, isNativeAndroid } from "./car-media.js";
 
@@ -45,11 +55,10 @@ function renderMachine(state) {
 }
 
 function renderCommandList(state) {
-  const labels = state === LOOP_STATES.CORRECTION ? CORRECTION_COMMAND_LABELS : LISTENING_COMMAND_LABELS;
+  const labels =
+    state === LOOP_STATES.CORRECTION ? getCommandLabels("correction") : getCommandLabels("listening");
   const title =
-    state === LOOP_STATES.CORRECTION
-      ? "Après correction — commande vocale + Previous volant (suivant) ou Next (remind)"
-      : "Pendant la saisie — Next / Previous volant uniquement";
+    state === LOOP_STATES.CORRECTION ? t("commandsTitleCorrection") : t("commandsTitleListening");
   $("commands-title").textContent = title;
   $("commands").innerHTML = labels
     .map(
@@ -61,9 +70,10 @@ function renderCommandList(state) {
 
 function renderPhrase(phrase, state = LOOP_STATES.IDLE) {
   if (!phrase) return;
-  const showEn = state === LOOP_STATES.FEEDBACK || state === LOOP_STATES.CORRECTION;
-  $("phrase-kicker").textContent = showEn ? "Phrase anglaise" : "Phrase française";
-  $("phrase-fr").textContent = showEn ? phrase.en : phrase.fr;
+  const showAnswer = state === LOOP_STATES.FEEDBACK || state === LOOP_STATES.CORRECTION;
+  $("phrase-kicker").textContent = showAnswer ? t("phraseAnswer") : t("phrasePrompt");
+  $("phrase-fr").textContent = showAnswer ? phraseAnswer(phrase) : phrasePrompt(phrase);
+  $("phrase-fr").dataset.idle = state === LOOP_STATES.IDLE ? "1" : "0";
   $("phrase-index").textContent = queue.isInterlude()
     ? `rappel · ${queue.indexOfCurrent() + 1} / ${queue.ids.length}`
     : `${queue.indexOfCurrent() + 1} / ${queue.ids.length}`;
@@ -76,10 +86,10 @@ function renderPhrase(phrase, state = LOOP_STATES.IDLE) {
       ? "remind"
       : (phrase.tags && phrase.tags[0]) || "phrase";
   $("reveal").hidden = true;
-  $("reveal").textContent = phrase.en;
+  $("reveal").textContent = phraseAnswer(phrase);
 
-  $("ui-phrase-fr").textContent = phrase.fr;
-  $("ui-phrase-en").textContent = phrase.en;
+  $("ui-phrase-fr").textContent = phrasePrompt(phrase);
+  $("ui-phrase-en").textContent = phraseAnswer(phrase);
   const correction = state === LOOP_STATES.CORRECTION;
   $("ui-phrase-en-wrap").hidden = !correction;
   $("minimal-view").classList.toggle("is-correction", correction);
@@ -103,10 +113,11 @@ function renderStats() {
     ? list
         .map((item) => {
           const p = byId.get(item.phraseId);
-          return `<li>${p ? p.fr : item.phraseId}</li>`;
+          const label = p ? (isEnToFr() ? p.en : p.fr) : item.phraseId;
+          return `<li>${label}</li>`;
         })
         .join("")
-    : "<li>Aucune phrase en don't remind.</li>";
+    : `<li>${t("noDontRemind")}</li>`;
 }
 
 function setBadge(kind, label) {
@@ -125,12 +136,12 @@ function renderFeedback({ ok, score, spoken, phrase, phase }) {
   el.className = `feedback show ${ok ? "ok" : "bad"}`;
   const pct = Math.round((score || 0) * 100);
   el.innerHTML = `
-    <strong>Validé</strong>
-    · similarité ${pct}%
-    <div>Vous : ${spoken || "—"}</div>
-    <div>Attendu : ${phrase.en}</div>
+    <strong>${t("feedbackValidated")}</strong>
+    · ${t("similarity")} ${pct}%
+    <div>${t("youSaid")} : ${spoken || "—"}</div>
+    <div>${t("expected")} : ${phraseAnswer(phrase)}</div>
     <div class="meter"><span style="width:${pct}%;background:${ok ? "var(--ok)" : "var(--bad)"}"></span></div>
-    <div class="hint">${ok ? "Perfect — puis commande vocale, Previous volant pour continuer, ou Next pour remind." : "Correction lue — puis commande vocale, Previous volant pour continuer, ou Next pour remind."}</div>
+    <div class="hint">${ok ? t("hintOk") : t("hintBad")}</div>
   `;
 }
 
@@ -161,10 +172,13 @@ function syncSessionUi(state = loop.state) {
   $("ui-idle-meta").hidden = running;
   $("ui-export").disabled = running;
   $("ui-import").disabled = running;
+  $("ui-lang-toggle").disabled = running;
+  const legacyLang = $("ui-lang-toggle-legacy");
+  if (legacyLang) legacyLang.disabled = running;
 }
 
 function resetProgress() {
-  if (!confirm("Effacer la progression locale ?")) return;
+  if (!confirm(t("resetConfirm"))) return;
   storage.resetProgress();
   queue.rebuild();
   renderPhrase(queue.current());
@@ -196,7 +210,7 @@ async function importProgressFromFile(file) {
     alert(err.message || "Import impossible");
     return;
   }
-  if (!confirm("Remplacer toute la progression locale par ce fichier ?")) return;
+  if (!confirm(t("importConfirm"))) return;
   storage.applySnapshot(snapshot);
   queue.rebuild();
   renderPhrase(queue.current());
@@ -275,10 +289,45 @@ async function loadPhrases() {
   throw new Error("Aucune liste de phrases disponible");
 }
 
+function applyStudyDirectionFromSettings() {
+  const { studyDirection } = storage.getSettings();
+  setStudyDirection(
+    studyDirection === STUDY_DIRECTION.EN_FR ? STUDY_DIRECTION.EN_FR : STUDY_DIRECTION.FR_EN,
+  );
+  applyStaticI18n();
+  document.body.dataset.study = getStudyDirection();
+}
+
+async function toggleStudyDirection() {
+  if (loop.running || starting) {
+    alert(t("langSwitchBlocked"));
+    return;
+  }
+  const next =
+    getStudyDirection() === STUDY_DIRECTION.FR_EN ? STUDY_DIRECTION.EN_FR : STUDY_DIRECTION.FR_EN;
+  storage.setSettings({ studyDirection: next });
+  setStudyDirection(next);
+  applyStudyDirectionFromSettings();
+  try {
+    await stt.reconfigureForStudyMode();
+  } catch (err) {
+    log(err.message || String(err));
+  }
+  renderPhrase(queue.current(), loop.state);
+  renderCommandList(loop.state);
+  renderStats();
+  log(
+    next === STUDY_DIRECTION.EN_FR
+      ? "Mode EN→FR — UI anglaise, réponses en français"
+      : "Mode FR→EN — UI française, réponses en anglais",
+  );
+}
+
 async function boot() {
   renderMachine(LOOP_STATES.IDLE);
-  renderCommandList(LOOP_STATES.IDLE);
   await storage.init();
+  applyStudyDirectionFromSettings();
+  renderCommandList(LOOP_STATES.IDLE);
   applyView(storage.getSettings().uiMode === "legacy" ? "legacy" : "minimal");
   syncSessionUi(LOOP_STATES.IDLE);
 
@@ -409,8 +458,11 @@ async function boot() {
 
   $("btn-repeat-fr").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
   $("btn-repeat-en").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
-  $("ui-phrase-fr-wrap").addEventListener("click", () => loop.trigger("REPEAT_FRENCH"));
-  $("ui-phrase-en-wrap").addEventListener("click", () => loop.trigger("REPEAT_ENGLISH"));
+  $("ui-phrase-fr-wrap").addEventListener("click", () => loop.trigger(repeatPromptCommand()));
+  $("ui-phrase-en-wrap").addEventListener("click", () => loop.trigger(repeatAnswerCommand()));
+
+  $("ui-lang-toggle").addEventListener("click", () => toggleStudyDirection());
+  $("ui-lang-toggle-legacy").addEventListener("click", () => toggleStudyDirection());
 
   $("btn-prev").addEventListener("click", () => loop.onPhysicalPrevious());
   $("btn-next").addEventListener("click", () => loop.onPhysicalNext());
